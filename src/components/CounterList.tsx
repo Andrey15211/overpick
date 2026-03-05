@@ -18,9 +18,17 @@ export default function CounterList({ counters, heroes, title = 'Контрпи�
   const [sortOrder, setSortOrder] = useState<SortOrder>('effectiveness');
   const [activeRole, setActiveRole] = useState<HeroRole | 'All'>('All');
 
+  const heroesById = useMemo(() => {
+    const map = new Map<string, Hero>();
+    for (const hero of heroes) {
+      map.set(hero.id, hero);
+    }
+    return map;
+  }, [heroes]);
+
   // Получить информацию о герое
   const getHero = (heroId: string): Hero | undefined => {
-    return heroes.find(h => h.id === heroId);
+    return heroesById.get(heroId);
   };
 
   // Фильтрация и сортировка контрпиков
@@ -47,14 +55,14 @@ export default function CounterList({ counters, heroes, title = 'Контрпи�
       });
     } else {
       result.sort((a, b) => {
-        const heroA = getHero(a.heroId);
-        const heroB = getHero(b.heroId);
+        const heroA = heroesById.get(a.heroId);
+        const heroB = heroesById.get(b.heroId);
         return (heroA?.nameRu || '').localeCompare(heroB?.nameRu || '', 'ru');
       });
     }
     
     return result;
-  }, [counters, sortOrder, activeRole]);
+  }, [counters, sortOrder, activeRole, heroesById]);
 
   // Рендер шкалы эффективности (звезды)
   const renderEffectiveness = (effectiveness: number) => {

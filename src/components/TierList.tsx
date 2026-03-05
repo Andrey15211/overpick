@@ -10,12 +10,11 @@ import '../styles/TierList.css';
 interface TierListProps {
   metaHeroes: HeroMeta[];
   heroes: Hero[];
-  tiers: Record<Tier, { label: string; description: string; color: string }>;
 }
 
 type RoleFilter = 'all' | HeroRole;
 
-export default function TierList({ metaHeroes, heroes, tiers }: TierListProps) {
+export default function TierList({ metaHeroes, heroes }: TierListProps) {
   const [roleFilter, setRoleFilter] = useState<RoleFilter>('all');
   const [selectedHero, setSelectedHero] = useState<HeroMeta | null>(null);
 

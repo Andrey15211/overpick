@@ -85,7 +85,6 @@ export default function MetaPage() {
           <TierList 
             metaHeroes={meta.heroes} 
             heroes={heroes}
-            tiers={meta.tiers}
           />
         </section>
 

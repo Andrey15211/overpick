@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Hero, HeroRole } from '@/types/heroes';
+import { Hero } from '@/types/heroes';
 import { Tier } from '@/types/meta';
 import '../styles/HeroCard.css';
 
