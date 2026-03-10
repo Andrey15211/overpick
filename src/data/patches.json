@@ -1,30 +1,183 @@
 [
   {
+    "patchId": "ow-s1.5-mid",
+    "date": "2026-03-10",
+    "version": "1.5",
+    "title": "⚡ Overwatch Season 1.5 — Середина сезона",
+    "changes": [
+      {
+        "heroId": "Подкласс Медик",
+        "type": "buff",
+        "description": "самоисцеление от лечения союзников увеличено с 25% до 40%"
+      },
+      {
+        "heroId": "Подкласс Bruiser",
+        "type": "buff",
+        "description": "эффект срабатывает при <50% здоровья"
+      },
+      {
+        "heroId": "Подкласс Инициатор",
+        "type": "nerf",
+        "description": "эффект больше не срабатывает при полном здоровье. Исцеление 70→60 ед."
+      },
+      {
+        "heroId": "dva",
+        "type": "nerf",
+        "description": "Перезарядка «Ускорителей» увеличена с 3,5 до 4 сек"
+      },
+      {
+        "heroId": "hazard",
+        "type": "rework",
+        "description": "Азарт перенесен из подкласса «Стойкость» в «Инициатор»"
+      },
+      {
+        "heroId": "ramattra",
+        "type": "buff",
+        "description": "Перезарядка «Барьера пустоты» 13→12с. Урон «Аннигиляции» 30→35 ед."
+      },
+      {
+        "heroId": "roadhog",
+        "type": "buff",
+        "description": "Металломет: урон за дробинку увеличен с 6,5 до 7 ед."
+      },
+      {
+        "heroId": "anran",
+        "type": "buff",
+        "description": "Инфернальный рывок: высота прыжка +20%, перенос через преграды"
+      },
+      {
+        "heroId": "emre",
+        "type": "buff",
+        "description": "Задержка пассивки «Трансформация организма» 4.5→4 сек"
+      },
+      {
+        "heroId": "vendetta",
+        "type": "rework",
+        "description": "Raging Storm (35→30) стал малым талантом, Siphoning Strike стал высшим (30%→40%)"
+      },
+      {
+        "heroId": "illari",
+        "type": "nerf",
+        "description": "Летнее солнцестояние (30%→20%), Солнечный ожог (70→50), заряд винтовки 3.5→3с"
+      },
+      {
+        "heroId": "jetpackcat",
+        "type": "rework",
+        "description": "Защита территории удален, Когти наголо стал высшим (КД 8→6с), новый талант Тайный умысел"
+      },
+      {
+        "heroId": "mizuki",
+        "type": "buff",
+        "description": "Радиус ауры 10→12м, дегенерация 2→1.75с"
+      }
+    ]
+  },
+  {
     "patchId": "ow-s1-launch",
     "date": "2026-02-10",
     "version": "1.0",
     "title": "🔥 Overwatch Season 1 — Ребрендинг",
     "changes": [
-      {"heroId": "domina", "type": "rework", "description": "Новый танк Domina (Stalwart) добавлен в игру"},
-      {"heroId": "anran", "type": "rework", "description": "Новый DD Anran (Flanker) добавлен в игру"},
-      {"heroId": "emre", "type": "rework", "description": "Новый DD Emre (Specialist) добавлен в игру"},
-      {"heroId": "jetpackcat", "type": "rework", "description": "Новый саппорт Jetpack Cat добавлен в игру"},
-      {"heroId": "mizuki", "type": "rework", "description": "Новый саппорт Mizuki добавлен в игру"},
-      {"heroId": "tracer", "type": "nerf", "description": "Урон снижен с 6 до 5.75 за пулю. Увеличена дальность мерцания на 20%"},
-      {"heroId": "dva", "type": "nerf", "description": "Базовое HP снижено с 375 до 325 (5v5) и с 300 до 250 (6v6)"},
-      {"heroId": "sigma", "type": "nerf", "description": "HP барьера снижено с 700 до 650"},
-      {"heroId": "zarya", "type": "nerf", "description": "Максимальный DPS снижен с 190 до 175"},
-      {"heroId": "kiriko", "type": "buff", "description": "Скорость лечебных снарядов увеличена с 18 до 24. Swift Step больше не очищает эффекты"},
-      {"heroId": "baptiste", "type": "buff", "description": "Радиус бессмертия +30%. Хил за выстрел увеличен с 25 до 40"},
-      {"heroId": "roadhog", "type": "buff", "description": "Take a Breather: длительность 3с (было 2.5с), overhealth 300 (было 250)"},
-      {"heroId": "winston", "type": "buff", "description": "+10% скорости за каждого задетого врага (макс +30%)"},
-      {"heroId": "cassidy", "type": "buff", "description": "КД Combat Roll снижен с 6 до 5с"},
-      {"heroId": "lifeweaver", "type": "buff", "description": "Древо Жизни: конверсия overhealth 100% (было 50%)"},
-      {"heroId": "mercy", "type": "rework", "description": "Sympathetic Recovery заменена на Swift Recovery"},
-      {"heroId": "sombra", "type": "rework", "description": "Пассивка Opportunist: теперь раскрывает ульты врагов вместо HP <50%"},
-      {"heroId": "reaper", "type": "nerf", "description": "Shadow Step больше не очищает эффекты"},
-      {"heroId": "illari", "type": "nerf", "description": "Outburst КД увеличен 7→8с. Регенерация ресурса 43→35"},
-      {"heroId": "wuyang", "type": "rework", "description": "Пассивный хил -5, луч хила +5. Переработан баланс"}
+      {
+        "heroId": "domina",
+        "type": "rework",
+        "description": "Новый танк Domina (Stalwart) добавлен в игру"
+      },
+      {
+        "heroId": "anran",
+        "type": "rework",
+        "description": "Новый DD Anran (Flanker) добавлен в игру"
+      },
+      {
+        "heroId": "emre",
+        "type": "rework",
+        "description": "Новый DD Emre (Specialist) добавлен в игру"
+      },
+      {
+        "heroId": "jetpackcat",
+        "type": "rework",
+        "description": "Новый саппорт Jetpack Cat добавлен в игру"
+      },
+      {
+        "heroId": "mizuki",
+        "type": "rework",
+        "description": "Новый саппорт Mizuki добавлен в игру"
+      },
+      {
+        "heroId": "tracer",
+        "type": "nerf",
+        "description": "Урон снижен с 6 до 5.75 за пулю. Увеличена дальность мерцания на 20%"
+      },
+      {
+        "heroId": "dva",
+        "type": "nerf",
+        "description": "Базовое HP снижено с 375 до 325 (5v5) и с 300 до 250 (6v6)"
+      },
+      {
+        "heroId": "sigma",
+        "type": "nerf",
+        "description": "HP барьера снижено с 700 до 650"
+      },
+      {
+        "heroId": "zarya",
+        "type": "nerf",
+        "description": "Максимальный DPS снижен с 190 до 175"
+      },
+      {
+        "heroId": "kiriko",
+        "type": "buff",
+        "description": "Скорость лечебных снарядов увеличена с 18 до 24. Swift Step больше не очищает эффекты"
+      },
+      {
+        "heroId": "baptiste",
+        "type": "buff",
+        "description": "Радиус бессмертия +30%. Хил за выстрел увеличен с 25 до 40"
+      },
+      {
+        "heroId": "roadhog",
+        "type": "buff",
+        "description": "Take a Breather: длительность 3с (было 2.5с), overhealth 300 (было 250)"
+      },
+      {
+        "heroId": "winston",
+        "type": "buff",
+        "description": "+10% скорости за каждого задетого врага (макс +30%)"
+      },
+      {
+        "heroId": "cassidy",
+        "type": "buff",
+        "description": "КД Combat Roll снижен с 6 до 5с"
+      },
+      {
+        "heroId": "lifeweaver",
+        "type": "buff",
+        "description": "Древо Жизни: конверсия overhealth 100% (было 50%)"
+      },
+      {
+        "heroId": "mercy",
+        "type": "rework",
+        "description": "Sympathetic Recovery заменена на Swift Recovery"
+      },
+      {
+        "heroId": "sombra",
+        "type": "rework",
+        "description": "Пассивка Opportunist: теперь раскрывает ульты врагов вместо HP <50%"
+      },
+      {
+        "heroId": "reaper",
+        "type": "nerf",
+        "description": "Shadow Step больше не очищает эффекты"
+      },
+      {
+        "heroId": "illari",
+        "type": "nerf",
+        "description": "Outburst КД увеличен 7→8с. Регенерация ресурса 43→35"
+      },
+      {
+        "heroId": "wuyang",
+        "type": "rework",
+        "description": "Пассивный хил -5, луч хила +5. Переработан баланс"
+      }
     ]
   },
   {
@@ -33,11 +186,31 @@
     "version": "20.1",
     "title": "Середина сезона 20",
     "changes": [
-      {"heroId": "sigma", "type": "nerf", "description": "Урон Гиперсфер снижен с 55 до 50"},
-      {"heroId": "dva", "type": "buff", "description": "Длительность матрицы защиты увеличена на 0.5 секунды"},
-      {"heroId": "tracer", "type": "nerf", "description": "Урон импульсной бомбы снижен с 350 до 325"},
-      {"heroId": "ana", "type": "buff", "description": "Радиус биотической гранаты увеличен на 10%"},
-      {"heroId": "vendetta", "type": "buff", "description": "Увеличен радиус ближней атаки"}
+      {
+        "heroId": "sigma",
+        "type": "nerf",
+        "description": "Урон Гиперсфер снижен с 55 до 50"
+      },
+      {
+        "heroId": "dva",
+        "type": "buff",
+        "description": "Длительность матрицы защиты увеличена на 0.5 секунды"
+      },
+      {
+        "heroId": "tracer",
+        "type": "nerf",
+        "description": "Урон импульсной бомбы снижен с 350 до 325"
+      },
+      {
+        "heroId": "ana",
+        "type": "buff",
+        "description": "Радиус биотической гранаты увеличен на 10%"
+      },
+      {
+        "heroId": "vendetta",
+        "type": "buff",
+        "description": "Увеличен радиус ближней атаки"
+      }
     ]
   },
   {
@@ -46,22 +219,54 @@
     "version": "20.0",
     "title": "Запуск сезона 20",
     "changes": [
-      {"heroId": "vendetta", "type": "rework", "description": "Новый герой добавлен в игру"},
-      {"heroId": "sigma", "type": "buff", "description": "Урон Гиперсфер увеличен с 50 до 55"},
-      {"heroId": "reinhardt", "type": "buff", "description": "Прочность щита увеличена с 1200 до 1400"},
-      {"heroId": "kiriko", "type": "nerf", "description": "Время восстановления Судзу увеличено с 14 до 15с"}
+      {
+        "heroId": "vendetta",
+        "type": "rework",
+        "description": "Новый герой добавлен в игру"
+      },
+      {
+        "heroId": "sigma",
+        "type": "buff",
+        "description": "Урон Гиперсфер увеличен с 50 до 55"
+      },
+      {
+        "heroId": "reinhardt",
+        "type": "buff",
+        "description": "Прочность щита увеличена с 1200 до 1400"
+      },
+      {
+        "heroId": "kiriko",
+        "type": "nerf",
+        "description": "Время восстановления Судзу увеличено с 14 до 15с"
+      }
     ]
   },
   {
     "patchId": "s19-mid",
     "date": "2025-10-15",
-    "version": "19.1", 
+    "version": "19.1",
     "title": "Середина сезона 19",
     "changes": [
-      {"heroId": "wuyang", "type": "buff", "description": "Увеличена скорость исцеления основной способности"},
-      {"heroId": "sojourn", "type": "nerf", "description": "Снижена скорость зарядки рейлгана на 10%"},
-      {"heroId": "genji", "type": "buff", "description": "Урон сюрикенов увеличен с 27 до 29"},
-      {"heroId": "mercy", "type": "nerf", "description": "Скорость исцеления снижена с 55 до 50 в секунду"}
+      {
+        "heroId": "wuyang",
+        "type": "buff",
+        "description": "Увеличена скорость исцеления основной способности"
+      },
+      {
+        "heroId": "sojourn",
+        "type": "nerf",
+        "description": "Снижена скорость зарядки рейлгана на 10%"
+      },
+      {
+        "heroId": "genji",
+        "type": "buff",
+        "description": "Урон сюрикенов увеличен с 27 до 29"
+      },
+      {
+        "heroId": "mercy",
+        "type": "nerf",
+        "description": "Скорость исцеления снижена с 55 до 50 в секунду"
+      }
     ]
   },
   {
@@ -70,10 +275,26 @@
     "version": "19.0",
     "title": "Запуск сезона 19",
     "changes": [
-      {"heroId": "wuyang", "type": "rework", "description": "Новый саппорт добавлен в игру"},
-      {"heroId": "roadhog", "type": "rework", "description": "Переработана механика крюка и пассивка"},
-      {"heroId": "pharah", "type": "buff", "description": "Увеличена маневренность в воздухе"},
-      {"heroId": "lucio", "type": "buff", "description": "Радиус ауры увеличен с 12 до 14 метров"}
+      {
+        "heroId": "wuyang",
+        "type": "rework",
+        "description": "Новый саппорт добавлен в игру"
+      },
+      {
+        "heroId": "roadhog",
+        "type": "rework",
+        "description": "Переработана механика крюка и пассивка"
+      },
+      {
+        "heroId": "pharah",
+        "type": "buff",
+        "description": "Увеличена маневренность в воздухе"
+      },
+      {
+        "heroId": "lucio",
+        "type": "buff",
+        "description": "Радиус ауры увеличен с 12 до 14 метров"
+      }
     ]
   },
   {
@@ -82,10 +303,26 @@
     "version": "18.1",
     "title": "Середина сезона 18",
     "changes": [
-      {"heroId": "juno", "type": "buff", "description": "Увеличена скорость передвижения на 5%"},
-      {"heroId": "mauga", "type": "nerf", "description": "Снижена эффективность Берсерка"},
-      {"heroId": "sombra", "type": "rework", "description": "Переработана механика взлома"},
-      {"heroId": "illari", "type": "nerf", "description": "HP пилона снижено с 150 до 100"}
+      {
+        "heroId": "juno",
+        "type": "buff",
+        "description": "Увеличена скорость передвижения на 5%"
+      },
+      {
+        "heroId": "mauga",
+        "type": "nerf",
+        "description": "Снижена эффективность Берсерка"
+      },
+      {
+        "heroId": "sombra",
+        "type": "rework",
+        "description": "Переработана механика взлома"
+      },
+      {
+        "heroId": "illari",
+        "type": "nerf",
+        "description": "HP пилона снижено с 150 до 100"
+      }
     ]
   },
   {
@@ -94,10 +331,26 @@
     "version": "18.0",
     "title": "Запуск сезона 18",
     "changes": [
-      {"heroId": "freja", "type": "rework", "description": "Новый DD-герой добавлен в игру"},
-      {"heroId": "bastion", "type": "buff", "description": "Режим осады теперь с неограниченным запасом"},
-      {"heroId": "torbjorn", "type": "buff", "description": "Турель получила +50 HP"},
-      {"heroId": "zarya", "type": "nerf", "description": "Снижена максимальная энергия с 100 до 90"}
+      {
+        "heroId": "freja",
+        "type": "rework",
+        "description": "Новый DD-герой добавлен в игру"
+      },
+      {
+        "heroId": "bastion",
+        "type": "buff",
+        "description": "Режим осады теперь с неограниченным запасом"
+      },
+      {
+        "heroId": "torbjorn",
+        "type": "buff",
+        "description": "Турель получила +50 HP"
+      },
+      {
+        "heroId": "zarya",
+        "type": "nerf",
+        "description": "Снижена максимальная энергия с 100 до 90"
+      }
     ]
   },
   {
@@ -106,10 +359,26 @@
     "version": "14.0",
     "title": "Запуск сезона 14 — Hazard",
     "changes": [
-      {"heroId": "hazard", "type": "rework", "description": "Новый танк добавлен в игру"},
-      {"heroId": "orisa", "type": "buff", "description": "Увеличен урон копья"},
-      {"heroId": "winston", "type": "buff", "description": "Прыжок теперь наносит больше урона при приземлении"},
-      {"heroId": "zenyatta", "type": "buff", "description": "Разлад теперь увеличивает получаемый урон на 30%"}
+      {
+        "heroId": "hazard",
+        "type": "rework",
+        "description": "Новый танк добавлен в игру"
+      },
+      {
+        "heroId": "orisa",
+        "type": "buff",
+        "description": "Увеличен урон копья"
+      },
+      {
+        "heroId": "winston",
+        "type": "buff",
+        "description": "Прыжок теперь наносит больше урона при приземлении"
+      },
+      {
+        "heroId": "zenyatta",
+        "type": "buff",
+        "description": "Разлад теперь увеличивает получаемый урон на 30%"
+      }
     ]
   }
 ]

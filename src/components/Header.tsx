@@ -9,7 +9,7 @@ export default function Header() {
           <span className="header__logo-icon">◆</span>
           <span>Over</span>
           <span className="header__logo-accent">pick</span>
-          <span className="header__logo-season">S1</span>
+          <span className="header__logo-season">S1.5</span>
         </Link>
         
         <nav className="header__nav">

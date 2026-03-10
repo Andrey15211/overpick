@@ -7,8 +7,8 @@ export const metadata: Metadata = {
     default: "Overpick - Контрпики Overwatch",
     template: "%s | Overpick"
   },
-  description: "Лучший сервис для поиска контрпиков, изучения меты и патч-нотов Overwatch. Актуальные тир-листы Season 1 (февраль 2026). Подроли, 5 новых героев.",
-  keywords: ["overwatch", "контрпики", "мета", "герои", "патчи", "тир-лист", "counters", "tier list", "season 1", "подроли", "subroles"],
+  description: "Лучший сервис для поиска контрпиков, изучения меты и патч-нотов Overwatch. Актуальные тир-листы Season 1.5 (март 2026). Подроли, балансные правки.",
+  keywords: ["overwatch", "контрпики", "мета", "герои", "патчи", "тир-лист", "counters", "tier list", "season 1.5", "подроли", "subroles"],
   authors: [{ name: "Overpick Team" }],
   creator: "Overpick",
   publisher: "Overpick",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: "https://overpick-phi.vercel.app",
     siteName: "Overpick",
     title: "Overpick - Контрпики Overwatch",
-    description: "Найди лучший контрпик для любого героя Overwatch. Актуальная мета Season 1.",
+    description: "Найди лучший контрпик для любого героя Overwatch. Актуальная мета Season 1.5.",
   },
   twitter: {
     card: "summary_large_image",

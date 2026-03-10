@@ -9,7 +9,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Мета и Тир-лист',
-  description: 'Актуальный тир-лист героев Overwatch Season 1. S-tier герои, подроли, pick rate и win rate статистика.',
+  description: 'Актуальный тир-лист героев Overwatch Season 1.5. S-tier герои, подроли, pick rate и win rate статистика.',
 };
 
 // Типизация данных

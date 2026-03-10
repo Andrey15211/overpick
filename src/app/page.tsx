@@ -18,7 +18,7 @@ const meta = metaData as {
   heroes: HeroMeta[];
 };
 
-// Новые герои Season 1
+// Новые герои Season 1.5
 const NEW_HEROES = ['domina', 'anran', 'emre', 'jetpackcat', 'mizuki'];
 
 export default function Home() {
