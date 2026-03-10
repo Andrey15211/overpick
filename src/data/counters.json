@@ -18,10 +18,10 @@
       },
       {
         "heroId": "mei",
-        "effectiveness": 4,
-        "tier": "A",
+        "effectiveness": 5,
+        "tier": "S",
         "counterRole": "Damage",
-        "reason": "Замедление мешает мобильности, стена разделяет от команды"
+        "reason": "Замедление мешает мобильности, CD ускорителей (4с) позволяет легко ловить в Стену"
       },
       {
         "heroId": "reaper",
@@ -32,10 +32,10 @@
       },
       {
         "heroId": "symmetra",
-        "effectiveness": 4,
-        "tier": "A",
+        "effectiveness": 5,
+        "tier": "S",
         "counterRole": "Damage",
-        "reason": "Луч проходит сквозь матрицу защиты"
+        "reason": "Луч проходит сквозь матрицу, CD ускорителей 4с не дает сбежать вовремя"
       },
       {
         "heroId": "bastion",
@@ -390,10 +390,10 @@
       },
       {
         "heroId": "roadhog",
-        "effectiveness": 4,
-        "tier": "A",
+        "effectiveness": 5,
+        "tier": "S",
         "counterRole": "Tank",
-        "reason": "Крюк ловит на подходе, ваншот комбо до того как сработает Commanding Shout"
+        "reason": "Крюк ловит на подходе, урон (7 за дробинку) гарантирует ваншот до крика"
       },
       {
         "heroId": "sigma",
@@ -978,10 +978,10 @@
       },
       {
         "heroId": "roadhog",
-        "effectiveness": 4,
-        "tier": "A",
+        "effectiveness": 5,
+        "tier": "S",
         "counterRole": "Tank",
-        "reason": "Дробовик сносит много ХП, хук ловит прыжок"
+        "reason": "Бафф урона (7 за дробинку) и хук делают его фатальным для Уинстона"
       },
       {
         "heroId": "mauga",
@@ -4029,10 +4029,10 @@
       },
       {
         "heroId": "tracer",
-        "effectiveness": 2,
-        "tier": "C",
+        "effectiveness": 1,
+        "tier": "D",
         "counterRole": "Damage",
-        "reason": "Мойра опасна в дуэли, но Трейсер может забайтить"
+        "reason": "Мойра с 40% самохила почти неуязвима для Трейсер в дуэли"
       },
       {
         "heroId": "sigma",
@@ -4172,10 +4172,10 @@
       },
       {
         "heroId": "tracer",
-        "effectiveness": 5,
-        "tier": "S",
+        "effectiveness": 4,
+        "tier": "A",
         "counterRole": "Damage",
-        "reason": "Ванклип из-за огромного хитбокса, Дзен медленный"
+        "reason": "Трейсер всё ещё сильна, но Medic-пассивка союзников Дзена мешает его добить"
       },
       {
         "heroId": "genji",
@@ -4453,10 +4453,10 @@
       },
       {
         "heroId": "roadhog",
-        "effectiveness": 4,
-        "tier": "A",
+        "effectiveness": 5,
+        "tier": "S",
         "counterRole": "Tank",
-        "reason": "Крюк ловит Эмре без дэша, ваншот комбо убивает"
+        "reason": "Крюк ловит Эмре без дэша, бафф урона 1.5 гарантирует фраг"
       },
       {
         "heroId": "sombra",
@@ -4631,10 +4631,10 @@
       },
       {
         "heroId": "roadhog",
-        "effectiveness": 4,
-        "tier": "A",
+        "effectiveness": 5,
+        "tier": "S",
         "counterRole": "Tank",
-        "reason": "Крюк ловит до активации Katashiro Return, ваншот"
+        "reason": "Крюк ловит до активации Katashiro Return, ваншот с 7 урона за дробинку"
       },
       {
         "heroId": "sombra",

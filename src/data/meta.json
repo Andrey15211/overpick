@@ -13,384 +13,52 @@
   ],
   "metaDescription": "Overwatch Season 1.5 (Mid-Season, 10 марта 2026). Крупный балансный патч: усиление Medic-саппортов (40% самохил), изменение порогов активации Bruiser и Initiator. D.Va получила нерф мобильности, Ramattra и Roadhog значительно усилены. Новые герои S1 (Anran, Emre, Jetpack Cat) сбалансированы.",
   "tiers": {
-    "S": {
-      "label": "S-Tier",
-      "description": "Доминируют в мете, must-pick",
-      "color": "#FF4444"
-    },
-    "A": {
-      "label": "A-Tier",
-      "description": "Сильные и надёжные выборы",
-      "color": "#3B82F6"
-    },
-    "B": {
-      "label": "B-Tier",
-      "description": "Ситуативно эффективные герои",
-      "color": "#FFCC44"
-    },
-    "C": {
-      "label": "C-Tier",
-      "description": "Легко контрятся или мало влияния",
-      "color": "#88CC44"
-    },
-    "D": {
-      "label": "D-Tier",
-      "description": "Избегаются в рейтинге",
-      "color": "#888888"
-    }
+    "S": {"label": "S-Tier", "description": "Доминируют в мете, must-pick", "color": "#FF4444"},
+    "A": {"label": "A-Tier", "description": "Сильные и надёжные выборы", "color": "#3B82F6"},
+    "B": {"label": "B-Tier", "description": "Ситуативно эффективные герои", "color": "#FFCC44"},
+    "C": {"label": "C-Tier", "description": "Легко контрятся или мало влияния", "color": "#88CC44"},
+    "D": {"label": "D-Tier", "description": "Избегаются в рейтинге", "color": "#888888"}
   },
   "heroes": [
-    {
-      "heroId": "sigma",
-      "tier": "S",
-      "pickRate": 12.8,
-      "winRate": 53.5,
-      "whyMeta": "Stalwart-подроль даёт 40% сопротивление отбрасыванию. Контроль пространства барьером (650 HP после нерфа). [Esports Insider, Overbuff]"
-    },
-    {
-      "heroId": "dva",
-      "tier": "S",
-      "pickRate": 11.5,
-      "winRate": 52.8,
-      "whyMeta": "Initiator-подроль. Нерф CD Boosters (4с) сделал её более уязвимой при агрессии. [Sports Dunia, Dexerto]"
-    },
-    {
-      "heroId": "zarya",
-      "tier": "S",
-      "pickRate": 10.2,
-      "winRate": 53.0,
-      "whyMeta": "Bruiser-подроль: порог активации 50% HP. Всё ещё один из лучших танков для защиты команды. [Overbuff, Blizzard]"
-    },
-    {
-      "heroId": "ramattra",
-      "tier": "A",
-      "pickRate": 7.2,
-      "winRate": 52.5,
-      "whyMeta": "Stalwart. Бафф Barrier CD (12с) и урона Annihilation (35) значительно подняли его эффективность. [Blizzard]"
-    },
-    {
-      "heroId": "roadhog",
-      "tier": "A",
-      "pickRate": 6.8,
-      "winRate": 51.5,
-      "whyMeta": "Bruiser. Бафф урона (7 за дробинку) вернул угрозу ваншота. [Destructoid, Blizzard]"
-    },
-    {
-      "heroId": "winston",
-      "tier": "A",
-      "pickRate": 7.5,
-      "winRate": 51.8,
-      "whyMeta": "Initiator: нерф хила (60) и ограничение при full HP немного ослабили выживаемость. [Destructoid]"
-    },
-    {
-      "heroId": "domina",
-      "tier": "A",
-      "pickRate": 7.0,
-      "winRate": 51.2,
-      "whyMeta": "Новый Stalwart-танк Season 1. Всё ещё сильна в координации. [Blizzard, Dexerto]"
-    },
-    {
-      "heroId": "wreckingball",
-      "tier": "A",
-      "pickRate": 2.6,
-      "winRate": 50.5,
-      "whyMeta": "Initiator: нерф пассивного хила заставил играть аккуратнее. [Overbuff]"
-    },
-    {
-      "heroId": "doomfist",
-      "tier": "A",
-      "pickRate": 5.8,
-      "winRate": 50.5,
-      "whyMeta": "Initiator-подроль. Остается сильным в дайве. [Esports Insider]"
-    },
-    {
-      "heroId": "hazard",
-      "tier": "A",
-      "pickRate": 5.2,
-      "winRate": 50.2,
-      "whyMeta": "Перенос в подкласс Initiator изменил стиль на более агрессивный. [Dexerto]"
-    },
-    {
-      "heroId": "junkerqueen",
-      "tier": "B",
-      "pickRate": 3.9,
-      "winRate": 53.5,
-      "whyMeta": "Stalwart-подроль. Агрессивный brawl-стиль. [Overbuff]"
-    },
-    {
-      "heroId": "orisa",
-      "tier": "B",
-      "pickRate": 3.5,
-      "winRate": 48.5,
-      "whyMeta": "Bruiser-подроль: бафф порога активации (50% HP) помог выживаемости. [Overbuff]"
-    },
-    {
-      "heroId": "mauga",
-      "tier": "C",
-      "pickRate": 2.8,
-      "winRate": 47.5,
-      "whyMeta": "Bruiser. Помог бафф порога 50% HP, но всё ещё уязвим к Ana. [Esports Insider]"
-    },
-    {
-      "heroId": "reinhardt",
-      "tier": "C",
-      "pickRate": 2.0,
-      "winRate": 46.5,
-      "whyMeta": "Stalwart. Всё ещё страдает в дайв-мете. [Dexerto]"
-    },
-
-    {
-      "heroId": "tracer",
-      "tier": "S",
-      "pickRate": 12.0,
-      "winRate": 54.5,
-      "whyMeta": "Flanker. Лучший фланкер. [Esports Insider, Overbuff]"
-    },
-    {
-      "heroId": "sojourn",
-      "tier": "S",
-      "pickRate": 10.8,
-      "winRate": 53.8,
-      "whyMeta": "Sharpshooter. Рейлган всё ещё невероятно силен. [Sports Dunia, Dexerto]"
-    },
-    {
-      "heroId": "torbjorn",
-      "tier": "S",
-      "pickRate": 8.5,
-      "winRate": 56.5,
-      "whyMeta": "Specialist. Сюрприз меты Season 1. [Overbuff, Esports Insider]"
-    },
-    {
-      "heroId": "anran",
-      "tier": "A",
-      "pickRate": 8.5,
-      "winRate": 53.0,
-      "whyMeta": "Flanker. Бафф «Инфернального рывка» улучшил мобильность и агрессию. [Blizzard, Dexerto]"
-    },
-    {
-      "heroId": "genji",
-      "tier": "A",
-      "pickRate": 8.2,
-      "winRate": 52.5,
-      "whyMeta": "Flanker. Силен в дайве. [Esports Insider]"
-    },
-    {
-      "heroId": "ashe",
-      "tier": "A",
-      "pickRate": 7.0,
-      "winRate": 51.8,
-      "whyMeta": "Sharpshooter. Стабильный выбор. [Overbuff]"
-    },
-    {
-      "heroId": "freja",
-      "tier": "A",
-      "pickRate": 6.2,
-      "winRate": 51.5,
-      "whyMeta": "Recon. Сильный дайв-компаньон. [Esports Insider]"
-    },
-    {
-      "heroId": "cassidy",
-      "tier": "A",
-      "pickRate": 5.8,
-      "winRate": 51.2,
-      "whyMeta": "Sharpshooter. Магнитная граната против фланкеров. [Dexerto, Blizzard]"
-    },
-    {
-      "heroId": "soldier76",
-      "tier": "A",
-      "pickRate": 14.1,
-      "winRate": 49.5,
-      "whyMeta": "Specialist. Стабильный урон. [Overbuff]"
-    },
-    {
-      "heroId": "emre",
-      "tier": "A",
-      "pickRate": 6.5,
-      "winRate": 51.5,
-      "whyMeta": "Specialist. Бафф пассивки (4с) ускорил темп игры. [Blizzard]"
-    },
-    {
-      "heroId": "reaper",
-      "tier": "A",
-      "pickRate": 5.0,
-      "winRate": 50.5,
-      "whyMeta": "Flanker. Контрит танков. [Destructoid]"
-    },
-    {
-      "heroId": "vendetta",
-      "tier": "B",
-      "pickRate": 5.0,
-      "winRate": 50.5,
-      "whyMeta": "Flanker. Переработка талантов улучшила вампиризм Siphoning Strike. [Esports Insider]"
-    },
-    {
-      "heroId": "illari",
-      "tier": "B",
-      "pickRate": 4.5,
-      "winRate": 48.0,
-      "whyMeta": "Нерф урона Sunburn и заряда винтовки снизил её дуэльный потенциал. [Blizzard, Overbuff]"
-    },
-    {
-      "heroId": "pharah",
-      "tier": "B",
-      "pickRate": 4.0,
-      "winRate": 49.5,
-      "whyMeta": "Recon. Pharmercy работает. [Overbuff]"
-    },
-    {
-      "heroId": "symmetra",
-      "tier": "B",
-      "pickRate": 3.5,
-      "winRate": 49.0,
-      "whyMeta": "Specialist. Телепорт для ротаций. [Dexerto]"
-    },
-    {
-      "heroId": "echo",
-      "tier": "B",
-      "pickRate": 3.2,
-      "winRate": 48.8,
-      "whyMeta": "Recon. Мобильность воздуха. [Sports Dunia]"
-    },
-    {
-      "heroId": "sombra",
-      "tier": "B",
-      "pickRate": 3.0,
-      "winRate": 48.5,
-      "whyMeta": "Recon. Взлом силён. [Blizzard, Dexerto]"
-    },
-    {
-      "heroId": "mei",
-      "tier": "B",
-      "pickRate": 2.8,
-      "winRate": 48.2,
-      "whyMeta": "Specialist. Стена для разделения. [Overbuff]"
-    },
-    {
-      "heroId": "hanzo",
-      "tier": "B",
-      "pickRate": 2.5,
-      "winRate": 47.8,
-      "whyMeta": "Sharpshooter. Соник для разведки. [Overbuff]"
-    },
-    {
-      "heroId": "bastion",
-      "tier": "C",
-      "pickRate": 2.2,
-      "winRate": 47.2,
-      "whyMeta": "Specialist. Ситуативно силён. [Sports Dunia]"
-    },
-    {
-      "heroId": "junkrat",
-      "tier": "C",
-      "pickRate": 2.0,
-      "winRate": 47.0,
-      "whyMeta": "Specialist. На узких картах хорош. [Overbuff]"
-    },
-    {
-      "heroId": "venture",
-      "tier": "C",
-      "pickRate": 1.8,
-      "winRate": 46.5,
-      "whyMeta": "Flanker. Сложный в освоении. [Esports Insider]"
-    },
-    {
-      "heroId": "widowmaker",
-      "tier": "C",
-      "pickRate": 1.5,
-      "winRate": 46.0,
-      "whyMeta": "Sharpshooter. Ваншот потенциал. [Dexerto]"
-    },
-
-    {
-      "heroId": "kiriko",
-      "tier": "S",
-      "pickRate": 14.5,
-      "winRate": 56.5,
-      "whyMeta": "Medic. Огромный бафф самохила (40%) сделал её почти неубиваемой в дуэлях. [Esports Insider, Overbuff, Blizzard]"
-    },
-    {
-      "heroId": "mercy",
-      "tier": "S",
-      "pickRate": 11.2,
-      "winRate": 53.5,
-      "whyMeta": "Medic. Бафф самохила (40%) значительно повысил выживаемость. [Blizzard]"
-    },
-    {
-      "heroId": "moira",
-      "tier": "S",
-      "pickRate": 10.5,
-      "winRate": 53.0,
-      "whyMeta": "Medic. Самохил 40% синергирует с её китом, делая её топ-пиком. [Overbuff]"
-    },
-    {
-      "heroId": "lucio",
-      "tier": "S",
-      "pickRate": 12.5,
-      "winRate": 54.5,
-      "whyMeta": "Идеален для дайв-меты. [Sports Dunia, Overbuff]"
-    },
-    {
-      "heroId": "ana",
-      "tier": "S",
-      "pickRate": 12.0,
-      "winRate": 54.0,
-      "whyMeta": "Антихил гранаты всё ещё доминирует. [Esports Insider, Dexerto]"
-    },
-    {
-      "heroId": "baptiste",
-      "tier": "A",
-      "pickRate": 8.0,
-      "winRate": 52.5,
-      "whyMeta": "Стабильный урон и хил. [Blizzard, Overbuff]"
-    },
-    {
-      "heroId": "brigitte",
-      "tier": "A",
-      "pickRate": 6.5,
-      "winRate": 51.5,
-      "whyMeta": "Контрит фланкеров. [Esports Insider]"
-    },
-    {
-      "heroId": "jetpackcat",
-      "tier": "A",
-      "pickRate": 9.5,
-      "winRate": 52.5,
-      "whyMeta": "Tactician. Переработка таланта Claws Out и новый Ulterior Motive освежили геймплей. [Blizzard]"
-    },
-    {
-      "heroId": "mizuki",
-      "tier": "A",
-      "pickRate": 6.2,
-      "winRate": 51.5,
-      "whyMeta": "Survivor. Бафф радиуса ауры (12м) упростил поддержку команды. [Blizzard]"
-    },
-    {
-      "heroId": "juno",
-      "tier": "A",
-      "pickRate": 5.8,
-      "winRate": 51.0,
-      "whyMeta": "Мобильность и хил. [Overbuff]"
-    },
-    {
-      "heroId": "wuyang",
-      "tier": "A",
-      "pickRate": 5.5,
-      "winRate": 50.8,
-      "whyMeta": "Survivor. Сбалансированный хил. [Blizzard, Dexerto]"
-    },
-    {
-      "heroId": "lifeweaver",
-      "tier": "B",
-      "pickRate": 2.5,
-      "winRate": 49.0,
-      "whyMeta": "Medic. Бафф самохила 40% помог, но кит всё ещё специфичен. [Blizzard]"
-    },
-    {
-      "heroId": "zenyatta",
-      "tier": "C",
-      "pickRate": 2.5,
-      "winRate": 47.5,
-      "whyMeta": "Уязвим к дайву. [Dexerto]"
-    }
+    {"heroId": "sigma", "tier": "S", "pickRate": 14.2, "winRate": 53.8, "whyMeta": "Стабильный S-tier. Контроль пространства и высокая выживаемость. Высокий pick rate на всех рангах. [Blizzard Official]"},
+    {"heroId": "zarya", "tier": "S", "pickRate": 10.8, "winRate": 54.2, "whyMeta": "Bruiser-пассивка теперь срабатывает на 50% HP, что делает Зарю почти неубиваемой в дуэлях. [Overbuff]"},
+    {"heroId": "tracer", "tier": "S", "pickRate": 15.5, "winRate": 54.0, "whyMeta": "Самый популярный DPS в хай-рангах (50%+ pick rate в GM). Невероятная мобильность и контроль аптечек. [Esports Insider]"},
+    {"heroId": "kiriko", "tier": "S", "pickRate": 14.8, "winRate": 56.2, "whyMeta": "Medic-бафф (40% самохила) сделал её дуэльный потенциал избыточным. Судзу всё ещё лучший утилит. [Blizzard Official]"},
+    {"heroId": "ana", "tier": "S", "pickRate": 13.5, "winRate": 52.8, "whyMeta": "Антихил жизненно важен для борьбы с усиленным самоисцелением медиков. [Dexerto]"},
+    {"heroId": "lucio", "tier": "S", "pickRate": 12.0, "winRate": 54.5, "whyMeta": "Скорость необходима для координации в мете гибридного дайва. [Sports Dunia]"},
+    {"heroId": "dva", "tier": "A", "pickRate": 11.2, "winRate": 51.5, "whyMeta": "Нерф КД бустеров (4с) сделал её более уязвимой к наказу за ошибки позиционирования. [Patch 1.5]"},
+    {"heroId": "roadhog", "tier": "A", "pickRate": 8.5, "winRate": 52.2, "whyMeta": "Бафф урона (7 за дробинку) вернул угрозу ваншота. Bruiser-пассивка на 50% HP усилила выживаемость. [Blizzard Official]"},
+    {"heroId": "ramattra", "tier": "A", "pickRate": 7.8, "winRate": 52.5, "whyMeta": "Бафф кулдауна барьера и урона ульты подняли его в тир-листе. Силен против Sigma. [Sports Dunia]"},
+    {"heroId": "vendetta", "tier": "A", "pickRate": 5.2, "winRate": 54.0, "whyMeta": "Высокий винрейт (54%) сохраняется даже после перестановок в талантах. Очень эффективна в умелых руках. [Epiccarry]"},
+    {"heroId": "moira", "tier": "A", "pickRate": 9.2, "winRate": 53.5, "whyMeta": "Medic buff 40% сделал её крайне сложной целью для Tracer/Genji. [Overbuff]"},
+    {"heroId": "mercy", "tier": "A", "pickRate": 10.5, "winRate": 52.8, "whyMeta": "Medic buff 40% значительно повысил выживаемость под фокусом. [Blizzard]"},
+    {"heroId": "sojourn", "tier": "A", "pickRate": 10.8, "winRate": 51.5, "whyMeta": "Стабильный урон и мобильность. [Dexerto]"},
+    {"heroId": "genji", "tier": "A", "pickRate": 8.5, "winRate": 51.0, "whyMeta": "Силен в дайве, но теперь сложнее убивать саппортов-медиков. [Esports Insider]"},
+    {"heroId": "anran", "tier": "A", "pickRate": 8.0, "winRate": 52.0, "whyMeta": "Бафф прыжка и мобильности сделал её опасным фланкером в Season 1.5. [Dexerto]"},
+    {"heroId": "baptiste", "tier": "A", "pickRate": 7.5, "winRate": 52.0, "whyMeta": "Tactician пассивка позволяет часто использовать Окно. [Blizzard]"},
+    {"heroId": "junkerqueen", "tier": "A", "pickRate": 4.5, "winRate": 54.4, "whyMeta": "Высокий винрейт в 6v6 и Open Queue. Сильный бравл-танк. [Skycoach]"},
+    {"heroId": "winston", "tier": "B", "pickRate": 6.5, "winRate": 49.5, "whyMeta": "Нерф пассивки Initiator (не работает на фулл HP) и Medic-бафф противника усложнили жизнь. [Patch Notes]"},
+    {"heroId": "illari", "tier": "B", "pickRate": 4.2, "winRate": 48.0, "whyMeta": "Значительные нерфы урона и ресурса снизили её влияние на игру. [Patch 1.5]"},
+    {"heroId": "domina", "tier": "B", "pickRate": 5.5, "winRate": 49.0, "whyMeta": "Изучается игроками, эффективна в связках с контролем. [Dexerto]"},
+    {"heroId": "hazard", "tier": "B", "pickRate": 4.8, "winRate": 48.5, "whyMeta": "Перевод в Initiator требует смены стиля игры. [Blizzard]"},
+    {"heroId": "torbjorn", "tier": "B", "pickRate": 7.2, "winRate": 51.0, "whyMeta": "Сюрприз Season 1, но в 1.5 просел из-за возросшей мобильности танков. [Overbuff]"},
+    {"heroId": "ashe", "tier": "B", "pickRate": 6.5, "winRate": 49.8, "whyMeta": "Хороший хитскан, но страдает от дайва. [Sports Dunia]"},
+    {"heroId": "freja", "tier": "B", "pickRate": 5.5, "winRate": 48.5, "whyMeta": "Recon-пассивка полезна, но не хватает урона для S-tier. [Blizzard]"},
+    {"heroId": "cassidy", "tier": "B", "pickRate": 5.0, "winRate": 49.0, "whyMeta": "Анти-фланк потенциал всё ещё есть. [Dexerto]"},
+    {"heroId": "emre", "tier": "B", "pickRate": 5.8, "winRate": 49.2, "whyMeta": "Бафф пассивки (4с) помог, но герой остается ситуативным. [Blizzard]"},
+    {"heroId": "mizuki", "tier": "B", "pickRate": 6.0, "winRate": 49.5, "whyMeta": "Баффы ауры помогли, но Survivor-саппорты сейчас слабее Медиков. [Patch 1.5]"},
+    {"heroId": "reaper", "tier": "B", "pickRate": 4.5, "winRate": 49.0, "whyMeta": "Контр-пик танков. [Destructoid]"},
+    {"heroId": "pharah", "tier": "B", "pickRate": 3.8, "winRate": 49.2, "whyMeta": "Ситуативна, хороша с Мерси. [Overbuff]"},
+    {"heroId": "symmetra", "tier": "C", "pickRate": 3.0, "winRate": 48.5, "whyMeta": "Узкая специализация. [Dexerto]"},
+    {"heroId": "echo", "tier": "C", "pickRate": 2.8, "winRate": 48.0, "whyMeta": "Сложный герой, проигрывает хитсканам. [Sports Dunia]"},
+    {"heroId": "sombra", "tier": "C", "pickRate": 2.5, "winRate": 47.5, "whyMeta": "Трудно реализовать против Medic-пассивки. [Blizzard]"},
+    {"heroId": "mei", "tier": "C", "pickRate": 2.2, "winRate": 47.0, "whyMeta": "Ситуативный контроль. [Overbuff]"},
+    {"heroId": "hanzo", "tier": "C", "pickRate": 2.0, "winRate": 46.5, "whyMeta": "Проигрывает в стабильности другим DPS. [Overbuff]"},
+    {"heroId": "bastion", "tier": "C", "pickRate": 1.8, "winRate": 46.0, "whyMeta": "Легкая цель для дайва. [Sports Dunia]"},
+    {"heroId": "junkrat", "tier": "C", "pickRate": 1.5, "winRate": 45.8, "whyMeta": "Трудно попасть по мобильным целям. [Overbuff]"},
+    {"heroId": "venture", "tier": "C", "pickRate": 1.2, "winRate": 45.5, "whyMeta": "Слишком рискованный стиль игры. [Esports Insider]"},
+    {"heroId": "widowmaker", "tier": "C", "pickRate": 1.0, "winRate": 44.5, "whyMeta": "Дайв-мета не дает дышать. [Dexerto]"},
+    {"heroId": "reinhardt", "tier": "D", "pickRate": 0.5, "winRate": 43.0, "whyMeta": "Самый слабый танк в текущей мете скоростей и контроля. [Blizzard]"},
+    {"heroId": "mauga", "tier": "D", "pickRate": 0.8, "winRate": 43.5, "whyMeta": "Слишком зависим от ресурсов, которые легко перекрыть. [Esports Insider]"}
   ]
 }
