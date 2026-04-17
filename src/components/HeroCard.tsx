@@ -11,6 +11,8 @@ interface HeroCardProps {
 }
 
 export default function HeroCard({ hero, tier, showTier = false }: HeroCardProps) {
+  const tierLabel = tier ? `${tier} тир` : 'Нет тира';
+
   return (
     <Link 
       href={`/hero/${hero.id}`} 
@@ -31,9 +33,9 @@ export default function HeroCard({ hero, tier, showTier = false }: HeroCardProps
       
       <span className="heroCardName">{hero.nameRu}</span>
       
-      {showTier && tier && (
-        <span className={`heroCardTier heroCardTier--${tier}`}>
-          {tier}-Tier
+      {showTier && (
+        <span className={`heroCardTier ${tier ? `heroCardTier--${tier}` : 'heroCardTier--unknown'}`}>
+          {tierLabel}
         </span>
       )}
     </Link>

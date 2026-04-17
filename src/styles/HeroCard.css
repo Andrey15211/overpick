@@ -112,3 +112,4 @@
 .heroCardTier--B { background: linear-gradient(135deg, #FFCC44, #ffdd66); color: #333; }
 .heroCardTier--C { background: linear-gradient(135deg, #88CC44, #aadd66); color: #222; }
 .heroCardTier--D { background: #888888; color: white; }
+.heroCardTier--unknown { background: rgba(255, 255, 255, 0.12); color: rgba(255, 255, 255, 0.82); }

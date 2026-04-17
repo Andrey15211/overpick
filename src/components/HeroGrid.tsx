@@ -30,10 +30,15 @@ export default function HeroGrid({
   const [search, setSearch] = useState('');
   const [roleFilter, setRoleFilter] = useState<RoleFilter>('all');
 
-  // Получить тир героя
-  const getHeroTier = (heroId: string): Tier | undefined => {
-    return metaHeroes?.find(m => m.heroId === heroId)?.tier;
-  };
+  const tierByHeroId = useMemo(() => {
+    const map = new Map<string, Tier>();
+
+    for (const metaHero of metaHeroes ?? []) {
+      map.set(metaHero.heroId, metaHero.tier);
+    }
+
+    return map;
+  }, [metaHeroes]);
 
   // Фильтрация героев
   const filteredHeroes = useMemo(() => {
@@ -127,7 +132,7 @@ export default function HeroGrid({
                     <div key={hero.id} className="heroGridItem" style={{ animationDelay: `${idx * 0.02}s` }}>
                       <HeroCard 
                         hero={hero} 
-                        tier={getHeroTier(hero.id)}
+                        tier={tierByHeroId.get(hero.id)}
                         showTier={showTiers}
                       />
                     </div>
@@ -144,7 +149,7 @@ export default function HeroGrid({
             <div key={hero.id} className="heroGridItem" style={{ animationDelay: `${idx * 0.02}s` }}>
               <HeroCard 
                 hero={hero} 
-                tier={getHeroTier(hero.id)}
+                tier={tierByHeroId.get(hero.id)}
                 showTier={showTiers}
               />
             </div>
