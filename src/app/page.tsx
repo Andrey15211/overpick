@@ -3,7 +3,7 @@ import Image from 'next/image';
 import HeroGrid from '@/components/HeroGrid';
 import heroesData from '@/data/heroes.json';
 import metaData from '@/data/meta.json';
-import { Hero } from '@/types/heroes';
+import { Hero, SUBROLE_LABELS } from '@/types/heroes';
 import { HeroMeta, Tier, TierInfo } from '@/types/meta';
 import styles from './page.module.css';
 
@@ -18,11 +18,10 @@ const meta = metaData as {
   heroes: HeroMeta[];
 };
 
-// Новые герои Season 1.5
-const NEW_HEROES = ['domina', 'anran', 'emre', 'jetpackcat', 'mizuki'];
+const NEW_HEROES = ['sierra'];
 
 export default function Home() {
-  // Топ-герои по ролям (S-tier)
+  // Топ-герои по ролям
   const topHeroes = meta.heroes.filter(h => h.tier === 'S');
   
   return (
@@ -39,7 +38,7 @@ export default function Home() {
             <br />Контрпики Overwatch
           </h1>
           <p className={styles.heroSubtitle}>
-            Узнай, кем контрить любого героя. Актуальная мета с подролями и {heroes.length} героями.
+            Season 2: Summit, патч от 14 апреля 2026. Контрпики, актуальный тир-лист и разбор свежей меты для {heroes.length} героев.
           </p>
           <div className={styles.heroCta}>
             <Link href="/heroes" className={styles.heroCtaPrimary}>
@@ -57,7 +56,7 @@ export default function Home() {
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Выбери героя</h2>
           <p className={styles.sectionSubtitle}>
-            Кликни на героя, чтобы увидеть его контрпики
+            Выбери героя и сразу посмотри, кем его контрить на текущем патче
           </p>
         </div>
         <HeroGrid 
@@ -71,7 +70,7 @@ export default function Home() {
       {/* Топ меты */}
       <section className={styles.topMeta}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>S-Tier герои</h2>
+          <h2 className={styles.sectionTitle}>Герои высшего тира</h2>
           <Link href="/meta" className={styles.sectionLink}>
             Полный тир-лист →
           </Link>
@@ -102,15 +101,15 @@ export default function Home() {
                 <div className={styles.topMetaInfo}>
                   <span className={styles.topMetaName}>
                     {hero.nameRu}
-                    {isNew && <span className="new-badge">NEW</span>}
+                    {isNew && <span className="new-badge">НОВОЕ</span>}
                   </span>
                   <span className={styles.topMetaStats}>
-                    {heroMeta.winRate}% WR
+                    {heroMeta.winRate}% винрейт
                   </span>
                 </div>
                 {hero.subrole && (
                   <span className={styles.topMetaSubrole}>
-                    {hero.subrole}
+                    {SUBROLE_LABELS[hero.subrole] || hero.subrole}
                   </span>
                 )}
               </Link>
@@ -131,7 +130,7 @@ export default function Home() {
         </div>
         <div className={styles.statItem}>
           <span className={styles.statValue}>{meta.lastUpdated}</span>
-          <span className={styles.statLabel}>Обновлено</span>
+          <span className={styles.statLabel}>Дата обновления</span>
         </div>
       </section>
     </main>

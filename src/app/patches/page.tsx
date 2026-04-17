@@ -61,7 +61,7 @@ export default function PatchesPage() {
             История <span>Патчей</span>
           </h1>
           <p className={styles.patchesSubtitle}>
-            Баффы, нерфы и реворки героев Overwatch 2
+            Баффы, нерфы и реворки героев Overwatch 2, включая Season 2: Summit
           </p>
         </header>
 

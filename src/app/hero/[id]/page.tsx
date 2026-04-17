@@ -25,8 +25,7 @@ const meta = metaData as {
   heroes: HeroMeta[];
 };
 
-// Новые герои Season 1
-const NEW_HEROES = ['domina', 'anran', 'emre', 'jetpackcat', 'mizuki'];
+const NEW_HEROES = ['sierra'];
 
 // Иконки ролей
 const ROLE_ICONS: Record<HeroRole, string> = {
@@ -50,7 +49,7 @@ export async function generateMetadata({
   
   return {
     title: `${hero.nameRu} - Контрпики`,
-    description: `Узнай, кто контрит ${hero.nameRu} в Overwatch. Лучшие контрпики с объяснениями. Season 1.`,
+    description: `Узнай, кто контрит ${hero.nameRu} в Overwatch 2. Лучшие контрпики и мета-заметки для Season 2: Summit.`,
   };
 }
 
@@ -111,8 +110,7 @@ export default async function HeroDetailPage({
           <div className={styles.heroDetailInfo}>
             <h1 className={styles.heroDetailName}>
               {hero.nameRu}
-              <span className={styles.heroDetailNameEn}>{hero.name}</span>
-              {isNew && <span className="new-badge">NEW</span>}
+              {isNew && <span className="new-badge">НОВОЕ</span>}
             </h1>
             
             <div className={styles.heroDetailMeta}>
@@ -131,7 +129,7 @@ export default async function HeroDetailPage({
               
               {heroMeta && (
                 <span className={`${styles.heroDetailBadge} ${styles['heroDetailBadge--tier']} ${styles[`heroDetailBadge--tier-${heroMeta.tier}`]}`}>
-                  {heroMeta.tier}-Tier
+                  {heroMeta.tier} тир
                 </span>
               )}
             </div>
@@ -141,11 +139,11 @@ export default async function HeroDetailPage({
               <div className={styles.heroDetailStats}>
                 <div className={styles.heroDetailStat}>
                   <div className={styles.heroDetailStatValue}>{heroMeta.pickRate}%</div>
-                  <div className={styles.heroDetailStatLabel}>Pick Rate</div>
+                  <div className={styles.heroDetailStatLabel}>Частота выбора</div>
                 </div>
                 <div className={styles.heroDetailStat}>
                   <div className={styles.heroDetailStatValue}>{heroMeta.winRate}%</div>
-                  <div className={styles.heroDetailStatLabel}>Win Rate</div>
+                  <div className={styles.heroDetailStatLabel}>Винрейт</div>
                 </div>
               </div>
             )}

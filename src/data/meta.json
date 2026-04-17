@@ -1,64 +1,400 @@
 {
-  "season": 1.5,
-  "seasonName": "Overwatch Season 1.5",
-  "patch": "1.5",
-  "lastUpdated": "2026-03-10",
+  "season": 2,
+  "seasonName": "Сезон 2: Summit",
+  "patch": "2.0",
+  "lastUpdated": "2026-04-17",
   "sources": [
-    "Esports Insider",
-    "Overbuff",
-    "Sports Dunia",
-    "Dexerto",
-    "Destructoid",
-    "Blizzard Official"
+    "Blizzard Hero Statistics (EU Competitive Role Queue)",
+    "Overwatch Retail Patch Notes — April 14, 2026",
+    "Reach Heroic Heights in Reign of Talon - Season 2: Summit",
+    "Overwatch — Heroes — Sierra",
+    "Director’s Take: Small Steps, Big Leaps"
   ],
-  "metaDescription": "Overwatch Season 1.5 (Mid-Season, 10 марта 2026). Крупный балансный патч: усиление Medic-саппортов (40% самохил), изменение порогов активации Bruiser и Initiator. D.Va получила нерф мобильности, Ramattra и Roadhog значительно усилены. Новые герои S1 (Anran, Emre, Jetpack Cat) сбалансированы.",
+  "metaDescription": "Актуализация под Season 2: Summit от 14 апреля 2026 года. В игру вошла Sierra, Mercy получила Flash Heal в базовый кит, Pharah и Soldier: 76 обновили перки, Kiriko потеряла часть дальности телепорта, а Vendetta и ряд мобильных героев прошли через точечный ребаланс. Тир-лист ниже опирается на официальный EU Competitive win rate / pick rate Blizzard и свежие патч-ноты.",
   "tiers": {
-    "S": {"label": "S-Tier", "description": "Доминируют в мете, must-pick", "color": "#FF4444"},
-    "A": {"label": "A-Tier", "description": "Сильные и надёжные выборы", "color": "#3B82F6"},
-    "B": {"label": "B-Tier", "description": "Ситуативно эффективные герои", "color": "#FFCC44"},
-    "C": {"label": "C-Tier", "description": "Легко контрятся или мало влияния", "color": "#88CC44"},
-    "D": {"label": "D-Tier", "description": "Избегаются в рейтинге", "color": "#888888"}
+    "S": {
+      "label": "Высший тир",
+      "description": "Лучшие герои патча, которые дают максимум ценности почти на любой карте",
+      "color": "#FF4444"
+    },
+    "A": {
+      "label": "Сильный тир",
+      "description": "Стабильные и надёжные пики для большинства матчапов",
+      "color": "#3B82F6"
+    },
+    "B": {
+      "label": "Рабочий тир",
+      "description": "Ситуативно сильные герои, которые раскрываются на правильной карте и в нужной композиции",
+      "color": "#FFCC44"
+    },
+    "C": {
+      "label": "Нишевый тир",
+      "description": "Требуют больше условий или уступают прямым конкурентам",
+      "color": "#88CC44"
+    },
+    "D": {
+      "label": "Слабый тир",
+      "description": "На патче Summit им тяжело навязать игру без явного преимущества по исполнению",
+      "color": "#888888"
+    }
   },
   "heroes": [
-    {"heroId": "sigma", "tier": "S", "pickRate": 14.2, "winRate": 53.8, "whyMeta": "Стабильный S-tier. Контроль пространства и высокая выживаемость. Высокий pick rate на всех рангах. [Blizzard Official]"},
-    {"heroId": "zarya", "tier": "S", "pickRate": 10.8, "winRate": 54.2, "whyMeta": "Bruiser-пассивка теперь срабатывает на 50% HP, что делает Зарю почти неубиваемой в дуэлях. [Overbuff]"},
-    {"heroId": "tracer", "tier": "S", "pickRate": 15.5, "winRate": 54.0, "whyMeta": "Самый популярный DPS в хай-рангах (50%+ pick rate в GM). Невероятная мобильность и контроль аптечек. [Esports Insider]"},
-    {"heroId": "kiriko", "tier": "S", "pickRate": 14.8, "winRate": 56.2, "whyMeta": "Medic-бафф (40% самохила) сделал её дуэльный потенциал избыточным. Судзу всё ещё лучший утилит. [Blizzard Official]"},
-    {"heroId": "ana", "tier": "S", "pickRate": 13.5, "winRate": 52.8, "whyMeta": "Антихил жизненно важен для борьбы с усиленным самоисцелением медиков. [Dexerto]"},
-    {"heroId": "lucio", "tier": "S", "pickRate": 12.0, "winRate": 54.5, "whyMeta": "Скорость необходима для координации в мете гибридного дайва. [Sports Dunia]"},
-    {"heroId": "dva", "tier": "A", "pickRate": 11.2, "winRate": 51.5, "whyMeta": "Нерф КД бустеров (4с) сделал её более уязвимой к наказу за ошибки позиционирования. [Patch 1.5]"},
-    {"heroId": "roadhog", "tier": "A", "pickRate": 8.5, "winRate": 52.2, "whyMeta": "Бафф урона (7 за дробинку) вернул угрозу ваншота. Bruiser-пассивка на 50% HP усилила выживаемость. [Blizzard Official]"},
-    {"heroId": "ramattra", "tier": "A", "pickRate": 7.8, "winRate": 52.5, "whyMeta": "Бафф кулдауна барьера и урона ульты подняли его в тир-листе. Силен против Sigma. [Sports Dunia]"},
-    {"heroId": "vendetta", "tier": "A", "pickRate": 5.2, "winRate": 54.0, "whyMeta": "Высокий винрейт (54%) сохраняется даже после перестановок в талантах. Очень эффективна в умелых руках. [Epiccarry]"},
-    {"heroId": "moira", "tier": "A", "pickRate": 9.2, "winRate": 53.5, "whyMeta": "Medic buff 40% сделал её крайне сложной целью для Tracer/Genji. [Overbuff]"},
-    {"heroId": "mercy", "tier": "A", "pickRate": 10.5, "winRate": 52.8, "whyMeta": "Medic buff 40% значительно повысил выживаемость под фокусом. [Blizzard]"},
-    {"heroId": "sojourn", "tier": "A", "pickRate": 10.8, "winRate": 51.5, "whyMeta": "Стабильный урон и мобильность. [Dexerto]"},
-    {"heroId": "genji", "tier": "A", "pickRate": 8.5, "winRate": 51.0, "whyMeta": "Силен в дайве, но теперь сложнее убивать саппортов-медиков. [Esports Insider]"},
-    {"heroId": "anran", "tier": "A", "pickRate": 8.0, "winRate": 52.0, "whyMeta": "Бафф прыжка и мобильности сделал её опасным фланкером в Season 1.5. [Dexerto]"},
-    {"heroId": "baptiste", "tier": "A", "pickRate": 7.5, "winRate": 52.0, "whyMeta": "Tactician пассивка позволяет часто использовать Окно. [Blizzard]"},
-    {"heroId": "junkerqueen", "tier": "A", "pickRate": 4.5, "winRate": 54.4, "whyMeta": "Высокий винрейт в 6v6 и Open Queue. Сильный бравл-танк. [Skycoach]"},
-    {"heroId": "winston", "tier": "B", "pickRate": 6.5, "winRate": 49.5, "whyMeta": "Нерф пассивки Initiator (не работает на фулл HP) и Medic-бафф противника усложнили жизнь. [Patch Notes]"},
-    {"heroId": "illari", "tier": "B", "pickRate": 4.2, "winRate": 48.0, "whyMeta": "Значительные нерфы урона и ресурса снизили её влияние на игру. [Patch 1.5]"},
-    {"heroId": "domina", "tier": "B", "pickRate": 5.5, "winRate": 49.0, "whyMeta": "Изучается игроками, эффективна в связках с контролем. [Dexerto]"},
-    {"heroId": "hazard", "tier": "B", "pickRate": 4.8, "winRate": 48.5, "whyMeta": "Перевод в Initiator требует смены стиля игры. [Blizzard]"},
-    {"heroId": "torbjorn", "tier": "B", "pickRate": 7.2, "winRate": 51.0, "whyMeta": "Сюрприз Season 1, но в 1.5 просел из-за возросшей мобильности танков. [Overbuff]"},
-    {"heroId": "ashe", "tier": "B", "pickRate": 6.5, "winRate": 49.8, "whyMeta": "Хороший хитскан, но страдает от дайва. [Sports Dunia]"},
-    {"heroId": "freja", "tier": "B", "pickRate": 5.5, "winRate": 48.5, "whyMeta": "Recon-пассивка полезна, но не хватает урона для S-tier. [Blizzard]"},
-    {"heroId": "cassidy", "tier": "B", "pickRate": 5.0, "winRate": 49.0, "whyMeta": "Анти-фланк потенциал всё ещё есть. [Dexerto]"},
-    {"heroId": "emre", "tier": "B", "pickRate": 5.8, "winRate": 49.2, "whyMeta": "Бафф пассивки (4с) помог, но герой остается ситуативным. [Blizzard]"},
-    {"heroId": "mizuki", "tier": "B", "pickRate": 6.0, "winRate": 49.5, "whyMeta": "Баффы ауры помогли, но Survivor-саппорты сейчас слабее Медиков. [Patch 1.5]"},
-    {"heroId": "reaper", "tier": "B", "pickRate": 4.5, "winRate": 49.0, "whyMeta": "Контр-пик танков. [Destructoid]"},
-    {"heroId": "pharah", "tier": "B", "pickRate": 3.8, "winRate": 49.2, "whyMeta": "Ситуативна, хороша с Мерси. [Overbuff]"},
-    {"heroId": "symmetra", "tier": "C", "pickRate": 3.0, "winRate": 48.5, "whyMeta": "Узкая специализация. [Dexerto]"},
-    {"heroId": "echo", "tier": "C", "pickRate": 2.8, "winRate": 48.0, "whyMeta": "Сложный герой, проигрывает хитсканам. [Sports Dunia]"},
-    {"heroId": "sombra", "tier": "C", "pickRate": 2.5, "winRate": 47.5, "whyMeta": "Трудно реализовать против Medic-пассивки. [Blizzard]"},
-    {"heroId": "mei", "tier": "C", "pickRate": 2.2, "winRate": 47.0, "whyMeta": "Ситуативный контроль. [Overbuff]"},
-    {"heroId": "hanzo", "tier": "C", "pickRate": 2.0, "winRate": 46.5, "whyMeta": "Проигрывает в стабильности другим DPS. [Overbuff]"},
-    {"heroId": "bastion", "tier": "C", "pickRate": 1.8, "winRate": 46.0, "whyMeta": "Легкая цель для дайва. [Sports Dunia]"},
-    {"heroId": "junkrat", "tier": "C", "pickRate": 1.5, "winRate": 45.8, "whyMeta": "Трудно попасть по мобильным целям. [Overbuff]"},
-    {"heroId": "venture", "tier": "C", "pickRate": 1.2, "winRate": 45.5, "whyMeta": "Слишком рискованный стиль игры. [Esports Insider]"},
-    {"heroId": "widowmaker", "tier": "C", "pickRate": 1.0, "winRate": 44.5, "whyMeta": "Дайв-мета не дает дышать. [Dexerto]"},
-    {"heroId": "reinhardt", "tier": "D", "pickRate": 0.5, "winRate": 43.0, "whyMeta": "Самый слабый танк в текущей мете скоростей и контроля. [Blizzard]"},
-    {"heroId": "mauga", "tier": "D", "pickRate": 0.8, "winRate": 43.5, "whyMeta": "Слишком зависим от ресурсов, которые легко перекрыть. [Esports Insider]"}
+    {
+      "heroId": "dva",
+      "tier": "C",
+      "pickRate": 7.6,
+      "winRate": 47.2,
+      "whyMeta": "47.2% винрейта и 7.6% пикрейта в европейском Competitive Role Queue. Сейчас требует больше условий для успеха и чаще отстаёт от лидеров меты. Дива сейчас чувствует себя как initiator-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "domina",
+      "tier": "S",
+      "pickRate": 5.5,
+      "winRate": 52,
+      "whyMeta": "52.0% винрейта при стабильном пике. Домину сложно выбить из темпа матча: она хорошо держит пространство и комфортно играет в затяжных фронт-ту-бэк драках второго сезона."
+    },
+    {
+      "heroId": "doomfist",
+      "tier": "A",
+      "pickRate": 5.4,
+      "winRate": 51.1,
+      "whyMeta": "51.1% винрейта и 5.4% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Кулак Смерти сейчас чувствует себя как initiator-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "hazard",
+      "tier": "S",
+      "pickRate": 3.3,
+      "winRate": 53.2,
+      "whyMeta": "53.2% винрейта даже при нишевом пике. Хазард выигрывает за счёт высокого потолка и наказания за ошибки позиционки, поэтому в умелых руках держится в S-тире."
+    },
+    {
+      "heroId": "junkerqueen",
+      "tier": "A",
+      "pickRate": 3.7,
+      "winRate": 51.3,
+      "whyMeta": "51.3% винрейта и 3.7% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Королева Хлама сейчас чувствует себя как stalwart-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "mauga",
+      "tier": "B",
+      "pickRate": 5.5,
+      "winRate": 49.2,
+      "whyMeta": "49.2% винрейта и 5.5% пикрейта в европейском Competitive Role Queue. Играбелен и полезен, но зависит от карты, матча или механики игрока. Мауга сейчас чувствует себя как bruiser-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "orisa",
+      "tier": "D",
+      "pickRate": 12,
+      "winRate": 45.2,
+      "whyMeta": "45.2% винрейта. В мета-цикле Summit медленные фронтальные танки страдают от высокого pressure с углов и от более гибких DPS-героев, поэтому Ориса просела сильнее остальных."
+    },
+    {
+      "heroId": "ramattra",
+      "tier": "C",
+      "pickRate": 7.5,
+      "winRate": 47.1,
+      "whyMeta": "47.1% винрейта и 7.5% пикрейта в европейском Competitive Role Queue. Сейчас требует больше условий для успеха и чаще отстаёт от лидеров меты. Раматтра сейчас чувствует себя как stalwart-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "reinhardt",
+      "tier": "A",
+      "pickRate": 12.2,
+      "winRate": 51.7,
+      "whyMeta": "51.7% винрейта и 12.2% пикрейта. Райн стабилен в brawl-компах и хорошо использует наказание за ошибки на обновлённых картах с более читаемыми choke-поинтами."
+    },
+    {
+      "heroId": "roadhog",
+      "tier": "B",
+      "pickRate": 9.6,
+      "winRate": 49.2,
+      "whyMeta": "49.2% винрейта и 9.6% пикрейта в европейском Competitive Role Queue. Играбелен и полезен, но зависит от карты, матча или механики игрока. Турбосвин сейчас чувствует себя как bruiser-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "sigma",
+      "tier": "S",
+      "pickRate": 13.6,
+      "winRate": 52,
+      "whyMeta": "52.0% винрейта и 13.6% пикрейта в европейском Competitive Role Queue. Сигма остаётся самым надёжным танком для контроля углов, темпа и дальних разменов на патче Summit."
+    },
+    {
+      "heroId": "winston",
+      "tier": "B",
+      "pickRate": 5.5,
+      "winRate": 50,
+      "whyMeta": "50.0% винрейта и 5.5% пикрейта в европейском Competitive Role Queue. Играбелен и полезен, но зависит от карты, матча или механики игрока. Уинстон сейчас чувствует себя как initiator-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "wreckingball",
+      "tier": "A",
+      "pickRate": 2.8,
+      "winRate": 50.9,
+      "whyMeta": "50.9% винрейта и 2.8% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Таран сейчас чувствует себя как initiator-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "zarya",
+      "tier": "C",
+      "pickRate": 5.5,
+      "winRate": 47.3,
+      "whyMeta": "47.3% винрейта и 5.5% пикрейта в европейском Competitive Role Queue. Сейчас требует больше условий для успеха и чаще отстаёт от лидеров меты. Заря сейчас чувствует себя как bruiser-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "anran",
+      "tier": "A",
+      "pickRate": 8.8,
+      "winRate": 50.9,
+      "whyMeta": "50.9% винрейта и 8.8% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Аньрань сейчас чувствует себя как flanker-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "ashe",
+      "tier": "A",
+      "pickRate": 13.6,
+      "winRate": 50.6,
+      "whyMeta": "50.6% винрейта и 13.6% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Эш сейчас чувствует себя как sharpshooter-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "bastion",
+      "tier": "C",
+      "pickRate": 15.6,
+      "winRate": 47.3,
+      "whyMeta": "47.3% винрейта и 15.6% пикрейта в европейском Competitive Role Queue. Сейчас требует больше условий для успеха и чаще отстаёт от лидеров меты. Бастион сейчас чувствует себя как specialist-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "cassidy",
+      "tier": "B",
+      "pickRate": 17.7,
+      "winRate": 47.5,
+      "whyMeta": "47.5% винрейта и 17.7% пикрейта в европейском Competitive Role Queue. Играбелен и полезен, но зависит от карты, матча или механики игрока. Кэссиди сейчас чувствует себя как sharpshooter-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "echo",
+      "tier": "A",
+      "pickRate": 5,
+      "winRate": 50.8,
+      "whyMeta": "50.8% винрейта и 5.0% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Эхо сейчас чувствует себя как recon-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "emre",
+      "tier": "A",
+      "pickRate": 16.6,
+      "winRate": 50,
+      "whyMeta": "50.0% винрейта и 16.6% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Эмре сейчас чувствует себя как specialist-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "freja",
+      "tier": "D",
+      "pickRate": 4.2,
+      "winRate": 46.2,
+      "whyMeta": "46.2% винрейта и 4.2% пикрейта в европейском Competitive Role Queue. На текущем патче заметно уступает более универсальным альтернативам. Фрея сейчас чувствует себя как recon-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "genji",
+      "tier": "S",
+      "pickRate": 10.7,
+      "winRate": 52,
+      "whyMeta": "52.0% винрейта и 10.7% пикрейта. Быстрый темп Season 2 и давление на backline снова работают на Гэндзи, особенно против саппортов без идеального peel."
+    },
+    {
+      "heroId": "hanzo",
+      "tier": "B",
+      "pickRate": 9.6,
+      "winRate": 50.3,
+      "whyMeta": "50.3% винрейта и 9.6% пикрейта в европейском Competitive Role Queue. Играбелен и полезен, но зависит от карты, матча или механики игрока. Хандзо сейчас чувствует себя как sharpshooter-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "junkrat",
+      "tier": "B",
+      "pickRate": 9.9,
+      "winRate": 48.7,
+      "whyMeta": "48.7% винрейта и 9.9% пикрейта в европейском Competitive Role Queue. Играбелен и полезен, но зависит от карты, матча или механики игрока. Крысавчик сейчас чувствует себя как specialist-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "mei",
+      "tier": "A",
+      "pickRate": 8.1,
+      "winRate": 50.9,
+      "whyMeta": "50.9% винрейта и 8.1% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Мэй сейчас чувствует себя как specialist-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "pharah",
+      "tier": "S",
+      "pickRate": 5,
+      "winRate": 52.5,
+      "whyMeta": "52.5% винрейта. Blizzard встроила движение во время Barrage в базовый кит, а новый Rocket Salvo усилил взрывной урон, поэтому Фарра снова давит карты с вертикалью."
+    },
+    {
+      "heroId": "reaper",
+      "tier": "A",
+      "pickRate": 12.2,
+      "winRate": 51.3,
+      "whyMeta": "Reaper потерял cleanse на Shadow Step, но всё ещё держит 51.3% винрейта и 12.2% пикрейта. Он остаётся сильным выбором против плотных frontlines и коротких дистанций."
+    },
+    {
+      "heroId": "sojourn",
+      "tier": "D",
+      "pickRate": 12.7,
+      "winRate": 45.3,
+      "whyMeta": "45.3% винрейта при высоком пикрейте. Соджорн всё ещё берут за привычную универсальность, но в текущем патче она заметно проигрывает топовым hitscan и dive-угрозам."
+    },
+    {
+      "heroId": "soldier76",
+      "tier": "B",
+      "pickRate": 20.4,
+      "winRate": 48.5,
+      "whyMeta": "20.4% пикрейта делает Soldier: 76 самым частым безопасным ladder-пиком, но 48.5% винрейта говорит о том, что он уже не переворачивает матчи так же легко, как раньше."
+    },
+    {
+      "heroId": "sierra",
+      "tier": "B",
+      "pickRate": 5.2,
+      "winRate": 44.6,
+      "whyMeta": "Новый DPS-герой Season 2. Официальная статистика Blizzard для Sierra ещё дозаполняется, поэтому позиция оценена по первым матчам, киту героя и патч-нотам: Tracking Shot и Anchor Drone хорошо работают против мобильных и летающих целей, но герой пока нестабилен."
+    },
+    {
+      "heroId": "sombra",
+      "tier": "C",
+      "pickRate": 3.8,
+      "winRate": 48,
+      "whyMeta": "48.0% винрейта и 3.8% пикрейта в европейском Competitive Role Queue. Сейчас требует больше условий для успеха и чаще отстаёт от лидеров меты. Сомбра сейчас чувствует себя как recon-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "symmetra",
+      "tier": "A",
+      "pickRate": 3.2,
+      "winRate": 50.6,
+      "whyMeta": "50.6% винрейта и 3.2% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Симметра сейчас чувствует себя как specialist-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "torbjorn",
+      "tier": "A",
+      "pickRate": 4.8,
+      "winRate": 51.7,
+      "whyMeta": "51.7% винрейта и 4.8% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Торбьорн сейчас чувствует себя как specialist-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "tracer",
+      "tier": "B",
+      "pickRate": 5.9,
+      "winRate": 50.2,
+      "whyMeta": "50.2% винрейта и 5.9% пикрейта в европейском Competitive Role Queue. Играбелен и полезен, но зависит от карты, матча или механики игрока. Трейсер сейчас чувствует себя как flanker-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "vendetta",
+      "tier": "S",
+      "pickRate": 3.8,
+      "winRate": 53,
+      "whyMeta": "53.0% винрейта после апрельского нерфа брони и Onslaught. Даже с ослаблением Vendetta остаётся одним из лучших snowball-DPS патча."
+    },
+    {
+      "heroId": "venture",
+      "tier": "A",
+      "pickRate": 2.8,
+      "winRate": 51.8,
+      "whyMeta": "51.8% винрейта и 2.8% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Венчур сейчас чувствует себя как flanker-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "widowmaker",
+      "tier": "A",
+      "pickRate": 5.4,
+      "winRate": 50.5,
+      "whyMeta": "50.5% винрейта и 5.4% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Роковая Вдова сейчас чувствует себя как sharpshooter-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "ana",
+      "tier": "B",
+      "pickRate": 26.8,
+      "winRate": 47.3,
+      "whyMeta": "47.3% винрейта не выглядит доминирующим, но 26.8% пикрейта показывает, что Ана остаётся одной из центральных фигур ладдера за счёт anti-heal, sleep и сильного контроля темпа."
+    },
+    {
+      "heroId": "baptiste",
+      "tier": "D",
+      "pickRate": 7.5,
+      "winRate": 45.7,
+      "whyMeta": "45.7% винрейта и 7.5% пикрейта в европейском Competitive Role Queue. На текущем патче заметно уступает более универсальным альтернативам. Батист сейчас чувствует себя как support-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "brigitte",
+      "tier": "B",
+      "pickRate": 3.6,
+      "winRate": 50.5,
+      "whyMeta": "50.5% винрейта и 3.6% пикрейта в европейском Competitive Role Queue. Играбелен и полезен, но зависит от карты, матча или механики игрока. Бригитта сейчас чувствует себя как support-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "illari",
+      "tier": "S",
+      "pickRate": 11.5,
+      "winRate": 52.7,
+      "whyMeta": "52.7% винрейта и 11.5% пикрейта. Иллари отлично наказывает медленные пики и даёт команде сильный hybrid poke, что особенно ценно после обновления карты и ускорения файтов."
+    },
+    {
+      "heroId": "jetpackcat",
+      "tier": "A",
+      "pickRate": 5.2,
+      "winRate": 51.6,
+      "whyMeta": "51.6% винрейта и 5.2% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Реактивный Кот сейчас чувствует себя как support-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "juno",
+      "tier": "A",
+      "pickRate": 16.6,
+      "winRate": 51,
+      "whyMeta": "51.0% винрейта и 16.6% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Джуно сейчас чувствует себя как support-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "kiriko",
+      "tier": "C",
+      "pickRate": 29.1,
+      "winRate": 46.7,
+      "whyMeta": "Swift Step укоротили с 35 до 30 метров, поэтому Кирико уже не так безнаказанно выходит из плохих позиций. Огромный пикрейт 29.1% держится, но винрейт просел до 46.7%."
+    },
+    {
+      "heroId": "lifeweaver",
+      "tier": "C",
+      "pickRate": 7.1,
+      "winRate": 46.9,
+      "whyMeta": "46.9% винрейта и 7.1% пикрейта в европейском Competitive Role Queue. Сейчас требует больше условий для успеха и чаще отстаёт от лидеров меты. Ткач Жизни сейчас чувствует себя как support-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "lucio",
+      "tier": "A",
+      "pickRate": 7.9,
+      "winRate": 51.4,
+      "whyMeta": "51.4% винрейта и 7.9% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Лусио сейчас чувствует себя как support-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "mercy",
+      "tier": "A",
+      "pickRate": 21.1,
+      "winRate": 49.9,
+      "whyMeta": "Flash Heal перешёл в базовый кит, поэтому Мерси стала заметно удобнее в обычных ranked-матчах. Несмотря на нерфы Staff и Guardian Angel, её 21.1% пикрейта держит её в верхней части меты."
+    },
+    {
+      "heroId": "mizuki",
+      "tier": "S",
+      "pickRate": 17.5,
+      "winRate": 52.6,
+      "whyMeta": "52.6% винрейта и 17.5% пикрейта даже после точечных правок 14 апреля. Мизуки по-прежнему даёт слишком много стабильной ценности в длинных драках."
+    },
+    {
+      "heroId": "moira",
+      "tier": "C",
+      "pickRate": 26.8,
+      "winRate": 47.8,
+      "whyMeta": "47.8% винрейта и 26.8% пикрейта в европейском Competitive Role Queue. Сейчас требует больше условий для успеха и чаще отстаёт от лидеров меты. Мойра сейчас чувствует себя как support-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "wuyang",
+      "tier": "A",
+      "pickRate": 7.4,
+      "winRate": 51,
+      "whyMeta": "51.0% винрейта и 7.4% пикрейта в европейском Competitive Role Queue. Сильный и надёжный выбор, который регулярно окупается в ranked. Вуянг сейчас чувствует себя как support-пик с выраженной зависимостью от карты и темпа боя."
+    },
+    {
+      "heroId": "zenyatta",
+      "tier": "S",
+      "pickRate": 11.8,
+      "winRate": 53.2,
+      "whyMeta": "53.2% винрейта и 11.8% пикрейта. Discord Orb всё ещё ломает фронтлайн, а высокий burst pressure делает Дзеньятту одним из лучших саппортов для coordinated lobby."
+    }
   ]
 }

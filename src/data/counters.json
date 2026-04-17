@@ -113,6 +113,13 @@
     "heroId": "doomfist",
     "counters": [
       {
+        "heroId": "sierra",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Damage",
+        "reason": "Tracking Shot осложняет Думфисту вход и заставляет раньше тратить ресурсы на отход."
+      },
+      {
         "heroId": "sombra",
         "effectiveness": 5,
         "tier": "S",
@@ -571,7 +578,7 @@
         "effectiveness": 4,
         "tier": "A",
         "counterRole": "Tank",
-        "reason": "Рок прерывает Javelin Spin, гравитационный поток снимает фортификацию"
+        "reason": "Камень прерывает Вращение копья, гравитационный поток снимает фортификацию"
       },
       {
         "heroId": "roadhog",
@@ -585,7 +592,7 @@
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Support",
-        "reason": "Судзу очищает Javelin Spin замедление, кунаи в большой хитбокс"
+        "reason": "Судзу очищает Вращение копья замедление, кунаи в большой хитбокс"
       }
     ]
   },
@@ -763,7 +770,7 @@
         "effectiveness": 4,
         "tier": "A",
         "counterRole": "Tank",
-        "reason": "Рок оглушает через щит, гравитационный поток поднимает в воздух"
+        "reason": "Камень оглушает через щит, гравитационный поток поднимает в воздух"
       },
       {
         "heroId": "kiriko",
@@ -941,21 +948,21 @@
         "effectiveness": 4,
         "tier": "A",
         "counterRole": "Support",
-        "reason": "Сон прерывает Gravitic Flux, антихил блокирует щиты"
+        "reason": "Сон прерывает Гравитационный поток, антихил блокирует щиты"
       },
       {
         "heroId": "kiriko",
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Support",
-        "reason": "Судзу снимает Gravitic Flux, кунаи обходят барьер с фланга"
+        "reason": "Судзу снимает Гравитационный поток, кунаи обходят барьер с фланга"
       },
       {
         "heroId": "baptiste",
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Support",
-        "reason": "Бессмертие контрит Gravitic Flux, прыжок обходит рок"
+        "reason": "Бессмертие контрит Гравитационный поток, прыжок обходит камень"
       }
     ]
   },
@@ -1038,6 +1045,13 @@
     "heroId": "wreckingball",
     "counters": [
       {
+        "heroId": "sierra",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Damage",
+        "reason": "Марка и стабильный hitscan-урон помогают быстрее снимать Тарана в заходах через открытую карту."
+      },
+      {
         "heroId": "sombra",
         "effectiveness": 5,
         "tier": "S",
@@ -1112,7 +1126,7 @@
         "effectiveness": 4,
         "tier": "A",
         "counterRole": "Tank",
-        "reason": "Рок останавливает катящийся шар, гравитационный поток ловит в воздухе"
+        "reason": "Камень останавливает катящийся шар, гравитационный поток ловит в воздухе"
       }
     ]
   },
@@ -1201,7 +1215,7 @@
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Tank",
-        "reason": "Поглощение ест гравитон, рок оглушает запотенную Зарю"
+        "reason": "Поглощение ест гравитон, камень оглушает запотенную Зарю"
       },
       {
         "heroId": "ana",
@@ -1510,6 +1524,13 @@
   {
     "heroId": "echo",
     "counters": [
+      {
+        "heroId": "sierra",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Сьерра стабильно трекает Эхо в воздухе и навязывает ей неудобные пики через Tracking Shot."
+      },
       {
         "heroId": "widowmaker",
         "effectiveness": 5,
@@ -1955,7 +1976,7 @@
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Support",
-        "reason": "Сон прерывает RIP-Tire, антихил через зоны контроля"
+        "reason": "Сон прерывает Адская шина, антихил через зоны контроля"
       },
       {
         "heroId": "kiriko",
@@ -1969,14 +1990,14 @@
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Support",
-        "reason": "Бессмертие контрит RIP-Tire, прыжок над гранатами"
+        "reason": "Бессмертие контрит Адская шина, прыжок над гранатами"
       },
       {
         "heroId": "sigma",
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Tank",
-        "reason": "Поглощение ест гранаты, рок оглушает при установке RIP-Tire"
+        "reason": "Поглощение ест гранаты, камень оглушает при установке Адская шина"
       }
     ]
   },
@@ -2107,6 +2128,13 @@
   {
     "heroId": "pharah",
     "counters": [
+      {
+        "heroId": "sierra",
+        "effectiveness": 5,
+        "tier": "S",
+        "counterRole": "Damage",
+        "reason": "Tracking Shot и hitscan-спираль Sierra отлично ловят летающие цели и не дают Фарре безнаказанно держать высоту."
+      },
       {
         "heroId": "widowmaker",
         "effectiveness": 5,
@@ -2278,7 +2306,7 @@
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Tank",
-        "reason": "Поглощение контрит шотган, рок оглушает при телепорте"
+        "reason": "Поглощение контрит шотган, камень оглушает при телепорте"
       },
       {
         "heroId": "kiriko",
@@ -2730,13 +2758,20 @@
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Tank",
-        "reason": "Поглощение ест выстрелы, рок оглушает при Overcharge"
+        "reason": "Поглощение ест выстрелы, камень оглушает при Перегрузка"
       }
     ]
   },
   {
     "heroId": "tracer",
     "counters": [
+      {
+        "heroId": "sierra",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Tracking Shot снижает ценность резких movement-burstов Tracer и облегчает добивание после одного попадания."
+      },
       {
         "heroId": "winston",
         "effectiveness": 5,
@@ -2819,6 +2854,13 @@
   {
     "heroId": "vendetta",
     "counters": [
+      {
+        "heroId": "sierra",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Сьерра наказывает прямой вход Vendetta на средней дистанции и чаще первой навязывает размен."
+      },
       {
         "heroId": "pharah",
         "effectiveness": 5,
@@ -3257,14 +3299,14 @@
         "effectiveness": 4,
         "tier": "A",
         "counterRole": "Tank",
-        "reason": "Матрица ест Biotic Launcher и Amp Matrix, полёт преследует"
+        "reason": "Матрица ест Биотический гранатомёт и Amp Matrix, полёт преследует"
       },
       {
         "heroId": "sigma",
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Tank",
-        "reason": "Поглощение ест Biotic Launcher, рок оглушает при прыжке"
+        "reason": "Поглощение ест Биотический гранатомёт, камень оглушает при прыжке"
       },
       {
         "heroId": "kiriko",
@@ -3869,6 +3911,13 @@
     "heroId": "mercy",
     "counters": [
       {
+        "heroId": "sierra",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Сьерра хорошо добивает Mercy на открытых вертикальных линиях и мешает безопасно перелетать между союзниками."
+      },
+      {
         "heroId": "widowmaker",
         "effectiveness": 5,
         "tier": "S",
@@ -4039,7 +4088,7 @@
         "effectiveness": 3,
         "tier": "B",
         "counterRole": "Tank",
-        "reason": "Поглощение ест Biotic Orb, рок оглушает фейд кулдаун"
+        "reason": "Поглощение ест Биотическая сфера, камень оглушает фейд кулдаун"
       },
       {
         "heroId": "kiriko",
@@ -4698,6 +4747,67 @@
         "tier": "B",
         "counterRole": "Support",
         "reason": "Судзу снимает Binding Chain, кунаи прерывают хил"
+      }
+    ]
+  },
+  {
+    "heroId": "sierra",
+    "counters": [
+      {
+        "heroId": "dva",
+        "effectiveness": 5,
+        "tier": "S",
+        "counterRole": "Tank",
+        "reason": "Defense Matrix съедает большую часть давления Sierra, а бустеры быстро наказывают Anchor Drone-позиции."
+      },
+      {
+        "heroId": "sigma",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Tank",
+        "reason": "Барьер и Kinetic Grasp ломают её mid-range темп, а камень сбивает агрессивный выход с дрона."
+      },
+      {
+        "heroId": "genji",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Deflect опасен против hitscan-урона Sierra, а высокая мобильность помогает быстро сокращать дистанцию."
+      },
+      {
+        "heroId": "widowmaker",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Widowmaker перестреливает Sierra на длинных линиях и не даёт спокойно разыгрывать Tracking Shot."
+      },
+      {
+        "heroId": "sombra",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Hack отключает Anchor Drone и ломает её отходы, оставляя Sierra без безопасного reposition."
+      },
+      {
+        "heroId": "winston",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Tank",
+        "reason": "Пузырь разрывает линию огня, а быстрый dive вынуждает Sierra драться без времени на разгон точности."
+      },
+      {
+        "heroId": "kiriko",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Support",
+        "reason": "Swift Step уводит цель из Tracking Shot, а кунаи позволяют отвечать из неожиданных углов."
+      },
+      {
+        "heroId": "lucio",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Support",
+        "reason": "Скорость и boop ломают ей комфортную дистанцию и сбивают value с Trailblazer."
       }
     ]
   }

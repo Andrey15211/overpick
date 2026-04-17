@@ -111,7 +111,6 @@
     "subrole": "Bruiser",
     "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/9b6f63cc66ddf9d5e0862173c733cc0d2e574c5c89357798d91b93b2f95a7080.png"
   },
-
   {
     "id": "anran",
     "name": "Anran",
@@ -233,6 +232,14 @@
     "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/c93b5f0a528c40473188f77cc2a267aee7d5b6cf5c9e104105d634b4388674e2.png"
   },
   {
+    "id": "sierra",
+    "name": "Sierra",
+    "nameRu": "Сьерра",
+    "role": "Damage",
+    "subrole": "Recon",
+    "portrait": "https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt854021093f8d28b6/69d6d60a28a69c582e0f5c25/OVR_S2_H51_Sierra_BeautyShot_Individual_002_1.png"
+  },
+  {
     "id": "sombra",
     "name": "Sombra",
     "nameRu": "Сомбра",
@@ -288,7 +295,6 @@
     "subrole": "Sharpshooter",
     "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/6e4702b45f196aaf51555cf57327322721f45458b17f5f0643ed008a88378259.png"
   },
-
   {
     "id": "ana",
     "name": "Ana",

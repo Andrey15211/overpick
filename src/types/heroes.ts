@@ -2,7 +2,7 @@
 
 export type HeroRole = 'Tank' | 'Damage' | 'Support';
 
-// Новые подроли из обновления Season 1 (10 февраля 2026)
+// Подроли, которые используются в новом цикле сезонов Overwatch 2026
 export type HeroSubrole = 
   | 'Initiator' | 'Bruiser' | 'Stalwart'  // Танки
   | 'Specialist' | 'Recon' | 'Flanker' | 'Sharpshooter'  // DD

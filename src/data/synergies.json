@@ -1,184 +1,738 @@
 {
   "dva": [
-    {"partnerId": "winston", "name": "Дайв-комп", "effectiveness": 5, "reason": "Вместе прыгают на бэклайн. D.Va защищает матрицей при отходе Уинстона.", "source": "Mobalytics"},
-    {"partnerId": "genji", "name": "Дайв-координация", "effectiveness": 4, "reason": "D.Va создаёт хаос в тылу, Гэндзи добивает цели.", "source": "Reddit"}
+    {
+      "partnerId": "winston",
+      "name": "Дайв-координация",
+      "effectiveness": 5,
+      "reason": "Вместе прыгают на бэклайн. D.Va защищает матрицей при отходе Уинстона.",
+      "source": "Mobalytics"
+    },
+    {
+      "partnerId": "genji",
+      "name": "Дайв-координация",
+      "effectiveness": 4,
+      "reason": "D.Va создаёт хаос в тылу, Гэндзи добивает цели.",
+      "source": "Reddit"
+    }
   ],
   "doomfist": [
-    {"partnerId": "ana", "name": "Нано-Дум", "effectiveness": 5, "reason": "Нано Буст делает Думфиста неубиваемым в дайве.", "source": "OWL"},
-    {"partnerId": "lucio", "name": "Спид в энгейдж", "effectiveness": 4, "reason": "Лусио ускоряет Дума для быстрых входов.", "source": "Mobalytics"}
+    {
+      "partnerId": "ana",
+      "name": "Нано-Дум",
+      "effectiveness": 5,
+      "reason": "Нано Буст делает Думфиста неубиваемым в дайве.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "lucio",
+      "name": "Спид в энгейдж",
+      "effectiveness": 4,
+      "reason": "Лусио ускоряет Дума для быстрых входов.",
+      "source": "Mobalytics"
+    }
   ],
   "hazard": [
-    {"partnerId": "kiriko", "name": "Агрессивный танк", "effectiveness": 4, "reason": "Кирико телепортируется к Хазарду для хила и Судзу.", "source": "Reddit"},
-    {"partnerId": "ana", "name": "Нано-Хазард", "effectiveness": 4, "reason": "Нано усиливает урон и даёт выживаемость.", "source": "Overbuff"}
+    {
+      "partnerId": "kiriko",
+      "name": "Агрессивный танк",
+      "effectiveness": 4,
+      "reason": "Кирико телепортируется к Хазарду для хила и Судзу.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "ana",
+      "name": "Нано-Хазард",
+      "effectiveness": 4,
+      "reason": "Нано усиливает урон и даёт выживаемость.",
+      "source": "Overbuff"
+    }
   ],
   "junkerqueen": [
-    {"partnerId": "lucio", "name": "Brawl-комп", "effectiveness": 5, "reason": "Лусио ускоряет команду в агрессивные файты Королевы.", "source": "OWL"},
-    {"partnerId": "kiriko", "name": "Судзу + Рамpage", "effectiveness": 4, "reason": "Судзу снимает анти-хил, Рампейдж контрит хил врагов.", "source": "Reddit"}
+    {
+      "partnerId": "lucio",
+      "name": "Лобовая драка",
+      "effectiveness": 5,
+      "reason": "Лусио ускоряет команду в агрессивные файты Королевы.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "kiriko",
+      "name": "Судзу + Рамpage",
+      "effectiveness": 4,
+      "reason": "Судзу снимает анти-хил, Рампейдж контрит хил врагов.",
+      "source": "Reddit"
+    }
   ],
   "mauga": [
-    {"partnerId": "baptiste", "name": "Immortality Field", "effectiveness": 5, "reason": "Бессмертие спасает Маугу в Берсерке.", "source": "Mobalytics"},
-    {"partnerId": "kiriko", "name": "Судзу-спасение", "effectiveness": 4, "reason": "Судзу снимает CC и даёт неуязвимость.", "source": "Reddit"}
+    {
+      "partnerId": "baptiste",
+      "name": "Immortality Field",
+      "effectiveness": 5,
+      "reason": "Бессмертие спасает Маугу в Берсерке.",
+      "source": "Mobalytics"
+    },
+    {
+      "partnerId": "kiriko",
+      "name": "Судзу-спасение",
+      "effectiveness": 4,
+      "reason": "Судзу снимает CC и даёт неуязвимость.",
+      "source": "Reddit"
+    }
   ],
   "orisa": [
-    {"partnerId": "baptiste", "name": "Bunker-комп", "effectiveness": 4, "reason": "Ориса держит точку, Батист усиливает урон через окно.", "source": "Overbuff"},
-    {"partnerId": "sigma", "name": "Двойной барьер", "effectiveness": 3, "reason": "Два танка с контролем пространства.", "source": "Reddit"}
+    {
+      "partnerId": "baptiste",
+      "name": "Укреплённая композиция",
+      "effectiveness": 4,
+      "reason": "Ориса держит точку, Батист усиливает урон через окно.",
+      "source": "Overbuff"
+    },
+    {
+      "partnerId": "sigma",
+      "name": "Двойной барьер",
+      "effectiveness": 3,
+      "reason": "Два танка с контролем пространства.",
+      "source": "Reddit"
+    }
   ],
   "ramattra": [
-    {"partnerId": "lucio", "name": "Немезида-раш", "effectiveness": 4, "reason": "Лусио ускоряет Раматтру в форме Немезиды.", "source": "Mobalytics"},
-    {"partnerId": "ana", "name": "Нано-Немезида", "effectiveness": 5, "reason": "Нано делает Немезиду смертоносной машиной.", "source": "OWL"}
+    {
+      "partnerId": "lucio",
+      "name": "Немезида-раш",
+      "effectiveness": 4,
+      "reason": "Лусио ускоряет Раматтру в форме Немезиды.",
+      "source": "Mobalytics"
+    },
+    {
+      "partnerId": "ana",
+      "name": "Нано-Немезида",
+      "effectiveness": 5,
+      "reason": "Нано делает Немезиду смертоносной машиной.",
+      "source": "OWL"
+    }
   ],
   "reinhardt": [
-    {"partnerId": "lucio", "name": "Спид-чардж", "effectiveness": 5, "reason": "Лусио ускоряет Райна для агрессивных заходов и чарджей.", "source": "OWL"},
-    {"partnerId": "ana", "name": "Нано-Райн", "effectiveness": 5, "reason": "Классическая связка: Нано + Молот = вайп команды.", "source": "Overbuff"}
+    {
+      "partnerId": "lucio",
+      "name": "Спид-чардж",
+      "effectiveness": 5,
+      "reason": "Лусио ускоряет Райна для агрессивных заходов и чарджей.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "ana",
+      "name": "Нано-Райн",
+      "effectiveness": 5,
+      "reason": "Классическая связка: Нано + Молот = вайп команды.",
+      "source": "Overbuff"
+    }
   ],
   "roadhog": [
-    {"partnerId": "ana", "name": "Нано-Хряк", "effectiveness": 4, "reason": "Нано + Whole Hog отталкивает и убивает.", "source": "Reddit"},
-    {"partnerId": "zarya", "name": "Пузырь-крюк", "effectiveness": 4, "reason": "Заря даёт пузырь для безопасных хуков.", "source": "Mobalytics"}
+    {
+      "partnerId": "ana",
+      "name": "Нано-Хряк",
+      "effectiveness": 4,
+      "reason": "Нано + Whole Hog отталкивает и убивает.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "zarya",
+      "name": "Пузырь-крюк",
+      "effectiveness": 4,
+      "reason": "Заря даёт пузырь для безопасных хуков.",
+      "source": "Mobalytics"
+    }
   ],
   "sigma": [
-    {"partnerId": "zarya", "name": "Off-tank синергия", "effectiveness": 4, "reason": "Сигма контролит, Заря защищает и добивает.", "source": "Overbuff"},
-    {"partnerId": "ana", "name": "Нано-Flux", "effectiveness": 5, "reason": "Нано + Gravitic Flux = гарантированные убийства.", "source": "OWL"}
+    {
+      "partnerId": "zarya",
+      "name": "Синергия двух танков",
+      "effectiveness": 4,
+      "reason": "Сигма контролит, Заря защищает и добивает.",
+      "source": "Overbuff"
+    },
+    {
+      "partnerId": "ana",
+      "name": "Нано-поток",
+      "effectiveness": 5,
+      "reason": "Нано + Гравитационный поток = гарантированные убийства.",
+      "source": "OWL"
+    }
   ],
   "winston": [
-    {"partnerId": "dva", "name": "Классический дайв", "effectiveness": 5, "reason": "Уинстон прыгает, D.Va следует и защищает матрицей.", "source": "OWL"},
-    {"partnerId": "tracer", "name": "Дайв-DPS", "effectiveness": 5, "reason": "Трейсер и Уинстон вместе уничтожают бэклайн.", "source": "Mobalytics"}
+    {
+      "partnerId": "dva",
+      "name": "Классический дайв",
+      "effectiveness": 5,
+      "reason": "Уинстон прыгает, D.Va следует и защищает матрицей.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "tracer",
+      "name": "Дайв-DPS",
+      "effectiveness": 5,
+      "reason": "Трейсер и Уинстон вместе уничтожают бэклайн.",
+      "source": "Mobalytics"
+    }
   ],
   "wreckingball": [
-    {"partnerId": "tracer", "name": "Хаос-дайв", "effectiveness": 4, "reason": "Хомяк создаёт хаос, Трейсер добивает.", "source": "Reddit"},
-    {"partnerId": "sombra", "name": "Хак + Пайлдрайв", "effectiveness": 4, "reason": "Сомбра хакает, Таран залетает.", "source": "Overbuff"}
+    {
+      "partnerId": "tracer",
+      "name": "Хаос-дайв",
+      "effectiveness": 4,
+      "reason": "Хомяк создаёт хаос, Трейсер добивает.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "sombra",
+      "name": "Хак + Пайлдрайв",
+      "effectiveness": 4,
+      "reason": "Сомбра хакает, Таран залетает.",
+      "source": "Overbuff"
+    }
   ],
   "zarya": [
-    {"partnerId": "genji", "name": "Грав + Лезвие", "effectiveness": 5, "reason": "Гравитон собирает врагов — Гэндзи вайпает ультой.", "source": "OWL"},
-    {"partnerId": "hanzo", "name": "Грав + Драконы", "effectiveness": 5, "reason": "Классическая комба: драконы гарантированно убивают всех в граве.", "source": "OWL"}
+    {
+      "partnerId": "genji",
+      "name": "Грав + Лезвие",
+      "effectiveness": 5,
+      "reason": "Гравитон собирает врагов — Гэндзи вайпает ультой.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "hanzo",
+      "name": "Грав + Драконы",
+      "effectiveness": 5,
+      "reason": "Классическая комба: драконы гарантированно убивают всех в граве.",
+      "source": "OWL"
+    }
   ],
-
   "ashe": [
-    {"partnerId": "mercy", "name": "Дамаг-буст Эш", "effectiveness": 5, "reason": "Мерси буст делает выстрелы ваншотами.", "source": "Mobalytics"},
-    {"partnerId": "ana", "name": "Нано-Боб", "effectiveness": 4, "reason": "Нано на Боба увеличивает его урон.", "source": "Reddit"}
+    {
+      "partnerId": "mercy",
+      "name": "Дамаг-буст Эш",
+      "effectiveness": 5,
+      "reason": "Мерси буст делает выстрелы ваншотами.",
+      "source": "Mobalytics"
+    },
+    {
+      "partnerId": "ana",
+      "name": "Нано-Боб",
+      "effectiveness": 4,
+      "reason": "Нано на Боба увеличивает его урон.",
+      "source": "Reddit"
+    }
   ],
   "bastion": [
-    {"partnerId": "baptiste", "name": "Окно + Турель", "effectiveness": 5, "reason": "Усилитель урона + Бастион = массовые убийства.", "source": "Overbuff"},
-    {"partnerId": "orisa", "name": "Bunker-защита", "effectiveness": 4, "reason": "Ориса защищает позицию Бастиона.", "source": "Mobalytics"}
+    {
+      "partnerId": "baptiste",
+      "name": "Окно + Турель",
+      "effectiveness": 5,
+      "reason": "Усилитель урона + Бастион = массовые убийства.",
+      "source": "Overbuff"
+    },
+    {
+      "partnerId": "orisa",
+      "name": "Защита укреплённой позиции",
+      "effectiveness": 4,
+      "reason": "Ориса защищает позицию Бастиона.",
+      "source": "Mobalytics"
+    }
   ],
   "cassidy": [
-    {"partnerId": "ana", "name": "Нано-Полдень", "effectiveness": 5, "reason": "Нано + Deadeye = быстрая зарядка и убийства.", "source": "OWL"},
-    {"partnerId": "zarya", "name": "Грав + Полдень", "effectiveness": 4, "reason": "Гравитон держит врагов для Дедая.", "source": "Reddit"}
+    {
+      "partnerId": "ana",
+      "name": "Нано-Полдень",
+      "effectiveness": 5,
+      "reason": "Нано + Deadeye = быстрая зарядка и убийства.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "zarya",
+      "name": "Грав + Полдень",
+      "effectiveness": 4,
+      "reason": "Гравитон держит врагов для Дедая.",
+      "source": "Reddit"
+    }
   ],
   "echo": [
-    {"partnerId": "mercy", "name": "Воздушный дуэт", "effectiveness": 4, "reason": "Мерси летает с Эхо и бустит урон.", "source": "Mobalytics"},
-    {"partnerId": "zarya", "name": "Грав + Sticky", "effectiveness": 4, "reason": "Бомбы на врагах в граве.", "source": "Reddit"}
+    {
+      "partnerId": "mercy",
+      "name": "Воздушный дуэт",
+      "effectiveness": 4,
+      "reason": "Мерси летает с Эхо и бустит урон.",
+      "source": "Mobalytics"
+    },
+    {
+      "partnerId": "zarya",
+      "name": "Грав + Sticky",
+      "effectiveness": 4,
+      "reason": "Бомбы на врагах в граве.",
+      "source": "Reddit"
+    }
   ],
   "freja": [
-    {"partnerId": "lucio", "name": "Мобильный DPS", "effectiveness": 4, "reason": "Лусио ускоряет для агрессивного плея.", "source": "Reddit"},
-    {"partnerId": "ana", "name": "Нано-Фрея", "effectiveness": 4, "reason": "Нано усиливает урон нового DD.", "source": "Mobalytics"}
+    {
+      "partnerId": "lucio",
+      "name": "Мобильный DPS",
+      "effectiveness": 4,
+      "reason": "Лусио ускоряет для агрессивного плея.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "ana",
+      "name": "Нано-Фрея",
+      "effectiveness": 4,
+      "reason": "Нано усиливает урон нового DD.",
+      "source": "Mobalytics"
+    }
   ],
   "genji": [
-    {"partnerId": "ana", "name": "Нано-Блейд", "effectiveness": 5, "reason": "Легендарная связка: Нано + Драконье лезвие = тимвайп.", "source": "OWL"},
-    {"partnerId": "zarya", "name": "Грав + Блейд", "effectiveness": 5, "reason": "Гравитон собирает, Гэндзи режет.", "source": "OWL"}
+    {
+      "partnerId": "ana",
+      "name": "Нано-Блейд",
+      "effectiveness": 5,
+      "reason": "Легендарная связка: Нано + Драконье лезвие = тимвайп.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "zarya",
+      "name": "Грав + Блейд",
+      "effectiveness": 5,
+      "reason": "Гравитон собирает, Гэндзи режет.",
+      "source": "OWL"
+    }
   ],
   "hanzo": [
-    {"partnerId": "zarya", "name": "Грав + Драконы", "effectiveness": 5, "reason": "Драконы проходят через всех в гравитоне.", "source": "OWL"},
-    {"partnerId": "mercy", "name": "Дамаг-буст лучник", "effectiveness": 4, "reason": "Буст делает стрелы ваншотами.", "source": "Mobalytics"}
+    {
+      "partnerId": "zarya",
+      "name": "Грав + Драконы",
+      "effectiveness": 5,
+      "reason": "Драконы проходят через всех в гравитоне.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "mercy",
+      "name": "Дамаг-буст лучник",
+      "effectiveness": 4,
+      "reason": "Буст делает стрелы ваншотами.",
+      "source": "Mobalytics"
+    }
   ],
   "junkrat": [
-    {"partnerId": "zarya", "name": "Грав + Шина", "effectiveness": 5, "reason": "RIP-Tire убивает всех в гравитоне.", "source": "OWL"},
-    {"partnerId": "orisa", "name": "Спам-контроль", "effectiveness": 3, "reason": "Ориса держит точку, Крысавчик спамит.", "source": "Reddit"}
+    {
+      "partnerId": "zarya",
+      "name": "Грав + Шина",
+      "effectiveness": 5,
+      "reason": "RIP-Tire убивает всех в гравитоне.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "orisa",
+      "name": "Спам-контроль",
+      "effectiveness": 3,
+      "reason": "Ориса держит точку, Крысавчик спамит.",
+      "source": "Reddit"
+    }
   ],
   "mei": [
-    {"partnerId": "reinhardt", "name": "Стена + Шаттер", "effectiveness": 4, "reason": "Стена разделяет команду для Шаттера.", "source": "Overbuff"},
-    {"partnerId": "zarya", "name": "Грав + Близзард", "effectiveness": 4, "reason": "Двойной контроль = гарантированные убийства.", "source": "Reddit"}
+    {
+      "partnerId": "reinhardt",
+      "name": "Стена + Шаттер",
+      "effectiveness": 4,
+      "reason": "Стена разделяет команду для Шаттера.",
+      "source": "Overbuff"
+    },
+    {
+      "partnerId": "zarya",
+      "name": "Грав + Близзард",
+      "effectiveness": 4,
+      "reason": "Двойной контроль = гарантированные убийства.",
+      "source": "Reddit"
+    }
   ],
   "pharah": [
-    {"partnerId": "mercy", "name": "Фармерси", "effectiveness": 5, "reason": "Легендарный дуэт: Мерси летает и бустит Фарру.", "source": "OWL"},
-    {"partnerId": "zarya", "name": "Грав + Баррадж", "effectiveness": 5, "reason": "Гравитон + Ракетный шквал = вайп.", "source": "OWL"}
+    {
+      "partnerId": "mercy",
+      "name": "Фармерси",
+      "effectiveness": 5,
+      "reason": "Легендарный дуэт: Мерси летает и бустит Фарру.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "zarya",
+      "name": "Грав + Баррадж",
+      "effectiveness": 5,
+      "reason": "Гравитон + Ракетный шквал = вайп.",
+      "source": "OWL"
+    }
   ],
   "reaper": [
-    {"partnerId": "ana", "name": "Нано-Жнец", "effectiveness": 5, "reason": "Нано + Death Blossom = массовые убийства.", "source": "OWL"},
-    {"partnerId": "lucio", "name": "Brawl-энгейдж", "effectiveness": 4, "reason": "Лусио ускоряет Жнеца в ближний бой.", "source": "Mobalytics"}
+    {
+      "partnerId": "ana",
+      "name": "Нано-Жнец",
+      "effectiveness": 5,
+      "reason": "Нано + Death Blossom = массовые убийства.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "lucio",
+      "name": "Вход в лобовую драку",
+      "effectiveness": 4,
+      "reason": "Лусио ускоряет Жнеца в ближний бой.",
+      "source": "Mobalytics"
+    }
   ],
   "sojourn": [
-    {"partnerId": "mercy", "name": "Дамаг-буст рейлган", "effectiveness": 5, "reason": "Буст делает рейлган ваншотом на любом заряде.", "source": "Mobalytics"},
-    {"partnerId": "zarya", "name": "Грав + Оверклок", "effectiveness": 4, "reason": "Оверклок уничтожает врагов в граве.", "source": "Reddit"}
+    {
+      "partnerId": "mercy",
+      "name": "Дамаг-буст рейлган",
+      "effectiveness": 5,
+      "reason": "Буст делает рейлган ваншотом на любом заряде.",
+      "source": "Mobalytics"
+    },
+    {
+      "partnerId": "zarya",
+      "name": "Грав + Оверклок",
+      "effectiveness": 4,
+      "reason": "Оверклок уничтожает врагов в граве.",
+      "source": "Reddit"
+    }
   ],
   "soldier76": [
-    {"partnerId": "ana", "name": "Нано-Визор", "effectiveness": 5, "reason": "Нано + Тактический визор = автоматические убийства.", "source": "OWL"},
-    {"partnerId": "mercy", "name": "Дамаг-буст", "effectiveness": 4, "reason": "Буст увеличивает DPS солдата.", "source": "Mobalytics"}
+    {
+      "partnerId": "ana",
+      "name": "Нано-Визор",
+      "effectiveness": 5,
+      "reason": "Нано + Тактический визор = автоматические убийства.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "mercy",
+      "name": "Дамаг-буст",
+      "effectiveness": 4,
+      "reason": "Буст увеличивает DPS солдата.",
+      "source": "Mobalytics"
+    }
   ],
   "sombra": [
-    {"partnerId": "dva", "name": "Хак + Дайв", "effectiveness": 4, "reason": "Сомбра хакает цель, D.Va добивает.", "source": "Reddit"},
-    {"partnerId": "zarya", "name": "Грав + EMP", "effectiveness": 5, "reason": "EMP снимает щиты перед гравитоном.", "source": "OWL"}
+    {
+      "partnerId": "dva",
+      "name": "Хак + Дайв",
+      "effectiveness": 4,
+      "reason": "Сомбра хакает цель, D.Va добивает.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "zarya",
+      "name": "Грав + EMP",
+      "effectiveness": 5,
+      "reason": "EMP снимает щиты перед гравитоном.",
+      "source": "OWL"
+    }
   ],
   "symmetra": [
-    {"partnerId": "reinhardt", "name": "Телепорт-агрессия", "effectiveness": 4, "reason": "Телепорт позволяет Райну быстро заходить.", "source": "Overbuff"},
-    {"partnerId": "zarya", "name": "Грав + Турели", "effectiveness": 3, "reason": "Турели добивают врагов в граве.", "source": "Reddit"}
+    {
+      "partnerId": "reinhardt",
+      "name": "Телепорт-агрессия",
+      "effectiveness": 4,
+      "reason": "Телепорт позволяет Райну быстро заходить.",
+      "source": "Overbuff"
+    },
+    {
+      "partnerId": "zarya",
+      "name": "Грав + Турели",
+      "effectiveness": 3,
+      "reason": "Турели добивают врагов в граве.",
+      "source": "Reddit"
+    }
   ],
   "torbjorn": [
-    {"partnerId": "orisa", "name": "Bunker-защита", "effectiveness": 4, "reason": "Ориса защищает турель Торба.", "source": "Mobalytics"},
-    {"partnerId": "baptiste", "name": "Окно + Турель", "effectiveness": 4, "reason": "Усилитель урона усиливает турель.", "source": "Reddit"}
+    {
+      "partnerId": "orisa",
+      "name": "Защита укреплённой позиции",
+      "effectiveness": 4,
+      "reason": "Ориса защищает турель Торба.",
+      "source": "Mobalytics"
+    },
+    {
+      "partnerId": "baptiste",
+      "name": "Окно + Турель",
+      "effectiveness": 4,
+      "reason": "Усилитель урона усиливает турель.",
+      "source": "Reddit"
+    }
   ],
   "tracer": [
-    {"partnerId": "winston", "name": "Дайв-комп", "effectiveness": 5, "reason": "Вместе уничтожают бэклайн противника.", "source": "OWL"},
-    {"partnerId": "zarya", "name": "Грав + Бомба", "effectiveness": 5, "reason": "Пульс-бомба в гравитоне — массовые убийства.", "source": "OWL"}
+    {
+      "partnerId": "winston",
+      "name": "Дайв-координация",
+      "effectiveness": 5,
+      "reason": "Вместе уничтожают бэклайн противника.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "zarya",
+      "name": "Грав + Бомба",
+      "effectiveness": 5,
+      "reason": "Пульс-бомба в гравитоне — массовые убийства.",
+      "source": "OWL"
+    }
   ],
   "vendetta": [
-    {"partnerId": "ana", "name": "Нано-Вендетта", "effectiveness": 4, "reason": "Нано усиливает мили-урон и живучесть.", "source": "Reddit"},
-    {"partnerId": "lucio", "name": "Спид-атака", "effectiveness": 4, "reason": "Лусио ускоряет для быстрых заходов.", "source": "Mobalytics"}
+    {
+      "partnerId": "ana",
+      "name": "Нано-Вендетта",
+      "effectiveness": 4,
+      "reason": "Нано усиливает мили-урон и живучесть.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "lucio",
+      "name": "Спид-атака",
+      "effectiveness": 4,
+      "reason": "Лусио ускоряет для быстрых заходов.",
+      "source": "Mobalytics"
+    }
   ],
   "venture": [
-    {"partnerId": "lucio", "name": "Мобильный дайв", "effectiveness": 4, "reason": "Лусио ускоряет Венчур для агрессии.", "source": "Reddit"},
-    {"partnerId": "kiriko", "name": "Судзу-защита", "effectiveness": 4, "reason": "Кирико спасает при подземных атаках.", "source": "Mobalytics"}
+    {
+      "partnerId": "lucio",
+      "name": "Мобильный дайв",
+      "effectiveness": 4,
+      "reason": "Лусио ускоряет Венчур для агрессии.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "kiriko",
+      "name": "Судзу-защита",
+      "effectiveness": 4,
+      "reason": "Кирико спасает при подземных атаках.",
+      "source": "Mobalytics"
+    }
   ],
   "widowmaker": [
-    {"partnerId": "mercy", "name": "Дамаг-буст снайпер", "effectiveness": 4, "reason": "Буст убивает танков с одного хедшота.", "source": "Overbuff"},
-    {"partnerId": "winston", "name": "Защита дайвом", "effectiveness": 3, "reason": "Уинстон отгоняет дайверов от Вдовы.", "source": "Reddit"}
+    {
+      "partnerId": "mercy",
+      "name": "Дамаг-буст снайпер",
+      "effectiveness": 4,
+      "reason": "Буст убивает танков с одного хедшота.",
+      "source": "Overbuff"
+    },
+    {
+      "partnerId": "winston",
+      "name": "Защита дайвом",
+      "effectiveness": 3,
+      "reason": "Уинстон отгоняет дайверов от Вдовы.",
+      "source": "Reddit"
+    }
   ],
-
   "ana": [
-    {"partnerId": "genji", "name": "Нано-Блейд", "effectiveness": 5, "reason": "Легендарная связка: Нано на Драконье лезвие.", "source": "OWL"},
-    {"partnerId": "reinhardt", "name": "Нано-Райн", "effectiveness": 5, "reason": "Нано-заряженный Райнхардт — страшная сила.", "source": "OWL"}
+    {
+      "partnerId": "genji",
+      "name": "Нано-Блейд",
+      "effectiveness": 5,
+      "reason": "Легендарная связка: Нано на Драконье лезвие.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "reinhardt",
+      "name": "Нано-Райн",
+      "effectiveness": 5,
+      "reason": "Нано-заряженный Райнхардт — страшная сила.",
+      "source": "OWL"
+    }
   ],
   "baptiste": [
-    {"partnerId": "bastion", "name": "Окно + Турель", "effectiveness": 5, "reason": "Усилитель урона + Бастион = массовые убийства.", "source": "Overbuff"},
-    {"partnerId": "sigma", "name": "Poke-комп", "effectiveness": 4, "reason": "Сигма контролит, Батист хилит и дамажит.", "source": "Mobalytics"}
+    {
+      "partnerId": "bastion",
+      "name": "Окно + Турель",
+      "effectiveness": 5,
+      "reason": "Усилитель урона + Бастион = массовые убийства.",
+      "source": "Overbuff"
+    },
+    {
+      "partnerId": "sigma",
+      "name": "Позиционный обстрел",
+      "effectiveness": 4,
+      "reason": "Сигма контролит, Батист хилит и дамажит.",
+      "source": "Mobalytics"
+    }
   ],
   "brigitte": [
-    {"partnerId": "reinhardt", "name": "Brawl-защита", "effectiveness": 5, "reason": "Бригитта защищает Райна и даёт Rally.", "source": "OWL"},
-    {"partnerId": "lucio", "name": "Двойной аура-хил", "effectiveness": 4, "reason": "Rally + Speed boost для агрессии.", "source": "Mobalytics"}
+    {
+      "partnerId": "reinhardt",
+      "name": "Защита в ближнем бою",
+      "effectiveness": 5,
+      "reason": "Бригитта защищает Райна и даёт Сплочение.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "lucio",
+      "name": "Двойной аура-хил",
+      "effectiveness": 4,
+      "reason": "Сплочение + Speed boost для агрессии.",
+      "source": "Mobalytics"
+    }
   ],
   "illari": [
-    {"partnerId": "sigma", "name": "Poke-саппорт", "effectiveness": 4, "reason": "Иллари хилит издалека, Сигма контролит.", "source": "Reddit"},
-    {"partnerId": "ashe", "name": "Дальний бой", "effectiveness": 3, "reason": "Оба работают на дистанции.", "source": "Mobalytics"}
+    {
+      "partnerId": "sigma",
+      "name": "Поддержка с дистанции",
+      "effectiveness": 4,
+      "reason": "Иллари хилит издалека, Сигма контролит.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "ashe",
+      "name": "Дальний бой",
+      "effectiveness": 3,
+      "reason": "Оба работают на дистанции.",
+      "source": "Mobalytics"
+    }
   ],
   "juno": [
-    {"partnerId": "tracer", "name": "Мобильный хил", "effectiveness": 4, "reason": "Джуно успевает хилить мобильную Трейсер.", "source": "Reddit"},
-    {"partnerId": "genji", "name": "Дайв-саппорт", "effectiveness": 4, "reason": "Джуно поддерживает дайв-героев.", "source": "Mobalytics"}
+    {
+      "partnerId": "tracer",
+      "name": "Мобильный хил",
+      "effectiveness": 4,
+      "reason": "Джуно успевает хилить мобильную Трейсер.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "genji",
+      "name": "Дайв-саппорт",
+      "effectiveness": 4,
+      "reason": "Джуно поддерживает дайв-героев.",
+      "source": "Mobalytics"
+    }
   ],
   "kiriko": [
-    {"partnerId": "genji", "name": "Дайв-синергия", "effectiveness": 5, "reason": "Кирико телепортируется к Гэндзи, Судзу спасает.", "source": "OWL"},
-    {"partnerId": "winston", "name": "Дайв-хил", "effectiveness": 5, "reason": "Телепорт к Уинстону для хила в дайве.", "source": "Mobalytics"}
+    {
+      "partnerId": "genji",
+      "name": "Дайв-синергия",
+      "effectiveness": 5,
+      "reason": "Кирико телепортируется к Гэндзи, Судзу спасает.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "winston",
+      "name": "Дайв-хил",
+      "effectiveness": 5,
+      "reason": "Телепорт к Уинстону для хила в дайве.",
+      "source": "Mobalytics"
+    }
   ],
   "lifeweaver": [
-    {"partnerId": "reinhardt", "name": "Pull + Charge", "effectiveness": 4, "reason": "Притягивает союзников от опасности.", "source": "Reddit"},
-    {"partnerId": "roadhog", "name": "Petal Platform", "effectiveness": 3, "reason": "Платформа для хуков сверху.", "source": "Mobalytics"}
+    {
+      "partnerId": "reinhardt",
+      "name": "Pull + Charge",
+      "effectiveness": 4,
+      "reason": "Притягивает союзников от опасности.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "roadhog",
+      "name": "Petal Platform",
+      "effectiveness": 3,
+      "reason": "Платформа для хуков сверху.",
+      "source": "Mobalytics"
+    }
   ],
   "lucio": [
-    {"partnerId": "reinhardt", "name": "Спид-раш", "effectiveness": 5, "reason": "Ускорение для агрессивных заходов Райна.", "source": "OWL"},
-    {"partnerId": "junkerqueen", "name": "Brawl-ускорение", "effectiveness": 5, "reason": "Лусио идеален для brawl-стиля Королевы.", "source": "OWL"}
+    {
+      "partnerId": "reinhardt",
+      "name": "Спид-раш",
+      "effectiveness": 5,
+      "reason": "Ускорение для агрессивных заходов Райна.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "junkerqueen",
+      "name": "Ускорение ближнего боя",
+      "effectiveness": 5,
+      "reason": "Лусио идеален для игры в ближнем бою Королевы.",
+      "source": "OWL"
+    }
   ],
   "mercy": [
-    {"partnerId": "pharah", "name": "Фармерси", "effectiveness": 5, "reason": "Классический дуэт: Мерси летает с Фаррой.", "source": "OWL"},
-    {"partnerId": "ashe", "name": "Дамаг-буст", "effectiveness": 5, "reason": "Буст делает выстрелы Эш ваншотами.", "source": "Mobalytics"}
+    {
+      "partnerId": "pharah",
+      "name": "Фармерси",
+      "effectiveness": 5,
+      "reason": "Классический дуэт: Мерси летает с Фаррой.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "ashe",
+      "name": "Дамаг-буст",
+      "effectiveness": 5,
+      "reason": "Буст делает выстрелы Эш ваншотами.",
+      "source": "Mobalytics"
+    }
   ],
   "moira": [
-    {"partnerId": "reinhardt", "name": "Brawl-хил", "effectiveness": 4, "reason": "Мойра хилит Райна в ближнем бою.", "source": "Reddit"},
-    {"partnerId": "lucio", "name": "Двойной AoE", "effectiveness": 4, "reason": "Массовый хил для brawl-композиций.", "source": "Mobalytics"}
+    {
+      "partnerId": "reinhardt",
+      "name": "Лечение для ближнего боя",
+      "effectiveness": 4,
+      "reason": "Мойра хилит Райна в ближнем бою.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "lucio",
+      "name": "Двойной исцеление по площади",
+      "effectiveness": 4,
+      "reason": "Массовый хил для композиций для ближнего боя.",
+      "source": "Mobalytics"
+    }
   ],
   "wuyang": [
-    {"partnerId": "genji", "name": "Новый саппорт дайва", "effectiveness": 4, "reason": "Вуянг поддерживает агрессивный плей Гэндзи.", "source": "Reddit"},
-    {"partnerId": "tracer", "name": "Мобильная связка", "effectiveness": 4, "reason": "Синергия с мобильными DD.", "source": "Mobalytics"}
+    {
+      "partnerId": "genji",
+      "name": "Новый саппорт дайва",
+      "effectiveness": 4,
+      "reason": "Вуянг поддерживает агрессивный плей Гэндзи.",
+      "source": "Reddit"
+    },
+    {
+      "partnerId": "tracer",
+      "name": "Мобильная связка",
+      "effectiveness": 4,
+      "reason": "Синергия с мобильными DD.",
+      "source": "Mobalytics"
+    }
   ],
   "zenyatta": [
-    {"partnerId": "genji", "name": "Разлад + Блейд", "effectiveness": 5, "reason": "Разлад на целях — Гэндзи убивает быстрее.", "source": "OWL"},
-    {"partnerId": "winston", "name": "Дайв-разлад", "effectiveness": 5, "reason": "Разлад на целях дайва = быстрые убийства.", "source": "OWL"}
+    {
+      "partnerId": "genji",
+      "name": "Разлад + Блейд",
+      "effectiveness": 5,
+      "reason": "Разлад на целях — Гэндзи убивает быстрее.",
+      "source": "OWL"
+    },
+    {
+      "partnerId": "winston",
+      "name": "Дайв-разлад",
+      "effectiveness": 5,
+      "reason": "Разлад на целях дайва = быстрые убийства.",
+      "source": "OWL"
+    }
+  ],
+  "sierra": [
+    {
+      "partnerId": "mercy",
+      "name": "Карманный рейндж",
+      "effectiveness": 5,
+      "reason": "Damage Boost усиливает стабильный pressure Sierra, а Flash Heal/Guardian Angel помогают удерживать её на сильных углах.",
+      "source": "Blizzard Patch Notes + Hero Kit"
+    },
+    {
+      "partnerId": "ana",
+      "name": "Контроль через метку",
+      "effectiveness": 4,
+      "reason": "Сон и антихил Ана создают простые добивания под Tracking Shot и Trailblazer.",
+      "source": "Blizzard Hero Stats + Hero Kit"
+    }
   ]
 }

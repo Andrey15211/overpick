@@ -9,7 +9,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Мета и Тир-лист',
-  description: 'Актуальный тир-лист героев Overwatch Season 1.5. S-tier герои, подроли, pick rate и win rate статистика.',
+  description: 'Актуальный тир-лист героев Overwatch 2 для Season 2: Summit с обновлением под патч от 14 апреля 2026 года.',
 };
 
 // Типизация данных
@@ -41,7 +41,7 @@ export default function MetaPage() {
             Текущая <span>Мета</span>
           </h1>
           <p className={styles.metaSubtitle}>
-            Тир-лист героев Overwatch на основе актуальных данных
+            Тир-лист героев Overwatch 2 на основе официальной статистики Blizzard и свежих патч-нотов
           </p>
           <div className={styles.metaInfo}>
             <div className={styles.metaInfoItem}>

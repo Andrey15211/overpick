@@ -1,5 +1,68 @@
 [
   {
+    "patchId": "ow-s2-summit",
+    "date": "2026-04-14",
+    "version": "2.0",
+    "title": "⛰️ Overwatch Season 2: Summit",
+    "changes": [
+      {
+        "heroId": "sierra",
+        "type": "rework",
+        "description": "Новый DPS-герой Sierra добавлен в основной ростер. Кит строится вокруг Tracking Shot, Anchor Drone и Trailblazer."
+      },
+      {
+        "heroId": "mercy",
+        "type": "rework",
+        "description": "Flash Heal перенесён из перка в базовый кит, КД 15→12с, базовый хил 50→60. В компенсацию Staff 60→55, скорость Guardian Angel снижена на 10%. "
+      },
+      {
+        "heroId": "kiriko",
+        "type": "rework",
+        "description": "Swift Step получил нерф дальности 35→30м, но Healing Ofuda ускорены с 5 до 7 выстрелов в секунду."
+      },
+      {
+        "heroId": "pharah",
+        "type": "buff",
+        "description": "Базовый кит усилен за счёт интеграции движения во время Barrage; новый major-перк Rocket Salvo добавляет две мини-ракеты после movement ability."
+      },
+      {
+        "heroId": "reaper",
+        "type": "nerf",
+        "description": "Shadow Step больше не очищает эффекты при использовании."
+      },
+      {
+        "heroId": "soldier76",
+        "type": "buff",
+        "description": "Helix Propulsion ускоряет Helix Rockets на 50%, Tactical Salvo позволяет не прерывать основной огонь во время Tactical Visor."
+      },
+      {
+        "heroId": "vendetta",
+        "type": "nerf",
+        "description": "Броня снижена 100→75, скорость за стак Onslaught урезана 4%→2%, а бонусная дальность Palatine Fang уменьшена 2.5→2.0м."
+      },
+      {
+        "heroId": "anran",
+        "type": "rework",
+        "description": "Anran переработали через пакет перков: Fan the Flames усилили, Inferno Rush ослабили, а Dancing Blaze теперь лечит при попаданиях."
+      },
+      {
+        "heroId": "ashe",
+        "type": "nerf",
+        "description": "Double Barreled теперь требует 2 секунды на повторную активацию Coach Gun вместо 1 секунды."
+      },
+      {
+        "heroId": "bastion",
+        "type": "nerf",
+        "description": "Configuration Reload больше не полностью возвращает кулдаун и теперь сокращает его только на 4 секунды."
+      },
+      {
+        "heroId": "mizuki",
+        "type": "nerf",
+        "description": "Katashiro Return ослаблен по скорости 35%→30%, а Remedy Aura в 6v6 урезана по минимуму и максимуму лечения."
+      }
+    ]
+  },
+  {
     "patchId": "ow-s1.5-mid",
     "date": "2026-03-10",
     "version": "1.5",
@@ -11,7 +74,7 @@
         "description": "самоисцеление от лечения союзников увеличено с 25% до 40%"
       },
       {
-        "heroId": "Подкласс Bruiser",
+        "heroId": "Подкласс бруйзер",
         "type": "buff",
         "description": "эффект срабатывает при <50% здоровья"
       },
@@ -86,7 +149,7 @@
       {
         "heroId": "anran",
         "type": "rework",
-        "description": "Новый DD Anran (Flanker) добавлен в игру"
+        "description": "Новый DD Anran (фланкер) добавлен в игру"
       },
       {
         "heroId": "emre",
