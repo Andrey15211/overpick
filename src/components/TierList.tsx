@@ -93,13 +93,13 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
       <div className="tierControlPanel" aria-label="Фильтры тир-листа">
         <div className="tierControlGrid">
           <label className="tierSelectField">
-            <span className="tierSelectLabel">Role</span>
+            <span className="tierSelectLabel">Роль</span>
             <select
               value={roleFilter}
               onChange={(event) => setRoleFilter(event.target.value as RoleFilter)}
               className="tierSelect"
             >
-              <option value="all">All Roles</option>
+              <option value="all">Все роли</option>
               {(['Tank', 'Damage', 'Support'] as HeroRole[]).map(role => (
                 <option key={role} value={role}>
                   {getRoleIcon(role)} {ROLE_LABELS[role]}
@@ -109,7 +109,7 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
           </label>
 
           <label className="tierSelectField">
-            <span className="tierSelectLabel">Input</span>
+            <span className="tierSelectLabel">Устройство</span>
             <select
               value={filters.input}
               onChange={(event) => setFilter('input', event.target.value as MetaFilters['input'])}
@@ -122,7 +122,7 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
           </label>
 
           <label className="tierSelectField">
-            <span className="tierSelectLabel">Game Mode</span>
+            <span className="tierSelectLabel">Режим</span>
             <select
               value={filters.gameMode}
               onChange={(event) => setFilter('gameMode', event.target.value as MetaFilters['gameMode'])}
@@ -136,7 +136,7 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
 
           {filters.gameMode === 'competitive' && (
             <label className="tierSelectField">
-              <span className="tierSelectLabel">Tier</span>
+              <span className="tierSelectLabel">Ранг</span>
               <select
                 value={filters.rankTier}
                 onChange={(event) => setFilter('rankTier', event.target.value as MetaFilters['rankTier'])}
@@ -150,7 +150,7 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
           )}
 
           <label className="tierSelectField">
-            <span className="tierSelectLabel">Map</span>
+            <span className="tierSelectLabel">Карта</span>
             <select
               value={filters.map}
               onChange={(event) => setFilter('map', event.target.value as MetaFilters['map'])}
@@ -167,7 +167,7 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
           </label>
 
           <label className="tierSelectField">
-            <span className="tierSelectLabel">Region</span>
+            <span className="tierSelectLabel">Регион</span>
             <select
               value={filters.region}
               onChange={(event) => setFilter('region', event.target.value as MetaFilters['region'])}

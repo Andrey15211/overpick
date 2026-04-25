@@ -12,12 +12,17 @@
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-border);
   overflow: hidden;
-  transition: all var(--transition-normal);
+  transition:
+    border-color 360ms ease,
+    box-shadow 360ms ease,
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  animation: fadeInScale 460ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
 .tierRow:hover {
   border-color: var(--color-border-hover);
   box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
 }
 
 .tierLabel {
@@ -70,7 +75,11 @@
   border-radius: var(--radius-md);
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition:
+    background 320ms ease,
+    border-color 320ms ease,
+    box-shadow 320ms ease,
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
   min-width: 85px;
   text-decoration: none;
   color: inherit;
@@ -79,8 +88,8 @@
 .tierHeroCard:hover {
   background: var(--color-bg-hover);
   border-color: var(--color-accent);
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.34);
   color: inherit;
 }
 
@@ -156,10 +165,22 @@
 /* Фильтры */
 .tierControlPanel {
   margin-bottom: var(--spacing-lg);
-  padding: var(--spacing-md);
-  background: linear-gradient(180deg, rgba(0, 86, 179, 0.92), rgba(0, 58, 128, 0.92));
-  border: 1px solid rgba(0, 191, 255, 0.25);
+  padding: var(--spacing-lg);
+  background:
+    linear-gradient(135deg, rgba(0, 191, 255, 0.045), transparent 55%),
+    var(--color-bg-card);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition:
+    border-color 360ms ease,
+    box-shadow 360ms ease,
+    background 360ms ease;
+}
+
+.tierControlPanel:hover {
+  border-color: var(--color-border-hover);
   box-shadow: var(--shadow-md);
 }
 
@@ -178,11 +199,11 @@
 }
 
 .tierSelectLabel {
-  color: white;
+  color: var(--color-text-secondary);
   font-family: var(--font-heading);
-  font-size: var(--font-size-sm);
-  font-weight: 800;
-  letter-spacing: 0.03em;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -190,30 +211,35 @@
   width: 100%;
   min-height: 42px;
   padding: 0 34px 0 10px;
-  background: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  border-radius: var(--radius-sm);
-  color: #131722;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
   font-family: var(--font-heading);
   font-size: var(--font-size-sm);
-  font-weight: 800;
+  font-weight: 700;
   text-transform: uppercase;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.18);
+  transition:
+    border-color 280ms ease,
+    box-shadow 280ms ease,
+    background 280ms ease;
 }
 
 .tierSelect:focus {
-  outline: 2px solid var(--color-accent-blue);
+  outline: 2px solid rgba(0, 191, 255, 0.35);
   outline-offset: 2px;
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.08);
 }
 
 .tierSelect option,
 .tierSelect optgroup {
-  color: #131722;
-  background: #ffffff;
+  color: var(--color-text);
+  background: var(--color-bg-secondary);
   font-family: var(--font-primary);
   text-transform: none;
 }
@@ -227,17 +253,17 @@
 
 .tierActiveSlice span {
   padding: 4px 9px;
-  background: rgba(5, 5, 8, 0.42);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 191, 255, 0.08);
+  border: 1px solid rgba(0, 191, 255, 0.16);
   border-radius: var(--radius-full);
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--color-text-secondary);
   font-size: var(--font-size-xs);
   font-weight: 600;
 }
 
 .tierMethodology {
   margin-top: var(--spacing-sm);
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
 }
 
@@ -258,19 +284,25 @@
   flex-direction: column;
   gap: 2px;
   padding: 8px 10px;
-  background: rgba(5, 5, 8, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  color: white;
+  color: var(--color-text);
+  transition:
+    border-color 260ms ease,
+    background 260ms ease,
+    transform 260ms ease;
 }
 
 .tierMethodologyBody a:hover {
-  border-color: rgba(255, 255, 255, 0.22);
-  color: white;
+  border-color: var(--color-border-hover);
+  background: var(--color-bg-hover);
+  color: var(--color-text);
+  transform: translateY(-1px);
 }
 
 .tierMethodologyBody span {
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-text-secondary);
   font-size: var(--font-size-xs);
   line-height: 1.4;
 }

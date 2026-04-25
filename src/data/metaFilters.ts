@@ -46,89 +46,89 @@ export const META_SOURCE_NOTES = [
 ] as const;
 
 export const INPUT_OPTIONS: { value: MetaInput; label: string }[] = [
-  { value: 'pc', label: 'Mouse & Keyboard' },
-  { value: 'console', label: 'Controller' },
+  { value: 'pc', label: 'Мышь и клавиатура' },
+  { value: 'console', label: 'Геймпад' },
 ];
 
 export const GAME_MODE_OPTIONS: { value: MetaGameMode; label: string }[] = [
-  { value: 'quick-play', label: 'Quick Play - Role Queue' },
-  { value: 'competitive', label: 'Competitive - Role Queue' },
+  { value: 'quick-play', label: 'Быстрая игра - очередь ролей' },
+  { value: 'competitive', label: 'Соревновательная игра - очередь ролей' },
 ];
 
 export const RANK_TIER_OPTIONS: { value: MetaRankTier; label: string }[] = [
-  { value: 'all', label: 'All Tiers' },
-  { value: 'bronze', label: 'Bronze' },
-  { value: 'silver', label: 'Silver' },
-  { value: 'gold', label: 'Gold' },
-  { value: 'platinum', label: 'Platinum' },
-  { value: 'diamond', label: 'Diamond' },
-  { value: 'master', label: 'Master' },
-  { value: 'grandmaster', label: 'Grandmaster and Champion' },
+  { value: 'all', label: 'Все ранги' },
+  { value: 'bronze', label: 'Бронза' },
+  { value: 'silver', label: 'Серебро' },
+  { value: 'gold', label: 'Золото' },
+  { value: 'platinum', label: 'Платина' },
+  { value: 'diamond', label: 'Алмаз' },
+  { value: 'master', label: 'Мастер' },
+  { value: 'grandmaster', label: 'Грандмастер и Чемпион' },
 ];
 
 export const REGION_OPTIONS: { value: MetaRegion; label: string }[] = [
-  { value: 'americas', label: 'Americas' },
-  { value: 'asia', label: 'Asia' },
-  { value: 'europe', label: 'Europe' },
+  { value: 'americas', label: 'Америка' },
+  { value: 'asia', label: 'Азия' },
+  { value: 'europe', label: 'Европа' },
 ];
 
 export const MAP_GROUPS: { label: string; options: { value: MetaMap; label: string }[] }[] = [
   {
-    label: 'General',
-    options: [{ value: 'all-maps', label: 'All Maps' }],
+    label: 'Общее',
+    options: [{ value: 'all-maps', label: 'Все карты' }],
   },
   {
-    label: 'Control',
+    label: 'Контроль',
     options: [
-      { value: 'antarctic-peninsula', label: 'Antarctic Peninsula' },
-      { value: 'busan', label: 'Busan' },
-      { value: 'ilios', label: 'Ilios' },
-      { value: 'lijiang-tower', label: 'Lijiang Tower' },
-      { value: 'nepal', label: 'Nepal' },
-      { value: 'oasis', label: 'Oasis' },
-      { value: 'samoa', label: 'Samoa' },
+      { value: 'antarctic-peninsula', label: 'Антарктический полуостров' },
+      { value: 'busan', label: 'Пусан' },
+      { value: 'ilios', label: 'Илиос' },
+      { value: 'lijiang-tower', label: 'Башня Лицзян' },
+      { value: 'nepal', label: 'Непал' },
+      { value: 'oasis', label: 'Оазис' },
+      { value: 'samoa', label: 'Самоа' },
     ],
   },
   {
-    label: 'Escort',
+    label: 'Сопровождение',
     options: [
-      { value: 'circuit-royal', label: 'Circuit Royal' },
-      { value: 'dorado', label: 'Dorado' },
-      { value: 'havana', label: 'Havana' },
-      { value: 'junkertown', label: 'Junkertown' },
-      { value: 'rialto', label: 'Rialto' },
-      { value: 'route-66', label: 'Route 66' },
-      { value: 'shambali-monastery', label: 'Shambali Monastery' },
-      { value: 'watchpoint-gibraltar', label: 'Watchpoint: Gibraltar' },
+      { value: 'circuit-royal', label: 'Трасса Рояль' },
+      { value: 'dorado', label: 'Дорадо' },
+      { value: 'havana', label: 'Гавана' },
+      { value: 'junkertown', label: 'Джанкертаун' },
+      { value: 'rialto', label: 'Риальто' },
+      { value: 'route-66', label: 'Шоссе 66' },
+      { value: 'shambali-monastery', label: 'Монастырь Шамбали' },
+      { value: 'watchpoint-gibraltar', label: 'Пост наблюдения: Гибралтар' },
     ],
   },
   {
-    label: 'Flashpoint',
+    label: 'Точка вспышки',
     options: [
-      { value: 'aatlis', label: 'Aatlis' },
-      { value: 'new-junk-city', label: 'New Junk City' },
-      { value: 'suravasa', label: 'Suravasa' },
+      { value: 'aatlis', label: 'Атлис' },
+      { value: 'new-junk-city', label: 'Новый Джанкертаун' },
+      { value: 'suravasa', label: 'Сураваса' },
     ],
   },
   {
-    label: 'Hybrid',
+    label: 'Гибрид',
     options: [
-      { value: 'blizzard-world', label: 'Blizzard World' },
-      { value: 'eichenwalde', label: 'Eichenwalde' },
-      { value: 'hollywood', label: 'Hollywood' },
-      { value: 'kings-row', label: "King's Row" },
-      { value: 'midtown', label: 'Midtown' },
-      { value: 'numbani', label: 'Numbani' },
-      { value: 'paraiso', label: 'Paraíso' },
+      { value: 'blizzard-world', label: 'Мир Blizzard' },
+      { value: 'eichenwalde', label: 'Айхенвальд' },
+      { value: 'hollywood', label: 'Голливуд' },
+      { value: 'kings-row', label: 'Кингс Роу' },
+      { value: 'midtown', label: 'Мидтаун' },
+      { value: 'numbani', label: 'Нумбани' },
+      { value: 'paraiso', label: 'Параисо' },
     ],
   },
   {
-    label: 'Push',
+    label: 'Натиск',
     options: [
-      { value: 'colosseo', label: 'Colosseo' },
-      { value: 'esperanca', label: 'Esperança' },
-      { value: 'new-queen-street', label: 'New Queen Street' },
-      { value: 'runasapi', label: 'Runasapi' },
+      { value: 'colosseo', label: 'Колизей' },
+      { value: 'esperanca', label: 'Эсперанса' },
+      { value: 'new-queen-street', label: 'Новая Куин-стрит' },
+      { value: 'runasapi', label: 'Рунасапи' },
     ],
   },
 ];
