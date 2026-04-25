@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     default: "Overpick - Контрпики Overwatch",
     template: "%s | Overpick"
   },
-  description: "Контрпики, тир-листы и патч-ноты Overwatch 2 для Season 2: Summit. Обновлено под патч от 14 апреля 2026 года, включая Sierra и свежую мету.",
+  description: "Контрпики, тир-листы и патч-ноты Overwatch 2 для Season 2: Summit. Обновлено под hotfix от 23 апреля 2026 года, включая Sierra и свежую мету.",
   keywords: ["overwatch", "контрпики", "мета", "герои", "патчи", "тир-лист", "sierra", "season 2 summit", "overwatch 2", "counters", "tier list"],
   authors: [{ name: "Overpick Team" }],
   creator: "Overpick",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Overpick - Контрпики Overwatch",
-    description: "Найди лучший контрпик для любого героя Overwatch 2 на патче Season 2: Summit",
+    description: "Найди лучший контрпик для любого героя Overwatch 2 на патче Season 2: Summit от 23 апреля 2026",
   },
 };
 
