@@ -9,7 +9,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Мета и Тир-лист',
-  description: 'Актуальный тир-лист героев Overwatch 2 для Season 2: Summit с обновлением под патч от 14 апреля 2026 года.',
+  description: 'Фильтруемый тир-лист героев Overwatch для Season 2: Summit: статистика Blizzard, свежие tier-листы и pro/high-rank сигналы.',
 };
 
 // Типизация данных
@@ -41,7 +41,7 @@ export default function MetaPage() {
             Текущая <span>Мета</span>
           </h1>
           <p className={styles.metaSubtitle}>
-            Тир-лист героев Overwatch 2 на основе официальной статистики Blizzard и свежих патч-нотов
+            Тир-лист героев Overwatch на основе статистики Blizzard, свежих экспертных tier-листов и pro/high-rank меты
           </p>
           <div className={styles.metaInfo}>
             <div className={styles.metaInfoItem}>
@@ -59,7 +59,11 @@ export default function MetaPage() {
           </div>
           {/* Описание меты */}
           <div className={styles.metaDesc}>
-            <p>{meta.metaDescription}</p>
+            <p>
+              {meta.metaDescription} Теперь тиры пересчитываются под выбранный input, режим,
+              карту, регион и ранг: для обычных игроков сильнее учитывается статистика, а для
+              Competitive и высоких рангов больше весит свежая экспертная и pro-oriented мета.
+            </p>
           </div>
         </header>
 
