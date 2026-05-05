@@ -2,17 +2,17 @@
   "season": 2,
   "seasonName": "Сезон 2: Summit",
   "patch": "2.1",
-  "lastUpdated": "2026-04-29",
+  "lastUpdated": "2026-05-05",
   "sources": [
-    "Blizzard Hero Statistics (default PC Role Queue slice, refreshed after April 23 hotfix)",
+    "Blizzard Hero Statistics (current PC Role Queue slice)",
+    "Overwatch Retail Patch Notes - April 28, 2026 Bug Fix Update",
     "Overwatch Retail Patch Notes - April 23, 2026 Balance Hotfix",
     "Overwatch Retail Patch Notes - April 17, 2026 Sierra Hotfix",
     "PC Gamer Season 2 Summit Tier List - April 23, 2026",
     "PCGamesN Overwatch Tier List - updated April 21, 2026",
-    "PlayerAuctions Season 2 Summit Tier List - April 16, 2026",
-    "Overwatch - Heroes - Sierra"
+    "PlayerAuctions Season 2 Summit Tier List - April 16, 2026"
   ],
-  "metaDescription": "Тир-лист обновлён под Season 2: Summit после balance hotfix от 23 апреля 2026 года. Базовые pick rate и win rate взяты из официальной страницы Blizzard Hero Statistics, а итоговые тиры сверены с актуальными экспертными tier-листами PC Gamer, PCGamesN и PlayerAuctions, чтобы учесть быстрые правки Roadhog, Sombra, Vendetta и более свежую оценку Sierra после её hotfix-баффов.",
+  "metaDescription": "Тир-лист обновлён под Season 2: Summit с учётом официальной страницы Blizzard Hero Statistics и последних patch notes от 28 апреля 2026 года. Базовые pick rate и win rate берутся из текущего публичного среза Blizzard, а итоговые тиры сверяются с актуальными экспертными tier-листами PC Gamer, PCGamesN и PlayerAuctions, чтобы учесть правки Roadhog, Sombra, Vendetta и Sierra.",
   "tiers": {
     "S": {
       "label": "Высший тир",

@@ -1,0 +1,24 @@
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://127.0.0.1:3100
+- Network:       http://127.0.0.1:3100
+
+✓ Starting...
+✓ Ready in 1145ms
+ GET /meta 200 in 644ms (compile: 296ms, render: 348ms)
+ GET /meta 200 in 238ms (compile: 5ms, render: 233ms)
+ GET /meta 200 in 265ms (compile: 6ms, render: 259ms)
+ GET /meta 200 in 183ms (compile: 3ms, render: 179ms)
+ GET /meta 200 in 156ms (compile: 4ms, render: 152ms)
+ GET / 200 in 489ms (compile: 448ms, render: 41ms)
+ GET /meta 200 in 58ms (compile: 3ms, render: 55ms)
+✓ Compiled in 17ms
+✓ Compiled in 5ms
+✓ Compiled in 6ms
+ GET /meta 200 in 239ms (compile: 4ms, render: 235ms)
+ GET /meta 200 in 242ms (compile: 4ms, render: 238ms)
+ GET /meta 200 in 167ms (compile: 4ms, render: 163ms)
+✓ Compiled in 9ms
+✓ Compiled in 2ms
+✓ Compiled in 13ms
+✓ Compiled in 4ms
+✓ Compiled in 1ms

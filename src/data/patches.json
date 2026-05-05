@@ -1,5 +1,18 @@
 [
   {
+    "patchId": "ow-s2-bugfix-2026-04-28",
+    "date": "2026-04-28",
+    "version": "2.1.1",
+    "title": "🧰 Season 2: Summit — Bug Fix Update",
+    "changes": [
+      {
+        "heroId": "ramattra",
+        "type": "rework",
+        "description": "Replay codes были сброшены вместе с обновлением, но баланс-правок героев в этом патче нет."
+      }
+    ]
+  },
+  {
     "patchId": "ow-s2-hotfix-2026-04-23",
     "date": "2026-04-23",
     "version": "2.1",
