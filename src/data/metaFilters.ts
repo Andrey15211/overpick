@@ -23,13 +23,13 @@ export const META_SOURCE_NOTES = [
     id: 'blizzard-2026-04-23',
     label: 'Blizzard April 23 Balance Hotfix',
     url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/pc?blzcmp=app',
-    weight: 'Свежие изменения Roadhog, Sombra и Vendetta после старта Season 2.',
+    weight: 'Предыдущий balance hotfix с правками Roadhog, Sombra и Vendetta после старта Season 2.',
   },
   {
     id: 'blizzard-2026-04-28',
     label: 'Blizzard April 28 Bug Fix Update',
     url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/pc?blzcmp=app',
-    weight: 'Последний опубликованный патч без balance changes, полезен для отметки актуальности данных.',
+    weight: 'Последний опубликованный патч без balance changes; полезен как маркер актуальности и reset replay codes.',
   },
   {
     id: 'blizzard-2026-04-17',

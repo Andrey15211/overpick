@@ -7,8 +7,8 @@ export const metadata: Metadata = {
     default: "Overpick - Контрпики Overwatch",
     template: "%s | Overpick"
   },
-  description: "Контрпики, тир-листы и патч-ноты Overwatch 2 для Season 2: Summit. Обновлено под hotfix от 23 апреля 2026 года, включая Sierra и свежую мету.",
-  keywords: ["overwatch", "контрпики", "мета", "герои", "патчи", "тир-лист", "sierra", "season 2 summit", "overwatch 2", "counters", "tier list"],
+  description: "Контрпики, тир-листы и патч-ноты Overwatch 2 для Season 2: Summit. Обновлено под bug fix update от 28 апреля 2026 года, включая Sierra и свежую мету.",
+  keywords: ["overwatch", "контрпики", "мета", "герои", "патчи", "тир-лист", "sierra", "season 2 summit", "bug fix update", "overwatch 2", "counters", "tier list"],
   authors: [{ name: "Overpick Team" }],
   creator: "Overpick",
   publisher: "Overpick",
@@ -27,12 +27,12 @@ export const metadata: Metadata = {
     url: "https://overpick-phi.vercel.app",
     siteName: "Overpick",
     title: "Overpick - Контрпики Overwatch",
-    description: "Найди лучший контрпик для любого героя Overwatch 2. Актуальная мета Season 2: Summit.",
+    description: "Найди лучший контрпик для любого героя Overwatch 2. Актуальная мета Season 2: Summit после обновления от 28 апреля 2026 года.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Overpick - Контрпики Overwatch",
-    description: "Найди лучший контрпик для любого героя Overwatch 2 на патче Season 2: Summit от 23 апреля 2026",
+    description: "Найди лучший контрпик для любого героя Overwatch 2 на патче Season 2: Summit с учетом обновления Blizzard от 28 апреля 2026 года",
   },
 };
 

@@ -61,7 +61,7 @@ export default function PatchesPage() {
             История <span>Патчей</span>
           </h1>
           <p className={styles.patchesSubtitle}>
-            Баффы, нерфы и реворки героев Overwatch 2, включая Season 2: Summit
+            Баффы, нерфы и реворки героев Overwatch 2, включая Season 2: Summit и bug fix update от 28 апреля 2026
           </p>
         </header>
 

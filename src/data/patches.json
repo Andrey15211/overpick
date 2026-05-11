@@ -9,6 +9,11 @@
         "heroId": "ramattra",
         "type": "rework",
         "description": "Replay codes были сброшены вместе с обновлением, но баланс-правок героев в этом патче нет."
+      },
+      {
+        "heroId": "sierra",
+        "type": "buff",
+        "description": "4v4 Evolved и общие bug fixes подтверждают актуальность текущего среза, но числовых правок Sierra в этом патче нет."
       }
     ]
   },
