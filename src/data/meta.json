@@ -2,15 +2,15 @@
   "season": 2,
   "seasonName": "Сезон 2: Summit",
   "patch": "2.1",
-  "lastUpdated": "2026-05-11",
+  "lastUpdated": "2026-05-14",
   "sources": [
-    "Blizzard Hero Statistics (PC, Competitive - Role Queue, Americas)",
-    "Overwatch Retail Patch Notes - April 28, 2026 Bug Fix Update",
-    "Overwatch Retail Patch Notes - April 23, 2026 Balance Hotfix",
-    "Overwatch Retail Patch Notes - April 14, 2026 Season 2: Summit Patch Notes",
-    "Overwatch Season 2: Summit announcement - April 13, 2026"
+    "Blizzard Hero Statistics: Competitive - Role Queue, PC, Americas",
+    "Overwatch Retail Patch Notes: April 28, 2026 Bug Fix Update",
+    "Overwatch Retail Patch Notes: April 23, 2026 Balance Hotfix",
+    "Overwatch Retail Patch Notes: April 14, 2026 Season 2: Summit",
+    "Overwatch Season 2: Summit announcement: April 13, 2026"
   ],
-  "metaDescription": "Тир-лист обновлён под Season 2: Summit по официальным данным Blizzard Hero Statistics для Competitive Role Queue на PC (Americas) и последним патчноутам от 28 апреля 2026 года. Базовые pick rate и win rate берутся из текущего публичного среза Blizzard, а итоговые тиры отражают изменения после Season 2: Summit, hotfix от 23 апреля и bug fix-патча 28 апреля.",
+  "metaDescription": "Тир-лист обновлён под Season 2: Summit по официальным данным Blizzard Hero Statistics для Competitive Role Queue на PC (Americas) и последним опубликованным патчноутам Blizzard от 28 апреля 2026 года. Базовые pick rate и win rate берутся из текущего публичного среза Blizzard, а итоговые тиры отражают изменения после Season 2: Summit, hotfix от 23 апреля и bug fix-патча 28 апреля.",
   "tiers": {
     "S": {
       "label": "Высший тир",

@@ -25,7 +25,7 @@ export default function HeroesPage() {
             Все <span>Герои</span>
           </h1>
           <p className={styles.heroesSubtitle}>
-            Выбери героя для просмотра контрпиков и информации о мете
+            Выбери героя для просмотра контрпиков и информации о мете по состоянию на 14 мая 2026 года
           </p>
         </header>
 

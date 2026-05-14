@@ -22,19 +22,19 @@ export const META_SOURCE_NOTES = [
   {
     id: 'blizzard-2026-04-23',
     label: 'Blizzard April 23 Balance Hotfix',
-    url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/pc?blzcmp=app',
+    url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/live/2026/04/',
     weight: 'Предыдущий balance hotfix с правками Roadhog, Sombra и Vendetta после старта Season 2.',
   },
   {
     id: 'blizzard-2026-04-28',
     label: 'Blizzard April 28 Bug Fix Update',
-    url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/pc?blzcmp=app',
+    url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/live/2026/04/',
     weight: 'Последний опубликованный патч без balance changes; полезен как маркер актуальности и reset replay codes.',
   },
   {
     id: 'blizzard-2026-04-17',
     label: 'Blizzard April 17 Sierra Hotfix',
-    url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/live/2026/04',
+    url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/live/2026/04/',
     weight: 'Launch hotfix для Sierra: урон, Anchor Drone и Medi-Drone.',
   },
   {
