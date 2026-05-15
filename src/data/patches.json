@@ -1,5 +1,53 @@
 [
   {
+    "patchId": "ow-s2-midcycle-2026-05-12",
+    "date": "2026-05-12",
+    "version": "2.1.2",
+    "title": "🎉 Season 2: Summit — 10th Anniversary Midcycle",
+    "changes": [
+      {
+        "heroId": "freja",
+        "type": "buff",
+        "description": "Updraft: cooldown reduced from 12 to 10 seconds. Rising Winds no longer reduces height gained from Updraft. Bounty Hunting now grants 33% Ultimate charge on final blows."
+      },
+      {
+        "heroId": "sierra",
+        "type": "nerf",
+        "description": "Helix Rifle: weapon fire volume reduced."
+      },
+      {
+        "heroId": "pharah",
+        "type": "nerf",
+        "description": "Concussive Force damage reduced from 50 to 30, and Rocket Salvo damage reduced from 40 to 30 per rocket."
+      },
+      {
+        "heroId": "kiriko",
+        "type": "nerf",
+        "description": "Protection Suzu no longer grants the extra 30 healing after cleansing negative status effects."
+      },
+      {
+        "heroId": "lucio",
+        "type": "nerf",
+        "description": "Sound Barrier overhealth reduced from 750 to 625 and duration reduced from 6 to 5 seconds."
+      },
+      {
+        "heroId": "mercy",
+        "type": "buff",
+        "description": "Guardian Angel's base launch speed was restored, and Winged Reach now increases Guardian Angel range by 30%."
+      },
+      {
+        "heroId": "jetpackcat",
+        "type": "buff",
+        "description": "New Stadium Hero Item and Power tuning landed for Jetpack Cat, including stronger Purr and Lifeline synergy options."
+      },
+      {
+        "heroId": "wuyang",
+        "type": "buff",
+        "description": "Colossus Core duration reduced from 5 to 3 seconds and Refresher cost reduced from 13000 to 12000."
+      }
+    ]
+  },
+  {
     "patchId": "ow-s2-bugfix-2026-04-28",
     "date": "2026-04-28",
     "version": "2.1.1",

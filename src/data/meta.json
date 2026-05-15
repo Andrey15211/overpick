@@ -2,15 +2,16 @@
   "season": 2,
   "seasonName": "Сезон 2: Summit",
   "patch": "2.1",
-  "lastUpdated": "2026-05-14",
+  "lastUpdated": "2026-05-15",
   "sources": [
-    "Blizzard Hero Statistics: Competitive - Role Queue, PC, Americas",
+    "Blizzard Hero Statistics: PC, Americas, live Hero Stats page updated with Season 2 midcycle changes on May 12, 2026",
+    "Overwatch Retail Patch Notes: May 12, 2026 10th Anniversary Midcycle",
     "Overwatch Retail Patch Notes: April 28, 2026 Bug Fix Update",
     "Overwatch Retail Patch Notes: April 23, 2026 Balance Hotfix",
     "Overwatch Retail Patch Notes: April 14, 2026 Season 2: Summit",
     "Overwatch Season 2: Summit announcement: April 13, 2026"
   ],
-  "metaDescription": "Тир-лист обновлён под Season 2: Summit по официальным данным Blizzard Hero Statistics для Competitive Role Queue на PC (Americas) и последним опубликованным патчноутам Blizzard от 28 апреля 2026 года. Базовые pick rate и win rate берутся из текущего публичного среза Blizzard, а итоговые тиры отражают изменения после Season 2: Summit, hotfix от 23 апреля и bug fix-патча 28 апреля.",
+  "metaDescription": "Тир-лист обновлён под Season 2: Summit по официальным данным Blizzard Hero Statistics для PC (Americas) и последним опубликованным патчноутам Blizzard от 12 мая 2026 года. Базовые pick rate и win rate берутся из текущего публичного среза Blizzard, а итоговые тиры отражают изменения после 10th Anniversary midcycle, bug fix-патча 28 апреля и Balance Hotfix от 23 апреля.",
   "tiers": {
     "S": {
       "label": "Высший тир",
@@ -181,10 +182,10 @@
     },
     {
       "heroId": "freja",
-      "tier": "D",
-      "pickRate": 5.9,
-      "winRate": 44.7,
-      "whyMeta": "Фрея после последних правок выглядит одной из самых слабых DPS опций сезона: свежие tier-листы почти единогласно держат её в D-tier."
+      "tier": "C",
+      "pickRate": 2.7,
+      "winRate": 47.7,
+      "whyMeta": "Фрея получила прямой бафф в midcycle-патче от 12 мая: её мобильность и темп входа выросли, поэтому она поднялась из самого низа в более рабочий ситуативный выбор."
     },
     {
       "heroId": "genji",
@@ -217,9 +218,9 @@
     {
       "heroId": "pharah",
       "tier": "S",
-      "pickRate": 3.9,
-      "winRate": 52.0,
-      "whyMeta": "Pharah сильно выиграла от сезонных perk- и kit-правок: вертикальное давление снова очень ценно, а свежие tier-листы и Blizzard stats подтверждают её высокий статус."
+      "pickRate": 8.1,
+      "winRate": 56.7,
+      "whyMeta": "Pharah сильно выиграла от сезонных perk- и kit-правок и после midcycle-патча остаётся одним из самых результативных DPS на официальном срезе Blizzard."
     },
     {
       "heroId": "reaper",
@@ -245,9 +246,9 @@
     {
       "heroId": "sierra",
       "tier": "B",
-      "pickRate": 5.2,
-      "winRate": 44.6,
-      "whyMeta": "Sierra усилили hotfix-патчем 17 апреля: урон Helix Rifle и Tracking Shot вырос, Anchor Drone стал живучее, а Medi-Drone лечит больше. Экспертные списки уже подняли её выше релизной оценки, но официальная страница Blizzard пока не даёт стабильный публичный срез, поэтому базово она остаётся верхним B-tier с потенциалом роста."
+      "pickRate": 15,
+      "winRate": 48.9,
+      "whyMeta": "Sierra остаётся сильным гибридным DPS, но официальный срез Blizzard после midcycle показывает скорее стабильный middle tier, чем безусловную элиту."
     },
     {
       "heroId": "sombra",
@@ -329,9 +330,9 @@
     {
       "heroId": "jetpackcat",
       "tier": "A",
-      "pickRate": 35.7,
-      "winRate": 52.2,
-      "whyMeta": "Jetpack Cat хороша там, где важны вертикальные углы и безопасное лечение. После Summit-патча герой всё ещё стабильно держится в верхней части support-пула."
+      "pickRate": 4.6,
+      "winRate": 49.9,
+      "whyMeta": "Jetpack Cat остаётся нишевым, но полезным support-выбором с сильной вертикальной игрой и гибкими Stadium-опциями."
     },
     {
       "heroId": "juno",
@@ -343,9 +344,9 @@
     {
       "heroId": "kiriko",
       "tier": "C",
-      "pickRate": 15.1,
-      "winRate": 46.0,
-      "whyMeta": "Кирико всё ещё популярна, но текущая форма после нерфа дальности телепорта оценивается заметно скромнее: её берут часто, но результаты уже не S-tier."
+      "pickRate": 43.2,
+      "winRate": 48.6,
+      "whyMeta": "Кирико остаётся одной из самых популярных поддержек, но midcycle-нерф Suzu и смещение меты удерживают её ближе к середине пула по результативности."
     },
     {
       "heroId": "lifeweaver",
@@ -357,16 +358,16 @@
     {
       "heroId": "lucio",
       "tier": "A",
-      "pickRate": 7.7,
-      "winRate": 52.2,
-      "whyMeta": "Лусио всегда ценен в мете, где темп файта решает слишком много. Speed boost и живучесть по-прежнему делают его одним из лучших саппортов патча."
+      "pickRate": 10.4,
+      "winRate": 51.2,
+      "whyMeta": "Лусио остаётся ценным за темп и engage/disengage, хотя нерф Sound Barrier чуть снижает его потолок ценности."
     },
     {
       "heroId": "mercy",
       "tier": "A",
-      "pickRate": 20.1,
-      "winRate": 47.8,
-      "whyMeta": "Mercy сильно выиграла от переноса Flash Heal в базовый кит. Даже после компенсационных нерфов она остаётся одним из самых надёжных high-value саппортов для ranked."
+      "pickRate": 14.7,
+      "winRate": 52.3,
+      "whyMeta": "Mercy восстановила часть мобильности в midcycle-патче и снова стала заметно стабильнее в ранкеде."
     },
     {
       "heroId": "mizuki",
