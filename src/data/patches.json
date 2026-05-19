@@ -1,49 +1,208 @@
 [
   {
+    "patchId": "ow-s2-bugfix-hotfix-2026-05-14",
+    "date": "2026-05-14",
+    "version": "2.1.3",
+    "title": "🔧 Season 2: Summit — Bug Fix Hotfix (May 14)",
+    "summary": "Хотфикс с исправлением багов и корректировкой Stadium-режима. Jetpack Cat получил бафф валюты.",
+    "changes": [
+      {
+        "heroId": "jetpackcat",
+        "type": "buff",
+        "ability": "Stadium Currency",
+        "description": "Скорость накопления валюты от лечения и урона увеличена на 7.14%.",
+        "devComment": "Stadium: повышение gain rate."
+      },
+      {
+        "heroId": "freja",
+        "type": "buff",
+        "ability": "Lille Fælde",
+        "description": "Исправлен баг, из-за которого Mini Bola от Lille Fælde наносила больше урона, чем задумано. Перк включён обратно.",
+        "devComment": "Bug fix: перк был временно отключён."
+      },
+      {
+        "heroId": "juno",
+        "type": "buff",
+        "ability": "Blink Boosts",
+        "description": "Исправлен баг, из-за которого Blink Boosts мог постоянно активировать On Ability эффекты при последнем заряде. Перк включён обратно.",
+        "devComment": "Bug fix: перк был временно отключён."
+      },
+      {
+        "heroId": "ramattra",
+        "type": "buff",
+        "ability": "Void Barrier",
+        "description": "Исправлен баг, из-за которого переключение Void Barrier активировало On Ability эффекты. Кулдаун теперь виден во время Nemesis Form.",
+        "devComment": "Bug fix + UI улучшение."
+      },
+      {
+        "heroId": "backstabber",
+        "type": "buff",
+        "ability": "Backstabber",
+        "description": "Исправлен баг, из-за которого Backstabber давал лишние bleed procs на критических попаданиях. Перк включён обратно.",
+        "devComment": "Bug fix: perk was temporarily disabled."
+      }
+    ]
+  },
+  {
     "patchId": "ow-s2-midcycle-2026-05-12",
     "date": "2026-05-12",
     "version": "2.1.2",
     "title": "🎉 Season 2: Summit — 10th Anniversary Midcycle",
+    "summary": "Масштабный межсезонный патч: переработка подкласса Инициатор, нерфы D.Va и Emre, баффы Freja, Baptiste и Junker Queen. Pharah ослаблена после доминирования в мете. Mercy получила новый перк Winged Reach.",
     "changes": [
+      {
+        "heroId": "Подкласс Инициатор",
+        "type": "rework",
+        "ability": "Subrole Passive",
+        "description": "Пассивка больше не активируется в воздухе. Теперь срабатывает при использовании конкретных movement ability: Winston — Jump Pack, D.Va — Boosters, Hazard — Violent Lunge, Wrecking Ball — Grappling Claw, Doomfist — Rocket Punch. Лечение снижено с 60 до 50.",
+        "values": "60 → 50 HP heal",
+        "devComment": "Изменение делает подкласс Инициатор более осознанным. Привязка триггера к конкретным способностям даёт игрокам больше контроля над доступом к лечению."
+      },
+      {
+        "heroId": "dva",
+        "type": "nerf",
+        "ability": "Micro Missiles",
+        "description": "Урон при попадании ракеты снижен с 3 до 2.",
+        "values": "3 → 2 impact damage",
+        "devComment": "Снижение эффективности быстрого устранения целей с низким запасом здоровья, уменьшение assassination-потенциала D.Va."
+      },
+      {
+        "heroId": "doomfist",
+        "type": "buff",
+        "ability": "Seismic Slam / Empowered Punch",
+        "description": "Seismic Slam: камера и ударная волна теперь активируются позже для лучшей синхронизации с анимацией. Empowered Punch: добавлены визуальные и звуковые эффекты перед истечением таймера.",
+        "devComment": "QoL улучшения для лучшей визуальной обратной связи."
+      },
+      {
+        "heroId": "junkerqueen",
+        "type": "buff",
+        "ability": "Adrenaline Rush",
+        "description": "(Только 5v5) Множитель самоисцеления от урона Ран увеличен с 2.25x до 2.5x.",
+        "values": "2.25x → 2.5x self-heal",
+        "devComment": "С ограниченной защитной митигацией Junker Queen с трудом держится в затяжных боях. Это увеличивает награду за успешное нанесение Ран."
+      },
+      {
+        "heroId": "emre",
+        "type": "nerf",
+        "ability": "Siphon Blaster",
+        "description": "Конвертация урона в лечение снижена с 80% до 60%.",
+        "values": "80% → 60% healing conversion",
+        "devComment": "Способность Emre выживать при постоянном давлении на ближней дистанции превышала запланированный уровень."
+      },
+      {
+        "heroId": "emre",
+        "type": "nerf",
+        "ability": "Cyber Frag",
+        "description": "Радиус максимального взрывного урона уменьшен с 2 до 1.5 метров.",
+        "values": "2m → 1.5m max damage radius",
+        "devComment": "Требуется большая точность для получения максимальной ценности от гранаты."
+      },
       {
         "heroId": "freja",
         "type": "buff",
-        "description": "Updraft: cooldown reduced from 12 to 10 seconds. Rising Winds no longer reduces height gained from Updraft. Bounty Hunting now grants 33% Ultimate charge on final blows."
+        "ability": "Updraft",
+        "description": "Кулдаун снижен с 12 до 10 секунд.",
+        "values": "12s → 10s cooldown"
+      },
+      {
+        "heroId": "freja",
+        "type": "buff",
+        "ability": "Rising Winds (Major Perk)",
+        "description": "Rising Winds больше не снижает высоту, набираемую от Updraft.",
+        "devComment": "Улучшение мобильности и позиционирования Freja."
+      },
+      {
+        "heroId": "freja",
+        "type": "buff",
+        "ability": "Bounty Hunting",
+        "description": "Бонусный заряд ультимейта за финальные удары увеличен с 25% до 33%.",
+        "values": "25% → 33% ult charge",
+        "devComment": "Награда за финальные удары — более частый доступ к Bola Shot."
       },
       {
         "heroId": "sierra",
         "type": "nerf",
-        "description": "Helix Rifle: weapon fire volume reduced."
+        "ability": "Helix Rifle",
+        "description": "Громкость стрельбы снижена.",
+        "devComment": "Audio polish."
       },
       {
         "heroId": "pharah",
         "type": "nerf",
-        "description": "Concussive Force damage reduced from 50 to 30, and Rocket Salvo damage reduced from 40 to 30 per rocket."
+        "ability": "Concussive Force (Minor Perk)",
+        "description": "Урон Concussive Force снижен с 50 до 30.",
+        "values": "50 → 30 damage",
+        "devComment": "Последние damage-перки Pharah слишком сильно повысили её burst damage."
+      },
+      {
+        "heroId": "pharah",
+        "type": "nerf",
+        "ability": "Rocket Salvo (Major Perk)",
+        "description": "Урон за ракету снижен с 40 до 30.",
+        "values": "40 → 30 damage per rocket"
+      },
+      {
+        "heroId": "baptiste",
+        "type": "buff",
+        "ability": "Regenerative Burst",
+        "description": "Мгновенное лечение увеличено с 40 до 50. Лечение за время увеличено с 40 до 50. Кулдаун снижен с 14 до 12 секунд.",
+        "values": "40→50 instant, 40→50 HoT, 14s→12s CD",
+        "devComment": "Долгий кулдаун ограничивал доступность Regenerative Burst в боях. Снижение кулдауна и увеличение лечения позволяют Батисту надёжнее поддерживать себя и команду."
+      },
+      {
+        "heroId": "illari",
+        "type": "nerf",
+        "ability": "Solar Rifle",
+        "description": "Базовый размер снаряда уменьшен с 0.05 до 0. Глобальный бонус размера снаряда для хитскана (0.07) всё ещё применяется.",
+        "values": "0.05 → 0 base projectile size",
+        "devComment": "Базовый размер снаряда Solar Rifle был слишком большим относительно урона. Удаление дополнительного размера лучше согласует точность с другими hitscan-героями."
       },
       {
         "heroId": "kiriko",
         "type": "nerf",
-        "description": "Protection Suzu no longer grants the extra 30 healing after cleansing negative status effects."
+        "ability": "Protection Suzu",
+        "description": "Дополнительное лечение (30 HP) после очистки негативных статусов убрано.",
+        "values": "30 → 0 cleanse heal",
+        "devComment": "Protection Suzu предоставляет мощную защитную утилиту. Удаление дополнительного лечения при очистке снижает burst-лечение."
       },
       {
         "heroId": "lucio",
         "type": "nerf",
-        "description": "Sound Barrier overhealth reduced from 750 to 625 and duration reduced from 6 to 5 seconds."
+        "ability": "Sound Barrier",
+        "description": "Overhealth снижен с 750 до 625. Длительность снижена с 6 до 5 секунд.",
+        "values": "750→625 OH, 6s→5s duration",
+        "devComment": "Sound Barrier остаётся одним из самых мощных защитных ультимейтов. Снижение overhealth и длительности усиливает важность тайминга."
       },
       {
         "heroId": "mercy",
-        "type": "buff",
-        "description": "Guardian Angel's base launch speed was restored, and Winged Reach now increases Guardian Angel range by 30%."
+        "type": "rework",
+        "ability": "Guardian Angel / Perks",
+        "description": "Перк Divine Momentum удалён. Новый перк Winged Reach: дальность Guardian Angel увеличена на 30%. Базовая скорость полёта Guardian Angel увеличена на 10% (возврат к предыдущему значению).",
+        "values": "+30% GA range, +10% GA speed",
+        "devComment": "Снижение мобильности в Season 2 слишком сильно повлияло на ключевой геймплей Mercy. Восстановление базовой функциональности GA возвращает привычный flow, а удаление Divine Momentum убирает экстремальные случаи мобильности."
       },
       {
-        "heroId": "jetpackcat",
+        "heroId": "mizuki",
+        "type": "rework",
+        "ability": "Kekkai Sanctuary",
+        "description": "Теперь поглощает вражеские снаряды в обоих направлениях (не только входящие, но и исходящие). Лечение за время снижено с 50/с до 40/с. Длительность снижена с 7 до 6 секунд.",
+        "values": "50/s→40/s HoT, 7s→6s duration",
+        "devComment": "Поглощение снарядов в обоих направлениях улучшает ясность и создаёт значимые взаимодействия, когда враги входят внутрь барьера. Лечение и длительность снижены для компенсации."
+      },
+      {
+        "heroId": "lucio",
         "type": "buff",
-        "description": "New Stadium Hero Item and Power tuning landed for Jetpack Cat, including stronger Purr and Lifeline synergy options."
+        "ability": "Crossfade",
+        "description": "Штраф самоисцеления пассивки исправлен и теперь корректно равен 60% (было 70% из-за бага).",
+        "values": "70% → 60% self-heal penalty",
+        "devComment": "Major bug fix: коррекция значения пассивки."
       },
       {
         "heroId": "wuyang",
         "type": "buff",
-        "description": "Colossus Core duration reduced from 5 to 3 seconds and Refresher cost reduced from 13000 to 12000."
+        "ability": "Xuanwu Staff",
+        "description": "Исправлен баг, из-за которого снижение урона от брони применялось дважды к снарядам Xuanwu Staff.",
+        "devComment": "Major bug fix: двойное применение DR от брони."
       }
     ]
   },
