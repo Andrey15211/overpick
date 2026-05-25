@@ -2,9 +2,10 @@
   "season": 2,
   "seasonName": "Сезон 2: Summit",
   "patch": "2.1.3",
-  "lastUpdated": "2026-05-22",
+  "lastUpdated": "2026-05-25",
   "sources": [
-    "Blizzard Hero Statistics: PC, Americas, live Hero Stats page crawled on May 22, 2026",
+    "Blizzard Hero Statistics: PC, Americas, live Hero Stats page crawled on May 25, 2026",
+    "Overwatch Retail Patch Notes: May 21, 2026 Stadium Hotfix",
     "Overwatch Retail Patch Notes: May 14, 2026 Bug Fix Hotfix",
     "Overwatch Retail Patch Notes: May 12, 2026 10th Anniversary Midcycle (updated May 15, 2026)",
     "Overwatch Retail Patch Notes: May 12, 2026 10th Anniversary Midcycle",
@@ -13,7 +14,7 @@
     "Overwatch Retail Patch Notes: April 14, 2026 Season 2: Summit",
     "Overwatch Season 2: Summit announcement: April 13, 2026"
   ],
-  "metaDescription": "Тир-лист обновлён под Season 2: Summit по официальным данным Blizzard Hero Statistics для PC (Americas) и последним опубликованным патчноутам Blizzard. Включает Bug Fix Hotfix от 14 мая 2026 года, 10th Anniversary Midcycle от 12 мая с обновлением от 15 мая, bug fix-патч 28 апреля и Balance Hotfix от 23 апреля. Базовые pick rate и win rate берутся из текущего публичного среза Blizzard на 22 мая 2026 года.",
+  "metaDescription": "Тир-лист обновлён под Season 2: Summit по текущему публичному срезу Blizzard Hero Statistics для PC (Americas) на 25 мая 2026 года. В источниках учтены Stadium hotfix от 21 мая, Bug Fix Hotfix от 14 мая, 10th Anniversary Midcycle от 12 мая с обновлением от 15 мая, bug fix-патч 28 апреля и Balance Hotfix от 23 апреля.",
   "tiers": {
     "S": {
       "label": "Высший тир",
@@ -45,358 +46,358 @@
     {
       "heroId": "dva",
       "tier": "B",
-      "pickRate": 9.5,
-      "winRate": 47.1,
+      "pickRate": 45.5,
+      "winRate": 28.2,
       "whyMeta": "D.Va остаётся просевшей по статистике после nerf'а Micro Missiles и переработки подкласса Инициатор. С учётом актуального среза Blizzard это средний танк без явного статуса лидера."
     },
     {
       "heroId": "domina",
       "tier": "A",
-      "pickRate": 7.8,
-      "winRate": 50.8,
+      "pickRate": 51.4,
+      "winRate": 9.8,
       "whyMeta": "Domina держится в верхней части танкового пула по официальной статистике, но уступает более универсальным и проще реализуемым фронтлайнам."
     },
     {
       "heroId": "doomfist",
       "tier": "A",
-      "pickRate": 7.5,
-      "winRate": 48.9,
+      "pickRate": 50.6,
+      "winRate": 8.5,
       "whyMeta": "Doomfist по-прежнему силён в руках игроков с механикой. QoL-улучшения Seismic Slam и Empowered Punch не ломают баланс, но поддерживают его темп."
     },
     {
       "heroId": "hazard",
       "tier": "S",
-      "pickRate": 4.5,
-      "winRate": 51.7,
+      "pickRate": 51.4,
+      "winRate": 4,
       "whyMeta": "Хазард остаётся мобильным и неприятным для слабого peel, а официальный срез уже не ставит его ниже середины танкового пула."
     },
     {
       "heroId": "junkerqueen",
       "tier": "A",
-      "pickRate": 4.3,
-      "winRate": 52.1,
+      "pickRate": 52.8,
+      "winRate": 4.6,
       "whyMeta": "Королева Хлама усилена баффом Adrenaline Rush (2.25x → 2.5x self-heal) в midcycle. Лучше держится в затяжных боях, винрейт вырос, уверенно в A-tier."
     },
     {
       "heroId": "mauga",
       "tier": "B",
-      "pickRate": 6.6,
-      "winRate": 50.2,
+      "pickRate": 51.4,
+      "winRate": 6.9,
       "whyMeta": "Мауга остаётся рабочим выбором, но свежие tier-листы сходятся в том, что он слишком зависим от карты и темпа команды, чтобы подняться выше среднего тира."
     },
     {
       "heroId": "orisa",
       "tier": "D",
-      "pickRate": 10,
-      "winRate": 47.1,
+      "pickRate": 46.9,
+      "winRate": 9.6,
       "whyMeta": "Ориса по-прежнему тяжело вписывается в быстрый темп мете и остаётся одним из слабых танков по официальной статистике."
     },
     {
       "heroId": "ramattra",
       "tier": "C",
-      "pickRate": 9.3,
-      "winRate": 51.3,
+      "pickRate": 50.8,
+      "winRate": 8.9,
       "whyMeta": "Раматтра остаётся playable и по статистике уже держится ближе к середине верхнего пула, хотя темп мете всё ещё не идеально под него."
     },
     {
       "heroId": "reinhardt",
       "tier": "S",
-      "pickRate": 10.9,
-      "winRate": 53.7,
+      "pickRate": 53.6,
+      "winRate": 10.9,
       "whyMeta": "После апрельского патча Райн стабильно попадает в S-tier у свежих Summit tier-листов: когда команда играет вокруг него, он остаётся одним из самых надёжных танков для brawl и удержания пространства."
     },
     {
       "heroId": "roadhog",
       "tier": "C",
-      "pickRate": 8.3,
-      "winRate": 46.7,
+      "pickRate": 46.5,
+      "winRate": 8.8,
       "whyMeta": "Турбосвин по-прежнему зависит от карты и дисциплины соперника. Хотфикс вернул часть ценности, но универсальным выбором он так и не стал."
     },
     {
       "heroId": "sigma",
       "tier": "S",
-      "pickRate": 8.3,
-      "winRate": 50.7,
+      "pickRate": 51.1,
+      "winRate": 7.5,
       "whyMeta": "Консенсус актуальных tier-листов держит Сигму в верхней группе: он стабилен на poke-картах, хорошо контролирует углы и остаётся одним из самых надёжных танков для организованной игры."
     },
     {
       "heroId": "winston",
       "tier": "B",
-      "pickRate": 4,
-      "winRate": 53,
+      "pickRate": 52.3,
+      "winRate": 3.9,
       "whyMeta": "Уинстон остаётся сильным dive-танком, но его ценность по-прежнему сильно зависит от координации и карты."
     },
     {
       "heroId": "wreckingball",
       "tier": "A",
-      "pickRate": 3.4,
-      "winRate": 49.9,
+      "pickRate": 50.1,
+      "winRate": 3.5,
       "whyMeta": "Таран хорошо чувствует себя на картах, где можно растянуть формацию врага, но остаётся более нишевым и требовательным к скиллу, чем верхушка танкового пула."
     },
     {
       "heroId": "zarya",
       "tier": "C",
-      "pickRate": 4.3,
-      "winRate": 47.7,
+      "pickRate": 47.6,
+      "winRate": 4.4,
       "whyMeta": "Заря всё ещё может carry через энергию, но текущий темп мете не даёт ей стабильно подниматься выше нижней середины."
     },
     {
       "heroId": "anran",
       "tier": "A",
-      "pickRate": 11.9,
-      "winRate": 52.8,
+      "pickRate": 52.5,
+      "winRate": 11,
       "whyMeta": "Anran остаётся агрессивным фланкером с высоким потолком и хорошим результатом в официальной статистике."
     },
     {
       "heroId": "ashe",
       "tier": "A",
-      "pickRate": 11.5,
-      "winRate": 49.6,
+      "pickRate": 49.9,
+      "winRate": 12.6,
       "whyMeta": "Эш остаётся надёжным hitscan-пиком, но по свежему срезу Blizzard она уже не выглядит безусловным лидером для всех карт."
     },
     {
       "heroId": "bastion",
       "tier": "C",
-      "pickRate": 9.8,
-      "winRate": 48.5,
+      "pickRate": 49,
+      "winRate": 10.6,
       "whyMeta": "Бастион может быть очень неприятным в правильной композиции, но слишком зависим от позиции и защиты команды, чтобы подниматься выше situational-tier."
     },
     {
       "heroId": "cassidy",
       "tier": "C",
-      "pickRate": 13.3,
-      "winRate": 47.4,
+      "pickRate": 47.8,
+      "winRate": 15.1,
       "whyMeta": "У Кэссиди высокий пикрейт, но конверсия в победы остаётся слабой. Это по-прежнему больше comfort pick, чем стабильный метовый выбор."
     },
     {
       "heroId": "echo",
       "tier": "B",
-      "pickRate": 5.1,
-      "winRate": 49.4,
+      "pickRate": 49.4,
+      "winRate": 5.4,
       "whyMeta": "Echo всё ещё сильно зависит от карты и исполнения, поэтому остаётся нишевым DPS без стабильного статуса топ-пика."
     },
     {
       "heroId": "emre",
       "tier": "B",
-      "pickRate": 10,
-      "winRate": 48.1,
+      "pickRate": 47.4,
+      "winRate": 9.2,
       "whyMeta": "Emre после midcycle уже не выглядит настолько перегруженным, как до нерфов, но по статистике всё ещё не вылезает в элиту."
     },
     {
       "heroId": "freja",
       "tier": "B",
-      "pickRate": 4.7,
-      "winRate": 44.7,
+      "pickRate": 45.8,
+      "winRate": 5.4,
       "whyMeta": "Фрея после баффов всё ещё требует аккуратного исполнения, а официальный срез пока не подтверждает заметный рост результативности."
     },
     {
       "heroId": "genji",
       "tier": "S",
-      "pickRate": 12.2,
-      "winRate": 51,
+      "pickRate": 51.1,
+      "winRate": 13.4,
       "whyMeta": "Гэндзи остаётся сильным фланкером, который хорошо чувствует быстрый темп и наказывает ошибки в позиционке."
     },
     {
       "heroId": "hanzo",
       "tier": "B",
-      "pickRate": 8.7,
-      "winRate": 48.4,
+      "pickRate": 48.6,
+      "winRate": 9.8,
       "whyMeta": "Хандзо остаётся сильным на sightline-картах, но в среднем не выбивается в верхнюю часть пула."
     },
     {
       "heroId": "junkrat",
       "tier": "C",
-      "pickRate": 10.2,
-      "winRate": 50.5,
+      "pickRate": 51.4,
+      "winRate": 10.6,
       "whyMeta": "Крысавчик по свежему срезу выглядит заметно лучше, но всё ещё зависит от карт и того, насколько враги позволяют играть в choke."
     },
     {
       "heroId": "mei",
       "tier": "B",
-      "pickRate": 6.7,
-      "winRate": 52.7,
+      "pickRate": 53.5,
+      "winRate": 5.3,
       "whyMeta": "Мэй по-прежнему очень сильна на закрытых картах и в brawl-сценариях, где Ice Wall решает файты."
     },
     {
       "heroId": "pharah",
       "tier": "A",
-      "pickRate": 4.8,
-      "winRate": 52.3,
+      "pickRate": 52.9,
+      "winRate": 4.9,
       "whyMeta": "Pharah всё ещё сильна в воздушной игре, но после midcycle у неё меньше burst-потенциала."
     },
     {
       "heroId": "reaper",
       "tier": "A",
-      "pickRate": 8.7,
-      "winRate": 53.9,
+      "pickRate": 54,
+      "winRate": 8.5,
       "whyMeta": "Жнец всё ещё хорошо наказывает ближнюю дистанцию и остаётся сильным ranked-пиком против слабого peel."
     },
     {
       "heroId": "sojourn",
       "tier": "D",
-      "pickRate": 6.1,
-      "winRate": 44,
+      "pickRate": 44.5,
+      "winRate": 6.6,
       "whyMeta": "Соджорн по текущей статистике выглядит слабее привычного статуса и не даёт прежнего impact."
     },
     {
       "heroId": "soldier76",
       "tier": "C",
-      "pickRate": 12.6,
-      "winRate": 49.1,
+      "pickRate": 49.1,
+      "winRate": 13.1,
       "whyMeta": "Soldier: 76 остаётся удобным и универсальным, но по влиянию на матч уступает более острым DPS."
     },
     {
       "heroId": "sierra",
       "tier": "B",
-      "pickRate": 24.9,
-      "winRate": 52.8,
+      "pickRate": 52.4,
+      "winRate": 24.1,
       "whyMeta": "Sierra после launch hotfix остаётся одним из самых заметных DPS в официальной статистике и сильнее среднего по текущему срезу."
     },
     {
       "heroId": "sombra",
       "tier": "C",
-      "pickRate": 4.9,
-      "winRate": 47.5,
+      "pickRate": 47.3,
+      "winRate": 5.2,
       "whyMeta": "Сомбра получила смягчение штрафа скорости в Stealth после раскрытия уроном, но свежие источники всё ещё держат её как нишевый counter-pick. До устойчивого роста win rate она остаётся в C-tier."
     },
     {
       "heroId": "symmetra",
       "tier": "B",
-      "pickRate": 3.1,
-      "winRate": 54.6,
+      "pickRate": 55.2,
+      "winRate": 2.6,
       "whyMeta": "Симметра по-прежнему очень сильна на узких картах и в coordinated play, но остаётся ситуативным выбором."
     },
     {
       "heroId": "torbjorn",
       "tier": "A",
-      "pickRate": 4.1,
-      "winRate": 56,
+      "pickRate": 56.3,
+      "winRate": 3.9,
       "whyMeta": "Торбьорн поднялся за счёт полезности против мобильных героев и хорошей ценности turret pressure, поэтому в текущем патче он заметно выше среднего."
     },
     {
       "heroId": "tracer",
       "tier": "B",
-      "pickRate": 6.4,
-      "winRate": 49.3,
+      "pickRate": 49.3,
+      "winRate": 6.3,
       "whyMeta": "Трейсер всё ещё high-ceiling DPS для dive и high-rank игры, но текущий общий срез не делает её статистическим лидером."
     },
     {
       "heroId": "vendetta",
       "tier": "S",
-      "pickRate": 5.1,
-      "winRate": 49.9,
+      "pickRate": 49.6,
+      "winRate": 4.5,
       "whyMeta": "Vendetta всё ещё остаётся опасным фланкером, но после nerf'ов Season 2 её абсолютный приоритет заметно ниже."
     },
     {
       "heroId": "venture",
       "tier": "A",
-      "pickRate": 3.5,
-      "winRate": 52.6,
+      "pickRate": 52.7,
+      "winRate": 2.6,
       "whyMeta": "Venture полезна как гибкий disrupt/engage-DPS и хорошо наказывает слабый peel, но всё ещё не настолько универсальна, чтобы заходить в S-tier."
     },
     {
       "heroId": "widowmaker",
       "tier": "B",
-      "pickRate": 6.7,
-      "winRate": 45.1,
+      "pickRate": 44.9,
+      "winRate": 9.6,
       "whyMeta": "Widowmaker по-прежнему решает открытые карты одним пик-оффом, но ценность сильно зависит от механики и sightline."
     },
     {
       "heroId": "ana",
       "tier": "B",
-      "pickRate": 24.1,
-      "winRate": 46.1,
+      "pickRate": 46.7,
+      "winRate": 28.2,
       "whyMeta": "Ана остаётся востребованной, но текущая мета по-прежнему требует больше выживаемости и темпа."
     },
     {
       "heroId": "baptiste",
       "tier": "C",
-      "pickRate": 4.9,
-      "winRate": 45.3,
+      "pickRate": 47.7,
+      "winRate": 5.3,
       "whyMeta": "Батист получил мощный бафф Regenerative Burst в midcycle: instant heal 40→50, HoT 40→50, CD 14→12с. Поднялся из D в C-tier, но всё ещё уступает ведущим саппортам."
     },
     {
       "heroId": "brigitte",
       "tier": "B",
-      "pickRate": 5.7,
-      "winRate": 54.2,
+      "pickRate": 54.4,
+      "winRate": 6,
       "whyMeta": "Бригитта полезна как ответ на dive и защита второго саппорта, а свежая статистика показывает у неё очень сильный результат."
     },
     {
       "heroId": "illari",
       "tier": "A",
-      "pickRate": 6.8,
-      "winRate": 52.8,
+      "pickRate": 50.8,
+      "winRate": 7.2,
       "whyMeta": "Иллари получила минорный nerf Solar Rifle в midcycle. Всё ещё держится как сильный гибридный саппорт, но уже не выглядит так же доминирующе."
     },
     {
       "heroId": "jetpackcat",
       "tier": "A",
-      "pickRate": 9,
-      "winRate": 48.6,
+      "pickRate": 48.5,
+      "winRate": 9.2,
       "whyMeta": "Jetpack Cat остаётся нишевым, но полезным support-выбором с сильной вертикальной игрой и Stadium-опциями."
     },
     {
       "heroId": "juno",
       "tier": "S",
-      "pickRate": 6.8,
-      "winRate": 52.8,
+      "pickRate": 51.1,
+      "winRate": 17.9,
       "whyMeta": "Juno стабильно в верхней группе из-за сочетания темпа, AoE-лечения и высокой популярности."
     },
     {
       "heroId": "kiriko",
       "tier": "C",
-      "pickRate": 24.1,
-      "winRate": 46.1,
+      "pickRate": 48.2,
+      "winRate": 22.6,
       "whyMeta": "Кирико после nerf Protection Suzu остаётся очень популярной, но по результативности выглядит слабее многих саппортов."
     },
     {
       "heroId": "lifeweaver",
       "tier": "C",
-      "pickRate": 18.7,
-      "winRate": 49.7,
+      "pickRate": 50.3,
+      "winRate": 15.7,
       "whyMeta": "Lifeweaver уже не выглядит настолько узким пиком и остаётся вполне играбельным саппортом в текущем срезе."
     },
     {
       "heroId": "lucio",
       "tier": "A",
-      "pickRate": 7.1,
-      "winRate": 51.3,
+      "pickRate": 51.6,
+      "winRate": 7.3,
       "whyMeta": "Лусио получил нерф Sound Barrier (750→625 OH, 6→5с) в midcycle, но исправление бага Crossfade (self-heal penalty 70%→60%) компенсирует потерю. Остаётся в A-tier."
     },
     {
       "heroId": "mercy",
       "tier": "A",
-      "pickRate": 26.5,
-      "winRate": 49.9,
+      "pickRate": 49,
+      "winRate": 29,
       "whyMeta": "Mercy после midcycle остаётся популярной, но свежая статистика уже не показывает у неё прежней эффективности."
     },
     {
       "heroId": "mizuki",
       "tier": "S",
-      "pickRate": 12.9,
-      "winRate": 52.4,
+      "pickRate": 52,
+      "winRate": 12.3,
       "whyMeta": "Мизуки после midcycle всё ещё остаётся универсальным саппортом и сильным выбором для coordinated play."
     },
     {
       "heroId": "moira",
       "tier": "B",
-      "pickRate": 18.7,
-      "winRate": 49.7,
+      "pickRate": 50.3,
+      "winRate": 19,
       "whyMeta": "Moira даёт много сырого объёма, но не хватает утилити, чтобы спорить с лучшими саппортами меты."
     },
     {
       "heroId": "wuyang",
       "tier": "A",
-      "pickRate": 9,
-      "winRate": 50.8,
+      "pickRate": 50.8,
+      "winRate": 8.9,
       "whyMeta": "Wuyang после bug fix выглядит стабильнее и остаётся конкурентным саппортом."
     },
     {
       "heroId": "zenyatta",
       "tier": "S",
-      "pickRate": 10.5,
-      "winRate": 54.4,
+      "pickRate": 54.7,
+      "winRate": 11.3,
       "whyMeta": "Дзеньятта по-прежнему держит один из лучших винрейтов на патче и отлично наказывает текущую танковую мету."
     }
   ]
