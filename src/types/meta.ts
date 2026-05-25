@@ -104,6 +104,9 @@ export interface PatchChange {
   heroId: string;
   type: ChangeType;
   description: string;
+  ability?: string;
+  devComment?: string;
+  values?: string;
 }
 
 export interface Patch {
@@ -111,6 +114,7 @@ export interface Patch {
   date: string;
   version: string;
   title: string;
+  summary?: string;
   changes: PatchChange[];
 }
 
