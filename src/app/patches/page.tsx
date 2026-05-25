@@ -190,6 +190,7 @@ export default function PatchesPage() {
           <div className={styles.patchesList}>
             {filteredPatches.map(patch => {
               const stats = countByType(patch.changes);
+              const patchSummary = (patch as Patch & { summary?: string }).summary;
               return (
                 <div key={patch.patchId} className={styles.patchTimelineItem}>
                   {/* Точка на таймлайне */}
@@ -207,8 +208,8 @@ export default function PatchesPage() {
                       </div>
 
                       {/* Краткое описание */}
-                      {patch.summary && (
-                        <p className={styles.patchCardSummary}>{patch.summary}</p>
+                      {patchSummary && (
+                        <p className={styles.patchCardSummary}>{patchSummary}</p>
                       )}
 
                       {/* Значки статистики */}
