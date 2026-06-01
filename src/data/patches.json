@@ -1,5 +1,21 @@
 [
   {
+    "patchId": "ow-s2-bugfix-2026-05-26",
+    "date": "2026-05-26",
+    "version": "2.1.4",
+    "title": "🔧 Season 2: Summit — Bug Fix Patch (May 26)",
+    "summary": "Небольшой bug fix-патч без балансных изменений. Исправлены ошибки в магазине, Post Match Accolades, Battle Pass и VFX Nano Boost.",
+    "changes": [
+      {
+        "heroId": "general",
+        "type": "rework",
+        "ability": "General",
+        "description": "Обновление не содержит правок баланса героев. Blizzard исправила проблемы с выбором валюты в магазине, расчётом статистики Junker Queen в Post Match Accolades, временем Battle Pass и VFX Nano Boost.",
+        "devComment": "Bug fix patch; no hero balance changes."
+      }
+    ]
+  },
+  {
     "patchId": "ow-s2-bugfix-hotfix-2026-05-14",
     "date": "2026-05-14",
     "version": "2.1.3",

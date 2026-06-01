@@ -49,7 +49,7 @@ export async function generateMetadata({
   
   return {
     title: `${hero.nameRu} - Контрпики`,
-    description: `Узнай, кто контрит ${hero.nameRu} в Overwatch 2. Лучшие контрпики и мета-заметки для Season 2: Summit после hotfix Blizzard от 21 мая 2026 года, актуально на 25 мая 2026 года.`,
+    description: `Узнай, кто контрит ${hero.nameRu} в Overwatch 2. Лучшие контрпики и мета-заметки для Season 2: Summit после bug fix-патча Blizzard от 26 мая 2026 года, актуально на 1 июня 2026 года.`,
   };
 }
 
