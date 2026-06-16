@@ -38,7 +38,7 @@ export default function Home() {
             <br />Контрпики Overwatch
           </h1>
           <p className={styles.heroSubtitle}>
-            Season 2: Summit, bug fix-патч от 26 мая 2026. Контрпики, актуальный тир-лист и разбор свежей меты для {heroes.length} героев по состоянию на 1 июня 2026.
+            Season 3, патч 3.0. Контрпики, актуальный тир-лист и разбор свежей меты для {heroes.length} героев по состоянию на 16 июня 2026.
           </p>
           <div className={styles.heroCta}>
             <Link href="/heroes" className={styles.heroCtaPrimary}>

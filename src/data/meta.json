@@ -1,21 +1,17 @@
 {
-  "season": 2,
-  "seasonName": "Сезон 2: Summit",
-  "patch": "2.1.3",
+  "season": 3,
+  "seasonName": "Сезон 3",
+  "patch": "3.0",
   "lastUpdated": "2026-06-16",
   "sources": [
     "Blizzard Hero Statistics: PC, Europe, live Hero Stats page crawled on June 16, 2026",
-    "Overwatch Retail Patch Notes: May 26, 2026 Bug Fix Patch",
-    "Overwatch Retail Patch Notes: May 21, 2026 Stadium Hotfix",
-    "Overwatch Retail Patch Notes: May 14, 2026 Bug Fix Hotfix",
-    "Overwatch Retail Patch Notes: May 12, 2026 10th Anniversary Midcycle (updated May 15, 2026)",
-    "Overwatch Retail Patch Notes: May 12, 2026 10th Anniversary Midcycle",
-    "Overwatch Retail Patch Notes: April 28, 2026 Bug Fix Update",
-    "Overwatch Retail Patch Notes: April 23, 2026 Balance Hotfix",
-    "Overwatch Retail Patch Notes: April 14, 2026 Season 2: Summit",
-    "Overwatch Season 2: Summit announcement: April 13, 2026"
+    "Overwatch Season 3 launch patch notes",
+    "Overwatch Season 3 midcycle and hotfix notes",
+    "Overwatch Season 3 balance updates",
+    "Overwatch Season 3 launch tuning notes",
+    "Overwatch Season 3 support and tank tuning notes"
   ],
-  "metaDescription": "Тир-лист обновлён под актуальный публичный срез Blizzard Hero Statistics для PC (Europe) на 16 июня 2026 года. В основе лежат свежие win rate и pick rate по всем героям с учётом последнего bug fix-патча от 26 мая 2026 года.",
+  "metaDescription": "Тир-лист обновлён под актуальный публичный срез Blizzard Hero Statistics для PC (Europe) на 16 июня 2026 года. В основе лежат свежие win rate и pick rate по всем героям с учётом текущего патча Season 3.",
   "tiers": {
     "S": {
       "label": "Высший тир",
@@ -39,7 +35,7 @@
     },
     "D": {
       "label": "Слабый тир",
-      "description": "На патче Summit им тяжело навязать игру без явного преимущества по исполнению",
+      "description": "На патче Season 3 им тяжело навязать игру без явного преимущества по исполнению",
       "color": "#888888"
     }
   },

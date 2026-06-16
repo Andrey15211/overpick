@@ -23,7 +23,7 @@ export const META_SOURCE_NOTES = [
     id: 'blizzard-2026-04-23',
     label: 'Blizzard April 23 Balance Hotfix',
     url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/live/2026/04/',
-    weight: 'Предыдущий balance hotfix с правками Roadhog, Sombra и Vendetta после старта Season 2.',
+    weight: 'Предыдущий balance hotfix с правками Roadhog, Sombra и Vendetta после старта Season 3.',
   },
   {
     id: 'blizzard-2026-04-28',
@@ -39,15 +39,15 @@ export const META_SOURCE_NOTES = [
   },
   {
     id: 'pcgamer-2026-04-23',
-    label: 'PC Gamer Season 2 Summit tier list',
+    label: 'PC Gamer Season 3 tier list',
     url: 'https://www.pcgamer.com/games/fps/overwatch-tier-list/',
     weight: 'Свежий общий tier list с упоминаниями pro/high-rank меты.',
   },
   {
     id: 'playerauctions-2026-04-16',
-    label: 'PlayerAuctions Season 2 Summit tier list',
+    label: 'PlayerAuctions Season 3 tier list',
     url: 'https://www.playerauctions.com/overwatch-guide/tips-tricks/season-2-summit-tier-list-is-sierra-broken/',
-    weight: 'Ролевая оценка героев после запуска Season 2: Summit.',
+    weight: 'Ролевая оценка героев после запуска Season 3.',
   },
   {
     id: 'dexerto-2026-04-15',
@@ -59,7 +59,7 @@ export const META_SOURCE_NOTES = [
     id: 'pockettactics-2026-04-01',
     label: 'Pocket Tactics April 2026 tier list',
     url: 'https://www.pockettactics.com/overwatch-2/tier-list',
-    weight: 'Более ранний baseline для проверки расхождений после старта Summit.',
+    weight: 'Более ранний baseline для проверки расхождений после старта Season 3.',
   },
 ] as const;
 
@@ -174,7 +174,7 @@ export const HERO_META_SIGNALS: Record<string, HeroMetaSignal> = {
   junkerqueen: { expertTier: 'B', proSignal: 1, notes: 'Работает в агрессивном brawl, но карта и состав сильно решают.', sourceIds: ['pcgamer-2026-04-23', 'playerauctions-2026-04-16'], mapTags: ['brawl'] },
   mauga: { expertTier: 'B', proSignal: 0, notes: 'Рабочий ranked pick, но expert consensus не держит его вверху.', sourceIds: ['pcgamer-2026-04-23'] },
   orisa: { expertTier: 'A', proSignal: 0, notes: 'Источники расходятся: статистика слабее, но часть tier-листов ценит стабильность.', sourceIds: ['pcgamer-2026-04-23'] },
-  ramattra: { expertTier: 'S', proSignal: 2, notes: 'Сильный tank consensus в Season 2 Summit, особенно в организованной игре.', sourceIds: ['pcgamer-2026-04-23'], mapTags: ['brawl', 'poke'], highRankBias: 0.04 },
+  ramattra: { expertTier: 'S', proSignal: 2, notes: 'Сильный tank consensus в Season 3, особенно в организованной игре.', sourceIds: ['pcgamer-2026-04-23'], mapTags: ['brawl', 'poke'], highRankBias: 0.04 },
   reinhardt: { expertTier: 'B', proSignal: 1, notes: 'Силен в ranked brawl и на close-range картах, но менее универсален.', sourceIds: ['pcgamer-2026-04-23'], mapTags: ['brawl'] },
   roadhog: { expertTier: 'C', proSignal: 0, notes: 'Нестабилен после быстрых правок Chain Hook; hotfix 23 апреля помогает, но статистика всё ещё низкая.', sourceIds: ['blizzard-2026-04-23', 'pcgamer-2026-04-23'] },
   sigma: { expertTier: 'S', proSignal: 3, notes: 'Один из самых надёжных pro/high-rank танков для poke и контроля углов.', sourceIds: ['pcgamer-2026-04-23'], mapTags: ['poke'], highRankBias: 0.06 },
