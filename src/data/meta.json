@@ -5,6 +5,7 @@
   "lastUpdated": "2026-06-16",
   "sources": [
     "Blizzard Hero Statistics: PC, Europe, live Hero Stats page crawled on June 16, 2026",
+    "Overwatch June 2026 live patch notes: no patch notes were published for the month",
     "Overwatch Season 3 launch patch notes",
     "Overwatch Season 3 midcycle and hotfix notes",
     "Overwatch Season 3 balance updates",
@@ -44,8 +45,8 @@
       "heroId": "ana",
       "tier": "D",
       "pickRate": 26.2,
-      "winRate": 46.8,
-      "whyMeta": "Ана по текущему срезу Blizzard выглядит как D-тир саппорта: 46.8% win rate и 26.2% pick rate."
+      "winRate": 46.7,
+      "whyMeta": "Ана по текущему срезу Blizzard выглядит как D-тир саппорта: 46.7% win rate и 26.2% pick rate."
     },
     {
       "heroId": "anran",
@@ -239,16 +240,16 @@
     {
       "heroId": "moira",
       "tier": "B",
-      "pickRate": 19.4,
+      "pickRate": 19.3,
       "winRate": 50.2,
-      "whyMeta": "Мойра по текущему срезу Blizzard выглядит как B-тир саппорта: 50.2% win rate и 19.4% pick rate."
+      "whyMeta": "Мойра по текущему срезу Blizzard выглядит как B-тир саппорта: 50.2% win rate и 19.3% pick rate."
     },
     {
       "heroId": "orisa",
       "tier": "D",
       "pickRate": 9.8,
-      "winRate": 46.8,
-      "whyMeta": "Ориса по текущему срезу Blizzard выглядит как D-тир танка: 46.8% win rate и 9.8% pick rate."
+      "winRate": 46.7,
+      "whyMeta": "Ориса по текущему срезу Blizzard выглядит как D-тир танка: 46.7% win rate и 9.8% pick rate."
     },
     {
       "heroId": "pharah",
