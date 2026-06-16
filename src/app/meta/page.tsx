@@ -9,7 +9,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Мета и Тир-лист',
-  description: 'Фильтруемый тир-лист героев Overwatch для Season 2: Summit после bug fix-патча от 26 мая 2026 года: статистика Blizzard, свежие tier-листы и pro/high-rank сигналы по состоянию на 3 июня 2026 года.',
+  description: 'Фильтруемый тир-лист героев Overwatch для Season 2: Summit после bug fix-патча от 26 мая 2026 года: статистика Blizzard, свежие tier-листы и pro/high-rank сигналы по состоянию на 16 июня 2026 года.',
 };
 
 // Типизация данных
@@ -41,7 +41,7 @@ export default function MetaPage() {
             Текущая <span>Мета</span>
           </h1>
           <p className={styles.metaSubtitle}>
-            Тир-лист героев Overwatch на основе статистики Blizzard, свежих экспертных tier-листов и pro/high-rank меты с учетом bug fix-патча от 26 мая 2026 года. Срез актуален на 3 июня 2026 года.
+            Тир-лист героев Overwatch на основе статистики Blizzard, свежих экспертных tier-листов и pro/high-rank меты с учетом bug fix-патча от 26 мая 2026 года. Срез актуален на 16 июня 2026 года.
           </p>
           <div className={styles.metaInfo}>
             <div className={styles.metaInfoItem}>
