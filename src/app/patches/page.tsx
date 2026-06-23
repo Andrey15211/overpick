@@ -58,6 +58,11 @@ export default function PatchesPage() {
     return getHero(heroId)?.nameRu || heroId;
   }, [getHero]);
 
+  const getChangeSubject = useCallback((change: Patch['changes'][number]): string => {
+    if (change.heroId) return getHeroName(change.heroId);
+    return change.mapId || 'Обновление';
+  }, [getHeroName]);
+
   // Переключить видимость dev-комментария
   const toggleComment = useCallback((key: string) => {
     setOpenComments(prev => {
@@ -83,10 +88,10 @@ export default function PatchesPage() {
         
         // Поиск
         if (searchQuery) {
-          const heroName = getHeroName(change.heroId).toLowerCase();
-          const desc = change.description.toLowerCase();
           const query = searchQuery.toLowerCase();
-          if (!heroName.includes(query) && !desc.includes(query)) return false;
+          const subject = change.heroId ? getHeroName(change.heroId) : change.mapId || '';
+          const desc = change.description.toLowerCase();
+          if (!subject.toLowerCase().includes(query) && !desc.includes(query)) return false;
         }
         
         return true;
@@ -101,13 +106,14 @@ export default function PatchesPage() {
 
   /** Подсчитать баффы/нерфы/реворки в списке изменений */
   const countByType = (changes: Patch['changes']) => {
-    let buffs = 0, nerfs = 0, reworks = 0;
+    let buffs = 0, nerfs = 0, reworks = 0, maps = 0;
     for (const c of changes) {
       if (c.type === 'buff') buffs++;
       else if (c.type === 'nerf') nerfs++;
       else if (c.type === 'rework') reworks++;
+      else if (c.type === 'map') maps++;
     }
-    return { buffs, nerfs, reworks };
+    return { buffs, nerfs, reworks, maps };
   };
 
   return (
@@ -119,7 +125,7 @@ export default function PatchesPage() {
             История <span>Патчей</span>
           </h1>
           <p className={styles.patchesSubtitle}>
-            Баффы, нерфы и реворки героев Overwatch 2. Страница синхронизирована с Season 3 и актуальным состоянием на 16 июня 2026 года.
+            Баффы, нерфы и реворки героев Overwatch 2. Страница синхронизирована с Season 3 и актуальным состоянием на 23 июня 2026 года.
           </p>
         </header>
 
@@ -235,7 +241,7 @@ export default function PatchesPage() {
                     {/* Список изменений */}
                     <div className={styles.patchCardChanges}>
                       {patch.changes.map((change, idx) => {
-                        const hero = getHero(change.heroId);
+                        const hero = change.heroId ? getHero(change.heroId) : undefined;
                         const commentKey = `${patch.patchId}:${idx}`;
                         const isCommentOpen = openComments.has(commentKey);
 
@@ -261,7 +267,7 @@ export default function PatchesPage() {
                                     unoptimized
                                   />
                                 )}
-                                <span className={styles.changeHero}>{getHeroName(change.heroId)}</span>
+                                <span className={styles.changeHero}>{getChangeSubject(change)}</span>
                               </div>
 
                               {/* Контент: описание + бейджи */}

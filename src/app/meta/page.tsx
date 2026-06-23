@@ -9,7 +9,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Мета и Тир-лист',
-  description: 'Фильтруемый тир-лист героев Overwatch для Season 3: статистика Blizzard, свежие tier-листы и pro/high-rank сигналы по состоянию на 16 июня 2026 года.',
+  description: 'Фильтруемый тир-лист героев Overwatch для Season 3: статистика Blizzard, свежие tier-листы и pro/high-rank сигналы по состоянию на 23 июня 2026 года.',
 };
 
 // Типизация данных
@@ -31,6 +31,11 @@ function getHeroName(heroId: string): string {
   return hero?.nameRu || heroId;
 }
 
+function getChangeSubject(change: Patch['changes'][number]): string {
+  if (change.heroId) return getHeroName(change.heroId);
+  return change.mapId || 'Обновление';
+}
+
 export default function MetaPage() {
   return (
     <div className={styles.metaPage}>
@@ -41,7 +46,7 @@ export default function MetaPage() {
             Текущая <span>Мета</span>
           </h1>
           <p className={styles.metaSubtitle}>
-            Тир-лист героев Overwatch на основе статистики Blizzard, свежих экспертных tier-листов и pro/high-rank меты. Срез актуален на 16 июня 2026 года в рамках Season 3.
+            Тир-лист героев Overwatch на основе статистики Blizzard, свежих экспертных tier-листов и pro/high-rank меты. Срез актуален на 23 июня 2026 года в рамках Season 3.
           </p>
           <div className={styles.metaInfo}>
             <div className={styles.metaInfoItem}>
@@ -111,7 +116,7 @@ export default function MetaPage() {
                       <span className={`${styles.patchChangeType} ${styles[`patchChangeType--${change.type}`]}`}>
                         {CHANGE_TYPE_LABELS[change.type as keyof typeof CHANGE_TYPE_LABELS].icon} {CHANGE_TYPE_LABELS[change.type as keyof typeof CHANGE_TYPE_LABELS].label}
                       </span>
-                      <span className={styles.patchChangeHero}>{getHeroName(change.heroId)}</span>
+                      <span className={styles.patchChangeHero}>{getChangeSubject(change)}</span>
                       <span className={styles.patchChangeDesc}>{change.description}</span>
                     </div>
                   ))}

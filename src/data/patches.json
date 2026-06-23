@@ -1,5 +1,32 @@
 [
   {
+    "patchId": "ow-s3-hotfix-2026-06-23",
+    "date": "2026-06-23",
+    "version": "3.0",
+    "title": "🔥 Overwatch Season 3 - Hotfix June 23",
+    "summary": "Геймплейный hotfix без массового баланса: Blizzard слегка подкрутила Neon Junction и подтвердила, что реплеи от 16 июня всё ещё доступны.",
+    "changes": [
+      {
+        "mapId": "neon-junction",
+        "type": "map",
+        "ability": "Payload speed",
+        "description": "Скорость payload немного снижена."
+      },
+      {
+        "mapId": "neon-junction",
+        "type": "map",
+        "ability": "Payload unlock timing",
+        "description": "Увеличено время разблокировки payload после захвата точки."
+      },
+      {
+        "mapId": "neon-junction",
+        "type": "map",
+        "ability": "Payload wait time",
+        "description": "Увеличено время ожидания payload в конце второй зоны."
+      }
+    ]
+  },
+  {
     "patchId": "ow-s3-launch-2026-06-16",
     "date": "2026-06-16",
     "version": "3.0",

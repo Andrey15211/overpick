@@ -98,10 +98,11 @@ export interface MetaData {
   heroes: HeroMeta[];
 }
 
-export type ChangeType = 'buff' | 'nerf' | 'rework';
+export type ChangeType = 'buff' | 'nerf' | 'rework' | 'map';
 
 export interface PatchChange {
-  heroId: string;
+  heroId?: string;
+  mapId?: string;
   type: ChangeType;
   description: string;
   ability?: string;
@@ -125,4 +126,5 @@ export const CHANGE_TYPE_LABELS: Record<ChangeType, { label: string; color: stri
   buff: { label: 'Бафф', color: '#27AE60', icon: '↑' },
   nerf: { label: 'Нерф', color: '#E74C3C', icon: '↓' },
   rework: { label: 'Реворк', color: '#9B59B6', icon: '⟳' },
+  map: { label: 'Карта', color: '#3498DB', icon: '▣' },
 };
