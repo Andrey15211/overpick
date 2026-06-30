@@ -125,7 +125,7 @@ export default function PatchesPage() {
             История <span>Патчей</span>
           </h1>
           <p className={styles.patchesSubtitle}>
-            Баффы, нерфы и реворки героев Overwatch 2. Страница синхронизирована с Season 3 и актуальным состоянием на 23 июня 2026 года.
+            Баффы, нерфы и реворки героев Overwatch 2. Страница синхронизирована с Season 3 и актуальным состоянием на 1 июля 2026 года.
           </p>
         </header>
 

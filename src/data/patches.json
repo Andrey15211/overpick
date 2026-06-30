@@ -1,5 +1,74 @@
 [
   {
+    "patchId": "ow-s3-community-crafted-2026-06-30",
+    "date": "2026-06-30",
+    "version": "3.0",
+    "title": "🛠 Overwatch Retail Patch Notes - June 30",
+    "summary": "Крупный game client update с режимом Community Crafted, сбросом replay codes и широкой наборной переработкой героев под июльскую мету.",
+    "changes": [
+      {
+        "heroId": "dva",
+        "type": "rework",
+        "ability": "Bunny Power / Team Leader",
+        "description": "Bunny Power переведён в базовый кит, а после призыва меха союзники рядом получают temporary overhealth."
+      },
+      {
+        "heroId": "doomfist",
+        "type": "rework",
+        "ability": "Power Block / Rising Uppercut",
+        "description": "Power Block теперь усиливает любую способность, а Rising Uppercut возвращён в набор."
+      },
+      {
+        "heroId": "hazard",
+        "type": "buff",
+        "ability": "Vault / Downpour",
+        "description": "Добавлен wall cling на максимальной высоте и переработан Downpour с более широкой областью и большим impact damage."
+      },
+      {
+        "heroId": "junkerqueen",
+        "type": "rework",
+        "ability": "Carnage",
+        "description": "Carnage теперь бросается, может критовать и оставляет axe для подбора после попадания."
+      },
+      {
+        "heroId": "mauga",
+        "type": "rework",
+        "ability": "Cardiac Overdrive / Overrun",
+        "description": "Cardiac Overdrive больше не даёт командный lifesteal и damage reduction, зато усиливает self-sustain и move speed Мауги."
+      },
+      {
+        "heroId": "orisa",
+        "type": "rework",
+        "ability": "Energy Javelin / Fortify / Javelin Spin",
+        "description": "Ориса получила более мобильный и командно полезный набор с лечением через Energy Javelin и рывком на Fortify."
+      },
+      {
+        "heroId": "ramattra",
+        "type": "buff",
+        "ability": "Void Barrier / Annihilation",
+        "description": "Void Barrier стал бессрочным с ручным recall, а Annihilation теперь даёт lifesteal на полной эффективности."
+      },
+      {
+        "heroId": "reinhardt",
+        "type": "buff",
+        "ability": "Berserker / Barrier Field / Charge",
+        "description": "Райнхардт получил passive Berserker и более агрессивный Charge, но его Barrier Field ослаблен."
+      },
+      {
+        "heroId": "winston",
+        "type": "buff",
+        "ability": "Jump Pack / Barrier Projector",
+        "description": "Уинстон теперь может активировать Jump Pack повторно, а Barrier Projector можно бросать вперёд."
+      },
+      {
+        "heroId": "zarya",
+        "type": "buff",
+        "ability": "Projected Barrier / Graviton Surge",
+        "description": "Барьер Зари теперь помогает союзникам выше прыгать, а Graviton Surge получил расширенную зону притяжения."
+      }
+    ]
+  },
+  {
     "patchId": "ow-s3-hotfix-2026-06-23",
     "date": "2026-06-23",
     "version": "3.0",
