@@ -4,6 +4,13 @@
     "macrostructure": "Workbench",
     "theme": "custom technical red-cyan",
     "enrichment": "none",
+    "brief": "Overpick full-site workbench surface pass"
+  },
+  {
+    "date": "2026-07-05",
+    "macrostructure": "Workbench",
+    "theme": "custom technical red-cyan",
+    "enrichment": "none",
     "brief": "Overpick homepage command-center redesign"
   }
 ]

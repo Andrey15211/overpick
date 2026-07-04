@@ -35,10 +35,10 @@ export const TIER_LABELS: Record<CounterTier, string> = {
 };
 
 export const TIER_COLORS: Record<CounterTier, string> = {
-  S: '#ff4444',
-  A: '#ff8844',
-  B: '#ffcc44',
-  C: '#888888',
+  S: 'var(--color-tier-s)',
+  A: 'var(--color-tier-a)',
+  B: 'var(--color-tier-b)',
+  C: 'var(--color-tier-c)',
 };
 
 export interface HeroCounters {
@@ -58,11 +58,11 @@ export type EffectivenessLevel = {
 };
 
 export const EFFECTIVENESS_LEVELS: EffectivenessLevel[] = [
-  { value: 5, label: 'Жёсткий контр', color: '#ff4444' },
-  { value: 4, label: 'Сильный контр', color: '#ff8844' },
-  { value: 3, label: 'Умеренный контр', color: '#ffcc44' },
-  { value: 2, label: 'Слабый контр', color: '#88cc44' },
-  { value: 1, label: 'Минимальный контр', color: '#44aa44' },
+  { value: 5, label: 'Жёсткий контр', color: 'var(--color-tier-s)' },
+  { value: 4, label: 'Сильный контр', color: 'var(--color-tier-a)' },
+  { value: 3, label: 'Умеренный контр', color: 'var(--color-tier-b)' },
+  { value: 2, label: 'Слабый контр', color: 'var(--color-tier-c)' },
+  { value: 1, label: 'Минимальный контр', color: 'var(--color-tier-d)' },
 ];
 
 export const ROLE_LABELS: Record<HeroRole, string> = {
@@ -72,9 +72,9 @@ export const ROLE_LABELS: Record<HeroRole, string> = {
 };
 
 export const ROLE_COLORS: Record<HeroRole, string> = {
-  Tank: '#F0B429',
-  Damage: '#E74C3C',
-  Support: '#27AE60',
+  Tank: 'var(--color-role-tank)',
+  Damage: 'var(--color-role-damage)',
+  Support: 'var(--color-role-support)',
 };
 
 // Подроли и их описания
@@ -89,13 +89,13 @@ export const SUBROLE_LABELS: Record<string, string> = {
 };
 
 export const SUBROLE_COLORS: Record<string, string> = {
-  Initiator: '#00BFFF',
-  Bruiser: '#FF6B35',
-  Stalwart: '#9B59B6',
-  Specialist: '#27AE60',
-  Recon: '#3498DB',
-  Flanker: '#E74C3C',
-  Sharpshooter: '#F39C12',
+  Initiator: 'var(--color-subrole-initiator)',
+  Bruiser: 'var(--color-subrole-bruiser)',
+  Stalwart: 'var(--color-subrole-stalwart)',
+  Specialist: 'var(--color-subrole-specialist)',
+  Recon: 'var(--color-subrole-recon)',
+  Flanker: 'var(--color-subrole-flanker)',
+  Sharpshooter: 'var(--color-subrole-sharpshooter)',
 };
 
 // Типы для синергий

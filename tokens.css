@@ -11,11 +11,26 @@
   --color-rule-strong: oklch(38% 0.04 248);
   --color-accent-red: oklch(65% 0.23 24);
   --color-accent-red-strong: oklch(70% 0.24 24);
+  --color-accent-ink: oklch(98% 0.01 24);
   --color-accent-cyan: oklch(77% 0.16 220);
   --color-accent-cyan-strong: oklch(84% 0.15 215);
   --color-role-tank: oklch(82% 0.15 82);
   --color-role-damage: oklch(65% 0.23 24);
   --color-role-support: oklch(73% 0.18 150);
+  --color-change-buff: oklch(73% 0.18 150);
+  --color-change-nerf: oklch(65% 0.23 24);
+  --color-change-rework: oklch(64% 0.17 315);
+  --color-change-map: oklch(70% 0.16 235);
+  --color-change-system: oklch(68% 0.04 250);
+  --color-subrole-initiator: oklch(77% 0.16 220);
+  --color-subrole-bruiser: oklch(69% 0.2 42);
+  --color-subrole-stalwart: oklch(64% 0.17 315);
+  --color-subrole-specialist: oklch(73% 0.18 150);
+  --color-subrole-recon: oklch(70% 0.16 235);
+  --color-subrole-flanker: oklch(65% 0.23 24);
+  --color-subrole-sharpshooter: oklch(78% 0.17 72);
+  --color-subrole-tactician: oklch(74% 0.15 178);
+  --color-subrole-survivor: oklch(58% 0.16 300);
   --color-tier-s: oklch(67% 0.24 22);
   --color-tier-a: oklch(68% 0.17 258);
   --color-tier-b: oklch(82% 0.16 88);
@@ -53,6 +68,9 @@
 
   --rule-sm: 1px;
   --rule-md: 2px;
+  --z-sticky: 200;
+  --z-sticky-nav: 300;
+  --z-tooltip: 600;
   --dur-fast: 150ms;
   --dur-med: 260ms;
   --dur-slow: 520ms;

@@ -148,8 +148,8 @@
   line-height: 1;
 }
 
-.heroCardTier--S { background: var(--color-tier-s); color: white; }
-.heroCardTier--A { background: var(--color-tier-a); color: white; }
+.heroCardTier--S { background: var(--color-tier-s); color: var(--color-accent-ink); }
+.heroCardTier--A { background: var(--color-tier-a); color: var(--color-accent-ink); }
 .heroCardTier--B { background: var(--color-tier-b); color: var(--color-bg); }
 .heroCardTier--C { background: var(--color-tier-c); color: var(--color-bg); }
 .heroCardTier--D { background: var(--color-tier-d); color: var(--color-bg); }

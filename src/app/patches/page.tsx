@@ -16,6 +16,23 @@ const heroes = heroesData as Hero[];
 const meta = metaData as { lastUpdated: string };
 
 type TypeFilter = 'all' | ChangeType;
+type PatchChange = Patch['changes'][number];
+type ChangeStats = {
+  buffs: number;
+  nerfs: number;
+  reworks: number;
+  maps: number;
+  systems: number;
+};
+type IndexedChange = {
+  change: PatchChange;
+  searchText: string;
+};
+type IndexedPatch = {
+  patch: Patch;
+  changes: IndexedChange[];
+  stats: ChangeStats;
+};
 
 /** Склонение слова по количеству */
 function pluralize(n: number, one: string, few: string, many: string): string {
@@ -25,6 +42,20 @@ function pluralize(n: number, one: string, few: string, many: string): string {
   if (lastDigit === 1) return `${n} ${one}`;
   if (lastDigit >= 2 && lastDigit <= 4) return `${n} ${few}`;
   return `${n} ${many}`;
+}
+
+function countByType(changes: PatchChange[]): ChangeStats {
+  const stats: ChangeStats = { buffs: 0, nerfs: 0, reworks: 0, maps: 0, systems: 0 };
+
+  for (const change of changes) {
+    if (change.type === 'buff') stats.buffs += 1;
+    else if (change.type === 'nerf') stats.nerfs += 1;
+    else if (change.type === 'rework') stats.reworks += 1;
+    else if (change.type === 'map') stats.maps += 1;
+    else if (change.type === 'system') stats.systems += 1;
+  }
+
+  return stats;
 }
 
 export default function PatchesPage() {
@@ -51,6 +82,22 @@ export default function PatchesPage() {
     return change.mapId || 'Обновление';
   }, [getHeroName]);
 
+  const indexedPatches = useMemo<IndexedPatch[]>(() => {
+    return patches.map((patch) => {
+      const indexedChanges = patch.changes.map((change) => {
+        const subject = getChangeSubject(change);
+        const searchText = `${subject} ${change.description} ${change.ability || ''} ${change.values || ''}`.toLowerCase();
+        return { change, searchText };
+      });
+
+      return {
+        patch,
+        changes: indexedChanges,
+        stats: countByType(patch.changes),
+      };
+    });
+  }, [getChangeSubject]);
+
   // Переключить видимость dev-комментария
   const toggleComment = useCallback((key: string) => {
     setOpenComments(prev => {
@@ -66,44 +113,23 @@ export default function PatchesPage() {
 
   // Фильтрация патчей
   const filteredPatches = useMemo(() => {
-    return patches.map(patch => {
-      const filteredChanges = patch.changes.filter(change => {
-        // Фильтр по герою
+    const query = searchQuery.trim().toLowerCase();
+
+    return indexedPatches.map(({ patch, changes }) => {
+      const filteredChanges = changes.filter(({ change, searchText }) => {
         if (heroFilter !== 'all' && change.heroId !== heroFilter) return false;
-        
-        // Фильтр по типу
         if (typeFilter !== 'all' && change.type !== typeFilter) return false;
-        
-        // Поиск
-        if (searchQuery) {
-          const query = searchQuery.toLowerCase();
-          const subject = change.heroId ? getHeroName(change.heroId) : change.mapId || '';
-          const desc = change.description.toLowerCase();
-          if (!subject.toLowerCase().includes(query) && !desc.includes(query)) return false;
-        }
-        
+        if (query && !searchText.includes(query)) return false;
         return true;
-      });
-      
+      }).map(({ change }) => change);
+
       return { ...patch, changes: filteredChanges };
-    }).filter(patch => patch.changes.length > 0);
-  }, [heroFilter, typeFilter, searchQuery, getHeroName]);
+    }).filter((patch) => patch.changes.length > 0);
+  }, [heroFilter, typeFilter, searchQuery, indexedPatches]);
 
-  // Подсчёт изменений
-  const totalChanges = filteredPatches.reduce((acc, p) => acc + p.changes.length, 0);
-
-  /** Подсчитать баффы/нерфы/реворки в списке изменений */
-  const countByType = (changes: Patch['changes']) => {
-    let buffs = 0, nerfs = 0, reworks = 0, maps = 0, systems = 0;
-    for (const c of changes) {
-      if (c.type === 'buff') buffs++;
-      else if (c.type === 'nerf') nerfs++;
-      else if (c.type === 'rework') reworks++;
-      else if (c.type === 'map') maps++;
-      else if (c.type === 'system') systems++;
-    }
-    return { buffs, nerfs, reworks, maps, systems };
-  };
+  const totalChanges = useMemo(() => {
+    return filteredPatches.reduce((acc, patch) => acc + patch.changes.length, 0);
+  }, [filteredPatches]);
 
   return (
     <div className={styles.patchesPage}>
@@ -286,14 +312,14 @@ export default function PatchesPage() {
                                     aria-expanded={isCommentOpen}
                                     aria-label="Комментарий разработчика"
                                   >
-                                    💬
+                                    Dev
                                   </button>
                                 )}
                               </div>
                             </div>
 
                             {/* Раскрываемый комментарий разработчика */}
-                            {change.devComment && (
+                            {change.devComment && isCommentOpen && (
                               <div className={`${styles.devCommentSection} ${isCommentOpen ? styles['devCommentSection--open'] : ''}`}>
                                 <div className={styles.devCommentInner}>
                                   <div className={styles.devCommentContent}>

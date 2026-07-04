@@ -123,9 +123,9 @@ export interface Patch {
 export const TIER_ORDER: Tier[] = ['S', 'A', 'B', 'C', 'D'];
 
 export const CHANGE_TYPE_LABELS: Record<ChangeType, { label: string; color: string; icon: string }> = {
-  buff: { label: 'Бафф', color: '#27AE60', icon: '↑' },
-  nerf: { label: 'Нерф', color: '#E74C3C', icon: '↓' },
-  rework: { label: 'Реворк', color: '#9B59B6', icon: '⟳' },
-  map: { label: 'Карта', color: '#3498DB', icon: '▣' },
-  system: { label: 'Обновление', color: '#95A5A6', icon: '✦' },
+  buff: { label: 'Бафф', color: 'var(--color-change-buff)', icon: '↑' },
+  nerf: { label: 'Нерф', color: 'var(--color-change-nerf)', icon: '↓' },
+  rework: { label: 'Реворк', color: 'var(--color-change-rework)', icon: '⟳' },
+  map: { label: 'Карта', color: 'var(--color-change-map)', icon: '▣' },
+  system: { label: 'Обновление', color: 'var(--color-change-system)', icon: '✦' },
 };

@@ -10,6 +10,8 @@
 
   --color-accent: var(--color-accent-red);
   --color-accent-hover: var(--color-accent-red-strong);
+  --color-on-accent: var(--color-accent-ink);
+  --color-bg-accent-subtle: color-mix(in oklch, var(--color-accent-red) 12%, transparent);
   --color-accent-glow: color-mix(in oklch, var(--color-accent-red) 32%, transparent);
   --color-accent-blue: var(--color-accent-cyan);
   --color-accent-blue-hover: var(--color-accent-cyan-strong);
