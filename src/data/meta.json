@@ -170,10 +170,10 @@
     },
     {
       "heroId": "junkerqueen",
-      "tier": "S",
+      "tier": "B",
       "pickRate": 5.2,
       "winRate": 54.2,
-      "whyMeta": "Королева Хлама по текущему срезу Blizzard выглядит как S-тир танка: 54.2% win rate и 5.2% pick rate."
+      "whyMeta": "Королева Хлама по текущему срезу Blizzard выглядит как B-тир танка: 54.2% win rate и 5.2% pick rate."
     },
     {
       "heroId": "junkrat",

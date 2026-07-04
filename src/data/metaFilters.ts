@@ -262,14 +262,6 @@ function roundStat(value: number) {
   return Number(value.toFixed(1));
 }
 
-function tierFromScore(score: number): Tier {
-  if (score >= 0.78) return 'S';
-  if (score >= 0.62) return 'A';
-  if (score >= 0.46) return 'B';
-  if (score >= 0.3) return 'C';
-  return 'D';
-}
-
 function getWeights(filters: MetaFilters) {
   if (filters.gameMode === 'quick-play') {
     return { stat: 0.7, expert: 0.25, pro: 0.05 };
@@ -364,13 +356,12 @@ export function computeFilteredMeta(
       const finalScore = clamp(
         statScore * weights.stat + expertScore * weights.expert + proScore * weights.pro + modifier,
       );
-      const tier = tierFromScore(finalScore);
       const dataConfidence: ComputedHeroMeta['dataConfidence'] =
         signal.sourceIds.length >= 3 ? 'high' : signal.sourceIds.length >= 2 ? 'medium' : 'limited';
 
       return {
         ...entry,
-        tier,
+        tier: entry.tier,
         sourceTier: entry.tier,
         pickRate: adjustedPickRate,
         winRate: adjustedWinRate,
