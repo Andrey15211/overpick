@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "verify:browser": "node scripts/verify-overwatch-browser.mjs",
     "sync:meta": "node scripts/sync-overwatch-meta.mjs"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.4",
+    "playwright": "^1.61.1",
     "typescript": "^5"
   }
 }

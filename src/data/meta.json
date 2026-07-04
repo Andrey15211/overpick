@@ -4,8 +4,9 @@
   "patch": "3.0",
   "lastUpdated": "2026-07-05",
   "sources": [
-    "Blizzard Hero Statistics: PC, Europe, live Hero Stats page crawled on 2026-07-05",
-    "Overwatch live patch notes reviewed on 2026-07-05",
+    "Blizzard Hero Statistics: PC, Europe, live Hero Stats page crawled on 5 июля 2026",
+    "🔥 Overwatch Season 3 - Hotfix July 2",
+    "🔥 Overwatch Season 3 - Hotfix July 1",
     "Overwatch June 30, 2026 live patch notes",
     "Overwatch June 23, 2026 live patch notes",
     "Overwatch Season 3 launch patch notes",
@@ -14,7 +15,7 @@
     "Overwatch Season 3 launch tuning notes",
     "Overwatch Season 3 support and tank tuning notes"
   ],
-  "metaDescription": "Тир-лист обновлён под актуальный публичный срез Blizzard Hero Statistics для PC (Europe) на 2026-07-05. В основе лежат свежие win rate и pick rate по всем героям с учётом текущего патча Season 3.",
+  "metaDescription": "Тир-лист обновлён под актуальный публичный срез Blizzard Hero Statistics для PC (Europe) на 5 июля 2026 года. В основе лежат свежие win rate и pick rate по всем героям с учётом текущего патча Season 3.",
   "tiers": {
     "S": {
       "label": "Высший тир",

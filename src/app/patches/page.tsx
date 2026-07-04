@@ -106,14 +106,15 @@ export default function PatchesPage() {
 
   /** Подсчитать баффы/нерфы/реворки в списке изменений */
   const countByType = (changes: Patch['changes']) => {
-    let buffs = 0, nerfs = 0, reworks = 0, maps = 0;
+    let buffs = 0, nerfs = 0, reworks = 0, maps = 0, systems = 0;
     for (const c of changes) {
       if (c.type === 'buff') buffs++;
       else if (c.type === 'nerf') nerfs++;
       else if (c.type === 'rework') reworks++;
       else if (c.type === 'map') maps++;
+      else if (c.type === 'system') systems++;
     }
-    return { buffs, nerfs, reworks, maps };
+    return { buffs, nerfs, reworks, maps, systems };
   };
 
   return (
@@ -168,7 +169,7 @@ export default function PatchesPage() {
               >
                 Все
               </button>
-              {(['buff', 'nerf', 'rework'] as ChangeType[]).map(type => (
+              {(['buff', 'nerf', 'rework', 'system'] as ChangeType[]).map(type => (
                 <button
                   key={type}
                   className={`${styles.patchesFilterBtn} ${styles[`patchesFilterBtn--${type}`]} ${typeFilter === type ? styles['patchesFilterBtn--active'] : ''}`}
@@ -233,6 +234,11 @@ export default function PatchesPage() {
                         {stats.reworks > 0 && (
                           <span className={`${styles.patchStatBadge} ${styles['patchStatBadge--rework']}`}>
                             ⟳ {pluralize(stats.reworks, 'реворк', 'реворка', 'реворков')}
+                          </span>
+                        )}
+                        {stats.systems > 0 && (
+                          <span className={`${styles.patchStatBadge} ${styles['patchStatBadge--system']}`}>
+                            ✦ {pluralize(stats.systems, 'обновление', 'обновления', 'обновлений')}
                           </span>
                         )}
                       </div>

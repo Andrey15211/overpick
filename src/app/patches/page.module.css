@@ -104,6 +104,8 @@
 .patchesFilterBtn--nerf.patchesFilterBtn--active { background: #E74C3C; }
 .patchesFilterBtn--rework { border-color: #9B59B6; }
 .patchesFilterBtn--rework.patchesFilterBtn--active { background: #9B59B6; }
+.patchesFilterBtn--system { border-color: #95A5A6; }
+.patchesFilterBtn--system.patchesFilterBtn--active { background: #95A5A6; }
 
 /* Результаты */
 .patchesResults {
@@ -174,6 +176,44 @@
   font-size: var(--font-size-sm);
 }
 
+.patchCardStats {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  margin-top: var(--spacing-sm);
+}
+
+.patchStatBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.patchStatBadge--buff {
+  background: rgba(39, 174, 96, 0.15);
+  color: #27AE60;
+}
+
+.patchStatBadge--nerf {
+  background: rgba(231, 76, 60, 0.15);
+  color: #E74C3C;
+}
+
+.patchStatBadge--rework {
+  background: rgba(155, 89, 182, 0.15);
+  color: #9B59B6;
+}
+
+.patchStatBadge--system {
+  background: rgba(149, 165, 166, 0.16);
+  color: #95A5A6;
+}
+
 .patchCardChanges {
   padding: var(--spacing-lg);
   display: flex;
@@ -220,6 +260,11 @@
 .changeType--rework {
   background: rgba(155, 89, 182, 0.2);
   color: #9B59B6;
+}
+
+.changeType--system {
+  background: rgba(149, 165, 166, 0.2);
+  color: #95A5A6;
 }
 
 .changeHero {
