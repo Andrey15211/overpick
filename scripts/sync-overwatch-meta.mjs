@@ -8,6 +8,7 @@ const ROOT = path.resolve(__dirname, '..');
 const META_PATH = path.join(ROOT, 'src', 'data', 'meta.json');
 const HEROES_PATH = path.join(ROOT, 'src', 'data', 'heroes.json');
 const PATCHES_PATH = path.join(ROOT, 'src', 'data', 'patches.json');
+const META_FILTERS_PATH = path.join(ROOT, 'src', 'data', 'metaFilters.ts');
 const BLIZZARD_RATES_URL =
   'https://overwatch.blizzard.com/en-us/rates/?input=PC&map=all-maps&region=Europe&role=All&rq=0&tier=All';
 
@@ -20,6 +21,16 @@ const ROLE_LABELS_RU = {
 const HERO_NAME_RU_OVERRIDES = {
   Shion: 'Шион',
 };
+
+const TIER_RANK = {
+  D: 0,
+  C: 1,
+  B: 2,
+  A: 3,
+  S: 4,
+};
+
+const RANK_TIER = ['D', 'C', 'B', 'A', 'S'];
 
 const MONTH_NAMES_EN = [
   'January',
@@ -338,11 +349,70 @@ function round1(value) {
   return Number(value.toFixed(1));
 }
 
+function parseMetaSignals(source) {
+  const start = source.indexOf('export const HERO_META_SIGNALS');
+  const end = source.indexOf('};', start);
+  if (start === -1 || end === -1) {
+    throw new Error('Could not locate HERO_META_SIGNALS in src/data/metaFilters.ts');
+  }
+
+  const block = source.slice(start, end);
+  const signals = new Map();
+  const signalPattern = /^\s*([a-z0-9]+):\s*\{[^}]*expertTier:\s*'([SABCD])'[^}]*proSignal:\s*([0-3])/gm;
+
+  for (const match of block.matchAll(signalPattern)) {
+    signals.set(match[1], {
+      expertTier: match[2],
+      proSignal: Number(match[3]),
+    });
+  }
+
+  return signals;
+}
+
+function statisticalTierFromRates(winRate, pickRate) {
+  if (winRate >= 54.5 && pickRate >= 1.5) return 'S';
+  if (winRate >= 51 && pickRate >= 3) return 'A';
+  if (winRate >= 48.5) return 'B';
+  if (winRate >= 46.5) return 'C';
+  return 'D';
+}
+
+function deriveTier({ winRate, pickRate, currentTier, signal }) {
+  const statTier = statisticalTierFromRates(winRate, pickRate);
+
+  if (!signal) {
+    return statTier || currentTier;
+  }
+
+  const statRank = TIER_RANK[statTier];
+  const expertRank = TIER_RANK[signal.expertTier];
+
+  if (statTier === 'S') {
+    return 'S';
+  }
+
+  if (expertRank <= TIER_RANK.B && statRank > expertRank && signal.proSignal <= 1 && pickRate < 8) {
+    return signal.expertTier;
+  }
+
+  if (expertRank >= TIER_RANK.A && statRank < expertRank && winRate >= 50 && signal.proSignal >= 1) {
+    return RANK_TIER[Math.min(TIER_RANK.A, statRank + 1)];
+  }
+
+  if (expertRank === TIER_RANK.S && winRate < 47) {
+    return statTier;
+  }
+
+  return statTier || currentTier;
+}
+
 async function main() {
-  const [metaRaw, heroesRaw, patchesRaw, ratesHtml] = await Promise.all([
+  const [metaRaw, heroesRaw, patchesRaw, signalSource, ratesHtml] = await Promise.all([
     fs.readFile(META_PATH, 'utf8'),
     fs.readFile(HEROES_PATH, 'utf8'),
     fs.readFile(PATCHES_PATH, 'utf8'),
+    fs.readFile(META_FILTERS_PATH, 'utf8'),
     fetchText(BLIZZARD_RATES_URL),
   ]);
 
@@ -350,6 +420,7 @@ async function main() {
   const heroes = JSON.parse(heroesRaw);
   const patches = JSON.parse(patchesRaw);
   const rates = parseRates(ratesHtml);
+  const metaSignals = parseMetaSignals(signalSource);
   const heroById = new Map(rates.map((row) => [row.id, row]));
   const heroNameById = new Map(heroes.map((hero) => [hero.id, hero.nameRu]));
   const heroRoleById = new Map(heroes.map((hero) => [hero.id, hero.role]));
@@ -381,11 +452,19 @@ async function main() {
     const pickRate = round1(Number(row.cells.pickrate));
     const nameRu = heroNameById.get(hero.heroId) || hero.heroId;
     const role = heroRoleById.get(hero.heroId) || 'Damage';
-    return {
-      ...hero,
+    const tier = deriveTier({
       winRate,
       pickRate,
-      whyMeta: `${nameRu} по текущему срезу Blizzard выглядит как ${hero.tier}-тир ${ROLE_LABELS_RU[role] || role}: ${winRate}% win rate и ${pickRate}% pick rate.`,
+      currentTier: hero.tier,
+      signal: metaSignals.get(hero.heroId),
+    });
+
+    return {
+      ...hero,
+      tier,
+      winRate,
+      pickRate,
+      whyMeta: `${nameRu} по текущему срезу Blizzard выглядит как ${tier}-тир ${ROLE_LABELS_RU[role] || role}: ${winRate}% win rate и ${pickRate}% pick rate.`,
     };
   });
 

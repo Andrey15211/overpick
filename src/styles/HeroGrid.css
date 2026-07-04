@@ -1,50 +1,49 @@
-/* HeroGrid — Overwatch Season 1 */
+/* HeroGrid · command surface */
 .heroGrid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-lg);
+  display: grid;
+  gap: var(--spacing-xl);
 }
 
-/* Панель управления */
 .heroGridControls {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) auto auto;
   gap: var(--spacing-md);
   align-items: center;
-  padding: var(--spacing-md) var(--spacing-lg);
-  background: var(--color-bg-card);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-xl);
+  background: color-mix(in oklch, var(--color-bg-card) 78%, transparent);
+  box-shadow:
+    inset 0 0 0 1px var(--color-border),
+    var(--shadow-sm);
 }
 
-/* Поиск */
 .heroGridSearch {
-  flex: 1;
-  min-width: 200px;
   position: relative;
+  min-width: 0;
 }
 
 .heroGridSearchIcon {
   position: absolute;
-  left: 14px;
+  left: var(--spacing-md);
   top: 50%;
+  color: var(--color-accent-cyan);
   transform: translateY(-50%);
-  color: var(--color-text-muted);
-  font-size: 1rem;
   pointer-events: none;
 }
 
 .heroGridSearchInput {
   width: 100%;
-  padding: 10px 14px;
-  padding-left: 40px;
-  background: var(--color-bg);
+  min-height: 48px;
+  padding: 0 var(--spacing-md) 0 2.75rem;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
+  background: var(--color-bg);
   color: var(--color-text);
-  font-size: var(--font-size-sm);
   font-family: var(--font-primary);
-  transition: all var(--transition-normal);
+  font-size: var(--font-size-sm);
+  transition-property: border-color, box-shadow, background-color;
+  transition-duration: var(--dur-med);
+  transition-timing-function: var(--ease-out);
 }
 
 .heroGridSearchInput::placeholder {
@@ -52,103 +51,153 @@
 }
 
 .heroGridSearchInput:focus {
+  border-color: var(--color-accent-cyan);
+  background: color-mix(in oklch, var(--color-bg) 86%, var(--color-accent-cyan));
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-accent-cyan) 24%, transparent);
   outline: none;
-  border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(230, 57, 70, 0.15);
 }
 
-/* Фильтры ролей */
 .heroGridFilters {
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
 }
 
 .heroGridFilterBtn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  background: var(--color-bg);
+  justify-content: center;
+  min-height: 40px;
+  gap: var(--spacing-xs);
+  padding: 0 var(--spacing-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
+  background: var(--color-bg);
   color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
   font-family: var(--font-primary);
-  cursor: pointer;
-  transition: all var(--transition-normal);
-  font-weight: 500;
+  font-size: var(--font-size-sm);
+  font-weight: 900;
+  transition-property: transform, color, background-color, border-color, box-shadow;
+  transition-duration: var(--dur-med);
+  transition-timing-function: var(--ease-out);
 }
 
 .heroGridFilterBtn:hover {
-  border-color: var(--color-border-hover);
   color: var(--color-text);
+  border-color: var(--color-border-hover);
   background: var(--color-bg-hover);
 }
 
-.heroGridFilterBtn--active {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: white;
+.heroGridFilterBtn:active {
+  transform: scale(0.96);
 }
 
-.heroGridFilterBtn--Tank.heroGridFilterBtn--active { background: #F0B429; border-color: #F0B429; color: #111; }
-.heroGridFilterBtn--Damage.heroGridFilterBtn--active { background: #E74C3C; border-color: #E74C3C; }
-.heroGridFilterBtn--Support.heroGridFilterBtn--active { background: #27AE60; border-color: #27AE60; }
+.heroGridFilterBtn--active {
+  color: white;
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  box-shadow: 0 10px 28px color-mix(in oklch, var(--color-accent) 24%, transparent);
+}
 
-/* Результаты */
+.heroGridFilterBtn--Tank.heroGridFilterBtn--active {
+  background: var(--color-role-tank);
+  border-color: var(--color-role-tank);
+  color: var(--color-bg);
+}
+
+.heroGridFilterBtn--Damage.heroGridFilterBtn--active {
+  background: var(--color-role-damage);
+  border-color: var(--color-role-damage);
+}
+
+.heroGridFilterBtn--Support.heroGridFilterBtn--active {
+  background: var(--color-role-support);
+  border-color: var(--color-role-support);
+  color: var(--color-bg);
+}
+
 .heroGridResults {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
+  justify-self: end;
   color: var(--color-text-muted);
   font-size: var(--font-size-xs);
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .heroGridResultsCount {
   color: var(--color-accent);
-  font-weight: 700;
 }
 
-/* Сетка героев */
 .heroGridContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
   gap: var(--spacing-md);
 }
 
-/* Группировка по ролям */
 .heroGridGroup {
-  margin-bottom: var(--spacing-xl);
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.heroGridGroup + .heroGridGroup {
+  margin-top: var(--spacing-xl);
 }
 
 .heroGridGroupTitle {
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-lg);
-  font-weight: 700;
-  margin-bottom: var(--spacing-md);
+  min-width: 0;
+  margin: 0;
   padding-bottom: var(--spacing-sm);
   border-bottom: 1px solid var(--color-border);
-  letter-spacing: -0.01em;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: 950;
 }
 
 .heroGridGroupIcon {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
 }
 
 .heroGridGroupCount {
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
-  font-weight: 400;
+  font-weight: 700;
 }
 
-/* Анимации */
-@keyframes fadeIn {
+.heroGridItem {
+  animation: heroGridReveal 360ms var(--ease-out) backwards;
+}
+
+.heroGridEmpty {
+  display: grid;
+  place-items: center;
+  min-height: 220px;
+  padding: var(--spacing-2xl);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-card);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  color: var(--color-text-muted);
+  text-align: center;
+}
+
+.heroGridEmptyIcon {
+  font-size: 2rem;
+  opacity: 0.65;
+}
+
+.heroGridEmptyText {
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+}
+
+@keyframes heroGridReveal {
   from {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -156,48 +205,23 @@
   }
 }
 
-.heroGridItem {
-  animation: fadeIn 0.3s ease backwards;
-}
-
-.heroGridItem:nth-child(1) { animation-delay: 0.02s; }
-.heroGridItem:nth-child(2) { animation-delay: 0.04s; }
-.heroGridItem:nth-child(3) { animation-delay: 0.06s; }
-.heroGridItem:nth-child(4) { animation-delay: 0.08s; }
-.heroGridItem:nth-child(5) { animation-delay: 0.1s; }
-.heroGridItem:nth-child(6) { animation-delay: 0.12s; }
-.heroGridItem:nth-child(7) { animation-delay: 0.14s; }
-.heroGridItem:nth-child(8) { animation-delay: 0.16s; }
-
-/* Пустое состояние */
-.heroGridEmpty {
-  text-align: center;
-  padding: var(--spacing-3xl);
-  color: var(--color-text-muted);
-}
-
-.heroGridEmptyIcon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-md);
-  opacity: 0.5;
-}
-
-.heroGridEmptyText {
-  font-size: var(--font-size-lg);
-}
-
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .heroGridControls {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: 1fr;
   }
 
-  .heroGridFilters {
-    flex-wrap: wrap;
+  .heroGridResults {
+    justify-self: start;
   }
+}
 
+@media (max-width: 520px) {
   .heroGridContainer {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
     gap: var(--spacing-sm);
+  }
+
+  .heroGridFilterBtn {
+    flex: 1 1 auto;
   }
 }

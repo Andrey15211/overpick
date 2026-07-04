@@ -3,8 +3,9 @@ import Image from 'next/image';
 import HeroGrid from '@/components/HeroGrid';
 import heroesData from '@/data/heroes.json';
 import metaData from '@/data/meta.json';
+import patchesData from '@/data/patches.json';
 import { Hero, SUBROLE_LABELS } from '@/types/heroes';
-import { HeroMeta, Tier, TierInfo } from '@/types/meta';
+import { HeroMeta, Patch, Tier, TierInfo } from '@/types/meta';
 import { buildHeroById, formatDateRu } from '@/lib/display';
 import styles from './page.module.css';
 
@@ -18,48 +19,98 @@ const meta = metaData as {
   tiers: Record<Tier, TierInfo>;
   heroes: HeroMeta[];
 };
+const patches = patchesData as Patch[];
 
 const NEW_HEROES = ['sierra'];
 
 export default function Home() {
-  // Топ-герои по ролям
-  const topHeroes = meta.heroes.filter(h => h.tier === 'S');
   const heroById = buildHeroById(heroes);
   const lastUpdatedRu = formatDateRu(meta.lastUpdated);
+  const topHeroes = meta.heroes.filter((heroMeta) => heroMeta.tier === 'S');
+  const topPerformer = [...meta.heroes].sort((left, right) => right.winRate - left.winRate)[0];
+  const topPerformerHero = topPerformer ? heroById.get(topPerformer.heroId) : undefined;
+  const latestPatch = patches[0];
+  const roleCounts = heroes.reduce(
+    (acc, hero) => {
+      acc[hero.role] += 1;
+      return acc;
+    },
+    { Tank: 0, Damage: 0, Support: 0 } as Record<Hero['role'], number>,
+  );
   
   return (
     <main className={styles.main}>
-      {/* Hero секция */}
       <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <div className={styles.heroBadge}>
-            <span className={styles.heroBadgeIcon}>◆</span>
-            {meta.seasonName}
+        <div className={styles.heroShell}>
+          <div className={styles.heroCopy}>
+            <p className={styles.heroSystemLine}>
+              {meta.seasonName} / патч {meta.patch} / обновлено {lastUpdatedRu}
+            </p>
+            <h1 className={styles.heroTitle}>
+              Контрпик за раунд
+            </h1>
+            <p className={styles.heroSubtitle}>
+              Быстрый выбор героя, текущий тир и свежие сигналы Blizzard Hero Statistics без ручного пересчёта после каждого патча.
+            </p>
+            <div className={styles.heroCta} aria-label="Основные действия">
+              <Link href="/heroes" className={styles.heroCtaPrimary}>
+                Найти контрпик
+              </Link>
+              <Link href="/meta" className={styles.heroCtaSecondary}>
+                Открыть тир-лист
+              </Link>
+            </div>
           </div>
-          <h1 className={styles.heroTitle}>
-            <span className={styles.heroTitleAccent}>Overpick</span>
-            <br />Контрпики Overwatch
-          </h1>
-          <p className={styles.heroSubtitle}>
-            Season 3, патч {meta.patch}. Контрпики, актуальный тир-лист и разбор свежей меты для {heroes.length} героев по состоянию на {lastUpdatedRu}.
-          </p>
-          <div className={styles.heroCta}>
-            <Link href="/heroes" className={styles.heroCtaPrimary}>
-              Найти контрпик
-            </Link>
-            <Link href="/meta" className={styles.heroCtaSecondary}>
-              Тир-лист
-            </Link>
+
+          <div className={styles.commandPanel} aria-label="Сводка текущей меты">
+            <div className={styles.commandPanelHeader}>
+              <span>Live meta desk</span>
+              <strong>{meta.lastUpdated}</strong>
+            </div>
+            <div className={styles.signalGrid}>
+              <div className={styles.signalCard}>
+                <span className={styles.signalLabel}>Героев</span>
+                <strong>{heroes.length}</strong>
+              </div>
+              <div className={styles.signalCard}>
+                <span className={styles.signalLabel}>S тир</span>
+                <strong>{topHeroes.length}</strong>
+              </div>
+              <div className={styles.signalCard}>
+                <span className={styles.signalLabel}>Свежий патч</span>
+                <strong>{latestPatch ? formatDateRu(latestPatch.date) : 'нет данных'}</strong>
+              </div>
+            </div>
+
+            {topPerformer && topPerformerHero && (
+              <Link href={`/hero/${topPerformerHero.id}`} className={styles.featuredHero}>
+                <span className={styles.featuredTier}>{topPerformer.tier}</span>
+                <span>
+                  <strong>{topPerformerHero.nameRu}</strong>
+                  <small>{topPerformer.winRate}% win rate / {topPerformer.pickRate}% pick rate</small>
+                </span>
+              </Link>
+            )}
+
+            <div className={styles.roleStrip} aria-label="Распределение героев по ролям">
+              <span>Танк {roleCounts.Tank}</span>
+              <span>Урон {roleCounts.Damage}</span>
+              <span>Поддержка {roleCounts.Support}</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Быстрый выбор героя */}
       <section className={styles.quickPick}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Выбери героя</h2>
+          <div>
+            <h2 className={styles.sectionTitle}>Выбери героя</h2>
+            <p className={styles.sectionSubtitle}>
+              Сетка сразу показывает роль и тир, чтобы перейти к контрпикам без лишних экранов.
+            </p>
+          </div>
           <p className={styles.sectionSubtitle}>
-            Выбери героя и сразу посмотри, кем его контрить на текущем патче
+            Найдено {heroes.length} героев / данные обновлены {lastUpdatedRu}
           </p>
         </div>
         <HeroGrid 
@@ -70,12 +121,14 @@ export default function Home() {
         />
       </section>
 
-      {/* Топ меты */}
       <section className={styles.topMeta}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Герои высшего тира</h2>
+          <div>
+            <h2 className={styles.sectionTitle}>Герои высшего тира</h2>
+            <p className={styles.sectionSubtitle}>Текущий S-tier из live-среза и экспертных сигналов.</p>
+          </div>
           <Link href="/meta" className={styles.sectionLink}>
-            Полный тир-лист →
+            Полный тир-лист
           </Link>
         </div>
         <div className={styles.topMetaGrid}>
@@ -121,7 +174,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Статистика */}
       <section className={styles.stats}>
         <div className={styles.statItem}>
           <span className={styles.statValue}>{heroes.length}</span>
