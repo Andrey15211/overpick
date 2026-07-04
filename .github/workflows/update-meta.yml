@@ -53,6 +53,9 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Verify built site
+        run: npm run verify:site
+
       - name: Check for changes
         id: changes
         run: |
@@ -66,7 +69,7 @@ jobs:
             echo "### Weekly Overwatch meta sync"
             echo ""
             echo "- Data changed: yes"
-            echo "- Validation: npm test, npm run lint, npm run build"
+            echo "- Validation: npm test, npm run lint, npm run build, npm run verify:site"
             echo "- Files:"
             git diff --name-only -- src/data/meta.json src/data/patches.json | sed 's/^/  - /'
           } >> "$GITHUB_STEP_SUMMARY"
@@ -78,7 +81,7 @@ jobs:
             echo "### Weekly Overwatch meta sync"
             echo ""
             echo "- Data changed: no"
-            echo "- Validation still passed: npm test, npm run lint, npm run build"
+            echo "- Validation still passed: npm test, npm run lint, npm run build, npm run verify:site"
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit and push

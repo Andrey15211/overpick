@@ -9,6 +9,7 @@
     "lint": "eslint",
     "test": "node --test tests/*.test.cjs",
     "verify:browser": "node scripts/verify-overwatch-browser.mjs",
+    "verify:site": "node scripts/verify-site.mjs",
     "sync:meta": "node scripts/sync-overwatch-meta.mjs"
   },
   "dependencies": {
