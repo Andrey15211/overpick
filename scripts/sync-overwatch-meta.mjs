@@ -47,18 +47,32 @@ const MONTH_NAMES_EN = [
   'December',
 ];
 
-function fetchText(url) {
-  return fetch(url, {
-    headers: {
-      'user-agent': 'Mozilla/5.0',
-      accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-    },
-  }).then((response) => {
+async function fetchText(url, timeoutMs = 30000) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        'user-agent': 'Mozilla/5.0',
+        accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      },
+    });
+
     if (!response.ok) {
       throw new Error(`Failed to fetch ${url}: ${response.status} ${response.statusText}`);
     }
+
     return response.text();
-  });
+  } catch (error) {
+    if (error?.name === 'AbortError') {
+      throw new Error(`Timed out fetching ${url} after ${timeoutMs}ms`);
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 function parseRates(html) {

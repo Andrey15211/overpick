@@ -16,6 +16,7 @@ concurrency:
 jobs:
   sync-meta:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout
@@ -43,6 +44,15 @@ jobs:
       - name: Sync meta from Blizzard
         run: npm run sync:meta
 
+      - name: Validate synced data
+        run: npm test
+
+      - name: Lint site
+        run: npm run lint
+
+      - name: Build site
+        run: npm run build
+
       - name: Check for changes
         id: changes
         run: |
@@ -52,6 +62,24 @@ jobs:
           fi
 
           echo "changed=true" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Weekly Overwatch meta sync"
+            echo ""
+            echo "- Data changed: yes"
+            echo "- Validation: npm test, npm run lint, npm run build"
+            echo "- Files:"
+            git diff --name-only -- src/data/meta.json src/data/patches.json | sed 's/^/  - /'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Report no data changes
+        if: steps.changes.outputs.changed == 'false'
+        run: |
+          {
+            echo "### Weekly Overwatch meta sync"
+            echo ""
+            echo "- Data changed: no"
+            echo "- Validation still passed: npm test, npm run lint, npm run build"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit and push
         if: steps.changes.outputs.changed == 'true'

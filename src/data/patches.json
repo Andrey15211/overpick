@@ -549,8 +549,7 @@
     "summary": "Небольшой bug fix-патч без балансных изменений. Исправлены ошибки в магазине, Post Match Accolades, Battle Pass и VFX Nano Boost.",
     "changes": [
       {
-        "heroId": "general",
-        "type": "rework",
+        "type": "system",
         "ability": "General",
         "description": "Обновление не содержит правок баланса героев. Blizzard исправила проблемы с выбором валюты в магазине, расчётом статистики Junker Queen в Post Match Accolades, временем Battle Pass и VFX Nano Boost.",
         "devComment": "Bug fix patch; no hero balance changes."
@@ -593,7 +592,6 @@
         "devComment": "Bug fix + UI улучшение."
       },
       {
-        "heroId": "backstabber",
         "type": "buff",
         "ability": "Backstabber",
         "description": "Исправлен баг, из-за которого Backstabber давал лишние bleed procs на критических попаданиях. Перк включён обратно.",
@@ -609,7 +607,6 @@
     "summary": "Масштабный межсезонный патч: переработка подкласса Инициатор, нерфы D.Va и Emre, баффы Freja, Baptiste и Junker Queen. Pharah ослаблена после доминирования в мете. Mercy получила новый перк Winged Reach.",
     "changes": [
       {
-        "heroId": "Подкласс Инициатор",
         "type": "rework",
         "ability": "Subrole Passive",
         "description": "Пассивка больше не активируется в воздухе. Теперь срабатывает при использовании конкретных movement ability: Winston — Jump Pack, D.Va — Boosters, Hazard — Violent Lunge, Wrecking Ball — Grappling Claw, Doomfist — Rocket Punch. Лечение снижено с 60 до 50.",
@@ -835,18 +832,18 @@
     "title": "⚡ Overwatch Season 1.5 — Середина сезона",
     "changes": [
       {
-        "heroId": "Подкласс Медик",
         "type": "buff",
+        "ability": "Подкласс Медик",
         "description": "самоисцеление от лечения союзников увеличено с 25% до 40%"
       },
       {
-        "heroId": "Подкласс бруйзер",
         "type": "buff",
+        "ability": "Подкласс бруйзер",
         "description": "эффект срабатывает при <50% здоровья"
       },
       {
-        "heroId": "Подкласс Инициатор",
         "type": "nerf",
+        "ability": "Подкласс Инициатор",
         "description": "эффект больше не срабатывает при полном здоровье. Исцеление 70→60 ед."
       },
       {
