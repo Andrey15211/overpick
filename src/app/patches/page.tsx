@@ -284,7 +284,6 @@ export default function PatchesPage() {
                                     width={24}
                                     height={24}
                                     className={styles.changeHeroPortrait}
-                                    unoptimized
                                   />
                                 )}
                                 <span className={styles.changeHero}>{getChangeSubject(change)}</span>

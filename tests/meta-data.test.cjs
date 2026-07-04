@@ -8,6 +8,10 @@ const patches = require('../src/data/patches.json');
 
 const VALID_TIERS = new Set(['S', 'A', 'B', 'C', 'D']);
 const VALID_CHANGE_TYPES = new Set(['buff', 'nerf', 'rework', 'map', 'system']);
+const ALLOWED_PORTRAIT_HOSTS = new Set([
+  'd15f34w2p8l1cc.cloudfront.net',
+  'blz-contentstack-images.akamaized.net',
+]);
 
 function assertFiniteRate(value, label) {
   assert.equal(typeof value, 'number', `${label} must be a number`);
@@ -48,6 +52,15 @@ test('meta snapshot has current source and numeric rates', () => {
     assertFiniteRate(entry.winRate, `${entry.heroId}.winRate`);
     assert.equal(typeof entry.whyMeta, 'string', `${entry.heroId}.whyMeta must be a string`);
     assert.ok(entry.whyMeta.includes(`${entry.tier}-тир`), `${entry.heroId}.whyMeta must mention its tier`);
+  }
+});
+
+test('hero portraits use image hosts configured for next/image', () => {
+  for (const hero of heroes) {
+    assert.equal(typeof hero.portrait, 'string', `${hero.id}.portrait must be a string`);
+    const url = new URL(hero.portrait);
+    assert.equal(url.protocol, 'https:', `${hero.id}.portrait must use https`);
+    assert.ok(ALLOWED_PORTRAIT_HOSTS.has(url.hostname), `${hero.id}.portrait uses unsupported host ${url.hostname}`);
   }
 });
 

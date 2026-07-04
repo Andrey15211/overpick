@@ -65,7 +65,6 @@ export default function SynergyBlock({ synergies, heroes }: SynergyBlockProps) {
                   height={56}
                   className="synergyPartnerAvatarImg"
                   loading="lazy"
-                  unoptimized
                 />
               </div>
 

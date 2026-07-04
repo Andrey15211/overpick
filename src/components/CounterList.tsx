@@ -149,7 +149,6 @@ export default function CounterList({ counters, heroes, title = 'Контрпи�
                   height={48}
                   className="counterItemAvatarImg"
                   loading="lazy"
-                  unoptimized
                 />
               </div>
               

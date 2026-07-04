@@ -239,7 +239,6 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
                         height={56}
                         className="tierHeroAvatarImg"
                         loading="lazy"
-                        unoptimized
                       />
                     </div>
                     <span className="tierHeroName">{hero.nameRu}</span>

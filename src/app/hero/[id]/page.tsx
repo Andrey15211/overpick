@@ -108,7 +108,6 @@ export default async function HeroDetailPage({
               height={120}
               className={styles.heroDetailAvatarImg}
               priority
-              unoptimized
             />
           </div>
           
