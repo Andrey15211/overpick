@@ -4,6 +4,7 @@ import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CounterInfo, Hero, HeroRole, ROLE_LABELS } from '@/types/heroes';
+import { buildHeroById } from '@/lib/display';
 import '../styles/CounterList.css';
 
 interface CounterListProps {
@@ -19,11 +20,7 @@ export default function CounterList({ counters, heroes, title = 'Контрпи�
   const [activeRole, setActiveRole] = useState<HeroRole | 'All'>('All');
 
   const heroesById = useMemo(() => {
-    const map = new Map<string, Hero>();
-    for (const hero of heroes) {
-      map.set(hero.id, hero);
-    }
-    return map;
+    return buildHeroById(heroes);
   }, [heroes]);
 
   // Получить информацию о герое

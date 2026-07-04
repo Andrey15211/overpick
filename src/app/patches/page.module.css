@@ -1,23 +1,31 @@
-/* Стили страницы Patches */
+/* Hallmark · macrostructure: Workbench · tone: technical · anchor hue: red-cyan */
 .patchesPage {
-  padding: var(--spacing-2xl) var(--spacing-lg);
   min-height: 100vh;
+  padding: clamp(2rem, 5vw, 4rem) var(--spacing-lg) var(--spacing-3xl);
 }
 
 .patchesContainer {
-  max-width: var(--container-max);
+  display: grid;
+  gap: var(--spacing-xl);
+  width: min(100%, var(--container-max));
   margin: 0 auto;
 }
 
 .patchesHeader {
-  text-align: center;
-  margin-bottom: var(--spacing-2xl);
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.5fr);
+  gap: var(--spacing-xl);
+  align-items: end;
+  animation: patchesReveal var(--dur-slow) var(--ease-out) both;
 }
 
 .patchesTitle {
-  font-size: var(--font-size-4xl);
-  margin-bottom: var(--spacing-sm);
-  font-family: var(--font-heading);
+  max-width: 10ch;
+  margin: 0;
+  font-size: var(--text-display-s);
+  font-weight: 950;
+  line-height: 0.92;
+  overflow-wrap: anywhere;
 }
 
 .patchesTitle span {
@@ -25,222 +33,480 @@
 }
 
 .patchesSubtitle {
+  max-width: 65ch;
+  margin: 0;
   color: var(--color-text-secondary);
   font-size: var(--font-size-lg);
+  line-height: 1.65;
 }
 
-/* Фильтры */
 .patchesFilters {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(200px, 0.8fr) minmax(280px, 1.2fr);
   gap: var(--spacing-md);
+  align-items: end;
   padding: var(--spacing-lg);
-  background: var(--color-bg-card);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  margin-bottom: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, color-mix(in oklch, var(--color-accent-cyan) 8%, transparent), transparent 52%),
+    var(--color-bg-card);
+  box-shadow: inset 0 0 0 1px var(--color-border), var(--shadow-sm);
 }
 
 .patchesFilterGroup {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  min-width: 0;
   gap: var(--spacing-xs);
-  flex: 1;
-  min-width: 200px;
 }
 
 .patchesFilterLabel {
-  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
-  font-weight: 500;
+  font-size: var(--font-size-xs);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .patchesFilterSelect,
 .patchesFilterInput {
-  padding: var(--spacing-sm) var(--spacing-md);
-  background: var(--color-bg);
+  width: 100%;
+  min-height: 44px;
+  padding-inline: var(--spacing-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   color: var(--color-text);
-  font-size: var(--font-size-base);
+  background: var(--color-bg);
+  font-family: var(--font-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 800;
+  transition-property: border-color, box-shadow, background-color;
+  transition-duration: var(--dur-fast);
+  transition-timing-function: var(--ease-out);
 }
 
-.patchesFilterSelect:focus,
-.patchesFilterInput:focus {
-  outline: none;
-  border-color: var(--color-accent);
+.patchesFilterSelect:focus-visible,
+.patchesFilterInput:focus-visible {
+  border-color: var(--color-accent-cyan);
+  outline: 2px solid var(--color-accent-cyan);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px color-mix(in oklch, var(--color-accent-cyan) 16%, transparent);
 }
 
 .patchesFilterBtns {
   display: flex;
-  gap: var(--spacing-xs);
   flex-wrap: wrap;
+  gap: var(--spacing-xs);
 }
 
 .patchesFilterBtn {
-  padding: var(--spacing-xs) var(--spacing-sm);
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding-inline: var(--spacing-md);
+  border-radius: var(--radius-full);
   color: var(--color-text-secondary);
+  background: var(--color-bg);
+  box-shadow: inset 0 0 0 1px var(--color-border);
   font-size: var(--font-size-sm);
-  cursor: pointer;
-  transition: all var(--transition-fast);
+  font-weight: 900;
+  white-space: nowrap;
+  transition-property: transform, color, background-color, box-shadow;
+  transition-duration: var(--dur-fast);
+  transition-timing-function: var(--ease-out);
 }
 
 .patchesFilterBtn:hover {
-  border-color: var(--color-accent);
+  color: var(--color-text);
+  background: var(--color-bg-hover);
+  box-shadow: inset 0 0 0 1px var(--color-border-hover);
+}
+
+.patchesFilterBtn:active {
+  transform: scale(0.96);
 }
 
 .patchesFilterBtn--active {
+  color: var(--color-accent-ink);
   background: var(--color-accent);
-  border-color: var(--color-accent);
-  color: white;
+  box-shadow: inset 0 0 0 1px var(--color-accent);
 }
 
-.patchesFilterBtn--buff { border-color: #27AE60; }
-.patchesFilterBtn--buff.patchesFilterBtn--active { background: #27AE60; }
-.patchesFilterBtn--nerf { border-color: #E74C3C; }
-.patchesFilterBtn--nerf.patchesFilterBtn--active { background: #E74C3C; }
-.patchesFilterBtn--rework { border-color: #9B59B6; }
-.patchesFilterBtn--rework.patchesFilterBtn--active { background: #9B59B6; }
+.patchesFilterBtn--buff { color: var(--color-change-buff); }
+.patchesFilterBtn--nerf { color: var(--color-change-nerf); }
+.patchesFilterBtn--rework { color: var(--color-change-rework); }
+.patchesFilterBtn--system { color: var(--color-change-system); }
+.patchesFilterBtn--buff.patchesFilterBtn--active,
+.patchesFilterBtn--nerf.patchesFilterBtn--active,
+.patchesFilterBtn--rework.patchesFilterBtn--active,
+.patchesFilterBtn--system.patchesFilterBtn--active {
+  color: var(--color-bg);
+}
 
-/* Результаты */
 .patchesResults {
-  margin-bottom: var(--spacing-md);
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+  font-weight: 800;
 }
 
 .patchesResultsCount {
   color: var(--color-accent);
-  font-weight: 600;
+  font-weight: 950;
 }
 
-/* Список патчей */
 .patchesList {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: var(--spacing-lg);
+  position: relative;
 }
 
-/* Карточка патча */
+.patchTimelineItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: var(--spacing-md);
+}
+
+.patchTimelineItem::before {
+  content: '';
+  position: absolute;
+  top: 32px;
+  bottom: calc(var(--spacing-lg) * -1);
+  left: 15px;
+  width: 1px;
+  background: var(--color-border);
+}
+
+.patchTimelineItem:last-child::before {
+  display: none;
+}
+
+.patchTimelineDot {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  box-shadow:
+    inset 0 0 0 2px var(--color-accent),
+    0 0 0 5px color-mix(in oklch, var(--color-accent) 12%, transparent);
+}
+
 .patchCard {
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
   overflow: hidden;
-  transition: border-color var(--transition-fast);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-card);
+  box-shadow:
+    inset 0 0 0 1px var(--color-border),
+    var(--shadow-sm);
+  transition-property: transform, background-color, box-shadow;
+  transition-duration: var(--dur-med);
+  transition-timing-function: var(--ease-out);
 }
 
 .patchCard:hover {
-  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  background: color-mix(in oklch, var(--color-bg-card) 92%, var(--color-accent));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent) 34%, transparent),
+    var(--shadow-md);
 }
 
 .patchCardHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  gap: var(--spacing-md);
   padding: var(--spacing-lg);
-  background: var(--color-bg-secondary);
   border-bottom: 1px solid var(--color-border);
-  flex-wrap: wrap;
-  gap: var(--spacing-sm);
+  background: color-mix(in oklch, var(--color-bg-secondary) 82%, transparent);
+}
+
+.patchCardHeaderTop {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--spacing-md);
 }
 
 .patchCardTitle {
-  font-family: var(--font-heading);
+  margin: 0;
   font-size: var(--font-size-xl);
-  font-weight: 600;
+  font-weight: 950;
+  overflow-wrap: anywhere;
 }
 
 .patchCardMeta {
   display: flex;
-  gap: var(--spacing-md);
   align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
 }
 
 .patchCardVersion {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding-inline: var(--spacing-sm);
+  border-radius: var(--radius-full);
+  color: var(--color-accent-ink);
   background: var(--color-accent);
-  color: white;
-  padding: 4px 12px;
-  border-radius: var(--radius-md);
-  font-weight: 600;
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 950;
 }
 
 .patchCardDate {
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+  font-weight: 800;
+}
+
+.patchCardSummary {
+  max-width: 78ch;
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+.patchCardStats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.patchStatBadge,
+.changeType {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding-inline: var(--spacing-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 950;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.patchStatBadge--buff,
+.changeType--buff {
+  color: var(--color-change-buff);
+  background: color-mix(in oklch, var(--color-change-buff) 14%, transparent);
+}
+
+.patchStatBadge--nerf,
+.changeType--nerf {
+  color: var(--color-change-nerf);
+  background: color-mix(in oklch, var(--color-change-nerf) 14%, transparent);
+}
+
+.patchStatBadge--rework,
+.changeType--rework {
+  color: var(--color-change-rework);
+  background: color-mix(in oklch, var(--color-change-rework) 14%, transparent);
+}
+
+.patchStatBadge--system,
+.changeType--system {
+  color: var(--color-change-system);
+  background: color-mix(in oklch, var(--color-change-system) 14%, transparent);
 }
 
 .patchCardChanges {
-  padding: var(--spacing-lg);
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
 }
 
-/* Элемент изменения */
 .changeItem {
+  display: grid;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklch, var(--color-bg) 62%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-border) 72%, transparent);
+}
+
+.changeItemMain {
+  display: grid;
+  grid-template-columns: auto minmax(9rem, 0.36fr) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--spacing-sm);
+  min-width: 0;
+}
+
+.changeHeroBlock {
   display: flex;
   align-items: center;
-  gap: var(--spacing-md);
-  padding: var(--spacing-md);
-  background: var(--color-bg);
-  border-radius: var(--radius-md);
-  transition: background var(--transition-fast);
+  min-width: 0;
+  gap: var(--spacing-xs);
 }
 
-.changeItem:hover {
-  background: var(--color-bg-hover);
-}
-
-.changeType {
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  font-size: var(--font-size-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  flex-shrink: 0;
-  min-width: 70px;
-  text-align: center;
-}
-
-.changeType--buff {
-  background: rgba(39, 174, 96, 0.2);
-  color: #27AE60;
-}
-
-.changeType--nerf {
-  background: rgba(231, 76, 60, 0.2);
-  color: #E74C3C;
-}
-
-.changeType--rework {
-  background: rgba(155, 89, 182, 0.2);
-  color: #9B59B6;
+.changeHeroPortrait {
+  width: 28px;
+  height: 28px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.12);
 }
 
 .changeHero {
-  font-weight: 600;
-  min-width: 120px;
-  flex-shrink: 0;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--color-text);
+  font-weight: 950;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.changeContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-width: 0;
+  gap: var(--spacing-xs);
 }
 
 .changeDesc {
+  flex-basis: 100%;
+  min-width: 0;
   color: var(--color-text-secondary);
-  flex: 1;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
 }
 
-/* Пустое состояние */
+.changeAbility,
+.changeValues {
+  display: inline-flex;
+  min-height: 26px;
+  align-items: center;
+  padding-inline: var(--spacing-sm);
+  border-radius: var(--radius-full);
+  color: var(--color-accent-cyan);
+  background: color-mix(in oklch, var(--color-accent-cyan) 10%, transparent);
+  font-size: var(--font-size-xs);
+  font-weight: 900;
+}
+
+.changeValues {
+  color: var(--color-accent);
+  background: color-mix(in oklch, var(--color-accent) 10%, transparent);
+}
+
+.devCommentToggle {
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  min-height: 32px;
+  border-radius: var(--radius-full);
+  color: var(--color-text-secondary);
+  background: var(--color-bg);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  transition-property: transform, color, background-color, box-shadow;
+  transition-duration: var(--dur-fast);
+  transition-timing-function: var(--ease-out);
+}
+
+.devCommentToggle:hover,
+.devCommentToggle--active {
+  color: var(--color-accent-ink);
+  background: var(--color-accent);
+  box-shadow: inset 0 0 0 1px var(--color-accent);
+}
+
+.devCommentToggle:active {
+  transform: scale(0.96);
+}
+
+.devCommentSection {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition-property: grid-template-rows, opacity;
+  transition-duration: var(--dur-med);
+  transition-timing-function: var(--ease-in-out);
+}
+
+.devCommentSection--open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+.devCommentInner {
+  overflow: hidden;
+}
+
+.devCommentContent {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  color: var(--color-text-secondary);
+  background: color-mix(in oklch, var(--color-accent-cyan) 8%, var(--color-bg));
+  font-size: var(--font-size-sm);
+  line-height: 1.55;
+}
+
+.devCommentLabel {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-accent-cyan);
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
 .patchesEmpty {
-  text-align: center;
+  display: grid;
+  place-items: center;
+  min-height: 220px;
   padding: var(--spacing-2xl);
+  border-radius: var(--radius-xl);
   color: var(--color-text-muted);
+  background: var(--color-bg-card);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+  text-align: center;
 }
 
 .patchesEmptyIcon {
-  font-size: 3rem;
   margin-bottom: var(--spacing-md);
+  font-size: 2rem;
+}
+
+@keyframes patchesReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 70rem) {
+  .patchesHeader,
+  .patchesFilters {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 48rem) {
+  .patchTimelineItem {
+    grid-template-columns: 1fr;
+  }
+
+  .patchTimelineItem::before,
+  .patchTimelineDot {
+    display: none;
+  }
+
+  .patchCardHeaderTop,
+  .changeItemMain {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .patchCardMeta {
+    justify-content: flex-start;
+  }
 }

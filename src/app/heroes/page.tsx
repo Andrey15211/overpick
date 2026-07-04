@@ -3,6 +3,7 @@ import heroesData from '@/data/heroes.json';
 import metaData from '@/data/meta.json';
 import { Hero } from '@/types/heroes';
 import { HeroMeta, Tier, TierInfo } from '@/types/meta';
+import { formatDateRu } from '@/lib/display';
 import styles from './page.module.css';
 
 // Типизация данных
@@ -16,6 +17,8 @@ const meta = metaData as {
 };
 
 export default function HeroesPage() {
+  const lastUpdatedRu = formatDateRu(meta.lastUpdated);
+
   return (
     <div className={styles.heroesPage}>
       <div className={styles.heroesContainer}>
@@ -25,7 +28,7 @@ export default function HeroesPage() {
             Все <span>Герои</span>
           </h1>
           <p className={styles.heroesSubtitle}>
-            Выбери героя для просмотра контрпиков и информации о мете по состоянию на 1 июня 2026 года
+            Выбери героя для просмотра контрпиков и информации о мете по состоянию на {lastUpdatedRu}
           </p>
         </header>
 

@@ -10,6 +10,7 @@ import metaData from '@/data/meta.json';
 import synergiesData from '@/data/synergies.json';
 import { Hero, HeroRole, ROLE_LABELS, SUBROLE_LABELS, HeroCounters, HeroSynergies } from '@/types/heroes';
 import { HeroMeta, Tier, TierInfo } from '@/types/meta';
+import { buildHeroById, formatDateRu } from '@/lib/display';
 import styles from './page.module.css';
 
 // Типизация данных
@@ -26,6 +27,10 @@ const meta = metaData as {
 };
 
 const NEW_HEROES = ['sierra'];
+const heroById = buildHeroById(heroes);
+const countersByHeroId = new Map(counters.map((counter) => [counter.heroId, counter]));
+const metaByHeroId = new Map(meta.heroes.map((heroMeta) => [heroMeta.heroId, heroMeta]));
+const lastUpdatedRu = formatDateRu(meta.lastUpdated);
 
 // Иконки ролей
 const ROLE_ICONS: Record<HeroRole, string> = {
@@ -41,7 +46,7 @@ export async function generateMetadata({
   params: Promise<{ id: string }> 
 }): Promise<Metadata> {
   const { id } = await params;
-  const hero = heroes.find(h => h.id === id);
+  const hero = heroById.get(id);
   
   if (!hero) {
     return { title: 'Герой не найден' };
@@ -49,7 +54,7 @@ export async function generateMetadata({
   
   return {
     title: `${hero.nameRu} - Контрпики`,
-    description: `Узнай, кто контрит ${hero.nameRu} в Overwatch 2. Лучшие контрпики и мета-заметки для Season 3, актуально на 1 июля 2026 года.`,
+    description: `Узнай, кто контрит ${hero.nameRu} в Overwatch 2. Лучшие контрпики и мета-заметки для Season 3, актуально на ${lastUpdatedRu}.`,
   };
 }
 
@@ -69,16 +74,16 @@ export default async function HeroDetailPage({
   const { id } = await params;
   
   // Найти героя
-  const hero = heroes.find(h => h.id === id);
+  const hero = heroById.get(id);
   if (!hero) {
     notFound();
   }
   
   // Найти контрпики для этого героя
-  const heroCounters = counters.find(c => c.heroId === id);
+  const heroCounters = countersByHeroId.get(id);
   
   // Найти мета-информацию
-  const heroMeta = meta.heroes.find(m => m.heroId === id);
+  const heroMeta = metaByHeroId.get(id);
   
   // Найти синергии
   const heroSynergies = synergies[id] || [];

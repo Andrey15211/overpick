@@ -4,32 +4,35 @@ import { useState, useMemo, useCallback } from 'react';
 import Image from 'next/image';
 import patchesData from '@/data/patches.json';
 import heroesData from '@/data/heroes.json';
+import metaData from '@/data/meta.json';
 import { Hero } from '@/types/heroes';
 import { Patch, ChangeType, CHANGE_TYPE_LABELS } from '@/types/meta';
+import { buildHeroById, formatDateRu } from '@/lib/display';
 import styles from './page.module.css';
 
 // Типизация
 const patches = patchesData as Patch[];
 const heroes = heroesData as Hero[];
+const meta = metaData as { lastUpdated: string };
 
 type TypeFilter = 'all' | ChangeType;
-
-/** Русские названия месяцев в родительном падеже */
-const MONTHS_RU = [
-  'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-  'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря',
-] as const;
-
-/** Форматирование даты: "DD MMMM YYYY" по-русски */
-function formatDateRu(dateStr: string): string {
-  const parts = dateStr.split('-');
-  if (parts.length !== 3) return dateStr;
-  const [yearStr, monthStr, dayStr] = parts;
-  const monthIdx = parseInt(monthStr, 10) - 1;
-  if (monthIdx < 0 || monthIdx > 11) return dateStr;
-  const day = parseInt(dayStr, 10);
-  return `${day} ${MONTHS_RU[monthIdx]} ${yearStr}`;
-}
+type PatchChange = Patch['changes'][number];
+type ChangeStats = {
+  buffs: number;
+  nerfs: number;
+  reworks: number;
+  maps: number;
+  systems: number;
+};
+type IndexedChange = {
+  change: PatchChange;
+  searchText: string;
+};
+type IndexedPatch = {
+  patch: Patch;
+  changes: IndexedChange[];
+  stats: ChangeStats;
+};
 
 /** Склонение слова по количеству */
 function pluralize(n: number, one: string, few: string, many: string): string {
@@ -41,17 +44,33 @@ function pluralize(n: number, one: string, few: string, many: string): string {
   return `${n} ${many}`;
 }
 
+function countByType(changes: PatchChange[]): ChangeStats {
+  const stats: ChangeStats = { buffs: 0, nerfs: 0, reworks: 0, maps: 0, systems: 0 };
+
+  for (const change of changes) {
+    if (change.type === 'buff') stats.buffs += 1;
+    else if (change.type === 'nerf') stats.nerfs += 1;
+    else if (change.type === 'rework') stats.reworks += 1;
+    else if (change.type === 'map') stats.maps += 1;
+    else if (change.type === 'system') stats.systems += 1;
+  }
+
+  return stats;
+}
+
 export default function PatchesPage() {
   const [heroFilter, setHeroFilter] = useState<string>('all');
   const [typeFilter, setTypeFilter] = useState<TypeFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
   // Ключ = "patchId:changeIdx" для открытых dev-комментариев
   const [openComments, setOpenComments] = useState<Set<string>>(new Set());
+  const heroById = useMemo(() => buildHeroById(heroes), []);
+  const lastUpdatedRu = formatDateRu(meta.lastUpdated);
 
   // Получить героя
   const getHero = useCallback((heroId: string): Hero | undefined => {
-    return heroes.find(h => h.id === heroId);
-  }, []);
+    return heroById.get(heroId);
+  }, [heroById]);
 
   // Получить имя героя
   const getHeroName = useCallback((heroId: string): string => {
@@ -62,6 +81,22 @@ export default function PatchesPage() {
     if (change.heroId) return getHeroName(change.heroId);
     return change.mapId || 'Обновление';
   }, [getHeroName]);
+
+  const indexedPatches = useMemo<IndexedPatch[]>(() => {
+    return patches.map((patch) => {
+      const indexedChanges = patch.changes.map((change) => {
+        const subject = getChangeSubject(change);
+        const searchText = `${subject} ${change.description} ${change.ability || ''} ${change.values || ''}`.toLowerCase();
+        return { change, searchText };
+      });
+
+      return {
+        patch,
+        changes: indexedChanges,
+        stats: countByType(patch.changes),
+      };
+    });
+  }, [getChangeSubject]);
 
   // Переключить видимость dev-комментария
   const toggleComment = useCallback((key: string) => {
@@ -78,43 +113,23 @@ export default function PatchesPage() {
 
   // Фильтрация патчей
   const filteredPatches = useMemo(() => {
-    return patches.map(patch => {
-      const filteredChanges = patch.changes.filter(change => {
-        // Фильтр по герою
+    const query = searchQuery.trim().toLowerCase();
+
+    return indexedPatches.map(({ patch, changes }) => {
+      const filteredChanges = changes.filter(({ change, searchText }) => {
         if (heroFilter !== 'all' && change.heroId !== heroFilter) return false;
-        
-        // Фильтр по типу
         if (typeFilter !== 'all' && change.type !== typeFilter) return false;
-        
-        // Поиск
-        if (searchQuery) {
-          const query = searchQuery.toLowerCase();
-          const subject = change.heroId ? getHeroName(change.heroId) : change.mapId || '';
-          const desc = change.description.toLowerCase();
-          if (!subject.toLowerCase().includes(query) && !desc.includes(query)) return false;
-        }
-        
+        if (query && !searchText.includes(query)) return false;
         return true;
-      });
-      
+      }).map(({ change }) => change);
+
       return { ...patch, changes: filteredChanges };
-    }).filter(patch => patch.changes.length > 0);
-  }, [heroFilter, typeFilter, searchQuery, getHeroName]);
+    }).filter((patch) => patch.changes.length > 0);
+  }, [heroFilter, typeFilter, searchQuery, indexedPatches]);
 
-  // Подсчёт изменений
-  const totalChanges = filteredPatches.reduce((acc, p) => acc + p.changes.length, 0);
-
-  /** Подсчитать баффы/нерфы/реворки в списке изменений */
-  const countByType = (changes: Patch['changes']) => {
-    let buffs = 0, nerfs = 0, reworks = 0, maps = 0;
-    for (const c of changes) {
-      if (c.type === 'buff') buffs++;
-      else if (c.type === 'nerf') nerfs++;
-      else if (c.type === 'rework') reworks++;
-      else if (c.type === 'map') maps++;
-    }
-    return { buffs, nerfs, reworks, maps };
-  };
+  const totalChanges = useMemo(() => {
+    return filteredPatches.reduce((acc, patch) => acc + patch.changes.length, 0);
+  }, [filteredPatches]);
 
   return (
     <div className={styles.patchesPage}>
@@ -125,7 +140,7 @@ export default function PatchesPage() {
             История <span>Патчей</span>
           </h1>
           <p className={styles.patchesSubtitle}>
-            Баффы, нерфы и реворки героев Overwatch 2. Страница синхронизирована с Season 3 и актуальным состоянием на 1 июля 2026 года.
+            Баффы, нерфы, реворки и системные hotfix-обновления Overwatch 2. Страница синхронизирована с Season 3 и актуальным состоянием на {lastUpdatedRu}.
           </p>
         </header>
 
@@ -168,7 +183,7 @@ export default function PatchesPage() {
               >
                 Все
               </button>
-              {(['buff', 'nerf', 'rework'] as ChangeType[]).map(type => (
+              {(['buff', 'nerf', 'rework', 'system'] as ChangeType[]).map(type => (
                 <button
                   key={type}
                   className={`${styles.patchesFilterBtn} ${styles[`patchesFilterBtn--${type}`]} ${typeFilter === type ? styles['patchesFilterBtn--active'] : ''}`}
@@ -235,6 +250,11 @@ export default function PatchesPage() {
                             ⟳ {pluralize(stats.reworks, 'реворк', 'реворка', 'реворков')}
                           </span>
                         )}
+                        {stats.systems > 0 && (
+                          <span className={`${styles.patchStatBadge} ${styles['patchStatBadge--system']}`}>
+                            ✦ {pluralize(stats.systems, 'обновление', 'обновления', 'обновлений')}
+                          </span>
+                        )}
                       </div>
                     </div>
 
@@ -292,14 +312,14 @@ export default function PatchesPage() {
                                     aria-expanded={isCommentOpen}
                                     aria-label="Комментарий разработчика"
                                   >
-                                    💬
+                                    Dev
                                   </button>
                                 )}
                               </div>
                             </div>
 
                             {/* Раскрываемый комментарий разработчика */}
-                            {change.devComment && (
+                            {change.devComment && isCommentOpen && (
                               <div className={`${styles.devCommentSection} ${isCommentOpen ? styles['devCommentSection--open'] : ''}`}>
                                 <div className={styles.devCommentInner}>
                                   <div className={styles.devCommentContent}>

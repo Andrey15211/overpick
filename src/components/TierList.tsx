@@ -14,6 +14,7 @@ import {
   RANK_TIER_OPTIONS,
   computeFilteredMeta,
 } from '@/data/metaFilters';
+import { buildHeroById } from '@/lib/display';
 import '../styles/TierList.css';
 
 interface TierListProps {
@@ -38,28 +39,33 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
     return new Map(heroes.map((hero) => [hero.id, hero.role]));
   }, [heroes]);
 
+  const heroById = useMemo(() => buildHeroById(heroes), [heroes]);
+
   // Получить информацию о герое по ID
   const getHeroInfo = (heroId: string): Hero | undefined => {
-    return heroes.find(h => h.id === heroId);
+    return heroById.get(heroId);
   };
 
   const computedHeroes = useMemo(() => {
     return computeFilteredMeta(metaHeroes, heroRoleById, filters);
   }, [filters, heroRoleById, metaHeroes]);
 
-  // Фильтрация героев по роли
-  const filteredHeroes = roleFilter === 'all'
-    ? computedHeroes
-    : computedHeroes.filter(mh => {
-        const hero = getHeroInfo(mh.heroId);
-        return hero?.role === roleFilter;
-      });
+  // Фильтрация по роли и группировка по тирам за один проход.
+  const heroesByTier = useMemo(() => {
+    const grouped = TIER_ORDER.reduce((acc, tier) => {
+      acc[tier] = [];
+      return acc;
+    }, {} as Record<Tier, ComputedHeroMeta[]>);
 
-  // Группировка героев по тирам
-  const heroesByTier = TIER_ORDER.reduce((acc, tier) => {
-    acc[tier] = filteredHeroes.filter(h => h.tier === tier);
-    return acc;
-  }, {} as Record<Tier, ComputedHeroMeta[]>);
+    for (const metaHero of computedHeroes) {
+      if (roleFilter !== 'all' && heroById.get(metaHero.heroId)?.role !== roleFilter) {
+        continue;
+      }
+      grouped[metaHero.tier].push(metaHero);
+    }
+
+    return grouped;
+  }, [computedHeroes, heroById, roleFilter]);
 
   const activeMode = GAME_MODE_OPTIONS.find((option) => option.value === filters.gameMode)?.label;
   const activeRank = RANK_TIER_OPTIONS.find((option) => option.value === filters.rankTier)?.label;

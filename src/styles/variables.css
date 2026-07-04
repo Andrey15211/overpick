@@ -1,84 +1,68 @@
-/* CSS переменные - дизайн-система Overpick */
-/* Обновлено под Overwatch Season 1 (красно-синяя палитра, февраль 2026) */
+@import '../../tokens.css';
+
+/* Backward-compatible Overpick interface tokens. */
 :root {
-  /* Основные цвета — более глубокий тёмный стиль */
-  --color-bg: #050508;
-  --color-bg-secondary: #0e1015;
-  --color-bg-card: #111318;
-  --color-bg-hover: #1a1d24;
-  --color-bg-elevated: #181b22;
+  --color-bg: var(--color-paper);
+  --color-bg-secondary: var(--color-paper-2);
+  --color-bg-card: var(--color-paper-3);
+  --color-bg-hover: var(--color-paper-4);
+  --color-bg-elevated: oklch(18% 0.028 250);
 
-  /* Акцентные цвета — красно-синяя палитра OW Season 1 */
-  --color-accent: #e63946;
-  --color-accent-hover: #ff4d5a;
-  --color-accent-glow: rgba(230, 57, 70, 0.4);
-  --color-accent-blue: #00bfff;
-  --color-accent-blue-hover: #33ccff;
-  --color-accent-blue-glow: rgba(0, 191, 255, 0.3);
-  --color-accent-purple: #9b59b6;
-  --color-accent-green: #27ae60;
+  --color-accent: var(--color-accent-red);
+  --color-accent-hover: var(--color-accent-red-strong);
+  --color-on-accent: var(--color-accent-ink);
+  --color-bg-accent-subtle: color-mix(in oklch, var(--color-accent-red) 12%, transparent);
+  --color-accent-glow: color-mix(in oklch, var(--color-accent-red) 32%, transparent);
+  --color-accent-blue: var(--color-accent-cyan);
+  --color-accent-blue-hover: var(--color-accent-cyan-strong);
+  --color-accent-blue-glow: color-mix(in oklch, var(--color-accent-cyan) 25%, transparent);
+  --color-accent-purple: oklch(63% 0.18 315);
+  --color-accent-green: var(--color-role-support);
 
-  /* Текст */
-  --color-text: #f0f0f5;
-  --color-text-secondary: #9a9ab0;
-  --color-text-muted: #555566;
+  --color-text: var(--color-ink);
+  --color-text-secondary: var(--color-ink-2);
+  --color-text-muted: var(--color-ink-3);
 
-  /* Границы — более тонкие, стеклянные */
-  --color-border: #1e2028;
-  --color-border-hover: #2a2d38;
-  --color-border-accent: rgba(230, 57, 70, 0.3);
+  --color-border: var(--color-rule);
+  --color-border-hover: var(--color-rule-strong);
+  --color-border-accent: color-mix(in oklch, var(--color-accent-red) 38%, transparent);
 
-  /* Тени — глубокие */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
-  --shadow-accent: 0 4px 24px rgba(230, 57, 70, 0.25);
-  --shadow-blue: 0 4px 24px rgba(0, 191, 255, 0.2);
+  --shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.35), 0 0 0 1px oklch(100% 0 0 / 0.03);
+  --shadow-md: 0 10px 30px oklch(0% 0 0 / 0.32), 0 0 0 1px oklch(100% 0 0 / 0.04);
+  --shadow-lg: 0 24px 80px oklch(0% 0 0 / 0.48), 0 0 0 1px oklch(100% 0 0 / 0.05);
+  --shadow-accent: 0 18px 54px color-mix(in oklch, var(--color-accent-red) 24%, transparent);
+  --shadow-blue: 0 18px 54px color-mix(in oklch, var(--color-accent-cyan) 20%, transparent);
 
-  /* Размеры и отступы */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
-  --spacing-3xl: 4rem;
+  --spacing-xs: var(--space-2xs);
+  --spacing-sm: var(--space-xs);
+  --spacing-md: var(--space-md);
+  --spacing-lg: var(--space-lg);
+  --spacing-xl: var(--space-xl);
+  --spacing-2xl: var(--space-2xl);
+  --spacing-3xl: var(--space-3xl);
 
-  /* Радиусы — более скруглённые */
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 14px;
-  --radius-xl: 18px;
-  --radius-full: 9999px;
+  --transition-fast: var(--dur-fast) var(--ease-out);
+  --transition-normal: var(--dur-med) var(--ease-out);
+  --transition-slow: var(--dur-slow) var(--ease-out);
+  --transition-spring: var(--dur-slow) var(--ease-out);
 
-  /* Переходы */
-  --transition-fast: 150ms ease;
-  --transition-normal: 250ms ease;
-  --transition-slow: 400ms cubic-bezier(0.25, 0.1, 0.25, 1);
-  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --font-primary: var(--font-body);
+  --font-heading: var(--font-display);
 
-  /* Шрифты */
-  --font-primary:
-    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-heading: "Outfit", "Inter", -apple-system, sans-serif;
+  --font-size-xs: var(--text-xs);
+  --font-size-sm: var(--text-sm);
+  --font-size-base: var(--text-base);
+  --font-size-lg: var(--text-lg);
+  --font-size-xl: var(--text-xl);
+  --font-size-2xl: var(--text-2xl);
+  --font-size-3xl: var(--text-3xl);
+  --font-size-4xl: var(--text-display-s);
+  --font-size-5xl: var(--text-display);
 
-  /* Размеры шрифтов */
-  --font-size-xs: 0.75rem;
-  --font-size-sm: 0.875rem;
-  --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-2xl: 1.5rem;
-  --font-size-3xl: 2rem;
-  --font-size-4xl: 2.5rem;
-  --font-size-5xl: 3.5rem;
-
-  /* Ширина контейнера */
-  --container-max: 1280px;
+  --container-max: 1320px;
   --header-height: 72px;
 
-  /* Glassmorphism base */
-  --glass-bg: rgba(17, 19, 24, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-blur: blur(20px);
+  --glass-bg: color-mix(in oklch, var(--color-paper-3) 82%, transparent);
+  --glass-border: oklch(100% 0 0 / 0.07);
+  --glass-blur: blur(18px);
 }

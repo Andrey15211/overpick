@@ -42,11 +42,13 @@ export default function HeroGrid({
 
   // Фильтрация героев
   const filteredHeroes = useMemo(() => {
+    const query = search.trim().toLowerCase();
+
     return heroes.filter(hero => {
       // Фильтр по поиску
-      const matchesSearch = search === '' || 
-        hero.name.toLowerCase().includes(search.toLowerCase()) ||
-        hero.nameRu.toLowerCase().includes(search.toLowerCase());
+      const matchesSearch = query === '' ||
+        hero.name.toLowerCase().includes(query) ||
+        hero.nameRu.toLowerCase().includes(query);
       
       // Фильтр по роли
       const matchesRole = roleFilter === 'all' || hero.role === roleFilter;
@@ -59,11 +61,17 @@ export default function HeroGrid({
   const groupedHeroes = useMemo(() => {
     if (!groupByRole) return null;
     
-    return {
-      Tank: filteredHeroes.filter(h => h.role === 'Tank'),
-      Damage: filteredHeroes.filter(h => h.role === 'Damage'),
-      Support: filteredHeroes.filter(h => h.role === 'Support'),
+    const grouped: Record<HeroRole, Hero[]> = {
+      Tank: [],
+      Damage: [],
+      Support: [],
     };
+
+    for (const hero of filteredHeroes) {
+      grouped[hero.role].push(hero);
+    }
+
+    return grouped;
   }, [filteredHeroes, groupByRole]);
 
   return (

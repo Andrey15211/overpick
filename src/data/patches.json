@@ -1,5 +1,43 @@
 [
   {
+    "patchId": "ow-s3-hotfix-2026-07-02",
+    "date": "2026-07-02",
+    "version": "3.0",
+    "title": "🔥 Overwatch Season 3 - Hotfix July 2",
+    "summary": "Горячий фикс без изменений баланса. Реплей-коды от патча 30 июня по-прежнему доступны.",
+    "changes": [
+      {
+        "type": "system",
+        "ability": "Шион / Execution",
+        "description": "Исправлена ошибка, из-за которой Шион не могла использовать Execution во время перезарядки."
+      }
+    ]
+  },
+  {
+    "patchId": "ow-s3-hotfix-2026-07-01",
+    "date": "2026-07-01",
+    "version": "3.0",
+    "title": "🔥 Overwatch Season 3 - Hotfix July 1",
+    "summary": "Горячий фикс без изменений баланса. Реплей-коды от патча 30 июня по-прежнему доступны.",
+    "changes": [
+      {
+        "type": "system",
+        "ability": "Событие Community Crafted",
+        "description": "Требование испытания \"Streamer Luck\" (победа на разных героях в Community Crafted) снижено с 20 до 3."
+      },
+      {
+        "type": "system",
+        "ability": "Событие Community Crafted",
+        "description": "Требование мета-испытания \"Chat, Are We Cooked?\" снижено с 14 до 13 выполнений."
+      },
+      {
+        "type": "system",
+        "ability": "Событие Community Crafted",
+        "description": "Требование по поглощению урона в испытании \"Clickbait Mitigation\" снижено с 15 000 до 5 000."
+      }
+    ]
+  },
+  {
     "patchId": "ow-s3-community-crafted-2026-06-30",
     "date": "2026-06-30",
     "version": "3.0",
