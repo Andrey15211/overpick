@@ -5,11 +5,12 @@ import patchesData from '@/data/patches.json';
 import heroesData from '@/data/heroes.json';
 import { Hero } from '@/types/heroes';
 import { HeroMeta, Tier, TierInfo, Patch, TIER_ORDER, CHANGE_TYPE_LABELS } from '@/types/meta';
+import { buildHeroById, formatDateRu } from '@/lib/display';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Мета и Тир-лист',
-  description: 'Фильтруемый тир-лист героев Overwatch для Season 3: статистика Blizzard, свежие tier-листы и pro/high-rank сигналы по состоянию на 1 июля 2026 года.',
+  description: `Фильтруемый тир-лист героев Overwatch для Season 3: статистика Blizzard, свежие tier-листы и pro/high-rank сигналы по состоянию на ${formatDateRu((metaData as { lastUpdated: string }).lastUpdated)}.`,
 };
 
 // Типизация данных
@@ -24,10 +25,11 @@ const meta = metaData as {
 };
 const patches = patchesData as Patch[];
 const heroes = heroesData as Hero[];
+const heroById = buildHeroById(heroes);
 
 // Получить героя по ID
 function getHeroName(heroId: string): string {
-  const hero = heroes.find(h => h.id === heroId);
+  const hero = heroById.get(heroId);
   return hero?.nameRu || heroId;
 }
 
@@ -37,6 +39,8 @@ function getChangeSubject(change: Patch['changes'][number]): string {
 }
 
 export default function MetaPage() {
+  const lastUpdatedRu = formatDateRu(meta.lastUpdated);
+
   return (
     <div className={styles.metaPage}>
       <div className={styles.metaContainer}>
@@ -46,7 +50,7 @@ export default function MetaPage() {
             Текущая <span>Мета</span>
           </h1>
           <p className={styles.metaSubtitle}>
-            Тир-лист героев Overwatch на основе статистики Blizzard, свежих экспертных tier-листов и pro/high-rank меты. Срез актуален на 1 июля 2026 года в рамках Season 3.
+            Тир-лист героев Overwatch на основе статистики Blizzard, свежих экспертных tier-листов и pro/high-rank меты. Срез актуален на {lastUpdatedRu} в рамках Season 3.
           </p>
           <div className={styles.metaInfo}>
             <div className={styles.metaInfoItem}>
@@ -59,7 +63,7 @@ export default function MetaPage() {
             </div>
             <div className={styles.metaInfoItem}>
               <span className={styles.metaInfoLabel}>Обновлено:</span>
-              <span className={styles.metaInfoValue}>{meta.lastUpdated}</span>
+              <span className={styles.metaInfoValue}>{lastUpdatedRu}</span>
             </div>
           </div>
           {/* Описание меты */}

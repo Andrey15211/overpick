@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Synergy, Hero } from '@/types/heroes';
+import { buildHeroById } from '@/lib/display';
 import '../styles/SynergyBlock.css';
 
 interface SynergyBlockProps {
@@ -9,9 +10,11 @@ interface SynergyBlockProps {
 }
 
 export default function SynergyBlock({ synergies, heroes }: SynergyBlockProps) {
+  const heroById = buildHeroById(heroes);
+
   // Получить информацию о герое
   const getHero = (heroId: string): Hero | undefined => {
-    return heroes.find(h => h.id === heroId);
+    return heroById.get(heroId);
   };
 
   // Рендер шкалы эффективности

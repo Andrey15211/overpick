@@ -5,6 +5,7 @@ import heroesData from '@/data/heroes.json';
 import metaData from '@/data/meta.json';
 import { Hero, SUBROLE_LABELS } from '@/types/heroes';
 import { HeroMeta, Tier, TierInfo } from '@/types/meta';
+import { buildHeroById, formatDateRu } from '@/lib/display';
 import styles from './page.module.css';
 
 // Типизация данных
@@ -23,6 +24,8 @@ const NEW_HEROES = ['sierra'];
 export default function Home() {
   // Топ-герои по ролям
   const topHeroes = meta.heroes.filter(h => h.tier === 'S');
+  const heroById = buildHeroById(heroes);
+  const lastUpdatedRu = formatDateRu(meta.lastUpdated);
   
   return (
     <main className={styles.main}>
@@ -38,7 +41,7 @@ export default function Home() {
             <br />Контрпики Overwatch
           </h1>
           <p className={styles.heroSubtitle}>
-            Season 3, патч 3.0. Контрпики, актуальный тир-лист и разбор свежей меты для {heroes.length} героев по состоянию на 1 июля 2026.
+            Season 3, патч {meta.patch}. Контрпики, актуальный тир-лист и разбор свежей меты для {heroes.length} героев по состоянию на {lastUpdatedRu}.
           </p>
           <div className={styles.heroCta}>
             <Link href="/heroes" className={styles.heroCtaPrimary}>
@@ -77,7 +80,7 @@ export default function Home() {
         </div>
         <div className={styles.topMetaGrid}>
           {topHeroes.slice(0, 9).map((heroMeta, index) => {
-            const hero = heroes.find(h => h.id === heroMeta.heroId);
+            const hero = heroById.get(heroMeta.heroId);
             if (!hero) return null;
             const isNew = NEW_HEROES.includes(hero.id);
             return (
@@ -129,7 +132,7 @@ export default function Home() {
           <span className={styles.statLabel}>Актуальная мета</span>
         </div>
         <div className={styles.statItem}>
-          <span className={styles.statValue}>{meta.lastUpdated}</span>
+          <span className={styles.statValue}>{lastUpdatedRu}</span>
           <span className={styles.statLabel}>Дата обновления</span>
         </div>
       </section>

@@ -4,32 +4,18 @@ import { useState, useMemo, useCallback } from 'react';
 import Image from 'next/image';
 import patchesData from '@/data/patches.json';
 import heroesData from '@/data/heroes.json';
+import metaData from '@/data/meta.json';
 import { Hero } from '@/types/heroes';
 import { Patch, ChangeType, CHANGE_TYPE_LABELS } from '@/types/meta';
+import { buildHeroById, formatDateRu } from '@/lib/display';
 import styles from './page.module.css';
 
 // Типизация
 const patches = patchesData as Patch[];
 const heroes = heroesData as Hero[];
+const meta = metaData as { lastUpdated: string };
 
 type TypeFilter = 'all' | ChangeType;
-
-/** Русские названия месяцев в родительном падеже */
-const MONTHS_RU = [
-  'января', 'февраля', 'марта', 'апреля', 'мая', 'июня',
-  'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря',
-] as const;
-
-/** Форматирование даты: "DD MMMM YYYY" по-русски */
-function formatDateRu(dateStr: string): string {
-  const parts = dateStr.split('-');
-  if (parts.length !== 3) return dateStr;
-  const [yearStr, monthStr, dayStr] = parts;
-  const monthIdx = parseInt(monthStr, 10) - 1;
-  if (monthIdx < 0 || monthIdx > 11) return dateStr;
-  const day = parseInt(dayStr, 10);
-  return `${day} ${MONTHS_RU[monthIdx]} ${yearStr}`;
-}
 
 /** Склонение слова по количеству */
 function pluralize(n: number, one: string, few: string, many: string): string {
@@ -47,11 +33,13 @@ export default function PatchesPage() {
   const [searchQuery, setSearchQuery] = useState('');
   // Ключ = "patchId:changeIdx" для открытых dev-комментариев
   const [openComments, setOpenComments] = useState<Set<string>>(new Set());
+  const heroById = useMemo(() => buildHeroById(heroes), []);
+  const lastUpdatedRu = formatDateRu(meta.lastUpdated);
 
   // Получить героя
   const getHero = useCallback((heroId: string): Hero | undefined => {
-    return heroes.find(h => h.id === heroId);
-  }, []);
+    return heroById.get(heroId);
+  }, [heroById]);
 
   // Получить имя героя
   const getHeroName = useCallback((heroId: string): string => {
@@ -126,7 +114,7 @@ export default function PatchesPage() {
             История <span>Патчей</span>
           </h1>
           <p className={styles.patchesSubtitle}>
-            Баффы, нерфы и реворки героев Overwatch 2. Страница синхронизирована с Season 3 и актуальным состоянием на 1 июля 2026 года.
+            Баффы, нерфы, реворки и системные hotfix-обновления Overwatch 2. Страница синхронизирована с Season 3 и актуальным состоянием на {lastUpdatedRu}.
           </p>
         </header>
 

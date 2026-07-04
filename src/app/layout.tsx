@@ -1,13 +1,18 @@
 import type { Metadata, Viewport } from "next";
 import Header from "@/components/Header";
+import metaData from "@/data/meta.json";
+import { formatDateRu } from "@/lib/display";
 import "./globals.css";
+
+const meta = metaData as { lastUpdated: string };
+const lastUpdatedRu = formatDateRu(meta.lastUpdated);
 
 export const metadata: Metadata = {
   title: {
     default: "Overpick - Контрпики Overwatch",
     template: "%s | Overpick"
   },
-  description: "Контрпики, тир-листы и патч-ноты Overwatch 2 для Season 3. Обновлено по состоянию на 1 июля 2026 года, включая June 30 balance update и свежую мету.",
+  description: `Контрпики, тир-листы и патч-ноты Overwatch 2 для Season 3. Обновлено по состоянию на ${lastUpdatedRu}, включая свежие Blizzard Hero Statistics и patch notes.`,
   keywords: ["overwatch", "контрпики", "мета", "герои", "патчи", "тир-лист", "sierra", "season 3", "overwatch 2", "counters", "tier list"],
   authors: [{ name: "Overpick Team" }],
   creator: "Overpick",
@@ -27,7 +32,7 @@ export const metadata: Metadata = {
     url: "https://overpick-phi.vercel.app",
     siteName: "Overpick",
     title: "Overpick - Контрпики Overwatch",
-    description: "Найди лучший контрпик для любого героя Overwatch 2. Актуальная мета Season 3 по состоянию на 1 июля 2026 года.",
+    description: `Найди лучший контрпик для любого героя Overwatch 2. Актуальная мета Season 3 по состоянию на ${lastUpdatedRu}.`,
   },
   twitter: {
     card: "summary_large_image",
