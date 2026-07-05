@@ -6,6 +6,10 @@ import { chromium } from 'playwright';
 const PORT = Number(process.env.OVERPICK_VERIFY_PORT || 3100);
 const BASE_URL = `http://127.0.0.1:${PORT}`;
 const START_TIMEOUT_MS = 45000;
+const VIEWPORTS = [
+  { name: 'mobile', width: 390, height: 900 },
+  { name: 'desktop', width: 1440, height: 1000 },
+];
 
 const ROUTES = [
   { path: '/', expectedText: ['Контрпик за раунд', 'Королева Хлама', 'B тир'] },
@@ -38,16 +42,16 @@ function waitForServer(url, timeoutMs) {
   });
 }
 
-async function verifyRoute(page, route) {
+async function verifyRoute(page, route, viewportName) {
   const response = await page.goto(`${BASE_URL}${route.path}`, { waitUntil: 'networkidle' });
   if (!response?.ok()) {
-    throw new Error(`${route.path} returned ${response?.status() ?? 'no response'}`);
+    throw new Error(`${route.path} returned ${response?.status() ?? 'no response'} on ${viewportName}`);
   }
 
   const text = await page.locator('body').innerText();
   for (const expected of route.expectedText) {
     if (!text.includes(expected)) {
-      throw new Error(`${route.path} is missing expected text: ${expected}`);
+      throw new Error(`${route.path} is missing expected text on ${viewportName}: ${expected}`);
     }
   }
 
@@ -56,11 +60,11 @@ async function verifyRoute(page, route) {
     return root.scrollWidth > root.clientWidth + 1;
   });
   if (hasHorizontalOverflow) {
-    throw new Error(`${route.path} has horizontal overflow`);
+    throw new Error(`${route.path} has horizontal overflow on ${viewportName}`);
   }
 }
 
-async function verifyOptimizedImages(page) {
+async function verifyOptimizedImages(page, viewportName) {
   await page.goto(`${BASE_URL}/heroes`, { waitUntil: 'networkidle' });
 
   const imageStats = await page.evaluate(() => {
@@ -73,13 +77,13 @@ async function verifyOptimizedImages(page) {
   });
 
   if (imageStats.total === 0) {
-    throw new Error('No hero images rendered on /heroes');
+    throw new Error(`No hero images rendered on /heroes on ${viewportName}`);
   }
   if (imageStats.optimized === 0) {
-    throw new Error('No optimized next/image URLs rendered on /heroes');
+    throw new Error(`No optimized next/image URLs rendered on /heroes on ${viewportName}`);
   }
   if (imageStats.broken > 0) {
-    throw new Error(`${imageStats.broken} hero images are broken on /heroes`);
+    throw new Error(`${imageStats.broken} hero images are broken on /heroes on ${viewportName}`);
   }
 }
 
@@ -105,24 +109,29 @@ async function main() {
   try {
     await waitForServer(`${BASE_URL}/`, START_TIMEOUT_MS);
 
-    const browser = await chromium.launch({ headless: true });
-    const page = await browser.newPage({ viewport: { width: 390, height: 900 } });
     const browserErrors = [];
-
-    page.on('console', (message) => {
-      if (message.type() === 'error') {
-        browserErrors.push(message.text());
-      }
-    });
-    page.on('pageerror', (error) => {
-      browserErrors.push(error.message);
-    });
+    const browser = await chromium.launch({ headless: true });
 
     try {
-      for (const route of ROUTES) {
-        await verifyRoute(page, route);
+      for (const viewport of VIEWPORTS) {
+        const { name: viewportName, ...viewportSize } = viewport;
+        const page = await browser.newPage({ viewport: viewportSize });
+
+        page.on('console', (message) => {
+          if (message.type() === 'error') {
+            browserErrors.push(`[${viewportName}] ${message.text()}`);
+          }
+        });
+        page.on('pageerror', (error) => {
+          browserErrors.push(`[${viewportName}] ${error.message}`);
+        });
+
+        for (const route of ROUTES) {
+          await verifyRoute(page, route, viewportName);
+        }
+        await verifyOptimizedImages(page, viewportName);
+        await page.close();
       }
-      await verifyOptimizedImages(page);
     } finally {
       await browser.close();
     }
