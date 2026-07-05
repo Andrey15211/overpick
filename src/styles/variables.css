@@ -6,7 +6,7 @@
   --color-bg-secondary: var(--color-paper-2);
   --color-bg-card: var(--color-paper-3);
   --color-bg-hover: var(--color-paper-4);
-  --color-bg-elevated: oklch(18% 0.028 250);
+  --color-bg-elevated: var(--color-paper-elevated);
 
   --color-accent: var(--color-accent-red);
   --color-accent-hover: var(--color-accent-red-strong);
@@ -16,7 +16,7 @@
   --color-accent-blue: var(--color-accent-cyan);
   --color-accent-blue-hover: var(--color-accent-cyan-strong);
   --color-accent-blue-glow: color-mix(in oklch, var(--color-accent-cyan) 25%, transparent);
-  --color-accent-purple: oklch(63% 0.18 315);
+  --color-accent-purple: var(--color-accent-violet);
   --color-accent-green: var(--color-role-support);
 
   --color-text: var(--color-ink);
@@ -27,9 +27,9 @@
   --color-border-hover: var(--color-rule-strong);
   --color-border-accent: color-mix(in oklch, var(--color-accent-red) 38%, transparent);
 
-  --shadow-sm: 0 1px 2px oklch(0% 0 0 / 0.35), 0 0 0 1px oklch(100% 0 0 / 0.03);
-  --shadow-md: 0 10px 30px oklch(0% 0 0 / 0.32), 0 0 0 1px oklch(100% 0 0 / 0.04);
-  --shadow-lg: 0 24px 80px oklch(0% 0 0 / 0.48), 0 0 0 1px oklch(100% 0 0 / 0.05);
+  --shadow-sm: 0 1px 2px color-mix(in oklch, var(--color-ink-shadow) 35%, transparent), 0 0 0 1px color-mix(in oklch, var(--color-ink-glint) 3%, transparent);
+  --shadow-md: 0 10px 30px color-mix(in oklch, var(--color-ink-shadow) 32%, transparent), 0 0 0 1px color-mix(in oklch, var(--color-ink-glint) 4%, transparent);
+  --shadow-lg: 0 24px 80px color-mix(in oklch, var(--color-ink-shadow) 48%, transparent), 0 0 0 1px color-mix(in oklch, var(--color-ink-glint) 5%, transparent);
   --shadow-accent: 0 18px 54px color-mix(in oklch, var(--color-accent-red) 24%, transparent);
   --shadow-blue: 0 18px 54px color-mix(in oklch, var(--color-accent-cyan) 20%, transparent);
 
@@ -63,6 +63,6 @@
   --header-height: 72px;
 
   --glass-bg: color-mix(in oklch, var(--color-paper-3) 82%, transparent);
-  --glass-border: oklch(100% 0 0 / 0.07);
+  --glass-border: var(--color-rule-glass);
   --glass-blur: blur(18px);
 }

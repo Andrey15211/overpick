@@ -87,7 +87,7 @@
   background: color-mix(in oklch, var(--color-bg-card) 82%, transparent);
   box-shadow:
     inset 0 0 0 1px var(--color-border),
-    0 8px 20px oklch(0% 0 0 / 0.14);
+    0 8px 20px color-mix(in oklch, var(--color-ink-shadow) 14%, transparent);
   transition-property: transform, background-color, box-shadow;
   transition-duration: var(--dur-med);
   transition-timing-function: var(--ease-out);
@@ -128,7 +128,7 @@
   overflow: hidden;
   border-radius: 50%;
   background: var(--color-bg);
-  box-shadow: 0 0 0 2px var(--color-border), 0 0 0 3px oklch(100% 0 0 / 0.08);
+  box-shadow: 0 0 0 2px var(--color-border), 0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .counterItemAvatarImg {
@@ -138,15 +138,15 @@
 }
 
 .counterItemAvatar--Tank {
-  box-shadow: 0 0 0 2px var(--color-role-tank), 0 0 0 3px oklch(100% 0 0 / 0.08);
+  box-shadow: 0 0 0 2px var(--color-role-tank), 0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .counterItemAvatar--Damage {
-  box-shadow: 0 0 0 2px var(--color-role-damage), 0 0 0 3px oklch(100% 0 0 / 0.08);
+  box-shadow: 0 0 0 2px var(--color-role-damage), 0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .counterItemAvatar--Support {
-  box-shadow: 0 0 0 2px var(--color-role-support), 0 0 0 3px oklch(100% 0 0 / 0.08);
+  box-shadow: 0 0 0 2px var(--color-role-support), 0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .counterItemInfo {

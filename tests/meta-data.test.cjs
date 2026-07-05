@@ -69,6 +69,17 @@ test('meta snapshot has current source and numeric rates', () => {
   }
 });
 
+test('meta tier colors are design-token references', () => {
+  for (const tier of VALID_TIERS) {
+    const tierInfo = meta.tiers[tier];
+
+    assert.ok(tierInfo, `Missing tier info for ${tier}`);
+    assert.equal(tierInfo.color, `var(--color-tier-${tier.toLowerCase()})`, `${tier}.color must use the tier token`);
+    assert.equal(typeof tierInfo.description, 'string', `${tier}.description must be a string`);
+    assert.ok(tierInfo.description.trim().length > 0, `${tier}.description must not be empty`);
+  }
+});
+
 test('meta snapshot is fresh enough for weekly sync cadence', () => {
   const snapshotAgeDays = Math.floor((todayUtcMs() - dateOnlyUtcMs(meta.lastUpdated)) / DAY_MS);
 

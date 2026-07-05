@@ -80,7 +80,7 @@
   overflow: hidden;
   border-radius: 50%;
   background: var(--color-bg);
-  box-shadow: 0 0 0 2px var(--color-accent-cyan), 0 0 0 3px oklch(100% 0 0 / 0.08);
+  box-shadow: 0 0 0 2px var(--color-accent-cyan), 0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .synergyPartnerAvatarImg {
