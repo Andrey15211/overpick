@@ -71,7 +71,7 @@
   background: var(--color-bg);
   box-shadow:
     0 0 0 3px var(--color-border),
-    0 0 0 5px oklch(100% 0 0 / 0.08);
+    0 0 0 5px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .heroDetailAvatarImg {
@@ -81,15 +81,15 @@
 }
 
 .heroDetailAvatar--Tank {
-  box-shadow: 0 0 0 3px var(--color-role-tank), 0 0 0 5px oklch(100% 0 0 / 0.08);
+  box-shadow: 0 0 0 3px var(--color-role-tank), 0 0 0 5px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .heroDetailAvatar--Damage {
-  box-shadow: 0 0 0 3px var(--color-role-damage), 0 0 0 5px oklch(100% 0 0 / 0.08);
+  box-shadow: 0 0 0 3px var(--color-role-damage), 0 0 0 5px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .heroDetailAvatar--Support {
-  box-shadow: 0 0 0 3px var(--color-role-support), 0 0 0 5px oklch(100% 0 0 / 0.08);
+  box-shadow: 0 0 0 3px var(--color-role-support), 0 0 0 5px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .heroDetailInfo {

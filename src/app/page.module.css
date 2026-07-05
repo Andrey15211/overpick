@@ -346,7 +346,7 @@
   background: var(--color-bg);
   box-shadow:
     0 0 0 2px color-mix(in oklch, var(--color-tier-s) 82%, transparent),
-    0 0 0 3px oklch(100% 0 0 / 0.1);
+    0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 10%, transparent);
 }
 
 .topMetaAvatarImg {
