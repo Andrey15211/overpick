@@ -20,10 +20,12 @@ npm run lint
 npm run build
 npm run verify:site
 npm run verify:browser
+npm run verify:local
+npm run verify:all
 npm run sync:meta
 ```
 
-Use `npm run dev` for local development. Before pushing meaningful changes, run `npm test`, `npm run lint`, `npm run build`, and `npm run verify:site`. Use `npm run verify:browser` when touching meta sync, source parsing, patch parsing, or GitHub Actions.
+Use `npm run dev` for local development. Before pushing meaningful changes, run `npm run verify:local`; it runs tests, lint, production build, and built-site smoke verification in the required order. Use `npm run verify:all` when touching meta sync, source parsing, patch parsing, or GitHub Actions because it also checks live Blizzard sources in a browser.
 
 ## Automation
 
