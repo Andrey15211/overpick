@@ -151,7 +151,6 @@ export default function Home() {
                     height={48}
                     className={styles.topMetaAvatarImg}
                     loading="lazy"
-                    unoptimized
                   />
                 </div>
                 <div className={styles.topMetaInfo}>

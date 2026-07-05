@@ -27,7 +27,6 @@ export default function HeroCard({ hero, tier, showTier = false }: HeroCardProps
           height={72}
           className="heroCardAvatarImg"
           loading="lazy"
-          unoptimized
         />
       </div>
       

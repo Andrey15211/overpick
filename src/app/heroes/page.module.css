@@ -1,23 +1,50 @@
-/* Стили страницы Heroes */
+/* Hallmark · macrostructure: Workbench · tone: technical · anchor hue: red-cyan */
 .heroesPage {
-  padding: var(--spacing-2xl) var(--spacing-lg);
   min-height: 100vh;
+  padding: clamp(2rem, 5vw, 4rem) var(--spacing-lg) var(--spacing-3xl);
+  overflow: clip;
 }
 
 .heroesContainer {
-  max-width: var(--container-max);
+  display: grid;
+  gap: var(--spacing-2xl);
+  width: min(100%, var(--container-max));
   margin: 0 auto;
 }
 
 .heroesHeader {
-  text-align: center;
-  margin-bottom: var(--spacing-2xl);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 460px);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  animation: heroesReveal var(--dur-slow) var(--ease-out) both;
+}
+
+.heroesHeaderCopy {
+  display: grid;
+  gap: var(--spacing-md);
+  min-width: 0;
+}
+
+.heroesSystemLine {
+  width: fit-content;
+  margin: 0;
+  color: var(--color-accent-cyan);
+  font-size: var(--font-size-sm);
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 .heroesTitle {
-  font-size: var(--font-size-4xl);
-  margin-bottom: var(--spacing-sm);
   font-family: var(--font-heading);
+  font-size: var(--text-display-s);
+  font-weight: 950;
+  line-height: 0.92;
+  letter-spacing: 0;
+  margin: 0;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .heroesTitle span {
@@ -25,6 +52,140 @@
 }
 
 .heroesSubtitle {
+  max-width: 68ch;
+  margin: 0;
   color: var(--color-text-secondary);
   font-size: var(--font-size-lg);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.heroesBrief {
+  display: grid;
+  gap: var(--spacing-md);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--color-bg-card) 94%, transparent), color-mix(in oklch, var(--color-bg-secondary) 94%, transparent));
+  box-shadow:
+    inset 0 0 0 1px var(--color-border),
+    var(--shadow-md);
+  animation: heroesReveal var(--dur-slow) var(--ease-out) 80ms both;
+}
+
+.heroesBriefHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.heroesBriefHeader strong {
+  color: var(--color-accent-cyan);
+  font-variant-numeric: tabular-nums;
+}
+
+.heroesBriefStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.heroesBriefStats div {
+  min-width: 0;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  background: color-mix(in oklch, var(--color-bg) 62%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-rule) 72%, transparent);
+}
+
+.heroesBriefStats span,
+.heroesTierStrip span {
+  display: block;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.heroesBriefStats strong {
+  display: block;
+  margin-top: var(--spacing-xs);
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-2xl);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.heroesTierStrip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.heroesTierStrip span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  min-width: 54px;
+  padding-inline: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  color: var(--color-bg);
+  font-variant-numeric: tabular-nums;
+}
+
+.heroesTierStrip--S { background: var(--color-tier-s); color: var(--color-accent-ink); }
+.heroesTierStrip--A { background: var(--color-tier-a); color: var(--color-accent-ink); }
+.heroesTierStrip--B { background: var(--color-tier-b); }
+.heroesTierStrip--C { background: var(--color-tier-c); }
+.heroesTierStrip--D { background: var(--color-tier-d); }
+
+.heroesRoster {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+@keyframes heroesReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .heroesHeader {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .heroesPage {
+    padding-inline: var(--spacing-md);
+  }
+
+  .heroesBrief {
+    padding: var(--spacing-md);
+    border-radius: var(--radius-lg);
+  }
+
+  .heroesBriefStats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroesHeader,
+  .heroesBrief {
+    animation-duration: 1ms;
+  }
 }

@@ -349,7 +349,7 @@
   height: 28px;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px oklch(100% 0 0 / 0.12);
+  box-shadow: 0 0 0 1px color-mix(in oklch, var(--color-ink-glint) 12%, transparent);
 }
 
 .changeHero {

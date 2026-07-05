@@ -329,7 +329,11 @@ export function computeFilteredMeta(
   heroRoleById: Map<string, HeroRole>,
   filters: MetaFilters,
 ): ComputedHeroMeta[] {
-  const maxPickRate = Math.max(...metaHeroes.map((entry) => entry.pickRate));
+  if (metaHeroes.length === 0) {
+    return [];
+  }
+
+  const maxPickRate = Math.max(1, ...metaHeroes.map((entry) => entry.pickRate));
   const weights = getWeights(filters);
 
   return metaHeroes

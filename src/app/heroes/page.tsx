@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import HeroGrid from '@/components/HeroGrid';
 import heroesData from '@/data/heroes.json';
 import metaData from '@/data/meta.json';
@@ -16,29 +17,83 @@ const meta = metaData as {
   heroes: HeroMeta[];
 };
 
+export const metadata: Metadata = {
+  title: 'Все герои',
+  description: `Полный список героев Overwatch 2 с ролями, текущими тирами и переходом к контрпикам. Данные обновлены ${formatDateRu(meta.lastUpdated)}.`,
+};
+
 export default function HeroesPage() {
   const lastUpdatedRu = formatDateRu(meta.lastUpdated);
+  const roleCounts = heroes.reduce(
+    (acc, hero) => {
+      acc[hero.role] += 1;
+      return acc;
+    },
+    { Tank: 0, Damage: 0, Support: 0 } as Record<Hero['role'], number>,
+  );
+  const tierCounts = meta.heroes.reduce(
+    (acc, heroMeta) => {
+      acc[heroMeta.tier] += 1;
+      return acc;
+    },
+    { S: 0, A: 0, B: 0, C: 0, D: 0 } as Record<Tier, number>,
+  );
 
   return (
     <div className={styles.heroesPage}>
       <div className={styles.heroesContainer}>
         {/* Заголовок */}
         <header className={styles.heroesHeader}>
-          <h1 className={styles.heroesTitle}>
-            Все <span>Герои</span>
-          </h1>
-          <p className={styles.heroesSubtitle}>
-            Выбери героя для просмотра контрпиков и информации о мете по состоянию на {lastUpdatedRu}
-          </p>
+          <div className={styles.heroesHeaderCopy}>
+            <p className={styles.heroesSystemLine}>
+              {heroes.length} героев / патч {meta.patch} / {lastUpdatedRu}
+            </p>
+            <h1 className={styles.heroesTitle}>
+              Все <span>Герои</span>
+            </h1>
+            <p className={styles.heroesSubtitle}>
+              Выбери героя для просмотра контрпиков, роли и текущего тира. Сетка синхронизирована с актуальным срезом меты и сразу ведёт в matchup-разбор.
+            </p>
+          </div>
+
+          <aside className={styles.heroesBrief} aria-label="Сводка по героям">
+            <div className={styles.heroesBriefHeader}>
+              <span>Hero desk</span>
+              <strong>{meta.lastUpdated}</strong>
+            </div>
+            <div className={styles.heroesBriefStats}>
+              <div>
+                <span>Танк</span>
+                <strong>{roleCounts.Tank}</strong>
+              </div>
+              <div>
+                <span>Урон</span>
+                <strong>{roleCounts.Damage}</strong>
+              </div>
+              <div>
+                <span>Поддержка</span>
+                <strong>{roleCounts.Support}</strong>
+              </div>
+            </div>
+            <div className={styles.heroesTierStrip}>
+              {(['S', 'A', 'B', 'C', 'D'] as Tier[]).map((tier) => (
+                <span key={tier} className={styles[`heroesTierStrip--${tier}`]}>
+                  {tier} {tierCounts[tier]}
+                </span>
+              ))}
+            </div>
+          </aside>
         </header>
 
         {/* Сетка героев */}
-        <HeroGrid 
-          heroes={heroes}
-          metaHeroes={meta.heroes}
-          showTiers={true}
-          groupByRole={true}
-        />
+        <section className={styles.heroesRoster} aria-label="Каталог героев">
+          <HeroGrid
+            heroes={heroes}
+            metaHeroes={meta.heroes}
+            showTiers={true}
+            groupByRole={true}
+          />
+        </section>
       </div>
     </div>
   );

@@ -17,13 +17,6 @@ const meta = metaData as { lastUpdated: string };
 
 type TypeFilter = 'all' | ChangeType;
 type PatchChange = Patch['changes'][number];
-type ChangeStats = {
-  buffs: number;
-  nerfs: number;
-  reworks: number;
-  maps: number;
-  systems: number;
-};
 type IndexedChange = {
   change: PatchChange;
   searchText: string;
@@ -31,7 +24,6 @@ type IndexedChange = {
 type IndexedPatch = {
   patch: Patch;
   changes: IndexedChange[];
-  stats: ChangeStats;
 };
 
 /** Склонение слова по количеству */
@@ -44,8 +36,8 @@ function pluralize(n: number, one: string, few: string, many: string): string {
   return `${n} ${many}`;
 }
 
-function countByType(changes: PatchChange[]): ChangeStats {
-  const stats: ChangeStats = { buffs: 0, nerfs: 0, reworks: 0, maps: 0, systems: 0 };
+function countByType(changes: PatchChange[]) {
+  const stats = { buffs: 0, nerfs: 0, reworks: 0, maps: 0, systems: 0 };
 
   for (const change of changes) {
     if (change.type === 'buff') stats.buffs += 1;
@@ -93,7 +85,6 @@ export default function PatchesPage() {
       return {
         patch,
         changes: indexedChanges,
-        stats: countByType(patch.changes),
       };
     });
   }, [getChangeSubject]);
@@ -284,7 +275,6 @@ export default function PatchesPage() {
                                     width={24}
                                     height={24}
                                     className={styles.changeHeroPortrait}
-                                    unoptimized
                                   />
                                 )}
                                 <span className={styles.changeHero}>{getChangeSubject(change)}</span>

@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Overpick
 
-## Getting Started
+Overpick is a Russian-language Overwatch 2 counter-pick and meta dashboard. It shows hero counters, tier lists, patch history, role filters, and hero detail pages from local JSON data that is refreshed from Blizzard public sources.
 
-First, run the development server:
+## Current Scope
+
+- Counter-pick browser for all heroes in `src/data/heroes.json`.
+- Meta and tier list views driven by `src/data/meta.json` and `src/data/metaFilters.ts`.
+- Patch history from `src/data/patches.json`.
+- Hero detail pages at `/hero/[id]`.
+- Production smoke checks for `/`, `/heroes`, `/meta`, `/patches`, and `/hero/junkerqueen`.
+- Weekly GitHub Actions sync from Blizzard Hero Statistics and live patch notes.
+
+## Commands
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm test
+npm run lint
+npm run build
+npm run verify:site
+npm run verify:browser
+npm run verify:local
+npm run verify:all
+npm run sync:meta
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Use `npm run dev` for local development. Before pushing meaningful changes, run `npm run verify:local`; it runs tests, lint, production build, and built-site smoke verification in the required order. Use `npm run verify:all` when touching meta sync, source parsing, patch parsing, or GitHub Actions because it also checks live Blizzard sources in a browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Automation
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`.github/workflows/ci.yml` runs on pushes to `main`, `codex/**`, and pull requests. It installs Chromium, runs data/design tests, lints, builds, and verifies the built site.
 
-## Learn More
+`.github/workflows/update-meta.yml` runs every Tuesday at 09:00 UTC and can also be started manually. It:
 
-To learn more about Next.js, take a look at the following resources:
+1. Verifies live Blizzard sources in a browser.
+2. Runs `npm run sync:meta`.
+3. Runs tests, lint, build, and built-site verification.
+4. Commits `src/data/meta.json` and `src/data/patches.json` only when synced data changed.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Meta Sources
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The sync script uses:
 
-## Deploy on Vercel
+- Blizzard Hero Statistics for current win rate and pick rate.
+- Blizzard live patch notes for recent hotfix and patch entries.
+- Local expert-signal weights in `src/data/metaFilters.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`tests/meta-data.test.cjs` enforces hero coverage, patch data contracts, image hosts, tier color tokens, and freshness of `meta.lastUpdated`. `tests/meta-filters.test.cjs` covers computed meta behavior, including Junker Queen staying in B tier for the default competitive view.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Design System
+
+`tokens.css` is the portable design-token source. `src/styles/variables.css` maps those tokens to the older Overpick variable names used by existing components.
+
+`tests/design-contract.test.cjs` keeps the UI from drifting back into raw colors or broad motion declarations:
+
+- raw color literals belong in `tokens.css` only;
+- use explicit transition properties instead of `transition: all`;
+- use `overflow-x: clip` or layout fixes instead of `overflow-x: hidden`.
+
+## Key Paths
+
+- `src/app`: Next.js App Router pages.
+- `src/components`: reusable UI components.
+- `src/data`: hero, counter, meta, patch, and synergy data.
+- `src/styles`: shared component CSS.
+- `scripts/sync-overwatch-meta.mjs`: Blizzard sync job.
+- `scripts/verify-overwatch-browser.mjs`: live-source browser verifier.
+- `scripts/verify-site.mjs`: production smoke verifier.
+- `tests`: Node test contracts used by CI and weekly sync.
+
+## Deployment
+
+The app is a standard Next.js static/SSG project and can be deployed on Vercel or any host that supports `next build` and `next start`. The automated meta sync requires GitHub Actions with `contents: write` permission, which is already configured in `update-meta.yml`.
