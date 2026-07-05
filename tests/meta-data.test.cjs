@@ -12,11 +12,25 @@ const ALLOWED_PORTRAIT_HOSTS = new Set([
   'd15f34w2p8l1cc.cloudfront.net',
   'blz-contentstack-images.akamaized.net',
 ]);
+const DAY_MS = 24 * 60 * 60 * 1000;
+const MAX_META_AGE_DAYS = 10;
 
 function assertFiniteRate(value, label) {
   assert.equal(typeof value, 'number', `${label} must be a number`);
   assert.ok(Number.isFinite(value), `${label} must be finite`);
   assert.ok(value >= 0 && value <= 100, `${label} must be between 0 and 100`);
+}
+
+function dateOnlyUtcMs(isoDate) {
+  const match = isoDate.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  assert.ok(match, `${isoDate} must be an ISO date`);
+
+  return Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+}
+
+function todayUtcMs() {
+  const now = new Date();
+  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
 }
 
 test('each hero has exactly one meta tier entry', () => {
@@ -53,6 +67,16 @@ test('meta snapshot has current source and numeric rates', () => {
     assert.equal(typeof entry.whyMeta, 'string', `${entry.heroId}.whyMeta must be a string`);
     assert.ok(entry.whyMeta.includes(`${entry.tier}-тир`), `${entry.heroId}.whyMeta must mention its tier`);
   }
+});
+
+test('meta snapshot is fresh enough for weekly sync cadence', () => {
+  const snapshotAgeDays = Math.floor((todayUtcMs() - dateOnlyUtcMs(meta.lastUpdated)) / DAY_MS);
+
+  assert.ok(snapshotAgeDays >= -1, `meta.lastUpdated ${meta.lastUpdated} must not be more than one day in the future`);
+  assert.ok(
+    snapshotAgeDays <= MAX_META_AGE_DAYS,
+    `meta.lastUpdated ${meta.lastUpdated} is ${snapshotAgeDays} days old; weekly sync should keep it under ${MAX_META_AGE_DAYS} days`,
+  );
 });
 
 test('hero portraits use image hosts configured for next/image', () => {
