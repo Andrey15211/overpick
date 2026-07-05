@@ -37,14 +37,5 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Test data contracts
-        run: npm test
-
-      - name: Lint
-        run: npm run lint
-
-      - name: Build
-        run: npm run build
-
-      - name: Verify built site
-        run: npm run verify:site
+      - name: Verify local build
+        run: npm run verify:local

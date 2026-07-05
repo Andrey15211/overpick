@@ -44,17 +44,8 @@ jobs:
       - name: Sync meta from Blizzard
         run: npm run sync:meta
 
-      - name: Validate synced data
-        run: npm test
-
-      - name: Lint site
-        run: npm run lint
-
-      - name: Build site
-        run: npm run build
-
-      - name: Verify built site
-        run: npm run verify:site
+      - name: Verify synced site
+        run: npm run verify:local
 
       - name: Check for changes
         id: changes
@@ -69,7 +60,7 @@ jobs:
             echo "### Weekly Overwatch meta sync"
             echo ""
             echo "- Data changed: yes"
-            echo "- Validation: npm run verify:browser, npm test, npm run lint, npm run build, npm run verify:site"
+            echo "- Validation: npm run verify:browser, npm run verify:local"
             echo "- Files:"
             git diff --name-only -- src/data/meta.json src/data/patches.json | sed 's/^/  - /'
           } >> "$GITHUB_STEP_SUMMARY"
@@ -81,7 +72,7 @@ jobs:
             echo "### Weekly Overwatch meta sync"
             echo ""
             echo "- Data changed: no"
-            echo "- Validation still passed: npm run verify:browser, npm test, npm run lint, npm run build, npm run verify:site"
+            echo "- Validation still passed: npm run verify:browser, npm run verify:local"
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Commit and push
