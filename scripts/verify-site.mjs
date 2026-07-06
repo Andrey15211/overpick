@@ -16,7 +16,7 @@ const ROUTES = [
   { path: '/heroes', expectedText: ['Все Герои', 'Королева Хлама', 'B тир', 'Сион'] },
   { path: '/meta', expectedText: ['Текущая Мета', 'Королева Хлама', 'Сион'] },
   { path: '/patches', expectedText: ['История Патчей', 'Найдено:'] },
-  { path: '/hero/junkerqueen', expectedText: ['Королева Хлама', 'B тир', 'ПОЧЕМУ В МЕТЕ'] },
+  { path: '/hero/junkerqueen', expectedText: ['Королева Хлама', 'B тир', 'Кто контрит Королева Хлама'] },
   { path: '/hero/shion', expectedText: ['Сион', 'A тир', 'Кто контрит Сион'] },
 ];
 

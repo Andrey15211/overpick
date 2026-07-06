@@ -7,9 +7,10 @@
   min-height: 100vh;
   overflow: clip;
   background:
-    radial-gradient(ellipse at 88% 4%, color-mix(in oklch, var(--color-accent-mint) 22%, transparent), transparent 34rem),
-    radial-gradient(ellipse at 8% 14%, color-mix(in oklch, var(--color-accent-sakura) 24%, transparent), transparent 30rem),
-    linear-gradient(180deg, var(--color-night-indigo), var(--color-bg) 58%);
+    radial-gradient(ellipse at 14% 3%, color-mix(in oklch, var(--color-accent-lantern) 18%, transparent), transparent 28rem),
+    radial-gradient(ellipse at 88% 12%, color-mix(in oklch, var(--color-accent-sakura) 20%, transparent), transparent 34rem),
+    radial-gradient(ellipse at 50% 92%, color-mix(in oklch, var(--color-accent-mint) 14%, transparent), transparent 42rem),
+    linear-gradient(180deg, color-mix(in oklch, var(--color-night-indigo) 86%, var(--color-accent-lantern)) 0%, var(--color-bg) 48%, color-mix(in oklch, var(--color-bg) 82%, var(--color-accent-mint)) 100%);
 }
 
 .main::before,
@@ -35,10 +36,11 @@
 
 .main::after {
   background:
-    repeating-linear-gradient(90deg, var(--color-shoji-line) 0 1px, transparent 1px 5.5rem),
-    repeating-linear-gradient(180deg, color-mix(in oklch, var(--color-shoji-line) 76%, transparent) 0 1px, transparent 1px 5.5rem);
-  mask-image: linear-gradient(180deg, black, transparent 72%);
-  opacity: 0.34;
+    radial-gradient(ellipse at 18% 24%, color-mix(in oklch, var(--color-accent-lantern) 8%, transparent), transparent 30rem),
+    radial-gradient(ellipse at 78% 54%, color-mix(in oklch, var(--color-accent-mint) 9%, transparent), transparent 34rem),
+    linear-gradient(150deg, transparent 0 42%, color-mix(in oklch, var(--color-accent-sakura) 5%, transparent) 58%, transparent 72%);
+  mask-image: linear-gradient(180deg, black, black 68%, transparent 100%);
+  opacity: 0.78;
 }
 
 .hero {
@@ -70,10 +72,8 @@
     radial-gradient(ellipse at 18% 28%, color-mix(in oklch, var(--color-sakura-petal) 72%, transparent) 0 0.22rem, transparent 0.25rem),
     radial-gradient(ellipse at 42% 12%, color-mix(in oklch, var(--color-sakura-petal-soft) 82%, transparent) 0 0.18rem, transparent 0.2rem),
     radial-gradient(ellipse at 66% 30%, color-mix(in oklch, var(--color-sakura-petal) 52%, transparent) 0 0.2rem, transparent 0.22rem),
-    radial-gradient(ellipse at 86% 18%, color-mix(in oklch, var(--color-accent-lantern) 44%, transparent) 0 0.16rem, transparent 0.18rem),
-    repeating-linear-gradient(90deg, color-mix(in oklch, var(--color-rule) 38%, transparent) 0 1px, transparent 1px 6rem),
-    repeating-linear-gradient(180deg, color-mix(in oklch, var(--color-rule) 30%, transparent) 0 1px, transparent 1px 6rem);
-  background-size: 20rem 16rem, 26rem 22rem, 24rem 20rem, 30rem 24rem, auto, auto;
+    radial-gradient(ellipse at 86% 18%, color-mix(in oklch, var(--color-accent-lantern) 44%, transparent) 0 0.16rem, transparent 0.18rem);
+  background-size: 20rem 16rem, 26rem 22rem, 24rem 20rem, 30rem 24rem;
   mask-image: linear-gradient(180deg, transparent, black 16%, black 72%, transparent);
   opacity: 0.52;
   animation: sakuraFloat 14s var(--ease-in-out) infinite alternate;
@@ -239,7 +239,11 @@
   min-height: clamp(26rem, 48vw, 44rem);
   overflow: clip;
   border-radius: var(--radius-xl);
-  background: var(--color-bg-secondary);
+  background:
+    radial-gradient(ellipse at 72% 18%, color-mix(in oklch, var(--color-accent-lantern) 20%, transparent), transparent 14rem),
+    radial-gradient(ellipse at 68% 46%, color-mix(in oklch, var(--color-accent-sakura) 16%, transparent), transparent 22rem),
+    radial-gradient(ellipse at 24% 88%, color-mix(in oklch, var(--color-accent-mint) 16%, transparent), transparent 24rem),
+    linear-gradient(140deg, color-mix(in oklch, var(--color-night-indigo) 82%, var(--color-accent-sakura)), color-mix(in oklch, var(--color-bg) 86%, var(--color-accent-mint)));
   box-shadow:
     inset 0 0 0 1px color-mix(in oklch, var(--color-accent-mint) 42%, transparent),
     0 32px 90px color-mix(in oklch, var(--color-ink-shadow) 44%, transparent);
@@ -253,21 +257,25 @@
   z-index: 1;
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(90deg, color-mix(in oklch, var(--color-bg) 72%, transparent), transparent 48%),
-    radial-gradient(ellipse at 28% 20%, color-mix(in oklch, var(--color-sakura-petal) 24%, transparent), transparent 18rem),
-    linear-gradient(180deg, transparent 62%, color-mix(in oklch, var(--color-bg) 72%, transparent));
+    radial-gradient(ellipse at 22% 24%, color-mix(in oklch, var(--color-sakura-petal) 28%, transparent), transparent 16rem),
+    radial-gradient(ellipse at 78% 12%, color-mix(in oklch, var(--color-accent-lantern) 16%, transparent), transparent 12rem),
+    linear-gradient(180deg, transparent 58%, color-mix(in oklch, var(--color-bg) 58%, transparent));
   pointer-events: none;
 }
 
 .seasonPosterImg {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center right;
-  transform-origin: 65% 50%;
-  animation: posterDrift 7s var(--ease-in-out) infinite alternate;
+  right: clamp(-6rem, -8vw, -2rem);
+  bottom: clamp(-5rem, -7vw, -2rem);
+  width: min(104%, 58rem);
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: right bottom;
+  filter:
+    drop-shadow(0 2rem 3rem color-mix(in oklch, var(--color-ink-shadow) 42%, transparent))
+    drop-shadow(0 0 2.5rem color-mix(in oklch, var(--color-accent-mint) 14%, transparent));
+  transform-origin: 70% 72%;
 }
 
 .posterHud {
@@ -318,7 +326,7 @@
 
 .signalGrid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--spacing-sm);
 }
 
@@ -498,11 +506,10 @@
 .topMeta {
   padding: var(--spacing-3xl) var(--spacing-lg);
   background:
-    radial-gradient(ellipse at 12% 0%, color-mix(in oklch, var(--color-accent-sakura) 16%, transparent), transparent 26rem),
-    radial-gradient(ellipse at 86% 12%, color-mix(in oklch, var(--color-accent-mint) 14%, transparent), transparent 28rem),
-    linear-gradient(180deg, color-mix(in oklch, var(--color-bg-secondary) 94%, transparent), var(--color-bg)),
-    repeating-linear-gradient(90deg, color-mix(in oklch, var(--color-rule) 32%, transparent) 0 1px, transparent 1px 7rem);
-  box-shadow: inset 0 1px 0 var(--color-border);
+    radial-gradient(ellipse at 10% 0%, color-mix(in oklch, var(--color-accent-lantern) 12%, transparent), transparent 26rem),
+    radial-gradient(ellipse at 80% 20%, color-mix(in oklch, var(--color-accent-sakura) 13%, transparent), transparent 28rem),
+    radial-gradient(ellipse at 50% 100%, color-mix(in oklch, var(--color-accent-mint) 13%, transparent), transparent 32rem),
+    linear-gradient(180deg, transparent, color-mix(in oklch, var(--color-bg) 80%, var(--color-accent-mint)));
 }
 
 .topMeta .sectionHeader,
@@ -514,21 +521,65 @@
 
 .topMetaGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: var(--spacing-md);
+}
+
+.topMetaTierColumn {
+  display: grid;
+  align-content: start;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  background: color-mix(in oklch, var(--color-bg-card) 78%, transparent);
+  box-shadow:
+    inset 0 0 0 1px var(--color-border),
+    0 20px 60px color-mix(in oklch, var(--color-ink-shadow) 20%, transparent);
+}
+
+.topMetaTierHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+  margin: 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--color-accent-ink);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-lg);
+  font-weight: 950;
+  line-height: 1;
+}
+
+.topMetaTierHeader small {
+  font-size: var(--font-size-xs);
+  font-weight: 950;
+  opacity: 0.78;
+}
+
+.topMetaTierColumn--S .topMetaTierHeader { background: var(--color-tier-s); }
+.topMetaTierColumn--A .topMetaTierHeader { background: var(--color-tier-a); }
+.topMetaTierColumn--B .topMetaTierHeader { background: var(--color-tier-b); color: var(--color-bg); }
+.topMetaTierColumn--C .topMetaTierHeader { background: var(--color-tier-c); color: var(--color-bg); }
+.topMetaTierColumn--D .topMetaTierHeader { background: var(--color-tier-d); color: var(--color-bg); }
+
+.topMetaTierList {
+  display: grid;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm);
 }
 
 .topMetaCard {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: auto minmax(0, 1fr);
   gap: var(--spacing-sm);
   align-items: center;
-  min-height: 92px;
-  padding: var(--spacing-md);
-  border-radius: var(--radius-lg);
-  background: var(--color-bg-card);
+  min-height: 76px;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  background: color-mix(in oklch, var(--color-bg) 58%, transparent);
   color: inherit;
-  box-shadow: inset 0 0 0 1px var(--color-border);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-border) 74%, transparent);
   opacity: 0;
   animation: overpickRise 420ms var(--ease-out) forwards;
   transition-property: transform, box-shadow, background-color;
@@ -539,15 +590,15 @@
 .topMetaCard:hover {
   color: inherit;
   transform: translateY(-3px);
-  background: color-mix(in oklch, var(--color-bg-card) 86%, var(--color-accent-red));
+  background: color-mix(in oklch, var(--color-bg-card) 82%, var(--color-accent-sakura));
   box-shadow:
-    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-red) 42%, transparent),
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-sakura) 42%, transparent),
     var(--shadow-md);
 }
 
 .topMetaAvatar {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--color-bg);
@@ -587,33 +638,14 @@
   font-variant-numeric: tabular-nums;
 }
 
-.topMetaScore {
-  display: grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-sm);
-  color: var(--color-accent-ink);
-  background: var(--color-tier-b);
-  font-family: var(--font-heading);
-  font-size: var(--font-size-sm);
-  font-weight: 950;
-  font-variant-numeric: tabular-nums;
-}
-
 .topMetaSubrole {
-  grid-column: 2 / -1;
   justify-self: start;
   max-width: 100%;
-  padding: var(--spacing-2xs) var(--spacing-sm);
-  border-radius: var(--radius-full);
-  color: var(--color-text-muted);
-  background: color-mix(in oklch, var(--color-bg) 55%, transparent);
-  box-shadow: inset 0 0 0 1px var(--color-border);
+  color: color-mix(in oklch, var(--color-text-muted) 82%, var(--color-accent-mint));
   font-size: 0.65rem;
   font-weight: 950;
   text-transform: uppercase;
-  text-align: center;
+  letter-spacing: 0.06em;
 }
 
 @keyframes overpickRise {
@@ -624,15 +656,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes posterDrift {
-  from {
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-  to {
-    transform: translate3d(-1.5%, -1%, 0) scale(1.015);
   }
 }
 
@@ -673,6 +696,10 @@
   .roleSpotlightGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .topMetaGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
@@ -705,15 +732,11 @@
     align-items: start;
   }
 
-  .topMetaCard {
-    grid-template-columns: auto minmax(0, 1fr) auto;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .heroCopy,
   .seasonPoster,
-  .seasonPosterImg,
   .topMetaCard,
   .main::before,
   .hero::after {

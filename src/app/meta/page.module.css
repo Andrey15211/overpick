@@ -2,6 +2,10 @@
 .metaPage {
   min-height: 100vh;
   padding: clamp(2rem, 5vw, 4rem) var(--spacing-lg) var(--spacing-3xl);
+  background:
+    radial-gradient(ellipse at 78% 2%, color-mix(in oklch, var(--color-accent-lantern) 12%, transparent), transparent 28rem),
+    radial-gradient(ellipse at 18% 32%, color-mix(in oklch, var(--color-accent-mint) 10%, transparent), transparent 34rem),
+    linear-gradient(180deg, color-mix(in oklch, var(--color-bg) 86%, var(--color-accent-mint)), transparent 36rem);
 }
 
 .metaContainer {

@@ -1,10 +1,11 @@
-/* Hallmark · macrostructure: Workbench · tone: technical · anchor hue: red-cyan */
+/* Hallmark · macrostructure: Workbench · tone: Tokyo sakura esports · anchor hue: sakura-mint */
 .heroDetailPage {
   min-height: 100vh;
   padding: clamp(2rem, 5vw, 4rem) var(--spacing-lg) var(--spacing-3xl);
   background:
-    linear-gradient(135deg, color-mix(in oklch, var(--color-accent) 9%, transparent), transparent 38%),
-    linear-gradient(225deg, color-mix(in oklch, var(--color-accent-cyan) 8%, transparent), transparent 36%);
+    radial-gradient(ellipse at 14% 0%, color-mix(in oklch, var(--color-accent-sakura) 13%, transparent), transparent 30rem),
+    radial-gradient(ellipse at 84% 20%, color-mix(in oklch, var(--color-accent-mint) 11%, transparent), transparent 34rem),
+    linear-gradient(180deg, color-mix(in oklch, var(--color-bg) 88%, var(--color-accent-sakura)), transparent 36rem);
 }
 
 .heroDetailContainer {
@@ -158,6 +159,9 @@
 .heroDetailBadgeSubrole--Recon { color: var(--color-subrole-recon); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-subrole-recon) 42%, transparent); }
 .heroDetailBadgeSubrole--Flanker { color: var(--color-subrole-flanker); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-subrole-flanker) 42%, transparent); }
 .heroDetailBadgeSubrole--Sharpshooter { color: var(--color-subrole-sharpshooter); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-subrole-sharpshooter) 42%, transparent); }
+.heroDetailBadgeSubrole--Medic { color: var(--color-subrole-medic); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-subrole-medic) 42%, transparent); }
+.heroDetailBadgeSubrole--Guardian { color: var(--color-subrole-guardian); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-subrole-guardian) 42%, transparent); }
+.heroDetailBadgeSubrole--Tempo { color: var(--color-subrole-tempo); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-subrole-tempo) 42%, transparent); }
 .heroDetailBadgeSubrole--Tactician { color: var(--color-subrole-tactician); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-subrole-tactician) 42%, transparent); }
 .heroDetailBadgeSubrole--Survivor { color: var(--color-subrole-survivor); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-subrole-survivor) 42%, transparent); }
 
@@ -198,30 +202,6 @@
   font-size: var(--font-size-xs);
   font-weight: 900;
   text-transform: uppercase;
-}
-
-.heroDetailWhyMeta {
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-xl);
-  background:
-    linear-gradient(90deg, color-mix(in oklch, var(--color-accent) 11%, transparent), transparent 60%),
-    color-mix(in oklch, var(--color-bg) 54%, transparent);
-  box-shadow: inset 3px 0 0 var(--color-accent), inset 0 0 0 1px color-mix(in oklch, var(--color-accent) 24%, transparent);
-}
-
-.heroDetailWhyMetaLabel {
-  margin-bottom: var(--spacing-xs);
-  color: var(--color-text-muted);
-  font-size: var(--font-size-xs);
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.heroDetailWhyMetaText {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-sm);
-  line-height: 1.65;
 }
 
 .heroDetailSection {

@@ -26,7 +26,6 @@ type RoleFilter = 'all' | HeroRole;
 
 export default function TierList({ metaHeroes, heroes }: TierListProps) {
   const [roleFilter, setRoleFilter] = useState<RoleFilter>('all');
-  const [selectedHero, setSelectedHero] = useState<ComputedHeroMeta | null>(null);
   const [filters, setFilters] = useState<MetaFilters>({
     input: 'pc',
     gameMode: 'competitive',
@@ -227,8 +226,6 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
                     key={metaHero.heroId} 
                     href={`/hero/${hero.id}`}
                     className="tierHeroCard"
-                    onMouseEnter={() => setSelectedHero(metaHero)}
-                    onMouseLeave={() => setSelectedHero(null)}
                     aria-label={`${hero.nameRu} — ${metaHero.tier} тир`}
                   >
                     <div className={`tierHeroAvatar tierHeroAvatar--${hero.role}`}>
@@ -250,9 +247,6 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
                         {metaHero.winRate}%
                       </span>
                     </div>
-                    <span className="tierHeroScore">
-                      score {Math.round(metaHero.finalScore * 100)}
-                    </span>
                   </Link>
                 );
               })}
@@ -260,25 +254,6 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
           </div>
         );
       })}
-
-      {/* Тултип при наведении */}
-      {selectedHero && (
-        <div className="tierTooltip" role="tooltip">
-          <div className="tierTooltipTitle">
-            {getHeroInfo(selectedHero.heroId)?.nameRu}
-          </div>
-          <div className="tierTooltipMeta">
-            <strong>Почему в мете:</strong><br />
-            {selectedHero.whyMeta}
-            <br /><br />
-            <strong>Частота выбора:</strong> {selectedHero.pickRate}%<br />
-            <strong>Винрейт:</strong> {selectedHero.winRate}%<br />
-            <strong>Исходный тир:</strong> {selectedHero.sourceTier}<br />
-            <strong>Сигнал источников:</strong> {selectedHero.dataConfidence === 'high' ? 'высокий' : selectedHero.dataConfidence === 'medium' ? 'средний' : 'ограниченный'}
-          </div>
-          <div className="tierTooltipHint">Нажмите для контрпиков</div>
-        </div>
-      )}
     </div>
   );
 }

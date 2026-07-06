@@ -6,7 +6,8 @@ export type HeroRole = 'Tank' | 'Damage' | 'Support';
 export type HeroSubrole = 
   | 'Initiator' | 'Bruiser' | 'Stalwart'  // Танки
   | 'Specialist' | 'Recon' | 'Flanker' | 'Sharpshooter'  // DD
-  | undefined;  // Саппорты (пока без подролей)
+  | 'Medic' | 'Guardian' | 'Tempo' | 'Tactician' | 'Survivor'
+  | undefined;
 
 export interface Hero {
   id: string;
@@ -86,6 +87,11 @@ export const SUBROLE_LABELS: Record<string, string> = {
   Recon: 'Разведчик',
   Flanker: 'Фланкер',
   Sharpshooter: 'Стрелок',
+  Medic: 'Лекарь',
+  Guardian: 'Защитник',
+  Tempo: 'Темпо',
+  Tactician: 'Тактик',
+  Survivor: 'Сейвер',
 };
 
 export const SUBROLE_COLORS: Record<string, string> = {
@@ -96,6 +102,11 @@ export const SUBROLE_COLORS: Record<string, string> = {
   Recon: 'var(--color-subrole-recon)',
   Flanker: 'var(--color-subrole-flanker)',
   Sharpshooter: 'var(--color-subrole-sharpshooter)',
+  Medic: 'var(--color-subrole-medic)',
+  Guardian: 'var(--color-subrole-guardian)',
+  Tempo: 'var(--color-subrole-tempo)',
+  Tactician: 'var(--color-subrole-tactician)',
+  Survivor: 'var(--color-subrole-survivor)',
 };
 
 // Типы для синергий

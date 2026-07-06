@@ -2,6 +2,10 @@
 .patchesPage {
   min-height: 100vh;
   padding: clamp(2rem, 5vw, 4rem) var(--spacing-lg) var(--spacing-3xl);
+  background:
+    radial-gradient(ellipse at 18% 0%, color-mix(in oklch, var(--color-accent-lantern) 14%, transparent), transparent 30rem),
+    radial-gradient(ellipse at 82% 28%, color-mix(in oklch, var(--color-accent-sakura) 10%, transparent), transparent 32rem),
+    linear-gradient(180deg, color-mix(in oklch, var(--color-night-indigo) 84%, var(--color-accent-lantern)), transparent 36rem);
 }
 
 .patchesContainer {

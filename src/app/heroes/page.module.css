@@ -3,6 +3,10 @@
   min-height: 100vh;
   padding: clamp(2rem, 5vw, 4rem) var(--spacing-lg) var(--spacing-3xl);
   overflow: clip;
+  background:
+    radial-gradient(ellipse at 12% 4%, color-mix(in oklch, var(--color-accent-sakura) 13%, transparent), transparent 30rem),
+    radial-gradient(ellipse at 88% 22%, color-mix(in oklch, var(--color-accent-mint) 12%, transparent), transparent 34rem),
+    linear-gradient(180deg, color-mix(in oklch, var(--color-night-indigo) 92%, var(--color-accent-sakura)), transparent 34rem);
 }
 
 .heroesContainer {

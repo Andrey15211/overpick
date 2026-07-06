@@ -43,6 +43,9 @@
   --color-subrole-recon: oklch(70% 0.16 235);
   --color-subrole-flanker: oklch(65% 0.23 24);
   --color-subrole-sharpshooter: oklch(78% 0.17 72);
+  --color-subrole-medic: oklch(82% 0.15 150);
+  --color-subrole-guardian: oklch(76% 0.16 188);
+  --color-subrole-tempo: oklch(78% 0.18 132);
   --color-subrole-tactician: oklch(74% 0.15 178);
   --color-subrole-survivor: oklch(58% 0.16 300);
   --color-tier-s: oklch(67% 0.24 22);

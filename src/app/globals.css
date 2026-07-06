@@ -43,6 +43,7 @@ html {
 }
 
 body {
+  position: relative;
   min-height: 100vh;
   background: var(--color-bg);
   color: var(--color-text);
@@ -54,10 +55,11 @@ body {
   font-variant-numeric: tabular-nums;
   overflow-x: clip;
   background-image:
-    linear-gradient(90deg, color-mix(in oklch, var(--color-ink-glint) 1.8%, transparent) 1px, transparent 1px),
-    linear-gradient(180deg, color-mix(in oklch, var(--color-ink-glint) 1.4%, transparent) 1px, transparent 1px),
-    linear-gradient(180deg, var(--color-bg-secondary) 0%, var(--color-bg) 34rem);
-  background-size: 48px 48px, 48px 48px, auto;
+    radial-gradient(ellipse at 16% -8%, color-mix(in oklch, var(--color-accent-lantern) 17%, transparent), transparent 30rem),
+    radial-gradient(ellipse at 84% 12%, color-mix(in oklch, var(--color-accent-sakura) 13%, transparent), transparent 32rem),
+    radial-gradient(ellipse at 50% 110%, color-mix(in oklch, var(--color-accent-mint) 12%, transparent), transparent 40rem),
+    linear-gradient(180deg, color-mix(in oklch, var(--color-night-indigo) 88%, var(--color-accent-lantern)) 0%, var(--color-bg) 46%, color-mix(in oklch, var(--color-bg) 82%, var(--color-accent-mint)) 100%);
+  background-size: auto;
   background-attachment: fixed;
 }
 

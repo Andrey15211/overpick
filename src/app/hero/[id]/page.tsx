@@ -151,15 +151,6 @@ export default async function HeroDetailPage({
                 </div>
               </div>
             )}
-            
-            {/* Why Meta */}
-            {heroMeta && (
-              <div className={styles.heroDetailWhyMeta}>
-                <div className={styles.heroDetailWhyMetaLabel}>Почему в мете</div>
-                <div className={styles.heroDetailWhyMetaText}>{heroMeta.whyMeta}</div>
-              </div>
-            )}
-
             {/* Имба-связки */}
             {heroSynergies.length > 0 && (
               <SynergyBlock synergies={heroSynergies} heroes={heroes} />
