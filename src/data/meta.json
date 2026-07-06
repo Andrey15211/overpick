@@ -17,11 +17,11 @@
     "Overwatch Season 3 launch tuning notes",
     "Overwatch Season 3 support and tank tuning notes"
   ],
-  "metaDescription": "Тир-лист обновлён под актуальный публичный срез Blizzard Hero Statistics для PC (Europe) на 6 июля 2026 года. В основе лежат свежие win rate и pick rate по всем героям с учётом текущего патча Season 3.",
+  "metaDescription": "Тир-лист обновлён под актуальный публичный срез Blizzard Hero Statistics для PC (Europe) на 6 июля 2026 года. В основе лежат свежие win rate и pick rate по всем героям с учётом текущего состояния Season 3.",
   "tiers": {
     "S": {
       "label": "Высший тир",
-      "description": "Лучшие герои патча, которые дают максимум ценности почти на любой карте",
+      "description": "Лучшие герои сезона, которые дают максимум ценности почти на любой карте",
       "color": "var(--color-tier-s)"
     },
     "A": {
@@ -41,7 +41,7 @@
     },
     "D": {
       "label": "Слабый тир",
-      "description": "На патче Season 3 им тяжело навязать игру без явного преимущества по исполнению",
+      "description": "В Season 3 им тяжело навязать игру без явного преимущества по исполнению",
       "color": "var(--color-tier-d)"
     }
   },

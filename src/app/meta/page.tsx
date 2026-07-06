@@ -58,10 +58,6 @@ export default function MetaPage() {
               <span className={styles.metaInfoValue}>{meta.seasonName}</span>
             </div>
             <div className={styles.metaInfoItem}>
-              <span className={styles.metaInfoLabel}>Патч:</span>
-              <span className={styles.metaInfoValue}>{meta.patch}</span>
-            </div>
-            <div className={styles.metaInfoItem}>
               <span className={styles.metaInfoLabel}>Обновлено:</span>
               <span className={styles.metaInfoValue}>{lastUpdatedRu}</span>
             </div>

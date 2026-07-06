@@ -3,10 +3,9 @@ import Image from 'next/image';
 import HeroGrid from '@/components/HeroGrid';
 import heroesData from '@/data/heroes.json';
 import metaData from '@/data/meta.json';
-import patchesData from '@/data/patches.json';
 import { computeFilteredMeta } from '@/data/metaFilters';
 import { Hero, SUBROLE_LABELS } from '@/types/heroes';
-import { ComputedHeroMeta, HeroMeta, MetaFilters, Patch, Tier, TierInfo, TIER_ORDER } from '@/types/meta';
+import { ComputedHeroMeta, HeroMeta, MetaFilters, Tier, TierInfo, TIER_ORDER } from '@/types/meta';
 import { buildHeroById, formatDateRu } from '@/lib/display';
 import styles from './page.module.css';
 
@@ -20,8 +19,6 @@ const meta = metaData as {
   tiers: Record<Tier, TierInfo>;
   heroes: HeroMeta[];
 };
-const patches = patchesData as Patch[];
-
 const NEW_HEROES = ['shion', 'sierra'];
 const SEASON_HERO_ID = 'shion';
 const SEASON_HERO_ART = '/shion-cutout.png';
@@ -54,7 +51,6 @@ export default function Home() {
     { label: '2 лучших DPS', rows: topDamage },
     { label: '2 лучших саппорта', rows: topSupport },
   ];
-  const latestPatch = patches[0];
   const heroesByTier = TIER_ORDER.reduce((acc, tier) => {
     acc[tier] = computedMeta.filter((heroMeta) => heroMeta.tier === tier);
     return acc;
@@ -120,11 +116,6 @@ export default function Home() {
               className={styles.seasonPosterImg}
               priority
             />
-            <div className={styles.posterHud}>
-              <span>Hero 52</span>
-              <strong>Сион</strong>
-              <small>Damage / Flanker</small>
-            </div>
           </div>
         </div>
       </section>
@@ -134,10 +125,6 @@ export default function Home() {
           <div className={styles.signalCard}>
             <span className={styles.signalLabel}>Статистика сайта</span>
             <strong>{lastUpdatedRu}</strong>
-          </div>
-          <div className={styles.signalCard}>
-            <span className={styles.signalLabel}>Последний патч Overwatch</span>
-            <strong>{latestPatch ? formatDateRu(latestPatch.date) : 'нет данных'}</strong>
           </div>
         </div>
 
@@ -191,7 +178,6 @@ export default function Home() {
             <section key={tier} className={`${styles.topMetaTierColumn} ${styles[`topMetaTierColumn--${tier}`]}`}>
               <h3 className={styles.topMetaTierHeader}>
                 <span>{tier}</span>
-                <small>{heroesByTier[tier].length}</small>
               </h3>
               <div className={styles.topMetaTierList}>
                 {heroesByTier[tier].map((heroMeta, index) => {
