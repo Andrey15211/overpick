@@ -102,3 +102,13 @@ test('map filters move brawl specialists in the expected direction', () => {
     'Junker Queen should score higher on a brawl map than on a long-range map',
   );
 });
+
+test('Season 3 spotlight ranks Shion as a top damage hero', () => {
+  const rows = compute();
+  const damageRows = rows.filter((entry) => heroRoleById.get(entry.heroId) === 'Damage');
+
+  assert.ok(
+    damageRows.slice(0, 2).some((entry) => entry.heroId === 'shion'),
+    'Shion should stay in the Season 3 top damage spotlight',
+  );
+});

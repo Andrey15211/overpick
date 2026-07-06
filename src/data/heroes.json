@@ -237,7 +237,15 @@
     "nameRu": "Сьерра",
     "role": "Damage",
     "subrole": "Recon",
-    "portrait": "https://blz-contentstack-images.akamaized.net/v3/assets/blt2477dcaf4ebd440c/blt854021093f8d28b6/69d6d60a28a69c582e0f5c25/OVR_S2_H51_Sierra_BeautyShot_Individual_002_1.png"
+    "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/4bfd3d8b95844231115cb5bf4db03344c71bc3e865189c52403b2dc51438e63a.png"
+  },
+  {
+    "id": "shion",
+    "name": "Shion",
+    "nameRu": "Сион",
+    "role": "Damage",
+    "subrole": "Flanker",
+    "portrait": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/070481cf871590a2b45a51d1335f9fe3d65eb4e4d361ecdd998b34fae2ed65d5.png"
   },
   {
     "id": "sombra",

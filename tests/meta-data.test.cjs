@@ -99,6 +99,22 @@ test('hero portraits use image hosts configured for next/image', () => {
   }
 });
 
+test('Season 3 new hero Shion is present with official role and meta data', () => {
+  const shion = heroes.find((hero) => hero.id === 'shion');
+  const shionMeta = meta.heroes.find((entry) => entry.heroId === 'shion');
+
+  assert.ok(shion, 'Expected Shion in heroes.json');
+  assert.equal(shion.nameRu, 'Сион');
+  assert.equal(shion.role, 'Damage');
+  assert.equal(shion.subrole, 'Flanker');
+  assert.ok(shion.portrait.includes('/overwatch/'), 'Shion portrait should use a Blizzard hero portrait asset');
+
+  assert.ok(shionMeta, 'Expected Shion in meta.json');
+  assert.equal(shionMeta.tier, 'A');
+  assert.ok(shionMeta.pickRate > 0, 'Shion pick rate should come from Blizzard Hero Statistics');
+  assert.ok(shionMeta.whyMeta.includes('Сион'), 'Shion meta explanation should use the Russian official name');
+});
+
 test('patch data references known heroes and valid change types', () => {
   const heroIds = new Set(heroes.map((hero) => hero.id));
   const patchIds = new Set();

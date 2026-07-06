@@ -11,7 +11,7 @@ This file maps the original requested scope to current repository evidence. It i
 | --- | --- | --- |
 | Analyze the listed skill repositories | Complete | `docs/skill-audit.md` records `mattpocock/skills`, `jakubkrehel/make-interfaces-feel-better`, `Nutlope/hallmark`, `Kappaemme-git/codex-complexity-optimizer`, and `ComposioHQ/awesome-codex-skills`. |
 | Install only necessary skills | Complete | `docs/skill-audit.md` lists installed `code-review` and `improve-codebase-architecture`; it also records why the other skill catalogs were not installed wholesale. |
-| Review/use the relevant skills | Complete | `docs/skill-audit.md`, `.hallmark/log.json`, `tokens.css`, and the design/test commits show Hallmark, interface-motion, complexity, code-review, and architecture guidance applied. |
+| Review/use the relevant skills | Complete | `docs/skill-audit.md`, `tokens.css`, and the design/test commits show Hallmark, interface-motion, complexity, code-review, and architecture guidance applied. |
 | Rewrite/redesign the site UI | Complete | Workbench visual system is present across `src/app/*.module.css`, `src/styles/*.css`, `src/components/*`, and `tokens.css`; route smoke verification covers `/`, `/heroes`, `/meta`, `/patches`, and `/hero/junkerqueen`. |
 | Add smooth, purposeful animations | Complete | Page/component CSS uses explicit `transition-property`, route reveal keyframes, `prefers-reduced-motion`, and the design contract forbids broad `transition: all`. |
 | Automate Overwatch meta updates with GitHub Actions | Complete | `.github/workflows/update-meta.yml` runs every Tuesday at 09:00 UTC, verifies Blizzard sources, syncs meta, runs `verify:local`, and commits changed meta/patch data. |

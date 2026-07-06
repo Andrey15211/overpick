@@ -12,11 +12,12 @@ const VIEWPORTS = [
 ];
 
 const ROUTES = [
-  { path: '/', expectedText: ['Контрпик за раунд', 'Королева Хлама', 'B тир'] },
-  { path: '/heroes', expectedText: ['Все Герои', 'Королева Хлама', 'B тир'] },
-  { path: '/meta', expectedText: ['Текущая Мета', 'Королева Хлама'] },
+  { path: '/', expectedText: ['Сион открывает мету Season 3', 'ЛУЧШИЙ ТАНК', '2 ЛУЧШИХ DPS'] },
+  { path: '/heroes', expectedText: ['Все Герои', 'Королева Хлама', 'B тир', 'Сион'] },
+  { path: '/meta', expectedText: ['Текущая Мета', 'Королева Хлама', 'Сион'] },
   { path: '/patches', expectedText: ['История Патчей', 'Найдено:'] },
   { path: '/hero/junkerqueen', expectedText: ['Королева Хлама', 'B тир', 'ПОЧЕМУ В МЕТЕ'] },
+  { path: '/hero/shion', expectedText: ['Сион', 'A тир', 'Кто контрит Сион'] },
 ];
 
 function waitForServer(url, timeoutMs) {

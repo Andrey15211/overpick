@@ -12,6 +12,8 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
 
 # next.js
 /.next/
@@ -23,12 +25,17 @@
 # misc
 .DS_Store
 *.pem
+*.log
+.idea/
+.vscode/
+.hallmark/
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+codex-preview*.log
 
 # env files (can opt-in for committing if needed)
 .env*
