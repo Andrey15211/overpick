@@ -19,7 +19,14 @@ const ROLE_LABELS_RU = {
 };
 
 const HERO_NAME_RU_OVERRIDES = {
-  Shion: 'Шион',
+  Shion: 'Сион',
+};
+
+const BLIZZARD_HERO_ID_ALIASES = {
+  'jetpack-cat': 'jetpackcat',
+  'junker-queen': 'junkerqueen',
+  'soldier-76': 'soldier76',
+  'wrecking-ball': 'wreckingball',
 };
 
 const TIER_RANK = {
@@ -123,6 +130,10 @@ function buildHeroNameMap(heroes) {
   return map;
 }
 
+function localHeroIdFromBlizzardId(heroId) {
+  return BLIZZARD_HERO_ID_ALIASES[heroId] || heroId;
+}
+
 function parseIsoDate(dateText) {
   const match = dateText.match(/^([A-Za-z]+) (\d{1,2}), (\d{4})$/);
   if (!match) {
@@ -180,7 +191,7 @@ function translateChange(sectionTitle, text) {
   }
 
   if (sectionTitle === 'Bug Fixes' && text.includes('Shion') && text.includes('Execution')) {
-    return 'Исправлена ошибка, из-за которой Шион не могла использовать Execution во время перезарядки.';
+    return 'Исправлена ошибка, из-за которой Сион не могла использовать Execution во время перезарядки.';
   }
 
   return stripHtml(text);
@@ -435,7 +446,17 @@ async function main() {
   const patches = JSON.parse(patchesRaw);
   const rates = parseRates(ratesHtml);
   const metaSignals = parseMetaSignals(signalSource);
-  const heroById = new Map(rates.map((row) => [row.id, row]));
+  const localHeroIds = new Set(heroes.map((hero) => hero.id));
+  const unknownRateHeroIds = rates
+    .map((row) => localHeroIdFromBlizzardId(row.id))
+    .filter((heroId) => !localHeroIds.has(heroId));
+  if (unknownRateHeroIds.length > 0) {
+    throw new Error(
+      `Blizzard Hero Statistics contains heroes missing from src/data/heroes.json: ${unknownRateHeroIds.join(', ')}`,
+    );
+  }
+
+  const heroById = new Map(rates.map((row) => [localHeroIdFromBlizzardId(row.id), row]));
   const heroNameById = new Map(heroes.map((hero) => [hero.id, hero.nameRu]));
   const heroRoleById = new Map(heroes.map((hero) => [hero.id, hero.role]));
   const today = normalizeDate(new Date());

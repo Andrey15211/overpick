@@ -4810,5 +4810,66 @@
         "reason": "Скорость и boop ломают ей комфортную дистанцию и сбивают value с Trailblazer."
       }
     ]
+  },
+  {
+    "heroId": "shion",
+    "counters": [
+      {
+        "heroId": "dva",
+        "effectiveness": 5,
+        "tier": "S",
+        "counterRole": "Tank",
+        "reason": "Defense Matrix съедает пистолеты и Execution, а бустеры догоняют Сион после Joyride."
+      },
+      {
+        "heroId": "winston",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Tank",
+        "reason": "Купол режет линии огня, а Tesla Cannon стабильно попадает по фланкеру после рывка."
+      },
+      {
+        "heroId": "cassidy",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Магнитная граната и mid-range burst наказывают Сион, когда она тратит Evade или выезжает на Joyride."
+      },
+      {
+        "heroId": "sombra",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Hack ломает темп фланга и не даёт безопасно разыгрывать Execution после захода в спину."
+      },
+      {
+        "heroId": "brigitte",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Support",
+        "reason": "Shield Bash и Inspire защищают бэклайн от флангов Сион и заставляют её играть без лёгких добиваний."
+      },
+      {
+        "heroId": "ana",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Support",
+        "reason": "Sleep Dart ловит предсказуемый вход после Joyride, а биотическая граната убирает sustain от талантов."
+      },
+      {
+        "heroId": "mei",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Damage",
+        "reason": "Стена разделяет маршрут фланга, а замедление мешает Сион выйти из ближней драки."
+      },
+      {
+        "heroId": "kiriko",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Support",
+        "reason": "Swift Step уводит цель из Execution, а Protection Suzu сбивает окно добивания."
+      }
+    ]
   }
 ]

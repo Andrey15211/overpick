@@ -1,4 +1,6 @@
-/* Hallmark · pre-emit critique: P4 H4 E4 S4 R4 V4 */
+/* Hallmark · macrostructure: Season Command Deck · tone: esports tactical · anchor hue: red-cyan
+ * pre-emit critique: P4 H4 E4 S4 R4 V4
+ */
 .main {
   min-height: 100vh;
 }
@@ -6,7 +8,8 @@
 .hero {
   position: relative;
   isolation: isolate;
-  padding: clamp(3rem, 7vw, 6rem) var(--spacing-lg) var(--spacing-2xl);
+  min-height: min(920px, calc(100svh - var(--header-height)));
+  padding: clamp(2.5rem, 5vw, 5rem) var(--spacing-lg) var(--spacing-2xl);
   overflow: clip;
 }
 
@@ -14,66 +17,79 @@
   content: '';
   position: absolute;
   inset: 0;
-  z-index: -2;
+  z-index: -3;
   background:
-    linear-gradient(115deg, color-mix(in oklch, var(--color-accent) 18%, transparent) 0%, transparent 36%),
-    linear-gradient(245deg, color-mix(in oklch, var(--color-accent-blue) 14%, transparent) 0%, transparent 34%),
-    linear-gradient(180deg, var(--color-bg-secondary), var(--color-bg));
+    linear-gradient(112deg, color-mix(in oklch, var(--color-accent-red) 28%, transparent) 0%, transparent 34%),
+    linear-gradient(252deg, color-mix(in oklch, var(--color-accent-cyan) 24%, transparent) 0%, transparent 36%),
+    linear-gradient(180deg, var(--color-bg-secondary), var(--color-bg) 72%);
 }
 
 .hero::after {
   content: '';
   position: absolute;
-  inset: 12% max(2rem, 6vw) auto auto;
-  z-index: -1;
-  width: min(42rem, 48vw);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-accent-blue), transparent);
-  opacity: 0.7;
+  inset: 0;
+  z-index: -2;
+  background:
+    repeating-linear-gradient(90deg, color-mix(in oklch, var(--color-rule) 42%, transparent) 0 1px, transparent 1px 6rem),
+    repeating-linear-gradient(180deg, color-mix(in oklch, var(--color-rule) 36%, transparent) 0 1px, transparent 1px 6rem);
+  mask-image: linear-gradient(180deg, transparent, black 16%, black 72%, transparent);
+  opacity: 0.32;
 }
 
 .heroShell {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
-  gap: clamp(2rem, 5vw, 5rem);
+  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
   align-items: center;
   width: min(100%, var(--container-max));
+  min-height: calc(min(920px, 100svh) - var(--header-height) - 4rem);
   margin: 0 auto;
+  gap: clamp(1.5rem, 4vw, 4rem);
 }
 
 .heroCopy {
+  z-index: 2;
   display: grid;
   gap: var(--spacing-lg);
-  animation: overpickReveal var(--dur-slow) var(--ease-out) both;
+  max-width: 700px;
+  animation: overpickRise var(--dur-slow) var(--ease-out) both;
 }
 
 .heroSystemLine {
   width: fit-content;
   margin: 0;
-  color: var(--color-accent-cyan);
-  font-size: var(--font-size-sm);
-  font-weight: 800;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent-cyan-strong);
+  background: color-mix(in oklch, var(--color-bg) 72%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-accent-cyan) 34%, transparent);
+  font-size: var(--font-size-xs);
+  font-weight: 950;
   text-transform: uppercase;
   letter-spacing: 0;
 }
 
 .heroTitle {
-  max-width: 9ch;
+  max-width: 10ch;
   margin: 0;
   color: var(--color-text);
   font-size: var(--text-display);
-  font-weight: 900;
+  font-weight: 950;
   line-height: 0.88;
   letter-spacing: 0;
   text-wrap: balance;
 }
 
+.heroTitle::first-line {
+  color: var(--color-accent-red-strong);
+}
+
 .heroSubtitle {
-  max-width: 660px;
+  max-width: 640px;
   margin: 0;
   color: var(--color-text-secondary);
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-size: clamp(1rem, 1.35vw, 1.2rem);
   line-height: 1.65;
+  text-wrap: pretty;
 }
 
 .heroCta {
@@ -91,82 +107,185 @@
   padding: 0 var(--spacing-lg);
   border-radius: var(--radius-md);
   font-size: var(--font-size-sm);
-  font-weight: 900;
-  transition-property: transform, color, background-color, border-color, box-shadow;
+  font-weight: 950;
+  transition-property: transform, color, background-color, box-shadow;
   transition-duration: var(--dur-med);
   transition-timing-function: var(--ease-out);
 }
 
 .heroCtaPrimary {
+  color: var(--color-accent-ink);
   background: var(--color-accent);
-  color: var(--color-accent-ink);
-  box-shadow: 0 18px 48px color-mix(in oklch, var(--color-accent) 28%, transparent);
-}
-
-.heroCtaPrimary:hover {
-  color: var(--color-accent-ink);
-  transform: translateY(-2px);
-  background: var(--color-accent-hover);
-  box-shadow: 0 24px 64px color-mix(in oklch, var(--color-accent) 36%, transparent);
-}
-
-.heroCtaPrimary:active,
-.heroCtaSecondary:active {
-  transform: scale(0.96);
+  box-shadow: 0 18px 48px color-mix(in oklch, var(--color-accent-red) 32%, transparent);
 }
 
 .heroCtaSecondary {
-  border: 1px solid var(--color-border-hover);
-  background: color-mix(in oklch, var(--color-bg-card) 78%, transparent);
   color: var(--color-text);
+  background: color-mix(in oklch, var(--color-bg-card) 76%, transparent);
+  box-shadow: inset 0 0 0 1px var(--color-border-hover);
 }
 
+.heroCtaPrimary:hover,
 .heroCtaSecondary:hover {
-  color: var(--color-accent-blue);
-  border-color: var(--color-accent-blue);
-  background: color-mix(in oklch, var(--color-accent-blue) 10%, var(--color-bg-card));
+  color: var(--color-accent-ink);
+  transform: translateY(-2px);
+  background: var(--color-accent-hover);
+  box-shadow: 0 24px 56px color-mix(in oklch, var(--color-accent-red) 36%, transparent);
 }
 
-.commandPanel {
-  display: grid;
-  gap: var(--spacing-md);
-  padding: var(--spacing-lg);
+.heroCtaPrimary:active,
+.heroCtaSecondary:active,
+.seasonHeroChip:active,
+.roleHero:active,
+.topMetaCard:active {
+  transform: scale(0.96);
+}
+
+.seasonHeroChip {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--spacing-sm);
+  width: min(100%, 24rem);
+  min-height: 78px;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-lg);
+  color: var(--color-text);
+  background: linear-gradient(90deg, color-mix(in oklch, var(--color-accent-red) 18%, var(--color-bg-card)), var(--color-bg-card));
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-red) 36%, transparent),
+    0 18px 48px color-mix(in oklch, var(--color-ink-shadow) 28%, transparent);
+  transition-property: transform, box-shadow;
+  transition-duration: var(--dur-med);
+  transition-timing-function: var(--ease-out);
+}
+
+.seasonHeroChip:hover {
+  color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-red) 56%, transparent),
+    0 24px 58px color-mix(in oklch, var(--color-accent-red) 18%, transparent);
+}
+
+.seasonHeroChipImg {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-bg);
+  box-shadow:
+    0 0 0 2px var(--color-accent-red),
+    0 0 0 4px color-mix(in oklch, var(--color-ink-glint) 12%, transparent);
+}
+
+.seasonHeroChip strong,
+.seasonHeroChip small {
+  display: block;
+}
+
+.seasonHeroChip small {
+  margin-top: var(--spacing-2xs);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.seasonPoster {
+  position: relative;
+  min-height: clamp(26rem, 48vw, 44rem);
+  overflow: clip;
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-secondary);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-cyan) 30%, transparent),
+    0 32px 90px color-mix(in oklch, var(--color-ink-shadow) 44%, transparent);
+  animation: overpickRise var(--dur-slow) var(--ease-out) 90ms both;
+}
+
+.seasonPoster::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(180deg, color-mix(in oklch, var(--color-bg-card) 92%, transparent), color-mix(in oklch, var(--color-bg-secondary) 94%, transparent));
-  border: 1px solid var(--color-border);
-  box-shadow: var(--shadow-lg);
-  animation: overpickReveal var(--dur-slow) var(--ease-out) 90ms both;
+    linear-gradient(90deg, color-mix(in oklch, var(--color-bg) 72%, transparent), transparent 48%),
+    linear-gradient(180deg, transparent 62%, color-mix(in oklch, var(--color-bg) 72%, transparent));
+  pointer-events: none;
 }
 
-.commandPanelHeader,
-.roleStrip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--spacing-sm);
+.seasonPosterImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  transform-origin: 65% 50%;
+  animation: posterDrift 7s var(--ease-in-out) infinite alternate;
+}
+
+.posterHud {
+  position: absolute;
+  z-index: 2;
+  right: min(3vw, var(--spacing-xl));
+  bottom: clamp(2rem, 6vw, 5rem);
+  display: grid;
+  gap: var(--spacing-2xs);
+  width: min(18rem, 72%);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklch, var(--color-bg) 78%, transparent);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-cyan) 36%, transparent),
+    var(--shadow-md);
+}
+
+.posterHud span,
+.posterHud small {
   color: var(--color-text-muted);
   font-size: var(--font-size-xs);
-  font-weight: 800;
+  font-weight: 900;
   text-transform: uppercase;
 }
 
-.commandPanelHeader strong {
-  color: var(--color-accent-cyan);
+.posterHud strong {
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  line-height: 1;
+}
+
+.metaDesk,
+.quickPick {
+  width: min(100%, var(--container-max));
+  margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-3xl);
+}
+
+.metaDesk {
+  display: grid;
+  gap: var(--spacing-lg);
+  margin-top: calc(var(--spacing-xl) * -1);
 }
 
 .signalGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: var(--spacing-sm);
 }
 
 .signalCard {
   min-width: 0;
   padding: var(--spacing-md);
-  border-radius: var(--radius-md);
-  background: color-mix(in oklch, var(--color-bg) 64%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-rule) 72%, transparent);
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklch, var(--color-bg-card) 88%, transparent);
+  box-shadow:
+    inset 0 0 0 1px var(--color-border),
+    0 18px 48px color-mix(in oklch, var(--color-ink-shadow) 22%, transparent);
 }
 
 .signalLabel {
@@ -174,72 +293,120 @@
   margin-bottom: var(--spacing-xs);
   color: var(--color-text-muted);
   font-size: var(--font-size-xs);
-  font-weight: 800;
+  font-weight: 950;
   text-transform: uppercase;
 }
 
 .signalCard strong {
   display: block;
+  min-width: 0;
   color: var(--color-text);
   font-family: var(--font-heading);
-  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-size: clamp(1.15rem, 2vw, 1.65rem);
+  font-weight: 950;
   line-height: 1.05;
+  overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
 }
 
-.featuredHero {
+.roleSpotlightGrid {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: 1fr 1.25fr 1.25fr;
   gap: var(--spacing-md);
-  align-items: center;
-  min-height: 72px;
+}
+
+.roleSpotlight {
+  display: grid;
+  gap: var(--spacing-sm);
+  min-width: 0;
   padding: var(--spacing-md);
   border-radius: var(--radius-lg);
-  background: linear-gradient(90deg, color-mix(in oklch, var(--color-accent) 18%, var(--color-bg-card)), var(--color-bg-card));
-  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-accent) 32%, transparent);
-  transition-property: transform, box-shadow;
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--color-bg-card) 88%, transparent), color-mix(in oklch, var(--color-bg-secondary) 86%, transparent));
+  box-shadow: inset 0 0 0 1px var(--color-border);
+}
+
+.roleSpotlight h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+.roleSpotlightRows {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.roleHero {
+  display: grid;
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--spacing-sm);
+  min-height: 82px;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  background: color-mix(in oklch, var(--color-bg) 56%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-rule) 82%, transparent);
+  transition-property: transform, background-color, box-shadow;
   transition-duration: var(--dur-med);
   transition-timing-function: var(--ease-out);
 }
 
-.featuredHero:hover {
-  color: inherit;
+.roleHero:hover {
+  color: var(--color-text);
   transform: translateY(-2px);
+  background: color-mix(in oklch, var(--color-bg-card) 80%, var(--color-accent-cyan));
   box-shadow:
-    inset 0 0 0 1px color-mix(in oklch, var(--color-accent) 56%, transparent),
-    0 20px 50px color-mix(in oklch, var(--color-accent) 18%, transparent);
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-cyan) 44%, transparent),
+    0 16px 36px color-mix(in oklch, var(--color-accent-cyan) 14%, transparent);
 }
 
-.featuredTier {
+.roleHeroRank {
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-md);
-  background: var(--color-tier-s);
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
   color: var(--color-accent-ink);
+  background: var(--color-accent-red);
+  font-size: var(--font-size-sm);
+  font-weight: 950;
+  font-variant-numeric: tabular-nums;
+}
+
+.roleHeroImg {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  background: var(--color-bg-secondary);
+  box-shadow:
+    0 0 0 1px color-mix(in oklch, var(--color-ink-glint) 12%, transparent),
+    0 10px 24px color-mix(in oklch, var(--color-ink-shadow) 32%, transparent);
+}
+
+.roleHeroText {
+  display: grid;
+  min-width: 0;
+}
+
+.roleHeroText strong {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-base);
   font-weight: 950;
 }
 
-.featuredHero strong,
-.featuredHero small {
-  display: block;
-}
-
-.featuredHero small {
-  color: var(--color-text-secondary);
+.roleHeroText small {
+  color: var(--color-text-muted);
   font-size: var(--font-size-xs);
-}
-
-.roleStrip {
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.roleStrip span {
-  padding: var(--spacing-xs) var(--spacing-sm);
-  border-radius: var(--radius-full);
-  background: color-mix(in oklch, var(--color-bg) 58%, transparent);
-  box-shadow: inset 0 0 0 1px var(--color-border);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
 }
 
 .sectionHeader {
@@ -253,16 +420,18 @@
 .sectionTitle {
   margin: 0;
   font-size: clamp(1.6rem, 3vw, 2.8rem);
-  font-weight: 900;
+  font-weight: 950;
   line-height: 1;
   letter-spacing: 0;
+  text-wrap: balance;
 }
 
 .sectionSubtitle {
-  max-width: 620px;
+  max-width: 650px;
   margin: var(--spacing-xs) 0 0;
   color: var(--color-text-muted);
   font-size: var(--font-size-sm);
+  text-wrap: pretty;
 }
 
 .sectionLink {
@@ -271,7 +440,7 @@
   min-height: 40px;
   color: var(--color-accent);
   font-size: var(--font-size-sm);
-  font-weight: 900;
+  font-weight: 950;
   transition-property: transform, color;
   transition-duration: var(--dur-fast);
   transition-timing-function: var(--ease-out);
@@ -282,16 +451,12 @@
   transform: translateX(3px);
 }
 
-.quickPick {
-  width: min(100%, var(--container-max));
-  margin: 0 auto;
-  padding: var(--spacing-2xl) var(--spacing-lg) var(--spacing-3xl);
-}
-
 .topMeta {
   padding: var(--spacing-3xl) var(--spacing-lg);
-  background: linear-gradient(180deg, var(--color-bg-secondary), var(--color-bg));
-  border-top: 1px solid var(--color-border);
+  background:
+    linear-gradient(180deg, color-mix(in oklch, var(--color-bg-secondary) 94%, transparent), var(--color-bg)),
+    repeating-linear-gradient(90deg, color-mix(in oklch, var(--color-rule) 32%, transparent) 0 1px, transparent 1px 7rem);
+  box-shadow: inset 0 1px 0 var(--color-border);
 }
 
 .topMeta .sectionHeader,
@@ -310,16 +475,16 @@
 .topMetaCard {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
   align-items: center;
-  min-height: 82px;
+  min-height: 92px;
   padding: var(--spacing-md);
   border-radius: var(--radius-lg);
   background: var(--color-bg-card);
   color: inherit;
   box-shadow: inset 0 0 0 1px var(--color-border);
   opacity: 0;
-  animation: overpickReveal 420ms var(--ease-out) forwards;
+  animation: overpickRise 420ms var(--ease-out) forwards;
   transition-property: transform, box-shadow, background-color;
   transition-duration: var(--dur-med);
   transition-timing-function: var(--ease-out);
@@ -328,21 +493,17 @@
 .topMetaCard:hover {
   color: inherit;
   transform: translateY(-3px);
-  background: color-mix(in oklch, var(--color-bg-card) 86%, var(--color-accent));
+  background: color-mix(in oklch, var(--color-bg-card) 86%, var(--color-accent-red));
   box-shadow:
-    inset 0 0 0 1px color-mix(in oklch, var(--color-accent) 42%, transparent),
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-red) 42%, transparent),
     var(--shadow-md);
 }
 
-.topMetaCard:active {
-  transform: scale(0.96);
-}
-
 .topMetaAvatar {
-  width: 52px;
-  height: 52px;
+  width: 60px;
+  height: 60px;
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: var(--radius-md);
   background: var(--color-bg);
   box-shadow:
     0 0 0 2px color-mix(in oklch, var(--color-tier-s) 82%, transparent),
@@ -357,7 +518,7 @@
 
 .topMetaInfo {
   display: grid;
-  gap: 0.15rem;
+  gap: var(--spacing-2xs);
   min-width: 0;
 }
 
@@ -369,69 +530,50 @@
   color: var(--color-text);
   font-family: var(--font-heading);
   font-size: var(--font-size-base);
-  font-weight: 900;
+  font-weight: 950;
+  overflow-wrap: anywhere;
 }
 
 .topMetaStats {
   color: var(--color-accent-cyan);
   font-size: var(--font-size-xs);
-  font-weight: 800;
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
+}
+
+.topMetaScore {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  color: var(--color-accent-ink);
+  background: var(--color-tier-b);
+  font-family: var(--font-heading);
+  font-size: var(--font-size-sm);
+  font-weight: 950;
+  font-variant-numeric: tabular-nums;
 }
 
 .topMetaSubrole {
-  justify-self: end;
-  max-width: 8rem;
-  padding: var(--spacing-xs) var(--spacing-sm);
+  grid-column: 2 / -1;
+  justify-self: start;
+  max-width: 100%;
+  padding: var(--spacing-2xs) var(--spacing-sm);
   border-radius: var(--radius-full);
   color: var(--color-text-muted);
   background: color-mix(in oklch, var(--color-bg) 55%, transparent);
   box-shadow: inset 0 0 0 1px var(--color-border);
   font-size: 0.65rem;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--spacing-md);
-  width: min(100%, 880px);
-  margin: 0 auto;
-  padding: var(--spacing-3xl) var(--spacing-lg);
-}
-
-.statItem {
-  min-width: 0;
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-lg);
-  background: color-mix(in oklch, var(--color-bg-card) 70%, transparent);
-  box-shadow: inset 0 0 0 1px var(--color-border);
-  text-align: center;
-}
-
-.statValue {
-  display: block;
-  color: var(--color-text);
-  font-family: var(--font-heading);
-  font-size: clamp(1.5rem, 3vw, 2.75rem);
   font-weight: 950;
-  line-height: 1;
-}
-
-.statLabel {
-  display: block;
-  margin-top: var(--spacing-sm);
-  color: var(--color-text-muted);
-  font-size: var(--font-size-xs);
-  font-weight: 900;
   text-transform: uppercase;
+  text-align: center;
 }
 
-@keyframes overpickReveal {
+@keyframes overpickRise {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
@@ -439,27 +581,58 @@
   }
 }
 
-@media (max-width: 980px) {
+@keyframes posterDrift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-1.5%, -1%, 0) scale(1.015);
+  }
+}
+
+@media (max-width: 1080px) {
   .heroShell {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
-  .commandPanel {
-    max-width: 640px;
+  .seasonPoster {
+    order: -1;
+    min-height: clamp(24rem, 58vw, 40rem);
+  }
+
+  .heroTitle {
+    max-width: 13ch;
+  }
+
+  .signalGrid,
+  .roleSpotlightGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 720px) {
   .hero {
-    padding-top: var(--spacing-2xl);
+    min-height: auto;
+    padding-top: var(--spacing-xl);
   }
 
   .heroTitle {
     max-width: 10ch;
   }
 
+  .seasonPoster {
+    min-height: 23rem;
+  }
+
+  .posterHud {
+    right: var(--spacing-sm);
+    bottom: var(--spacing-sm);
+  }
+
   .signalGrid,
-  .stats {
+  .roleSpotlightGrid,
+  .topMetaGrid {
     grid-template-columns: 1fr;
   }
 
@@ -468,16 +641,26 @@
     align-items: start;
   }
 
-  .topMetaGrid {
-    grid-template-columns: 1fr;
-  }
-
   .topMetaCard {
-    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroCopy,
+  .seasonPoster,
+  .seasonPosterImg,
+  .topMetaCard {
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
   }
 
-  .topMetaSubrole {
-    grid-column: 2;
-    justify-self: start;
+  .heroCtaPrimary,
+  .heroCtaSecondary,
+  .seasonHeroChip,
+  .roleHero,
+  .topMetaCard,
+  .sectionLink {
+    transition-duration: 1ms;
   }
 }

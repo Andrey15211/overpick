@@ -2,20 +2,22 @@
   "season": 3,
   "seasonName": "Сезон 3",
   "patch": "3.0",
-  "lastUpdated": "2026-07-05",
+  "lastUpdated": "2026-07-06",
   "sources": [
-    "Blizzard Hero Statistics: PC, Europe, live Hero Stats page crawled on 5 июля 2026",
+    "Blizzard Hero Statistics: PC, Europe, live Hero Stats page crawled on 6 июля 2026",
     "🔥 Overwatch Season 3 - Hotfix July 2",
     "🔥 Overwatch Season 3 - Hotfix July 1",
     "Overwatch June 30, 2026 live patch notes",
     "Overwatch June 23, 2026 live patch notes",
+    "Blizzard hero page: Shion, Season 3 damage flanker",
+    "PC Gamer Season 3 tier list: Shion debuts in A tier",
     "Overwatch Season 3 launch patch notes",
     "Overwatch Season 3 midcycle and hotfix notes",
     "Overwatch Season 3 balance updates",
     "Overwatch Season 3 launch tuning notes",
     "Overwatch Season 3 support and tank tuning notes"
   ],
-  "metaDescription": "Тир-лист обновлён под актуальный публичный срез Blizzard Hero Statistics для PC (Europe) на 5 июля 2026 года. В основе лежат свежие win rate и pick rate по всем героям с учётом текущего патча Season 3.",
+  "metaDescription": "Тир-лист обновлён под актуальный публичный срез Blizzard Hero Statistics для PC (Europe) на 6 июля 2026 года. В основе лежат свежие win rate и pick rate по всем героям с учётом текущего патча Season 3.",
   "tiers": {
     "S": {
       "label": "Высший тир",
@@ -165,17 +167,17 @@
     },
     {
       "heroId": "jetpackcat",
-      "tier": "A",
-      "pickRate": 9.2,
-      "winRate": 51.6,
-      "whyMeta": "Реактивный Кот по текущему срезу Blizzard выглядит как A-тир саппорта: 51.6% win rate и 9.2% pick rate."
+      "tier": "B",
+      "pickRate": 8.7,
+      "winRate": 50.7,
+      "whyMeta": "Реактивный Кот по текущему срезу Blizzard выглядит как B-тир саппорта: 50.7% win rate и 8.7% pick rate."
     },
     {
       "heroId": "junkerqueen",
       "tier": "B",
-      "pickRate": 5.2,
-      "winRate": 54.2,
-      "whyMeta": "Королева Хлама по текущему срезу Blizzard выглядит как B-тир танка: 54.2% win rate и 5.2% pick rate."
+      "pickRate": 4.7,
+      "winRate": 53,
+      "whyMeta": "Королева Хлама по текущему срезу Blizzard выглядит как B-тир танка: 53% win rate и 4.7% pick rate."
     },
     {
       "heroId": "junkrat",
@@ -291,10 +293,17 @@
     },
     {
       "heroId": "sierra",
-      "tier": "A",
+      "tier": "B",
       "pickRate": 14.4,
       "winRate": 50.4,
-      "whyMeta": "Сьерра по текущему срезу Blizzard выглядит как A-тир DPS: 50.4% win rate и 14.4% pick rate."
+      "whyMeta": "Сьерра по текущему срезу Blizzard выглядит как B-тир DPS: 50.4% win rate и 14.4% pick rate."
+    },
+    {
+      "heroId": "shion",
+      "tier": "A",
+      "pickRate": 51.4,
+      "winRate": 52.1,
+      "whyMeta": "Сион по текущему срезу Blizzard выглядит как A-тир DPS: 52.1% win rate и 51.4% pick rate."
     },
     {
       "heroId": "sigma",
@@ -312,10 +321,10 @@
     },
     {
       "heroId": "soldier76",
-      "tier": "C",
-      "pickRate": 5.5,
-      "winRate": 48.4,
-      "whyMeta": "Солдат-76 по текущему срезу Blizzard выглядит как C-тир DPS: 48.4% win rate и 5.5% pick rate."
+      "tier": "B",
+      "pickRate": 9,
+      "winRate": 48.8,
+      "whyMeta": "Солдат-76 по текущему срезу Blizzard выглядит как B-тир DPS: 48.8% win rate и 9% pick rate."
     },
     {
       "heroId": "sombra",
@@ -376,9 +385,9 @@
     {
       "heroId": "wreckingball",
       "tier": "B",
-      "pickRate": 3.2,
-      "winRate": 49.5,
-      "whyMeta": "Таран по текущему срезу Blizzard выглядит как B-тир танка: 49.5% win rate и 3.2% pick rate."
+      "pickRate": 3.3,
+      "winRate": 50.1,
+      "whyMeta": "Таран по текущему срезу Blizzard выглядит как B-тир танка: 50.1% win rate и 3.3% pick rate."
     },
     {
       "heroId": "wuyang",

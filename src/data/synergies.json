@@ -734,5 +734,28 @@
       "reason": "Сон и антихил Ана создают простые добивания под Tracking Shot и Trailblazer.",
       "source": "Blizzard Hero Stats + Hero Kit"
     }
+  ],
+  "shion": [
+    {
+      "partnerId": "winston",
+      "name": "Dive под Joyride",
+      "effectiveness": 5,
+      "reason": "Уинстон первым режет обзор куполом, а Сион заходит вторым темпом через Joyride и Execution.",
+      "source": "Blizzard Hero Stats + Shion Hero Kit"
+    },
+    {
+      "partnerId": "lucio",
+      "name": "Скоростной фланг",
+      "effectiveness": 4,
+      "reason": "Speed boost ускоряет вход и выход Сион, позволяя чаще навязывать ближний дуэльный темп.",
+      "source": "Blizzard Hero Page + Pro/High-rank signal"
+    },
+    {
+      "partnerId": "ana",
+      "name": "Добивание под контроль",
+      "effectiveness": 4,
+      "reason": "Sleep Dart и биотическая граната создают простые окна для Execution и Satsuriku.",
+      "source": "Blizzard Hero Page + Hero Kit"
+    }
   ]
 }

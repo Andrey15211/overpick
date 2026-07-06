@@ -26,7 +26,7 @@ const meta = metaData as {
   heroes: HeroMeta[];
 };
 
-const NEW_HEROES = ['sierra'];
+const NEW_HEROES = ['shion', 'sierra'];
 const heroById = buildHeroById(heroes);
 const countersByHeroId = new Map(counters.map((counter) => [counter.heroId, counter]));
 const metaByHeroId = new Map(meta.heroes.map((heroMeta) => [heroMeta.heroId, heroMeta]));
