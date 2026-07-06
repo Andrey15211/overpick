@@ -1,8 +1,44 @@
-/* Hallmark · macrostructure: Season Command Deck · tone: esports tactical · anchor hue: red-cyan
+/* Hallmark · macrostructure: Season Command Deck · tone: Tokyo sakura esports · anchor hue: sakura-mint
  * pre-emit critique: P4 H4 E4 S4 R4 V4
  */
 .main {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
+  overflow: clip;
+  background:
+    radial-gradient(ellipse at 88% 4%, color-mix(in oklch, var(--color-accent-mint) 22%, transparent), transparent 34rem),
+    radial-gradient(ellipse at 8% 14%, color-mix(in oklch, var(--color-accent-sakura) 24%, transparent), transparent 30rem),
+    linear-gradient(180deg, var(--color-night-indigo), var(--color-bg) 58%);
+}
+
+.main::before,
+.main::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.main::before {
+  background:
+    radial-gradient(ellipse at 12% 22%, var(--color-sakura-petal-soft) 0 0.22rem, transparent 0.24rem),
+    radial-gradient(ellipse at 34% 8%, color-mix(in oklch, var(--color-sakura-petal) 48%, transparent) 0 0.16rem, transparent 0.18rem),
+    radial-gradient(ellipse at 78% 18%, color-mix(in oklch, var(--color-sakura-petal) 42%, transparent) 0 0.2rem, transparent 0.22rem),
+    radial-gradient(ellipse at 92% 44%, color-mix(in oklch, var(--color-accent-lantern) 32%, transparent) 0 0.18rem, transparent 0.2rem),
+    radial-gradient(ellipse at 22% 72%, color-mix(in oklch, var(--color-sakura-petal) 36%, transparent) 0 0.18rem, transparent 0.2rem);
+  background-size: 22rem 20rem, 30rem 24rem, 26rem 22rem, 34rem 28rem, 28rem 26rem;
+  opacity: 0.92;
+  animation: sakuraDrift 18s var(--ease-in-out) infinite alternate;
+}
+
+.main::after {
+  background:
+    repeating-linear-gradient(90deg, var(--color-shoji-line) 0 1px, transparent 1px 5.5rem),
+    repeating-linear-gradient(180deg, color-mix(in oklch, var(--color-shoji-line) 76%, transparent) 0 1px, transparent 1px 5.5rem);
+  mask-image: linear-gradient(180deg, black, transparent 72%);
+  opacity: 0.34;
 }
 
 .hero {
@@ -19,9 +55,10 @@
   inset: 0;
   z-index: -3;
   background:
-    linear-gradient(112deg, color-mix(in oklch, var(--color-accent-red) 28%, transparent) 0%, transparent 34%),
-    linear-gradient(252deg, color-mix(in oklch, var(--color-accent-cyan) 24%, transparent) 0%, transparent 36%),
-    linear-gradient(180deg, var(--color-bg-secondary), var(--color-bg) 72%);
+    radial-gradient(ellipse at 74% 16%, color-mix(in oklch, var(--color-accent-mint) 30%, transparent), transparent 28rem),
+    radial-gradient(ellipse at 16% 18%, color-mix(in oklch, var(--color-accent-sakura) 28%, transparent), transparent 30rem),
+    radial-gradient(ellipse at 88% 76%, color-mix(in oklch, var(--color-accent-lantern) 12%, transparent), transparent 24rem),
+    linear-gradient(180deg, color-mix(in oklch, var(--color-paper-2) 88%, var(--color-accent-sakura)), var(--color-bg) 72%);
 }
 
 .hero::after {
@@ -30,10 +67,16 @@
   inset: 0;
   z-index: -2;
   background:
-    repeating-linear-gradient(90deg, color-mix(in oklch, var(--color-rule) 42%, transparent) 0 1px, transparent 1px 6rem),
-    repeating-linear-gradient(180deg, color-mix(in oklch, var(--color-rule) 36%, transparent) 0 1px, transparent 1px 6rem);
+    radial-gradient(ellipse at 18% 28%, color-mix(in oklch, var(--color-sakura-petal) 72%, transparent) 0 0.22rem, transparent 0.25rem),
+    radial-gradient(ellipse at 42% 12%, color-mix(in oklch, var(--color-sakura-petal-soft) 82%, transparent) 0 0.18rem, transparent 0.2rem),
+    radial-gradient(ellipse at 66% 30%, color-mix(in oklch, var(--color-sakura-petal) 52%, transparent) 0 0.2rem, transparent 0.22rem),
+    radial-gradient(ellipse at 86% 18%, color-mix(in oklch, var(--color-accent-lantern) 44%, transparent) 0 0.16rem, transparent 0.18rem),
+    repeating-linear-gradient(90deg, color-mix(in oklch, var(--color-rule) 38%, transparent) 0 1px, transparent 1px 6rem),
+    repeating-linear-gradient(180deg, color-mix(in oklch, var(--color-rule) 30%, transparent) 0 1px, transparent 1px 6rem);
+  background-size: 20rem 16rem, 26rem 22rem, 24rem 20rem, 30rem 24rem, auto, auto;
   mask-image: linear-gradient(180deg, transparent, black 16%, black 72%, transparent);
-  opacity: 0.32;
+  opacity: 0.52;
+  animation: sakuraFloat 14s var(--ease-in-out) infinite alternate;
 }
 
 .heroShell {
@@ -59,9 +102,9 @@
   margin: 0;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-sm);
-  color: var(--color-accent-cyan-strong);
+  color: var(--color-accent-mint-strong);
   background: color-mix(in oklch, var(--color-bg) 72%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-accent-cyan) 34%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-accent-mint) 42%, transparent);
   font-size: var(--font-size-xs);
   font-weight: 950;
   text-transform: uppercase;
@@ -80,7 +123,7 @@
 }
 
 .heroTitle::first-line {
-  color: var(--color-accent-red-strong);
+  color: var(--color-accent-sakura-strong);
 }
 
 .heroSubtitle {
@@ -154,7 +197,7 @@
   background: linear-gradient(90deg, color-mix(in oklch, var(--color-accent-red) 18%, var(--color-bg-card)), var(--color-bg-card));
   box-shadow:
     inset 0 0 0 1px color-mix(in oklch, var(--color-accent-red) 36%, transparent),
-    0 18px 48px color-mix(in oklch, var(--color-ink-shadow) 28%, transparent);
+    0 18px 48px color-mix(in oklch, var(--color-accent-sakura) 14%, transparent);
   transition-property: transform, box-shadow;
   transition-duration: var(--dur-med);
   transition-timing-function: var(--ease-out);
@@ -164,8 +207,8 @@
   color: var(--color-text);
   transform: translateY(-2px);
   box-shadow:
-    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-red) 56%, transparent),
-    0 24px 58px color-mix(in oklch, var(--color-accent-red) 18%, transparent);
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-sakura) 62%, transparent),
+    0 24px 58px color-mix(in oklch, var(--color-accent-sakura) 22%, transparent);
 }
 
 .seasonHeroChipImg {
@@ -198,7 +241,7 @@
   border-radius: var(--radius-xl);
   background: var(--color-bg-secondary);
   box-shadow:
-    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-cyan) 30%, transparent),
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-mint) 42%, transparent),
     0 32px 90px color-mix(in oklch, var(--color-ink-shadow) 44%, transparent);
   animation: overpickRise var(--dur-slow) var(--ease-out) 90ms both;
 }
@@ -211,6 +254,7 @@
   border-radius: var(--radius-xl);
   background:
     linear-gradient(90deg, color-mix(in oklch, var(--color-bg) 72%, transparent), transparent 48%),
+    radial-gradient(ellipse at 28% 20%, color-mix(in oklch, var(--color-sakura-petal) 24%, transparent), transparent 18rem),
     linear-gradient(180deg, transparent 62%, color-mix(in oklch, var(--color-bg) 72%, transparent));
   pointer-events: none;
 }
@@ -240,7 +284,7 @@
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   box-shadow:
-    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-cyan) 36%, transparent),
+    inset 0 0 0 1px color-mix(in oklch, var(--color-accent-mint) 44%, transparent),
     var(--shadow-md);
 }
 
@@ -454,6 +498,8 @@
 .topMeta {
   padding: var(--spacing-3xl) var(--spacing-lg);
   background:
+    radial-gradient(ellipse at 12% 0%, color-mix(in oklch, var(--color-accent-sakura) 16%, transparent), transparent 26rem),
+    radial-gradient(ellipse at 86% 12%, color-mix(in oklch, var(--color-accent-mint) 14%, transparent), transparent 28rem),
     linear-gradient(180deg, color-mix(in oklch, var(--color-bg-secondary) 94%, transparent), var(--color-bg)),
     repeating-linear-gradient(90deg, color-mix(in oklch, var(--color-rule) 32%, transparent) 0 1px, transparent 1px 7rem);
   box-shadow: inset 0 1px 0 var(--color-border);
@@ -590,6 +636,24 @@
   }
 }
 
+@keyframes sakuraFloat {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(1.5rem, 1rem, 0);
+  }
+}
+
+@keyframes sakuraDrift {
+  from {
+    transform: translate3d(-0.8rem, -0.4rem, 0);
+  }
+  to {
+    transform: translate3d(1.2rem, 1rem, 0);
+  }
+}
+
 @media (max-width: 1080px) {
   .heroShell {
     grid-template-columns: 1fr;
@@ -650,7 +714,9 @@
   .heroCopy,
   .seasonPoster,
   .seasonPosterImg,
-  .topMetaCard {
+  .topMetaCard,
+  .main::before,
+  .hero::after {
     animation-duration: 1ms;
     animation-iteration-count: 1;
   }
