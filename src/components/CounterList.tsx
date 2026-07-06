@@ -148,7 +148,7 @@ export default function CounterList({ counters, heroes, title = 'Контрпи�
                   width={48}
                   height={48}
                   className="counterItemAvatarImg"
-                  loading="lazy"
+                  loading="eager"
                 />
               </div>
               
