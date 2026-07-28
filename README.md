@@ -9,7 +9,7 @@ Overpick is a Russian-language Overwatch 2 counter-pick and meta dashboard. It s
 - Patch history from `src/data/patches.json`.
 - Hero detail pages at `/hero/[id]`.
 - Production smoke checks for `/`, `/heroes`, `/meta`, `/patches`, and `/hero/junkerqueen`.
-- Weekly GitHub Actions sync from Blizzard Hero Statistics and live patch notes.
+- Local weekly sync from Blizzard Hero Statistics and live patch notes.
 
 ## Commands
 
@@ -23,20 +23,28 @@ npm run verify:browser
 npm run verify:local
 npm run verify:all
 npm run sync:meta
+npm run update:meta
 ```
 
-Use `npm run dev` for local development. Before pushing meaningful changes, run `npm run verify:local`; it runs tests, lint, production build, and built-site smoke verification in the required order. Use `npm run verify:all` when touching meta sync, source parsing, patch parsing, or GitHub Actions because it also checks live Blizzard sources in a browser.
+Use `npm run dev` for local development. Before pushing meaningful changes, run `npm run verify:local`; it runs tests, lint, production build, and built-site smoke verification in the required order. Use `npm run verify:all` when touching meta sync, source parsing, or patch parsing because it also checks live Blizzard sources in a browser.
 
 ## Automation
 
-`.github/workflows/ci.yml` runs on pushes to `main`, `codex/**`, and pull requests. It installs Chromium, runs data/design tests, lints, builds, and verifies the built site.
+GitHub Actions are intentionally disabled. The repository does not contain active workflow files; weekly updates are run locally by the owner or a machine-level scheduler.
 
-`.github/workflows/update-meta.yml` runs every Tuesday at 09:00 UTC and can also be started manually. It:
+Install dependencies once with `npm ci`, then run the complete weekly job from the repository root:
 
-1. Verifies live Blizzard sources in a browser.
-2. Runs `npm run sync:meta`.
-3. Runs tests, lint, build, and built-site verification.
-4. Commits `src/data/meta.json` and `src/data/patches.json` only when synced data changed.
+```bash
+npm run update:meta
+```
+
+The command performs this sequence:
+
+1. `npm run verify:browser` checks that Blizzard Hero Statistics and a live patch-notes page still expose the expected source structure.
+2. `npm run sync:meta` downloads Blizzard rates and live patch notes, recalculates each hero tier from rates plus `src/data/metaFilters.ts`, and rewrites `src/data/meta.json` and `src/data/patches.json`.
+3. `npm run verify:local` runs data tests, lint, `next build`, and production browser smoke checks for the built site.
+
+The command does not commit, push, or deploy. To refresh a connected deployment after the checks pass, review the two data files, commit them, and push the intended branch; the hosting provider's existing deployment integration can then build the updated site. No deployment credentials or external settings are managed by this repository.
 
 ## Meta Sources
 
@@ -64,11 +72,11 @@ The sync script uses:
 - `src/components`: reusable UI components.
 - `src/data`: hero, counter, meta, patch, and synergy data.
 - `src/styles`: shared component CSS.
-- `scripts/sync-overwatch-meta.mjs`: Blizzard sync job.
+- `scripts/sync-overwatch-meta.mjs`: Blizzard sync job and tier-list generator.
 - `scripts/verify-overwatch-browser.mjs`: live-source browser verifier.
 - `scripts/verify-site.mjs`: production smoke verifier.
 - `tests`: Node test contracts used by CI and weekly sync.
 
 ## Deployment
 
-The app is a standard Next.js static/SSG project and can be deployed on Vercel or any host that supports `next build` and `next start`. The automated meta sync requires GitHub Actions with `contents: write` permission, which is already configured in `update-meta.yml`.
+The app is a standard Next.js static/SSG project and can be deployed on Vercel or any host that supports `next build` and `next start`. There is no deployment command or deployment configuration in this repository; deployment remains the responsibility of the existing host integration after a reviewed push.

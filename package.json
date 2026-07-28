@@ -12,7 +12,8 @@
     "verify:site": "node scripts/verify-site.mjs",
     "verify:local": "npm test && npm run lint && npm run build && npm run verify:site",
     "verify:all": "npm run verify:local && npm run verify:browser",
-    "sync:meta": "node scripts/sync-overwatch-meta.mjs"
+    "sync:meta": "node scripts/sync-overwatch-meta.mjs",
+    "update:meta": "npm run verify:browser && npm run sync:meta && npm run verify:local"
   },
   "dependencies": {
     "next": "16.1.4",

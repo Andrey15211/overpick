@@ -27,6 +27,6 @@ Codex must be restarted before newly installed skills appear in the skill list f
 
 ## Current architecture findings
 
-- The weekly meta sync module now has better CI leverage: the same GitHub Actions interface runs browser source verification, data tests, lint, and a production build before it can commit.
+- The weekly meta sync module now has a local interface: `npm run update:meta` runs browser source verification, data tests, lint, and a production build before a human reviews and publishes data changes.
 - The data validation module was too shallow: it only checked one meta entry per hero. It now validates source freshness shape, numeric rate ranges, patch IDs, patch dates, change types, and hero references.
 - The Blizzard fetch implementation had poor locality for external-source failure handling. HTTP timeout handling now lives inside `fetchText`, so future fetch callers inherit the same failure mode.

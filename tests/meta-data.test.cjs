@@ -99,7 +99,7 @@ test('hero portraits use image hosts configured for next/image', () => {
   }
 });
 
-test('Season 3 new hero Shion is present with official role and meta data', () => {
+test('Season 3 new hero Shion is present with current live meta data', () => {
   const shion = heroes.find((hero) => hero.id === 'shion');
   const shionMeta = meta.heroes.find((entry) => entry.heroId === 'shion');
 
@@ -110,7 +110,7 @@ test('Season 3 new hero Shion is present with official role and meta data', () =
   assert.ok(shion.portrait.includes('/overwatch/'), 'Shion portrait should use a Blizzard hero portrait asset');
 
   assert.ok(shionMeta, 'Expected Shion in meta.json');
-  assert.equal(shionMeta.tier, 'A');
+  assert.ok(VALID_TIERS.has(shionMeta.tier), 'Shion should have a valid current tier');
   assert.ok(shionMeta.pickRate > 0, 'Shion pick rate should come from Blizzard Hero Statistics');
   assert.ok(shionMeta.whyMeta.includes('Сион'), 'Shion meta explanation should use the Russian official name');
 });
@@ -135,4 +135,14 @@ test('patch data references known heroes and valid change types', () => {
       assert.ok(change.description.trim().length > 0, `${patch.patchId} change description must not be empty`);
     }
   }
+});
+
+test('live hero patch entries preserve subject and ability hierarchy', () => {
+  const doomfistRocketPunch = patches
+    .flatMap((patch) => patch.changes)
+    .find((change) => change.heroId === 'doomfist' && change.ability === 'Rocket Punch');
+
+  assert.ok(doomfistRocketPunch, 'Expected a parsed hero/ability patch entry from Blizzard live notes');
+  assert.equal(typeof doomfistRocketPunch.description, 'string');
+  assert.ok(doomfistRocketPunch.description.trim().length > 0);
 });
