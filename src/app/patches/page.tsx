@@ -26,6 +26,25 @@ type IndexedPatch = {
   changes: IndexedChange[];
 };
 
+type SubjectKind = 'hero' | 'map' | 'system';
+type SubjectGroup = {
+  key: string;
+  kind: SubjectKind;
+  label: string;
+  categoryLabel: string;
+  hero?: Hero;
+  changes: PatchChange[];
+};
+type AbilityGroup = {
+  key: string;
+  label: string;
+  changes: PatchChange[];
+};
+
+const MAP_LABELS: Record<string, string> = {
+  'neon-junction': 'Neon Junction',
+};
+
 /** Склонение слова по количеству */
 function pluralize(n: number, one: string, few: string, many: string): string {
   const abs = Math.abs(n) % 100;
@@ -50,11 +69,76 @@ function countByType(changes: PatchChange[]) {
   return stats;
 }
 
+function summarizeTypes(changes: PatchChange[]): string {
+  const stats = countByType(changes);
+  const labels = [
+    stats.buffs > 0 ? pluralize(stats.buffs, 'бафф', 'баффа', 'баффов') : '',
+    stats.nerfs > 0 ? pluralize(stats.nerfs, 'нерф', 'нерфа', 'нерфов') : '',
+    stats.reworks > 0 ? pluralize(stats.reworks, 'реворк', 'реворка', 'реворков') : '',
+    stats.maps > 0 ? pluralize(stats.maps, 'изменение карты', 'изменения карты', 'изменений карты') : '',
+    stats.systems > 0 ? pluralize(stats.systems, 'системный пункт', 'системных пункта', 'системных пунктов') : '',
+  ].filter(Boolean);
+
+  if (labels.length === 0) return `${changes.length} пунктов`;
+  return labels.join(', ');
+}
+
+function groupChangesBySubject(changes: PatchChange[], heroById: Map<string, Hero>): SubjectGroup[] {
+  const groups = new Map<string, SubjectGroup>();
+
+  for (const change of changes) {
+    const kind: SubjectKind = change.heroId ? 'hero' : change.mapId ? 'map' : 'system';
+    const key = change.heroId ? `hero:${change.heroId}` : change.mapId ? `map:${change.mapId}` : 'system';
+    const hero = change.heroId ? heroById.get(change.heroId) : undefined;
+    const label = hero?.nameRu || (change.mapId ? MAP_LABELS[change.mapId] || change.mapId : 'Системные изменения');
+
+    if (!groups.has(key)) {
+      groups.set(key, {
+        key,
+        kind,
+        label,
+        categoryLabel: kind === 'hero' ? 'Герой' : kind === 'map' ? 'Карта / режим' : 'Система',
+        hero,
+        changes: [],
+      });
+    }
+
+    groups.get(key)?.changes.push(change);
+  }
+
+  return [...groups.values()];
+}
+
+function groupChangesByAbility(changes: PatchChange[]): AbilityGroup[] {
+  const groups = new Map<string, AbilityGroup>();
+
+  for (const change of changes) {
+    const label = change.ability?.trim() || 'Общие изменения';
+    const key = label.toLowerCase();
+    if (!groups.has(key)) {
+      groups.set(key, { key, label, changes: [] });
+    }
+    groups.get(key)?.changes.push(change);
+  }
+
+  return [...groups.values()];
+}
+
+function getSubjectSummary(subject: SubjectGroup): string {
+  if (subject.kind === 'hero') {
+    return `${subject.label}: ${summarizeTypes(subject.changes)}. Ниже изменения разложены по способностям и отдельным характеристикам.`;
+  }
+  if (subject.kind === 'map') {
+    return `${subject.label}: ${summarizeTypes(subject.changes)}. Каждый пункт относится к правилам карты или режима.`;
+  }
+  return `Системный раздел: ${summarizeTypes(subject.changes)}. Пункты собраны по теме, чтобы было понятно, к какой части обновления они относятся.`;
+}
+
 export default function PatchesPage() {
   const [heroFilter, setHeroFilter] = useState<string>('all');
   const [typeFilter, setTypeFilter] = useState<TypeFilter>('all');
   const [searchQuery, setSearchQuery] = useState('');
-  // Ключ = "patchId:changeIdx" для открытых dev-комментариев
+  // Ключ = "patchId:subject:ability:changeIdx" для открытых dev-комментариев
   const [openComments, setOpenComments] = useState<Set<string>>(new Set());
   const heroById = useMemo(() => buildHeroById(heroes), []);
   const lastUpdatedRu = formatDateRu(meta.lastUpdated);
@@ -139,8 +223,9 @@ export default function PatchesPage() {
         <div className={styles.patchesFilters}>
           {/* Поиск */}
           <div className={styles.patchesFilterGroup}>
-            <label className={styles.patchesFilterLabel}>Поиск</label>
+            <label className={styles.patchesFilterLabel} htmlFor="patch-search">Поиск</label>
             <input
+              id="patch-search"
               type="text"
               className={styles.patchesFilterInput}
               placeholder="Герой или описание..."
@@ -151,8 +236,9 @@ export default function PatchesPage() {
 
           {/* Фильтр по герою */}
           <div className={styles.patchesFilterGroup}>
-            <label className={styles.patchesFilterLabel}>Герой</label>
+            <label className={styles.patchesFilterLabel} htmlFor="patch-hero-filter">Герой</label>
             <select
+              id="patch-hero-filter"
               className={styles.patchesFilterSelect}
               value={heroFilter}
               onChange={(e) => setHeroFilter(e.target.value)}
@@ -174,7 +260,7 @@ export default function PatchesPage() {
               >
                 Все
               </button>
-              {(['buff', 'nerf', 'rework', 'system'] as ChangeType[]).map(type => (
+              {(['buff', 'nerf', 'rework', 'map', 'system'] as ChangeType[]).map(type => (
                 <button
                   key={type}
                   className={`${styles.patchesFilterBtn} ${styles[`patchesFilterBtn--${type}`]} ${typeFilter === type ? styles['patchesFilterBtn--active'] : ''}`}
@@ -241,6 +327,11 @@ export default function PatchesPage() {
                             ⟳ {pluralize(stats.reworks, 'реворк', 'реворка', 'реворков')}
                           </span>
                         )}
+                        {stats.maps > 0 && (
+                          <span className={`${styles.patchStatBadge} ${styles['patchStatBadge--map']}`}>
+                            ▣ {pluralize(stats.maps, 'изменение карты', 'изменения карты', 'изменений карты')}
+                          </span>
+                        )}
                         {stats.systems > 0 && (
                           <span className={`${styles.patchStatBadge} ${styles['patchStatBadge--system']}`}>
                             ✦ {pluralize(stats.systems, 'обновление', 'обновления', 'обновлений')}
@@ -249,77 +340,92 @@ export default function PatchesPage() {
                       </div>
                     </div>
 
-                    {/* Список изменений */}
+                    {/* Семантическая иерархия: раздел → герой/объект → способность → пункты */}
                     <div className={styles.patchCardChanges}>
-                      {patch.changes.map((change, idx) => {
-                        const hero = change.heroId ? getHero(change.heroId) : undefined;
-                        const commentKey = `${patch.patchId}:${idx}`;
-                        const isCommentOpen = openComments.has(commentKey);
-
+                      {groupChangesBySubject(patch.changes, heroById).map((subject, subjectIndex) => {
+                        const subjectId = `${patch.patchId}-subject-${subjectIndex}`;
                         return (
-                          <div key={idx} className={styles.changeItem}>
-                            {/* Основная строка */}
-                            <div className={styles.changeItemMain}>
-                              {/* Тип изменения */}
-                              <span className={`${styles.changeType} ${styles[`changeType--${change.type}`]}`}>
-                                {CHANGE_TYPE_LABELS[change.type as keyof typeof CHANGE_TYPE_LABELS].icon}{' '}
-                                {CHANGE_TYPE_LABELS[change.type as keyof typeof CHANGE_TYPE_LABELS].label}
-                              </span>
-
-                              {/* Герой с портретом */}
-                              <div className={styles.changeHeroBlock}>
-                                {hero?.portrait && (
-                                  <Image
-                                    src={hero.portrait}
-                                    alt={hero.nameRu}
-                                    width={24}
-                                    height={24}
-                                    className={styles.changeHeroPortrait}
-                                  />
-                                )}
-                                <span className={styles.changeHero}>{getChangeSubject(change)}</span>
+                          <section key={subject.key} className={styles.patchSubject} aria-labelledby={`${subjectId}-title`}>
+                            <div className={styles.patchSubjectHeader}>
+                              <div className={styles.patchSubjectIdentity}>
+                                <span className={styles.patchSubjectKicker}>{subject.categoryLabel}</span>
+                                <div className={styles.patchSubjectTitleRow}>
+                                  {subject.hero?.portrait && (
+                                    <Image
+                                      src={subject.hero.portrait}
+                                      alt=""
+                                      width={36}
+                                      height={36}
+                                      className={styles.changeHeroPortrait}
+                                    />
+                                  )}
+                                  <h3 id={`${subjectId}-title`} className={styles.patchSubjectTitle}>{subject.label}</h3>
+                                </div>
                               </div>
-
-                              {/* Контент: описание + бейджи */}
-                              <div className={styles.changeContent}>
-                                <span className={styles.changeDesc}>{change.description}</span>
-
-                                {/* Бейдж способности */}
-                                {change.ability && (
-                                  <span className={styles.changeAbility}>{change.ability}</span>
-                                )}
-
-                                {/* Бейдж значений */}
-                                {change.values && (
-                                  <span className={styles.changeValues}>{change.values}</span>
-                                )}
-
-                                {/* Кнопка комментария */}
-                                {change.devComment && (
-                                  <button
-                                    className={`${styles.devCommentToggle} ${isCommentOpen ? styles['devCommentToggle--active'] : ''}`}
-                                    onClick={() => toggleComment(commentKey)}
-                                    aria-expanded={isCommentOpen}
-                                    aria-label="Комментарий разработчика"
-                                  >
-                                    Dev
-                                  </button>
-                                )}
+                              <div className={styles.patchSubjectTypes} aria-label="Типы изменений">
+                                {[...new Set(subject.changes.map((change) => change.type))].map((type) => (
+                                  <span key={type} className={`${styles.changeType} ${styles[`changeType--${type}`]}`}>
+                                    {CHANGE_TYPE_LABELS[type].icon} {CHANGE_TYPE_LABELS[type].label}
+                                  </span>
+                                ))}
                               </div>
                             </div>
 
-                            {/* Раскрываемый комментарий разработчика */}
-                            {change.devComment && isCommentOpen && (
-                              <div className={`${styles.devCommentSection} ${isCommentOpen ? styles['devCommentSection--open'] : ''}`}>
-                                <div className={styles.devCommentInner}>
-                                  <div className={styles.devCommentContent}>
-                                    <span className={styles.devCommentLabel}>Разработчик:</span>
-                                    {change.devComment}
-                                  </div>
-                                </div>
-                              </div>
-                            )}
-                          </div>
+                            <p className={styles.patchSubjectSummary}>{getSubjectSummary(subject)}</p>
+
+                            <div className={styles.patchAbilityList}>
+                              {groupChangesByAbility(subject.changes).map((abilityGroup, abilityIndex) => {
+                                const abilityId = `${subjectId}-ability-${abilityIndex}`;
+                                return (
+                                  <section key={abilityGroup.key} className={styles.patchAbility} aria-labelledby={abilityId}>
+                                    <div className={styles.patchAbilityHeader}>
+                                      <h4 id={abilityId} className={styles.patchAbilityTitle}>{abilityGroup.label}</h4>
+                                      <span className={styles.patchAbilityCount}>{pluralize(abilityGroup.changes.length, 'пункт', 'пункта', 'пунктов')}</span>
+                                    </div>
+                                    <ul className={styles.patchChangeList}>
+                                      {abilityGroup.changes.map((change, idx) => {
+                                      const commentKey = `${patch.patchId}:${subject.key}:${abilityGroup.key}:${idx}`;
+                                      const isCommentOpen = openComments.has(commentKey);
+                                      return (
+                                        <li key={`${commentKey}:${change.description}`} className={styles.patchChangeItem}>
+                                          <div className={styles.patchChangeTopline}>
+                                            <span className={`${styles.changeType} ${styles[`changeType--${change.type}`]}`}>
+                                              {CHANGE_TYPE_LABELS[change.type].icon} {CHANGE_TYPE_LABELS[change.type].label}
+                                            </span>
+                                            {change.values && <span className={styles.changeValues}>{change.values}</span>}
+                                            {change.devComment && (
+                                              <button
+                                                type="button"
+                                                className={`${styles.devCommentToggle} ${isCommentOpen ? styles['devCommentToggle--active'] : ''}`}
+                                                onClick={() => toggleComment(commentKey)}
+                                                aria-expanded={isCommentOpen}
+                                                aria-label="Комментарий разработчика"
+                                              >
+                                                Dev
+                                              </button>
+                                            )}
+                                          </div>
+                                          <p className={styles.changeDesc}>{change.description}</p>
+
+                                          {change.devComment && isCommentOpen && (
+                                            <div className={`${styles.devCommentSection} ${styles['devCommentSection--open']}`}>
+                                              <div className={styles.devCommentInner}>
+                                                <div className={styles.devCommentContent}>
+                                                  <span className={styles.devCommentLabel}>Разработчик:</span>
+                                                  {change.devComment}
+                                                </div>
+                                              </div>
+                                            </div>
+                                          )}
+                                        </li>
+                                      );
+                                      })}
+                                    </ul>
+                                  </section>
+                                );
+                              })}
+                            </div>
+                          </section>
                         );
                       })}
                     </div>

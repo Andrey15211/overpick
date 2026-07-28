@@ -197,6 +197,16 @@ function translateChange(sectionTitle, text) {
   return stripHtml(text);
 }
 
+function stripLeadingSectionTitle(text, sectionTitle) {
+  const cleanText = text.trim();
+  const cleanTitle = stripHtml(sectionTitle).trim();
+  if (!cleanTitle || !cleanText.toLowerCase().startsWith(cleanTitle.toLowerCase())) {
+    return cleanText;
+  }
+
+  return cleanText.slice(cleanTitle.length).trim();
+}
+
 function classifyChangeType(text, hasHeroId, sectionTitle) {
   if (!hasHeroId || sectionTitle === 'Hotfix Update' || sectionTitle === 'Community Crafted Event') {
     return 'system';
@@ -256,6 +266,42 @@ function parsePatchBlocks(html) {
 
 function parsePatchChanges(sectionHtml, sectionTitle, heroNameById) {
   const changes = [];
+  const heroUpdateStarts = [...sectionHtml.matchAll(/<div class="PatchNotesHeroUpdate">/g)]
+    .map((match) => match.index)
+    .filter((value) => value !== undefined);
+
+  if (heroUpdateStarts.length > 0) {
+    for (let index = 0; index < heroUpdateStarts.length; index += 1) {
+      const start = heroUpdateStarts[index];
+      const end = index + 1 < heroUpdateStarts.length ? heroUpdateStarts[index + 1] : sectionHtml.length;
+      const heroBlock = sectionHtml.slice(start, end);
+      const heroName = heroBlock.match(/<h5 class="PatchNotesHeroUpdate-name">([^<]+)<\/h5>/)?.[1];
+      const heroId = heroName ? heroNameById.get(normalizeName(heroName)) : undefined;
+      const devComment = stripHtml(
+        heroBlock.match(/<div class="PatchNotes-dev PatchNotesHeroUpdate-dev">([\s\S]*?)<\/div>/)?.[1] || '',
+      );
+      const abilityMatches = [...heroBlock.matchAll(/<div class="PatchNotesAbilityUpdate-name">([^<]+)<\/div>[\s\S]*?<div class="PatchNotesAbilityUpdate-detailList">([\s\S]*?)<\/div>/g)];
+
+      for (const abilityMatch of abilityMatches) {
+        const abilityName = stripHtml(abilityMatch[1]);
+        const details = extractListItems(abilityMatch[2]);
+
+        for (const detail of details) {
+          const description = translateChange(sectionTitle, detail);
+          changes.push({
+            ...(heroId ? { heroId } : {}),
+            type: classifyChangeType(description, Boolean(heroId), sectionTitle),
+            ability: abilityName,
+            description,
+            ...(devComment ? { devComment } : {}),
+          });
+        }
+      }
+    }
+
+    return changes;
+  }
+
   const heroName = sectionHtml.match(/<h5 class="PatchNotesHeroUpdate-name">([^<]+)<\/h5>/)?.[1];
   const heroId = heroName ? heroNameById.get(normalizeName(heroName)) : undefined;
   const abilityMatches = [...sectionHtml.matchAll(/<div class="PatchNotesAbilityUpdate-name">([^<]+)<\/div>[\s\S]*?<div class="PatchNotesAbilityUpdate-detailList">([\s\S]*?)<\/div>/g)];
@@ -290,7 +336,7 @@ function parsePatchChanges(sectionHtml, sectionTitle, heroNameById) {
     return changes;
   }
 
-  const sectionText = stripHtml(sectionHtml);
+  const sectionText = stripLeadingSectionTitle(stripHtml(sectionHtml), sectionTitle);
   if (sectionText) {
     changes.push({
       type: 'system',
