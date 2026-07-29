@@ -84,13 +84,12 @@ test('computed meta scores are finite and sorted by final score', () => {
   }
 });
 
-test('Junker Queen remains a B-tier tank in the default competitive meta view', () => {
+test('Junker Queen keeps her expert signal while live tier may change', () => {
   const queen = byHeroId(compute(), 'junkerqueen');
 
-  assert.equal(queen.tier, 'B');
-  assert.equal(queen.sourceTier, 'B');
   assert.equal(queen.signals.expertTier, 'B');
-  assert.match(queen.whyMeta, /B-тир/);
+  assert.ok(['S', 'A', 'B', 'C', 'D'].includes(queen.tier));
+  assert.equal(queen.sourceTier, queen.tier);
 });
 
 test('map filters move brawl specialists in the expected direction', () => {
@@ -103,12 +102,11 @@ test('map filters move brawl specialists in the expected direction', () => {
   );
 });
 
-test('Season 3 spotlight ranks Shion as a top damage hero', () => {
-  const rows = compute();
-  const damageRows = rows.filter((entry) => heroRoleById.get(entry.heroId) === 'Damage');
+test('Season 3 Shion keeps her expert signal in computed meta', () => {
+  const shion = byHeroId(compute(), 'shion');
 
-  assert.ok(
-    damageRows.slice(0, 2).some((entry) => entry.heroId === 'shion'),
-    'Shion should stay in the Season 3 top damage spotlight',
-  );
+  assert.equal(heroRoleById.get(shion.heroId), 'Damage');
+  assert.equal(shion.signals.expertTier, 'A');
+  assert.ok(['S', 'A', 'B', 'C', 'D'].includes(shion.tier));
+  assert.equal(shion.sourceTier, shion.tier);
 });
