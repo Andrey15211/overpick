@@ -1,6 +1,7 @@
 import { spawn } from 'node:child_process';
 import http from 'node:http';
 import path from 'node:path';
+import fs from 'node:fs';
 import { chromium } from 'playwright';
 
 const PORT = Number(process.env.OVERPICK_VERIFY_PORT || 3100);
@@ -16,9 +17,18 @@ const ROUTES = [
   { path: '/heroes', expectedText: ['Все Герои', 'Королева Хлама', 'B тир', 'Сион'] },
   { path: '/meta', expectedText: ['Текущая Мета', 'Королева Хлама', 'Сион'] },
   { path: '/patches', expectedText: ['История Патчей', 'Найдено:'] },
-  { path: '/hero/junkerqueen', expectedText: ['Королева Хлама', 'B тир', 'Кто контрит Королева Хлама'] },
-  { path: '/hero/shion', expectedText: ['Сион', 'A тир', 'Кто контрит Сион'] },
+  { path: '/hero/junkerqueen', expectedText: ['Королева Хлама', 'Кто контрит Королева Хлама'] },
+  { path: '/hero/shion', expectedText: ['Сион', 'Кто контрит Сион'] },
 ];
+
+const liveMeta = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'data', 'meta.json'), 'utf8'));
+const liveTierTextByRoute = Object.fromEntries(
+  ['/hero/junkerqueen', '/hero/shion'].map((routePath) => {
+    const heroId = routePath.split('/').at(-1);
+    const hero = liveMeta.heroes.find((entry) => entry.heroId === heroId);
+    return [routePath, hero ? `${hero.tier} тир` : null];
+  }),
+);
 
 function waitForServer(url, timeoutMs) {
   const startedAt = Date.now();
@@ -54,6 +64,11 @@ async function verifyRoute(page, route, viewportName) {
     if (!text.includes(expected)) {
       throw new Error(`${route.path} is missing expected text on ${viewportName}: ${expected}`);
     }
+  }
+
+  const expectedLiveTier = liveTierTextByRoute[route.path];
+  if (expectedLiveTier && !text.includes(expectedLiveTier)) {
+    throw new Error(`${route.path} is missing current meta tier on ${viewportName}: ${expectedLiveTier}`);
   }
 
   const hasHorizontalOverflow = await page.evaluate(() => {
