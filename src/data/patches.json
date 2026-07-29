@@ -1,5 +1,40 @@
 [
   {
+    "patchId": "ow-s3-hotfix-2026-07-28",
+    "date": "2026-07-28",
+    "version": "3.0",
+    "title": "🔥 Overwatch Season 3 - Hotfix July 28",
+    "summary": "Обновление, синхронизированное с Blizzard на 2026-07-28.",
+    "changes": [
+      {
+        "type": "system",
+        "ability": "Bug Fix Update",
+        "description": "This is a bug fix update. Replay codes have been wiped."
+      },
+      {
+        "type": "system",
+        "ability": "Competitive Play Updates",
+        "description": "In a previous update, a new tab was added to the Competitive Info page explaining the mechanics and rules of Hero Bans."
+      },
+      {
+        "type": "system",
+        "ability": "Исправления",
+        "description": "General\nFixed a bug where previously completed event challenges would sometimes show in the challenges menu."
+      },
+      {
+        "heroId": "lifeweaver",
+        "type": "system",
+        "ability": "Healing Blossom",
+        "description": "Fixed a bug where Healing Blossom would release unexpectedly when switching weapons."
+      },
+      {
+        "type": "system",
+        "ability": "Stadium",
+        "description": "Fixed a bug with Three Tap Tommy Gun on D.Va.\nTop of post"
+      }
+    ]
+  },
+  {
     "patchId": "ow-s3-hotfix-2026-07-14",
     "date": "2026-07-14",
     "version": "3.0",
