@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 
 const BLIZZARD_RATES_URL =
-  'https://overwatch.blizzard.com/en-us/rates/?input=PC&map=all-maps&region=Europe&role=All&rq=0&tier=All';
+  'https://overwatch.blizzard.com/en-us/rates/?input=PC&map=all-maps&region=Europe&role=All&rq=1&tier=All';
 
 function getPatchNoteUrls() {
   const now = new Date();

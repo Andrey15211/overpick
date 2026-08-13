@@ -59,6 +59,7 @@ test('meta snapshot has current source and numeric rates', () => {
     meta.sources.some((source) => source.startsWith('Blizzard Hero Statistics:')),
     'sources must include the live Blizzard Hero Statistics crawl',
   );
+  assert.ok(meta.heroes.some((entry) => entry.banRate > 0), 'competitive ban rates must not be an all-zero placeholder snapshot');
   assert.equal(new Set(meta.sources).size, meta.sources.length, 'sources must not contain duplicates');
 
   for (const entry of meta.heroes) {
