@@ -10,7 +10,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Мета и Тир-лист',
-  description: `Фильтруемый тир-лист героев Overwatch для Season 3: статистика Blizzard, свежие tier-листы и pro/high-rank сигналы по состоянию на ${formatDateRu((metaData as { lastUpdated: string }).lastUpdated)}.`,
+  description: `Фильтруемый тир-лист героев Overwatch для Season 4: статистика Blizzard, свежие tier-листы и pro/high-rank сигналы по состоянию на ${formatDateRu((metaData as { lastUpdated: string }).lastUpdated)}.`,
 };
 
 // Типизация данных
@@ -50,7 +50,7 @@ export default function MetaPage() {
             Текущая <span>Мета</span>
           </h1>
           <p className={styles.metaSubtitle}>
-            Тир-лист героев Overwatch на основе статистики Blizzard, свежих экспертных tier-листов и pro/high-rank меты. Срез актуален на {lastUpdatedRu} в рамках Season 3.
+            Тир-лист героев Overwatch на основе статистики Blizzard, свежих экспертных tier-листов и pro/high-rank меты. Срез актуален на {lastUpdatedRu} в рамках Season 4: Heroes of Busan.
           </p>
           <div className={styles.metaInfo}>
             <div className={styles.metaInfoItem}>

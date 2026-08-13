@@ -241,10 +241,13 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
                     <span className="tierHeroName">{hero.nameRu}</span>
                     <div className="tierHeroStats">
                       <span className="tierHeroStat tierHeroStat--pick">
-                        {metaHero.pickRate}%
+                        PR {metaHero.pickRate}%
                       </span>
                       <span className="tierHeroStat tierHeroStat--win">
-                        {metaHero.winRate}%
+                        WR {metaHero.winRate}%
+                      </span>
+                      <span className="tierHeroStat tierHeroStat--ban">
+                        BR {metaHero.banRate}%
                       </span>
                     </div>
                   </Link>

@@ -249,14 +249,15 @@
   position: absolute;
   left: 50%;
   bottom: clamp(-4rem, -5vw, -1.5rem);
-  width: min(124%, 68rem);
+  width: min(78%, 28rem);
   height: auto;
   max-width: none;
   object-fit: contain;
   object-position: center bottom;
   filter:
-    drop-shadow(0 2.4rem 3.4rem color-mix(in oklch, var(--color-ink-shadow) 34%, transparent))
-    drop-shadow(0 0 2.2rem color-mix(in oklch, var(--color-accent-mint) 10%, transparent));
+    drop-shadow(0 2.4rem 3.4rem color-mix(in oklch, var(--color-ink-shadow) 46%, transparent))
+    drop-shadow(0 0 2.2rem color-mix(in oklch, var(--color-accent-cyan) 24%, transparent))
+    drop-shadow(0 0 5rem color-mix(in oklch, var(--color-accent-red) 18%, transparent));
   transform: translateX(-50%);
   transform-origin: 50% 72%;
 }

@@ -285,6 +285,7 @@
 
 .tierHeroStat--pick { color: var(--color-accent-cyan); }
 .tierHeroStat--win { color: var(--color-accent); }
+.tierHeroStat--ban { color: var(--color-accent-lantern); }
 
 @keyframes tierReveal {
   from {

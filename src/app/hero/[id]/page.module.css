@@ -177,7 +177,7 @@
 
 .heroDetailStats {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 180px));
+  grid-template-columns: repeat(3, minmax(0, 180px));
   gap: var(--spacing-md);
 }
 
@@ -222,6 +222,59 @@
   font-size: var(--font-size-sm);
 }
 
+.heroGuide {
+  display: grid;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-xl);
+  background:
+    linear-gradient(135deg, color-mix(in oklch, var(--color-accent-red) 15%, transparent), transparent 52%),
+    var(--color-bg-card);
+  box-shadow: inset 0 0 0 1px var(--color-border), var(--shadow-md);
+}
+
+.heroGuideKicker {
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-accent-cyan);
+  font-size: var(--font-size-xs);
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.heroGuideIntro {
+  max-width: 70ch;
+  margin-top: var(--spacing-sm);
+  color: var(--color-text-secondary);
+}
+
+.heroGuideGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-sm);
+}
+
+.heroGuideCard {
+  min-height: 112px;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-lg);
+  background: color-mix(in oklch, var(--color-bg) 65%, transparent);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+}
+
+.heroGuideCard h3 {
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-weight: 950;
+}
+
+.heroGuideCard p {
+  margin-top: var(--spacing-xs);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.45;
+}
+
 .noCountersText {
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
@@ -253,6 +306,14 @@
   }
 
   .heroDetailStats {
+    grid-template-columns: 1fr;
+  }
+
+  .heroGuide {
+    padding: var(--spacing-lg);
+  }
+
+  .heroGuideGrid {
     grid-template-columns: 1fr;
   }
 }

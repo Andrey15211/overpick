@@ -13,17 +13,17 @@ const VIEWPORTS = [
 ];
 
 const ROUTES = [
-  { path: '/', expectedText: ['Сион открывает мету Season 3', 'ЛУЧШИЙ ТАНК', '2 ЛУЧШИХ DPS'] },
-  { path: '/heroes', expectedText: ['Все Герои', 'Королева Хлама', 'B тир', 'Сион'] },
-  { path: '/meta', expectedText: ['Текущая Мета', 'Королева Хлама', 'Сион'] },
+  { path: '/', expectedText: ['D.Mon открывает мету Season 4', 'ЛУЧШИЙ ТАНК', '2 ЛУЧШИХ DPS'] },
+  { path: '/heroes', expectedText: ['Все Герои', 'Королева Хлама', 'B тир', 'D.Mon'] },
+  { path: '/meta', expectedText: ['Текущая Мета', 'Королева Хлама', 'D.Mon'] },
   { path: '/patches', expectedText: ['История Патчей', 'Найдено:'] },
   { path: '/hero/junkerqueen', expectedText: ['Королева Хлама', 'Кто контрит Королева Хлама'] },
-  { path: '/hero/shion', expectedText: ['Сион', 'Кто контрит Сион'] },
+  { path: '/hero/dmon', expectedText: ['D.Mon', 'Кто контрит D.Mon'] },
 ];
 
 const liveMeta = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'src', 'data', 'meta.json'), 'utf8'));
 const liveTierTextByRoute = Object.fromEntries(
-  ['/hero/junkerqueen', '/hero/shion'].map((routePath) => {
+  ['/hero/junkerqueen', '/hero/dmon'].map((routePath) => {
     const heroId = routePath.split('/').at(-1);
     const hero = liveMeta.heroes.find((entry) => entry.heroId === heroId);
     return [routePath, hero ? `${hero.tier} тир` : null];
