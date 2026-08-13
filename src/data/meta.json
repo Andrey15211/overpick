@@ -4,7 +4,9 @@
   "patch": "4.0",
   "lastUpdated": "2026-08-13",
   "sources": [
-    "Blizzard Hero Statistics: PC, Europe, live Hero Stats page crawled on 13 августа 2026",
+    "Blizzard Hero Statistics: PC, Europe, Competitive queue (rq=1), live Hero Stats page crawled on 13 августа 2026",
+    "Blizzard D.Mon hero page: official abilities, role and lore",
+    "Blizzard Season 4: Heroes of Busan launch notes",
     "🔥 Overwatch Season 4 - Hotfix August 12",
     "🔥 Overwatch Season 4 - Hotfix August 11",
     "🔥 Overwatch Season 4 - Hotfix August 4",
@@ -53,427 +55,427 @@
   "heroes": [
     {
       "heroId": "ana",
-      "tier": "C",
-      "pickRate": 26.2,
-      "winRate": 48.1,
-      "whyMeta": "Ана по текущему срезу Blizzard выглядит как C-тир саппорта: 48.1% win rate, 26.2% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "B",
+      "pickRate": 27.5,
+      "winRate": 48.8,
+      "whyMeta": "Ана по текущему срезу Blizzard выглядит как B-тир саппорта: 48.8% win rate, 27.5% pick rate и 12.7% ban rate.",
+      "banRate": 12.7
     },
     {
       "heroId": "anran",
       "tier": "A",
-      "pickRate": 9.8,
-      "winRate": 51.7,
-      "whyMeta": "Аньрань по текущему срезу Blizzard выглядит как A-тир DPS: 51.7% win rate, 9.8% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 7.1,
+      "winRate": 51.4,
+      "whyMeta": "Аньрань по текущему срезу Blizzard выглядит как A-тир DPS: 51.4% win rate, 7.1% pick rate и 25.9% ban rate.",
+      "banRate": 25.9
     },
     {
       "heroId": "ashe",
       "tier": "A",
-      "pickRate": 11.7,
+      "pickRate": 12.7,
       "winRate": 51.2,
-      "whyMeta": "Эш по текущему срезу Blizzard выглядит как A-тир DPS: 51.2% win rate, 11.7% pick rate и 0% ban rate.",
-      "banRate": 0
+      "whyMeta": "Эш по текущему срезу Blizzard выглядит как A-тир DPS: 51.2% win rate, 12.7% pick rate и 1.6% ban rate.",
+      "banRate": 1.6
     },
     {
       "heroId": "baptiste",
-      "tier": "C",
-      "pickRate": 4.9,
-      "winRate": 46.9,
-      "whyMeta": "Батист по текущему срезу Blizzard выглядит как C-тир саппорта: 46.9% win rate, 4.9% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "D",
+      "pickRate": 6.3,
+      "winRate": 46.2,
+      "whyMeta": "Батист по текущему срезу Blizzard выглядит как D-тир саппорта: 46.2% win rate, 6.3% pick rate и 0.1% ban rate.",
+      "banRate": 0.1
     },
     {
       "heroId": "bastion",
-      "tier": "B",
-      "pickRate": 11.2,
-      "winRate": 49.7,
-      "whyMeta": "Бастион по текущему срезу Blizzard выглядит как B-тир DPS: 49.7% win rate, 11.2% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "C",
+      "pickRate": 14.9,
+      "winRate": 47.9,
+      "whyMeta": "Бастион по текущему срезу Blizzard выглядит как C-тир DPS: 47.9% win rate, 14.9% pick rate и 8.3% ban rate.",
+      "banRate": 8.3
     },
     {
       "heroId": "brigitte",
-      "tier": "A",
-      "pickRate": 5.4,
-      "winRate": 50.2,
-      "whyMeta": "Бригитта по текущему срезу Blizzard выглядит как A-тир саппорта: 50.2% win rate, 5.4% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "B",
+      "pickRate": 3.6,
+      "winRate": 49.5,
+      "whyMeta": "Бригитта по текущему срезу Blizzard выглядит как B-тир саппорта: 49.5% win rate, 3.6% pick rate и 0.1% ban rate.",
+      "banRate": 0.1
     },
     {
       "heroId": "cassidy",
       "tier": "C",
-      "pickRate": 14.2,
-      "winRate": 47.2,
-      "whyMeta": "Кэссиди по текущему срезу Blizzard выглядит как C-тир DPS: 47.2% win rate, 14.2% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 17.6,
+      "winRate": 47,
+      "whyMeta": "Кэссиди по текущему срезу Blizzard выглядит как C-тир DPS: 47% win rate, 17.6% pick rate и 7.3% ban rate.",
+      "banRate": 7.3
     },
     {
       "heroId": "domina",
       "tier": "A",
-      "pickRate": 2.2,
-      "winRate": 50.5,
-      "whyMeta": "Домина по текущему срезу Blizzard выглядит как A-тир танка: 50.5% win rate, 2.2% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 3.8,
+      "winRate": 50,
+      "whyMeta": "Домина по текущему срезу Blizzard выглядит как A-тир танка: 50% win rate, 3.8% pick rate и 4.9% ban rate.",
+      "banRate": 4.9
     },
     {
       "heroId": "doomfist",
       "tier": "C",
-      "pickRate": 4.4,
-      "winRate": 53.3,
-      "whyMeta": "Кулак Смерти по текущему срезу Blizzard выглядит как C-тир танка: 53.3% win rate, 4.4% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 5.7,
+      "winRate": 53.5,
+      "whyMeta": "Кулак Смерти по текущему срезу Blizzard выглядит как C-тир танка: 53.5% win rate, 5.7% pick rate и 20.2% ban rate.",
+      "banRate": 20.2
     },
     {
       "heroId": "dva",
-      "tier": "D",
-      "pickRate": 4.7,
-      "winRate": 46.2,
-      "whyMeta": "Дива по текущему срезу Blizzard выглядит как D-тир танка: 46.2% win rate, 4.7% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "C",
+      "pickRate": 5.9,
+      "winRate": 46.5,
+      "whyMeta": "Дива по текущему срезу Blizzard выглядит как C-тир танка: 46.5% win rate, 5.9% pick rate и 7.9% ban rate.",
+      "banRate": 7.9
     },
     {
       "heroId": "echo",
       "tier": "B",
-      "pickRate": 4.6,
-      "winRate": 48.5,
-      "whyMeta": "Эхо по текущему срезу Blizzard выглядит как B-тир DPS: 48.5% win rate, 4.6% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 3.9,
+      "winRate": 49.1,
+      "whyMeta": "Эхо по текущему срезу Blizzard выглядит как B-тир DPS: 49.1% win rate, 3.9% pick rate и 0.7% ban rate.",
+      "banRate": 0.7
     },
     {
       "heroId": "emre",
       "tier": "C",
-      "pickRate": 7,
-      "winRate": 48,
-      "whyMeta": "Эмре по текущему срезу Blizzard выглядит как C-тир DPS: 48% win rate, 7% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 6.9,
+      "winRate": 47.7,
+      "whyMeta": "Эмре по текущему срезу Blizzard выглядит как C-тир DPS: 47.7% win rate, 6.9% pick rate и 0.3% ban rate.",
+      "banRate": 0.3
     },
     {
       "heroId": "freja",
       "tier": "D",
-      "pickRate": 7.6,
-      "winRate": 48.9,
-      "whyMeta": "Фрея по текущему срезу Blizzard выглядит как D-тир DPS: 48.9% win rate, 7.6% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 6.4,
+      "winRate": 49.8,
+      "whyMeta": "Фрея по текущему срезу Blizzard выглядит как D-тир DPS: 49.8% win rate, 6.4% pick rate и 12.3% ban rate.",
+      "banRate": 12.3
     },
     {
       "heroId": "genji",
       "tier": "A",
-      "pickRate": 14.4,
-      "winRate": 50.9,
-      "whyMeta": "Гэндзи по текущему срезу Blizzard выглядит как A-тир DPS: 50.9% win rate, 14.4% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 12.3,
+      "winRate": 52.9,
+      "whyMeta": "Гэндзи по текущему срезу Blizzard выглядит как A-тир DPS: 52.9% win rate, 12.3% pick rate и 7.4% ban rate.",
+      "banRate": 7.4
     },
     {
       "heroId": "hanzo",
       "tier": "B",
-      "pickRate": 9.6,
-      "winRate": 49.3,
-      "whyMeta": "Хандзо по текущему срезу Blizzard выглядит как B-тир DPS: 49.3% win rate, 9.6% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 8.3,
+      "winRate": 50.1,
+      "whyMeta": "Хандзо по текущему срезу Blizzard выглядит как B-тир DPS: 50.1% win rate, 8.3% pick rate и 2.3% ban rate.",
+      "banRate": 2.3
     },
     {
       "heroId": "hazard",
       "tier": "A",
-      "pickRate": 1.1,
-      "winRate": 52.6,
-      "whyMeta": "Хазард по текущему срезу Blizzard выглядит как A-тир танка: 52.6% win rate, 1.1% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 2.9,
+      "winRate": 52.5,
+      "whyMeta": "Хазард по текущему срезу Blizzard выглядит как A-тир танка: 52.5% win rate, 2.9% pick rate и 5.1% ban rate.",
+      "banRate": 5.1
     },
     {
       "heroId": "illari",
       "tier": "B",
-      "pickRate": 5.6,
-      "winRate": 49.6,
-      "whyMeta": "Иллари по текущему срезу Blizzard выглядит как B-тир саппорта: 49.6% win rate, 5.6% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 4.5,
+      "winRate": 48.5,
+      "whyMeta": "Иллари по текущему срезу Blizzard выглядит как B-тир саппорта: 48.5% win rate, 4.5% pick rate и 0.1% ban rate.",
+      "banRate": 0.1
     },
     {
       "heroId": "jetpackcat",
       "tier": "S",
-      "pickRate": 15.1,
-      "winRate": 54.5,
-      "whyMeta": "Реактивный Кот по текущему срезу Blizzard выглядит как S-тир саппорта: 54.5% win rate, 15.1% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 8.1,
+      "winRate": 54.8,
+      "whyMeta": "Реактивный Кот по текущему срезу Blizzard выглядит как S-тир саппорта: 54.8% win rate, 8.1% pick rate и 25.4% ban rate.",
+      "banRate": 25.4
     },
     {
       "heroId": "junkerqueen",
-      "tier": "S",
-      "pickRate": 1.8,
-      "winRate": 55.6,
-      "whyMeta": "Королева Хлама по текущему срезу Blizzard выглядит как S-тир танка: 55.6% win rate, 1.8% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "B",
+      "pickRate": 3.5,
+      "winRate": 53,
+      "whyMeta": "Королева Хлама по текущему срезу Blizzard выглядит как B-тир танка: 53% win rate, 3.5% pick rate и 0.4% ban rate.",
+      "banRate": 0.4
     },
     {
       "heroId": "junkrat",
-      "tier": "A",
-      "pickRate": 10.7,
-      "winRate": 53,
-      "whyMeta": "Крысавчик по текущему срезу Blizzard выглядит как A-тир DPS: 53% win rate, 10.7% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "B",
+      "pickRate": 9.4,
+      "winRate": 49.9,
+      "whyMeta": "Крысавчик по текущему срезу Blizzard выглядит как B-тир DPS: 49.9% win rate, 9.4% pick rate и 4.2% ban rate.",
+      "banRate": 4.2
     },
     {
       "heroId": "juno",
       "tier": "A",
-      "pickRate": 21.6,
-      "winRate": 52.6,
-      "whyMeta": "Джуно по текущему срезу Blizzard выглядит как A-тир саппорта: 52.6% win rate, 21.6% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 19.6,
+      "winRate": 51.4,
+      "whyMeta": "Джуно по текущему срезу Blizzard выглядит как A-тир саппорта: 51.4% win rate, 19.6% pick rate и 0.3% ban rate.",
+      "banRate": 0.3
     },
     {
       "heroId": "kiriko",
-      "tier": "C",
-      "pickRate": 22.8,
-      "winRate": 46.5,
-      "whyMeta": "Кирико по текущему срезу Blizzard выглядит как C-тир саппорта: 46.5% win rate, 22.8% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "D",
+      "pickRate": 34.2,
+      "winRate": 46.3,
+      "whyMeta": "Кирико по текущему срезу Blizzard выглядит как D-тир саппорта: 46.3% win rate, 34.2% pick rate и 4.6% ban rate.",
+      "banRate": 4.6
     },
     {
       "heroId": "lifeweaver",
       "tier": "C",
-      "pickRate": 13.7,
-      "winRate": 47.5,
-      "whyMeta": "Ткач Жизни по текущему срезу Blizzard выглядит как C-тир саппорта: 47.5% win rate, 13.7% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 13.6,
+      "winRate": 48,
+      "whyMeta": "Ткач Жизни по текущему срезу Blizzard выглядит как C-тир саппорта: 48% win rate, 13.6% pick rate и 0.7% ban rate.",
+      "banRate": 0.7
     },
     {
       "heroId": "lucio",
       "tier": "A",
-      "pickRate": 6.4,
-      "winRate": 50.9,
-      "whyMeta": "Лусио по текущему срезу Blizzard выглядит как A-тир саппорта: 50.9% win rate, 6.4% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 5,
+      "winRate": 51.2,
+      "whyMeta": "Лусио по текущему срезу Blizzard выглядит как A-тир саппорта: 51.2% win rate, 5% pick rate и 0.5% ban rate.",
+      "banRate": 0.5
     },
     {
       "heroId": "mauga",
       "tier": "B",
-      "pickRate": 3.2,
-      "winRate": 51.3,
-      "whyMeta": "Мауга по текущему срезу Blizzard выглядит как B-тир танка: 51.3% win rate, 3.2% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 5.7,
+      "winRate": 50,
+      "whyMeta": "Мауга по текущему срезу Blizzard выглядит как B-тир танка: 50% win rate, 5.7% pick rate и 31.7% ban rate.",
+      "banRate": 31.7
     },
     {
       "heroId": "mei",
-      "tier": "S",
-      "pickRate": 7,
-      "winRate": 54.5,
-      "whyMeta": "Мэй по текущему срезу Blizzard выглядит как S-тир DPS: 54.5% win rate, 7% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "A",
+      "pickRate": 8,
+      "winRate": 50.6,
+      "whyMeta": "Мэй по текущему срезу Blizzard выглядит как A-тир DPS: 50.6% win rate, 8% pick rate и 4.5% ban rate.",
+      "banRate": 4.5
     },
     {
       "heroId": "mercy",
-      "tier": "D",
-      "pickRate": 22.5,
-      "winRate": 45.5,
-      "whyMeta": "Ангел по текущему срезу Blizzard выглядит как D-тир саппорта: 45.5% win rate, 22.5% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "B",
+      "pickRate": 19.5,
+      "winRate": 48.9,
+      "whyMeta": "Ангел по текущему срезу Blizzard выглядит как B-тир саппорта: 48.9% win rate, 19.5% pick rate и 12.6% ban rate.",
+      "banRate": 12.6
     },
     {
       "heroId": "mizuki",
       "tier": "A",
-      "pickRate": 15.5,
-      "winRate": 52,
-      "whyMeta": "Мизуки по текущему срезу Blizzard выглядит как A-тир саппорта: 52% win rate, 15.5% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 13.9,
+      "winRate": 50.6,
+      "whyMeta": "Мизуки по текущему срезу Blizzard выглядит как A-тир саппорта: 50.6% win rate, 13.9% pick rate и 6% ban rate.",
+      "banRate": 6
     },
     {
       "heroId": "moira",
-      "tier": "A",
-      "pickRate": 21.1,
-      "winRate": 51.7,
-      "whyMeta": "Мойра по текущему срезу Blizzard выглядит как A-тир саппорта: 51.7% win rate, 21.1% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "B",
+      "pickRate": 28.5,
+      "winRate": 49.8,
+      "whyMeta": "Мойра по текущему срезу Blizzard выглядит как B-тир саппорта: 49.8% win rate, 28.5% pick rate и 6.6% ban rate.",
+      "banRate": 6.6
     },
     {
       "heroId": "orisa",
-      "tier": "C",
-      "pickRate": 4.1,
-      "winRate": 47.7,
-      "whyMeta": "Ориса по текущему срезу Blizzard выглядит как C-тир танка: 47.7% win rate, 4.1% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "D",
+      "pickRate": 10.1,
+      "winRate": 45.9,
+      "whyMeta": "Ориса по текущему срезу Blizzard выглядит как D-тир танка: 45.9% win rate, 10.1% pick rate и 10.6% ban rate.",
+      "banRate": 10.6
     },
     {
       "heroId": "pharah",
       "tier": "B",
-      "pickRate": 4.2,
-      "winRate": 52.6,
-      "whyMeta": "Фарра по текущему срезу Blizzard выглядит как B-тир DPS: 52.6% win rate, 4.2% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 4.3,
+      "winRate": 51.7,
+      "whyMeta": "Фарра по текущему срезу Blizzard выглядит как B-тир DPS: 51.7% win rate, 4.3% pick rate и 13.7% ban rate.",
+      "banRate": 13.7
     },
     {
       "heroId": "ramattra",
-      "tier": "A",
-      "pickRate": 3.8,
-      "winRate": 51.7,
-      "whyMeta": "Раматтра по текущему срезу Blizzard выглядит как A-тир танка: 51.7% win rate, 3.8% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "B",
+      "pickRate": 8.2,
+      "winRate": 49,
+      "whyMeta": "Раматтра по текущему срезу Blizzard выглядит как B-тир танка: 49% win rate, 8.2% pick rate и 8.6% ban rate.",
+      "banRate": 8.6
     },
     {
       "heroId": "reaper",
       "tier": "A",
-      "pickRate": 6.5,
-      "winRate": 52.5,
-      "whyMeta": "Жнец по текущему срезу Blizzard выглядит как A-тир DPS: 52.5% win rate, 6.5% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 9.1,
+      "winRate": 50.4,
+      "whyMeta": "Жнец по текущему срезу Blizzard выглядит как A-тир DPS: 50.4% win rate, 9.1% pick rate и 1.8% ban rate.",
+      "banRate": 1.8
     },
     {
       "heroId": "reinhardt",
-      "tier": "S",
-      "pickRate": 6.4,
-      "winRate": 55.1,
-      "whyMeta": "Райнхардт по текущему срезу Blizzard выглядит как S-тир танка: 55.1% win rate, 6.4% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "A",
+      "pickRate": 11.8,
+      "winRate": 53.9,
+      "whyMeta": "Райнхардт по текущему срезу Blizzard выглядит как A-тир танка: 53.9% win rate, 11.8% pick rate и 3.3% ban rate.",
+      "banRate": 3.3
     },
     {
       "heroId": "roadhog",
       "tier": "C",
-      "pickRate": 3.8,
-      "winRate": 47.6,
-      "whyMeta": "Турбосвин по текущему срезу Blizzard выглядит как C-тир танка: 47.6% win rate, 3.8% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 6.5,
+      "winRate": 47.7,
+      "whyMeta": "Турбосвин по текущему срезу Blizzard выглядит как C-тир танка: 47.7% win rate, 6.5% pick rate и 15% ban rate.",
+      "banRate": 15
     },
     {
       "heroId": "sierra",
       "tier": "B",
-      "pickRate": 13.1,
-      "winRate": 49.4,
-      "whyMeta": "Сьерра по текущему срезу Blizzard выглядит как B-тир DPS: 49.4% win rate, 13.1% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 11.6,
+      "winRate": 48.8,
+      "whyMeta": "Сьерра по текущему срезу Blizzard выглядит как B-тир DPS: 48.8% win rate, 11.6% pick rate и 20.7% ban rate.",
+      "banRate": 20.7
     },
     {
       "heroId": "shion",
-      "tier": "C",
-      "pickRate": 14,
-      "winRate": 48.4,
-      "whyMeta": "Сион по текущему срезу Blizzard выглядит как C-тир DPS: 48.4% win rate, 14% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "B",
+      "pickRate": 9.1,
+      "winRate": 48.8,
+      "whyMeta": "Сион по текущему срезу Blizzard выглядит как B-тир DPS: 48.8% win rate, 9.1% pick rate и 1.4% ban rate.",
+      "banRate": 1.4
     },
     {
       "heroId": "sigma",
       "tier": "A",
-      "pickRate": 3,
-      "winRate": 50.6,
-      "whyMeta": "Сигма по текущему срезу Blizzard выглядит как A-тир танка: 50.6% win rate, 3% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 9.4,
+      "winRate": 50,
+      "whyMeta": "Сигма по текущему срезу Blizzard выглядит как A-тир танка: 50% win rate, 9.4% pick rate и 4.8% ban rate.",
+      "banRate": 4.8
     },
     {
       "heroId": "sojourn",
       "tier": "D",
-      "pickRate": 9.1,
-      "winRate": 45.7,
-      "whyMeta": "Соджорн по текущему срезу Blizzard выглядит как D-тир DPS: 45.7% win rate, 9.1% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 13.6,
+      "winRate": 45.8,
+      "whyMeta": "Соджорн по текущему срезу Blizzard выглядит как D-тир DPS: 45.8% win rate, 13.6% pick rate и 1.2% ban rate.",
+      "banRate": 1.2
     },
     {
       "heroId": "soldier76",
       "tier": "B",
-      "pickRate": 11.9,
+      "pickRate": 18.5,
       "winRate": 49.4,
-      "whyMeta": "Солдат-76 по текущему срезу Blizzard выглядит как B-тир DPS: 49.4% win rate, 11.9% pick rate и 0% ban rate.",
-      "banRate": 0
+      "whyMeta": "Солдат-76 по текущему срезу Blizzard выглядит как B-тир DPS: 49.4% win rate, 18.5% pick rate и 0.7% ban rate.",
+      "banRate": 0.7
     },
     {
       "heroId": "sombra",
       "tier": "C",
-      "pickRate": 5,
-      "winRate": 48.3,
-      "whyMeta": "Сомбра по текущему срезу Blizzard выглядит как C-тир DPS: 48.3% win rate, 5% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 3.2,
+      "winRate": 47.8,
+      "whyMeta": "Сомбра по текущему срезу Blizzard выглядит как C-тир DPS: 47.8% win rate, 3.2% pick rate и 31.1% ban rate.",
+      "banRate": 31.1
     },
     {
       "heroId": "symmetra",
       "tier": "B",
-      "pickRate": 2.7,
-      "winRate": 54,
-      "whyMeta": "Симметра по текущему срезу Blizzard выглядит как B-тир DPS: 54% win rate, 2.7% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 2.8,
+      "winRate": 50,
+      "whyMeta": "Симметра по текущему срезу Blizzard выглядит как B-тир DPS: 50% win rate, 2.8% pick rate и 2.3% ban rate.",
+      "banRate": 2.3
     },
     {
       "heroId": "torbjorn",
-      "tier": "S",
-      "pickRate": 4.2,
-      "winRate": 57.8,
-      "whyMeta": "Торбьорн по текущему срезу Blizzard выглядит как S-тир DPS: 57.8% win rate, 4.2% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "A",
+      "pickRate": 4.3,
+      "winRate": 51,
+      "whyMeta": "Торбьорн по текущему срезу Blizzard выглядит как A-тир DPS: 51% win rate, 4.3% pick rate и 0.5% ban rate.",
+      "banRate": 0.5
     },
     {
       "heroId": "tracer",
       "tier": "A",
-      "pickRate": 5.1,
-      "winRate": 50.3,
-      "whyMeta": "Трейсер по текущему срезу Blizzard выглядит как A-тир DPS: 50.3% win rate, 5.1% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 6.1,
+      "winRate": 51.2,
+      "whyMeta": "Трейсер по текущему срезу Blizzard выглядит как A-тир DPS: 51.2% win rate, 6.1% pick rate и 5.8% ban rate.",
+      "banRate": 5.8
     },
     {
       "heroId": "vendetta",
       "tier": "A",
-      "pickRate": 5.2,
-      "winRate": 51,
-      "whyMeta": "Вендетта по текущему срезу Blizzard выглядит как A-тир DPS: 51% win rate, 5.2% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 3.2,
+      "winRate": 52.1,
+      "whyMeta": "Вендетта по текущему срезу Blizzard выглядит как A-тир DPS: 52.1% win rate, 3.2% pick rate и 3.3% ban rate.",
+      "banRate": 3.3
     },
     {
       "heroId": "venture",
       "tier": "A",
-      "pickRate": 2.7,
-      "winRate": 53,
-      "whyMeta": "Венчур по текущему срезу Blizzard выглядит как A-тир DPS: 53% win rate, 2.7% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 2.3,
+      "winRate": 51.6,
+      "whyMeta": "Венчур по текущему срезу Blizzard выглядит как A-тир DPS: 51.6% win rate, 2.3% pick rate и 0.5% ban rate.",
+      "banRate": 0.5
     },
     {
       "heroId": "widowmaker",
-      "tier": "D",
-      "pickRate": 8.4,
-      "winRate": 45.1,
-      "whyMeta": "Роковая Вдова по текущему срезу Blizzard выглядит как D-тир DPS: 45.1% win rate, 8.4% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "B",
+      "pickRate": 4.6,
+      "winRate": 50.2,
+      "whyMeta": "Роковая Вдова по текущему срезу Blizzard выглядит как B-тир DPS: 50.2% win rate, 4.6% pick rate и 10.3% ban rate.",
+      "banRate": 10.3
     },
     {
       "heroId": "winston",
       "tier": "A",
-      "pickRate": 1.4,
-      "winRate": 52.5,
-      "whyMeta": "Уинстон по текущему срезу Blizzard выглядит как A-тир танка: 52.5% win rate, 1.4% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 4.4,
+      "winRate": 50.3,
+      "whyMeta": "Уинстон по текущему срезу Blizzard выглядит как A-тир танка: 50.3% win rate, 4.4% pick rate и 3.6% ban rate.",
+      "banRate": 3.6
     },
     {
       "heroId": "wreckingball",
       "tier": "B",
-      "pickRate": 1.8,
-      "winRate": 51.7,
-      "whyMeta": "Таран по текущему срезу Blizzard выглядит как B-тир танка: 51.7% win rate, 1.8% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 3.1,
+      "winRate": 51.3,
+      "whyMeta": "Таран по текущему срезу Blizzard выглядит как B-тир танка: 51.3% win rate, 3.1% pick rate и 11.9% ban rate.",
+      "banRate": 11.9
     },
     {
       "heroId": "wuyang",
       "tier": "A",
-      "pickRate": 8,
-      "winRate": 51.2,
-      "whyMeta": "Вуянг по текущему срезу Blizzard выглядит как A-тир саппорта: 51.2% win rate, 8% pick rate и 0% ban rate.",
-      "banRate": 0
+      "pickRate": 5.5,
+      "winRate": 51.8,
+      "whyMeta": "Вуянг по текущему срезу Blizzard выглядит как A-тир саппорта: 51.8% win rate, 5.5% pick rate и 0.1% ban rate.",
+      "banRate": 0.1
     },
     {
       "heroId": "zarya",
-      "tier": "A",
-      "pickRate": 1.5,
-      "winRate": 50,
-      "whyMeta": "Заря по текущему срезу Blizzard выглядит как A-тир танка: 50% win rate, 1.5% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "B",
+      "pickRate": 4,
+      "winRate": 49.3,
+      "whyMeta": "Заря по текущему срезу Blizzard выглядит как B-тир танка: 49.3% win rate, 4% pick rate и 48.4% ban rate.",
+      "banRate": 48.4
     },
     {
       "heroId": "zenyatta",
-      "tier": "S",
-      "pickRate": 11.2,
-      "winRate": 55,
-      "whyMeta": "Дзенъятта по текущему срезу Blizzard выглядит как S-тир саппорта: 55% win rate, 11.2% pick rate и 0% ban rate.",
-      "banRate": 0
+      "tier": "A",
+      "pickRate": 9.9,
+      "winRate": 52.8,
+      "whyMeta": "Дзенъятта по текущему срезу Blizzard выглядит как A-тир саппорта: 52.8% win rate, 9.9% pick rate и 3% ban rate.",
+      "banRate": 3
     },
     {
       "heroId": "dmon",
       "tier": "C",
-      "pickRate": 56.8,
-      "winRate": 48.1,
-      "banRate": 0,
-      "whyMeta": "D.Mon по текущему срезу Blizzard выглядит как C-тир танка: 48.1% win rate, 56.8% pick rate и 0% ban rate."
+      "pickRate": 15.2,
+      "winRate": 46.6,
+      "banRate": 12.8,
+      "whyMeta": "D.Mon по текущему срезу Blizzard выглядит как C-тир танка: 46.6% win rate, 15.2% pick rate и 12.8% ban rate."
     }
   ]
 }

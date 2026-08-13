@@ -50,7 +50,7 @@ The command does not commit, push, or deploy. To refresh a connected deployment 
 
 The sync script uses:
 
-- Blizzard Hero Statistics for current win rate, pick rate, and competitive ban rate.
+- Blizzard Hero Statistics competitive queue (`rq=1`) for current win rate, pick rate, and ban rate.
 - Blizzard's official D.Mon hero page and Season 4: Heroes of Busan launch notes.
 - Blizzard live patch notes for recent hotfix and patch entries.
 - Local expert-signal weights in `src/data/metaFilters.ts`.

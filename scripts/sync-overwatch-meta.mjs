@@ -10,7 +10,9 @@ const HEROES_PATH = path.join(ROOT, 'src', 'data', 'heroes.json');
 const PATCHES_PATH = path.join(ROOT, 'src', 'data', 'patches.json');
 const META_FILTERS_PATH = path.join(ROOT, 'src', 'data', 'metaFilters.ts');
 const BLIZZARD_RATES_URL =
-  'https://overwatch.blizzard.com/en-us/rates/?input=PC&map=all-maps&region=Europe&role=All&rq=0&tier=All';
+  // rq=1 is Blizzard's competitive queue view; rq=0 is the all-modes view
+  // and returns a zero placeholder for every ban-rate cell.
+  'https://overwatch.blizzard.com/en-us/rates/?input=PC&map=all-maps&region=Europe&role=All&rq=1&tier=All';
 
 const ROLE_LABELS_RU = {
   Tank: 'танка',
@@ -492,6 +494,9 @@ async function main() {
   const heroes = JSON.parse(heroesRaw);
   const patches = JSON.parse(patchesRaw);
   const rates = parseRates(ratesHtml);
+  if (!rates.some((row) => Number(row.cells?.banrate) > 0)) {
+    throw new Error('Blizzard competitive Hero Statistics returned no ban-rate values; refusing to publish placeholders');
+  }
   const metaSignals = parseMetaSignals(signalSource);
   const localHeroIds = new Set(heroes.map((hero) => hero.id));
   const unknownRateHeroIds = rates
@@ -517,7 +522,7 @@ async function main() {
   meta.patch = '4.0';
   meta.lastUpdated = today;
   meta.sources = [
-    `Blizzard Hero Statistics: PC, Europe, live Hero Stats page crawled on ${formatDateRu(new Date())}`,
+    `Blizzard Hero Statistics: PC, Europe, Competitive queue (rq=1), live Hero Stats page crawled on ${formatDateRu(new Date())}`,
     'Blizzard D.Mon hero page: official abilities, role and lore',
     'Blizzard Season 4: Heroes of Busan launch notes',
     ...livePatches.map((patch) => patch.title),
