@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    url: "https://overpick-phi.vercel.app",
+    url: "https://overpick-mocha.vercel.app",
     siteName: "Overpick",
     title: "Overpick - Контрпики Overwatch",
     description: `Найди лучший контрпик для любого героя Overwatch. Актуальная мета Season 4: Heroes of Busan по состоянию на ${lastUpdatedRu}.`,
