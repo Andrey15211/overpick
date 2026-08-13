@@ -757,5 +757,42 @@
       "reason": "Sleep Dart и биотическая граната создают простые окна для Execution и Satsuriku.",
       "source": "Blizzard Hero Page + Hero Kit"
     }
+  ],
+  "dmon": [
+    {
+      "partnerId": "dva",
+      "name": "MEKA-двойка",
+      "effectiveness": 5,
+      "reason": "D.Va прикрывает мобильным пиком, пока D.Mon удерживает фронт и ставит Power Barrier.",
+      "source": "Blizzard Season 4 / MEKA Squad"
+    },
+    {
+      "partnerId": "juno",
+      "name": "Орбитальный темп",
+      "effectiveness": 5,
+      "reason": "Hyper Ring помогает D.Mon добраться до цели, а Pulsar Torpedoes поддерживают агрессивный вход.",
+      "source": "Blizzard Hero Kit + Overpick analysis"
+    },
+    {
+      "partnerId": "lucio",
+      "name": "Скорость фронта",
+      "effectiveness": 4,
+      "reason": "Amp It Up превращает медленный переход D.Mon в быстрый brawl и облегчает отход после Limit Break.",
+      "source": "Overpick Season 4 matchup analysis"
+    },
+    {
+      "partnerId": "genji",
+      "name": "Фокус после Limit Break",
+      "effectiveness": 4,
+      "reason": "Уязвимость от ультимейта D.Mon даёт Гэндзи окно для Dragonblade и быстрых добиваний.",
+      "source": "Overwatch Season 4 patch notes"
+    },
+    {
+      "partnerId": "ana",
+      "name": "Nano-лимит",
+      "effectiveness": 4,
+      "reason": "Nano Boost усиливает переживаемость и давление D.Mon в главном окне Limit Break.",
+      "source": "Overpick Season 4 matchup analysis"
+    }
   ]
 }

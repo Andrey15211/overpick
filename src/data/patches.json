@@ -1,5 +1,229 @@
 [
   {
+    "patchId": "ow-s4-hotfix-2026-08-12",
+    "date": "2026-08-12",
+    "version": "4.0",
+    "title": "🔥 Overwatch Season 4 - Hotfix August 12",
+    "summary": "Горячий фикс без изменений баланса. Реплей-коды от патча 30 июня по-прежнему доступны.",
+    "changes": [
+      {
+        "heroId": "dmon",
+        "type": "buff",
+        "ability": "Plasma Saber",
+        "description": "Damage increased from 60 to 65."
+      },
+      {
+        "heroId": "dmon",
+        "type": "nerf",
+        "ability": "Propulsors",
+        "description": "Fuel drain rate reduced from 40 to 25."
+      },
+      {
+        "heroId": "dmon",
+        "type": "buff",
+        "ability": "Propulsors",
+        "description": "Fuel regen rate increased from 15 to 22.5."
+      },
+      {
+        "heroId": "dmon",
+        "type": "buff",
+        "ability": "Fusion Repeater",
+        "description": "Damage increased from 15 to 16."
+      },
+      {
+        "heroId": "dmon",
+        "type": "nerf",
+        "ability": "Fusion Repeater",
+        "description": "Cooldown reduced from 6 to 4 seconds."
+      },
+      {
+        "type": "system",
+        "ability": "Исправления",
+        "description": "Fixed a bug where Nano Boost was removed from Moira when she used Fade.\nFixed an issue preventing D.Mon's Power Barrier from fully protecting D.Mon if deployed while Fusion Repeater was active.\nFixed a bug where the second attacker spawn extended into playable areas on Paraíso.\nFixed a bug where D.Mon could become invulnerable temporarily.\nTop of post"
+      }
+    ]
+  },
+  {
+    "patchId": "ow-s4-hotfix-2026-08-11",
+    "date": "2026-08-11",
+    "version": "4.0",
+    "title": "🔥 Overwatch Season 4 - Hotfix August 11",
+    "summary": "Обновление, синхронизированное с Blizzard на 2026-08-11.",
+    "changes": [
+      {
+        "type": "system",
+        "ability": "Reign of Talon - Season 4: Heroes of Busan",
+        "description": "The Junkers and Talon descend on Busan, so new Tank Hero D.Mon joins D.Va and the rest of the MEKA Squad to protect their home! Choose your favorite pilot in the Shooting Stars: My MEKA Mania event, earning stars and unlocking the squad's story as your support helps them climb the global rankings. Then fight through a revamped Battle Pass with flexible progression and the option to swap an eligible Legendary reward. Plus, explore revitalized versions of Busan, Paraíso, and Eichenwalde before you take on Team Drives, where teams progress together and improved in-combat feedback makes every player’s impact easier to see. Cap things off by unlocking Mythic Genji or Sojourn's Mythic weapon, and other cosmetics to complete your collection!\nNew Tank Hero: D.MonYuna Lee has spent years defending Busan from inside her mech, Beast. Now it's your turn! The long-awaited MEKA pilot steps out of the story and into your hands as D.Mon, a new Tank who leads from the front. Cut through enemy lines with her Plasma Saber, take one for your team with a strategic Power Barrier, get moving with Propulsors, and then trade close-range pressure for the reach of a Fusion Repeater. You'll be at your best when the whole team moves with you, so MEKA Squad up with D.Mon and bring out the Hero in each other!\nMap Reworks: Paraíso, Eichenwalde, Busan Three familiar battlegrounds get revitalized and updated for a fresh feel. Busan bears the scars of the Junker assault and Talon's attack on the MEKA base, with new spaces, summer scenery, and mementos from D.Mon's life tucked throughout. Paraíso is getting ready to party despite Domina looming over the city, while Lúcio has plans of his own. Eichenwalde rounds things out with new routes and traversal options designed to keep its classic fight flowing.\nBattle Pass RevampA more flexible and player-friendly update to the Battle Pass experience—letting players choose which rewards to pursue first, swap one Battle Pass skin for a curated skin from the seasonal Swap Pool and engage with a refreshed UI that makes progression feel clearer and more rewarding.\nChoose your path through the Battle Pass. You no longer need to unlock every reward in a fixed linear order. You can choose which rewards you want to pursue first and can change tracks anytime after completion of the Intro track.\nSwap for a skin you want more. Once per Battle Pass, swap one Battle Pass skin for a curated skin from the seasonal Swap Pool.\nA more modern Battle Pass experience. A brand refreshed UI helps modernize Battle Pass progression and immerse you in the world of Overwatch with custom theming and appearance.\nMore flexibility, same seasonal value. Battle Pass Revamp keeps the core reward chase intact while giving you more agency over how to progress and what to prioritize.\nShooting Star: My MEKA ManiaSupport Your MEKA Faves On A Global Stage!\nThe MEKA Squad have long been the pride of South Korea and the city of Busan, and now their stars are on the rise!\nChoose a MEKA Squad member to support! Gain access to their Rewards pass that includes themed cosmetics, loot boxes, and more!\nCompleting a reward pass for a MEKA pilot contributes a Vote for them on the Global Leaderboard. At the end of the event, a special Player Card will unlock, gifted to all players who participated in the Event, and featuring the pilot who obtained the most votes\nComplete all five of the MEKA Squad pilots' reward passes to unlock a bonus sixth reward pass!\nTune into Shooting Star: My MEKA Mania and make your vote count from August 11–31!\nWorld Cup Cheer RallyComplete Challenges & Collect Cheer\nPlay matches to earn Cheers through completing challenges from Sept 1st to Sept 14th.\nCheck out the World Cup Cheer Rally event page where you can Cheer for your favorite Conference: AMER, ASIA, or EMEA. Each Conference has their own rewards to earn as a thank you for supporting them - lootboxes, Battle Pass XP, and awesome cosmetics!\nAt the end of the event the Conference with the most Cheers will be declared the global winner. The winning Conference will unlock a themed weapon charm for anyone who participated in the event. Look out for a special easter egg in future maps!"
+      },
+      {
+        "type": "system",
+        "ability": "General Updates",
+        "description": "In-Combat Feedback Improvements\nTeam Status Indicator: A new counter above the Kill Feed shows how many teammates and enemies are alive on the battlefield. For allies, a progress bar shows when they are respawning after being eliminated. This feature can be disabled under Gameplay -> HUD -> Show Team Status Indicator. This feature also has an experimental setting that's set to \"Respawn Time\" by default called \"Walkback Calculation Progress Bar\". If you're feeling adventurous, try changing this setting to \"Dynamic\", which includes an estimate of how long it will take your allies to get back to the fight. Be sure to let us know what you think!\nNew Stat - Protects: Added a new stat to the game similar to Saves which tracks when a player has mitigated significant damage near allies. Players will be notified with a new Activity Feed callout when they successfully Protect (or are Protected by) a teammate. Additionally, there will be a new Daily Challenge centered around Protects.\nUpdated Stat - Saves: We've included additional abilities and situations as Saves that were not previously tracked. Clutch overhealth from abilities will now count towards a save if it prevents a teammate from being eliminated. Jetpack Cat can also score a Save with a last-second tether after a teammate has been pushed off a cliff. Additionally, we are reducing the Daily Challenge requirement for Saves from 12 to 10.\nHealing and Status HUD visual updates: Made some improvements to how healing and player status are displayed on the HUD. Improved VFX for healing, status effect icons, and critical damage will give players a much clearer indication of when their health is being affected by healing and abilities. Improved health bar VFX for supports will give them a better indication of how their healing and abilities are aiding allies.\nMulti-Kill celebration: Added new callouts and new VO to celebrate when anyone scores a multi-kill (from 2x upwards). New icons will display in the Activity Feed and in the Kill Feed.\nPercentage Damage Dealt: Brought back an indicator on the Activity Feed which tells you what % of the damage you contributed to an elimination.\nWe wanted to provide a set of visual updates with the goal of helping players better understand the current game state, and to celebrate high-impact moments. With these changes, you should have a better idea of what is going on during and after team fights, which should allow you to make better decisions in the moment.\nPing System Refactor\nThe ping system has undergone a major technical refactor under the hood that makes the system approximately 1.5x more efficient on average, but up to 30x more efficient in some edge cases, while also using considerably less memory.\nOver the years the ping system had slowly become our most expensive script for memory usage as its complexity increased. With this update, some new bugs will occur (several that we're planning to fix in the mid-season patch), but please still let us know if you see any new bugs or loss of functionality that we missed!\nChallenges Updates\nThe requirements for the Daily Challenge \"Untouchable\" have been reduced to 5 eliminations instead of 10.\nMovie Player Updates\nVarious movie players (including the narrative viewer) now have the ability to seek.\nWith a mouse, you can seek to any point in a movie, and with controller/keyboard you can skip +- 10s.\nMany movie players will also now remember your progress after leaving and returning to the same video."
+      },
+      {
+        "type": "system",
+        "ability": "Competitive Play Updates",
+        "description": "New Skill Tier - Emerald (Ranks Redistributed)\nA new Rank has been added between Platinum and Diamond called Emerald. As we've shown in the past, the majority of our players are in Gold and Platinum, so adding a new Rank closer to the middle of the skill curve gives many players a better sense of Rank identity, a new goal to achieve, and increases fidelity in assessing skill for many players.\nTitles and Weapon Charms for Emerald have been added.\nThis Rank Redistribution primarily focuses on moving players that were Platinum and Diamond into Emerald, but the highest Divisions of Champion will now also be more exclusive.\nRank Distribution Indicator\nA new UI element has been added to the Competitive Overview that shows how your Rank compares to all other players in a given queue.\nTeam Drives (Experimental)\nLike Drives, Team Drives are limited-time events that award Competitive Points and a unique new visual reward! Unlike Drives, any time you win a match in a Team Drive, you'll be automatically grouped with all winning players. Why stay chained to the other gladiators and not just leave the group? Because each consecutive win as a team grants a big increasing bonus to Fame (similar to Drive Score) that will launch you through the Gladiator Ranks toward completion. You'll keep your individual bonus if you leave the group to queue again solo, but you won't benefit from the bonuses of all the other winners you just played with. You can also create your own full stacks and play only with friends if you want. There's also an option found under Social → General → Groups called \"Enable Auto-Grouping on Team Drive Wins\" that you can turn Off if you prefer to avoid grouping altogether, but the event will be much harder to complete solo since you won't benefit from other winners nearly as often.\nWhile Gladiator Ranks are very similar to Checkpoints from Drives, a Team Drive can only be completed by passing The Trail, requiring players to win 3 out of their last 4 matches.\nInstead of awarding Signatures that attach to your name plate, Team Drives award Player Card Frames that are visible where your Player Card is visible.\nThe first 10,000 players to complete the Team Drive by finishing The Trial will unlock a temporary dynamic title showing the order that they completed the event in. Can your stack be the #1 Gladiators? These titles will be unlocked at the end of the Team Drive.\nThe first Team Drive will take place September 4th 11 AM PT - September 7th 11 AM PT, in the days leading up to the mid-season patch.\nTeam Drives are shorter than regular Drives in an effort to be less disruptive to Competitive Play. We'll be listening to player feedback around the event, but this system is an example of how we want to focus on adding more social elements to the game over time.\nChallenger Score Tuning\nGrandmaster 2 - Increased from 175 to 200\nGrandmaster 1 - Increased from 200 to 250\nChampion 5 - Increased from 250 to 350\nChampion 4 - Increased from 300 to 450\nChampion 3 - Increased from 400 to 550\nChampion 2 - Increased from 550 to 700\nChampion 1- Increased from 700 to 900\nThis tuning makes winning at our highest ranks more rewarding, but we've heard the community feedback that the Challenger System has more foundational problems that can't be addressed by tuning. We're discussing potential solutions to address this feedback now."
+      },
+      {
+        "type": "system",
+        "ability": "Hero Updates",
+        "description": "Several underutilized perks have been replaced with new options, while others have been adjusted based on their performance. We've also updated ultimate costs for select heroes to better align the time required to earn them with their overall effectiveness while adjusting hero balance.\nRoster Updates\nAdded D.Mon to the Tank roster (Subrole: Stalwart).\nSubrolesFlanker\nAdditional healing from health packs reduced from 75 to 50.\nSmall Health Packs have become too effective for heroes in this subrole. We're reducing the additional health granted to better balance its survivability effect."
+      },
+      {
+        "heroId": "domina",
+        "type": "buff",
+        "ability": "Panopticon",
+        "description": "Barrier health increased from 450 to 500.",
+        "devComment": "Panopticon Barrier's health is being increased to improve its reliability. A higher health pool makes it more difficult for enemies to break free, increasing the likelihood of a detonation or forcing them to spend more time dealing with the ultimate."
+      },
+      {
+        "heroId": "doomfist",
+        "type": "buff",
+        "ability": "Seismic Slam",
+        "description": "Damage increased from 50 to 60.",
+        "devComment": "Increasing Seismic Slam's damage makes it a more effective tool for weakening targets before following up with Doomfist's other abilities."
+      },
+      {
+        "heroId": "mauga",
+        "type": "buff",
+        "ability": "Overrun",
+        "description": "Cooldown increased from 5 to 6 seconds. (5v5)",
+        "devComment": "Increasing Overrun's cooldown lengthens the window where Mauga must commit to a fight before he can disengage, reducing his mobility without directly impacting his ability to engage."
+      },
+      {
+        "heroId": "pharah",
+        "type": "buff",
+        "ability": "Concussive Blast",
+        "description": "Cooldown increased from 7 to 8 seconds.",
+        "devComment": "Concussive Blast provides Pharah with both mobility and displacement. Increasing its cooldown reduces how often she can reposition herself and disrupt enemy movement."
+      },
+      {
+        "heroId": "shion",
+        "type": "nerf",
+        "ability": "Joyride",
+        "description": "Ground launch detection radius reduced from 1.5 to 1 meter.",
+        "devComment": "This change better aligns the impact radius with the size of the motorbike, requiring players to either be more accurate with the ground launch or rely on the air launch."
+      },
+      {
+        "heroId": "tracer",
+        "type": "nerf",
+        "ability": "Recall",
+        "description": "Cooldown reduced from 13 to 12 seconds.",
+        "devComment": "While Tracer's damage has landed in an effective spot following recent adjustments, reducing Recall's cooldown allows her to disengage more frequently."
+      },
+      {
+        "heroId": "vendetta",
+        "type": "nerf",
+        "ability": "Soaring Slice",
+        "description": "Cooldown on spawn reduced from 7 to 3 seconds.",
+        "devComment": "Reducing Soaring Slice's cooldown on respawn reduces downtime after respawning while maintaining the reduced ability to quickly return to the fight."
+      },
+      {
+        "heroId": "jetpackcat",
+        "type": "nerf",
+        "ability": "Lifeline",
+        "description": "Movement speed bonus reduced from 40% to 30%.",
+        "devComment": "These changes are intended to make Jetpack Cat's movement more responsive while keeping Lifeline movement speeds similar to before. Frenetic Flight movement speeds remain unchanged."
+      },
+      {
+        "heroId": "juno",
+        "type": "nerf",
+        "ability": "Pulsar Torpedoes",
+        "description": "Target lock on minimum time reduced from 0.5 to 0.35 seconds.",
+        "devComment": "This change reduces the minimum lock-on time for nearby targets, allowing Pulsar Torpedoes to be used more reactively while creating a clearer distinction in lock-on times across different ranges."
+      },
+      {
+        "heroId": "lifeweaver",
+        "type": "system",
+        "ability": "Life Grip",
+        "description": "Can now be manually cancelled with the Jump input after 0.6 seconds.",
+        "devComment": "These changes give Life Gripped players greater control over whether they are pulled all the way to Lifeweaver's position. The pull now begins more gradually, creating a larger window to react and cancel the movement if desired. A new hero setting has also been added for players who prefer to disable the cancel option entirely."
+      },
+      {
+        "heroId": "lifeweaver",
+        "type": "nerf",
+        "ability": "Life Grip",
+        "description": "Base pull speed reduced from 30 to 25 meters per second.",
+        "devComment": "These changes give Life Gripped players greater control over whether they are pulled all the way to Lifeweaver's position. The pull now begins more gradually, creating a larger window to react and cancel the movement if desired. A new hero setting has also been added for players who prefer to disable the cancel option entirely."
+      },
+      {
+        "heroId": "lifeweaver",
+        "type": "system",
+        "ability": "Life Grip",
+        "description": "Targets pulled from further than 15 meters move slower and accelerate over time.",
+        "devComment": "These changes give Life Gripped players greater control over whether they are pulled all the way to Lifeweaver's position. The pull now begins more gradually, creating a larger window to react and cancel the movement if desired. A new hero setting has also been added for players who prefer to disable the cancel option entirely."
+      },
+      {
+        "heroId": "lifeweaver",
+        "type": "buff",
+        "ability": "Life Grip",
+        "description": "New general hero setting added for disabling Life Grip cancel controls.",
+        "devComment": "These changes give Life Gripped players greater control over whether they are pulled all the way to Lifeweaver's position. The pull now begins more gradually, creating a larger window to react and cancel the movement if desired. A new hero setting has also been added for players who prefer to disable the cancel option entirely."
+      },
+      {
+        "heroId": "mizuki",
+        "type": "nerf",
+        "ability": "Binding Chain",
+        "description": "Projectile size reduced from 0.35 to 0.3.",
+        "devComment": "Mizuki's mobility uptime has increased significantly following recent changes to Katashiro Return's duration and cooldown. While the increased duration has improved its usability, the cooldown is being partially reverted to reduce overall uptime. Binding Chain's projectile size is also being reduced to make its powerful hinder effect require more precise aim."
+      },
+      {
+        "heroId": "mizuki",
+        "type": "buff",
+        "ability": "Katashiro Return",
+        "description": "Cooldown increased from 11 to 12 seconds.",
+        "devComment": "Mizuki's mobility uptime has increased significantly following recent changes to Katashiro Return's duration and cooldown. While the increased duration has improved its usability, the cooldown is being partially reverted to reduce overall uptime. Binding Chain's projectile size is also being reduced to make its powerful hinder effect require more precise aim."
+      },
+      {
+        "heroId": "wuyang",
+        "type": "buff",
+        "ability": "Guardian Wave",
+        "description": "Maximum degrees increased from 10 to 15 degrees.",
+        "devComment": "Increasing Guardian Wave's width makes it easier to position the ability to affect multiple allies and enemies."
+      },
+      {
+        "type": "system",
+        "ability": "Core Game Updates",
+        "description": "Map Updates"
+      },
+      {
+        "type": "system",
+        "ability": "Busan - Control",
+        "description": "DowntownBefore and AfterBefore and AfterMEKA BaseBefore and AfterBefore and AfterSanctuaryBefore and AfterBefore and After"
+      },
+      {
+        "type": "system",
+        "ability": "Eichenwalde - Hybrid",
+        "description": "Point ABefore and AfterBefore and AfterBefore and AfterPoint BBefore and AfterBefore and AfterPoint CBefore and After"
+      },
+      {
+        "type": "system",
+        "ability": "Paraíso - Hybrid",
+        "description": "Point ABefore and AfterBefore and AfterPoint BBefore and AfterBefore and AfterPoint CBefore and AfterBefore and After"
+      },
+      {
+        "type": "system",
+        "ability": "Исправления",
+        "description": "General\nFixed an issue where Brigitte’s Inspiring Strike perk failed to provide its intended instant healing effect.\nFixed an issue that caused Mizuki’s Katashiro’s Return to not trigger when the return point was positioned too close to the payload.\nFixed an issue preventing Execution from appearing as a toggleable option in Custom Game settings.\nFixed an issue where the challenge “A Wee Minidin” had become unintentionally difficult to complete.\nFixed an issue that prevented Reaper from queueing a reload while actively firing Dire Triggers.\nFixed an issue where the Survivor sub‑role incorrectly triggered its passive healing effect without a corresponding movement ability.\nFixed an issue where Doomfist’s Survival of the Fittest perk was not granting the correct amount of Max Overhealth.\nFixed an issue with Hanzo's Frost Arrow Perk that would occur when activated on a controller.\nStadium\nIn a previous update, fixed an issue where Vortex Vial didn't grant the proper amount of Health.\nIn a previous update, fixed an issue where Three Tap Tommygun didn't work properly on D.Va.\nIn a previous update, fixed an issue where Friendly Fissure with Asteroid Smash wouldn't have any falloff damage.\nIn a previous update, fixed an issue where Lucio's Nano Boop item combined with Reverb was dealing more damage than intended.\nFixed an issue where D.Va could reset her boosters cooldown by destroying barriers and deployable when using MEKA Punch.\nFixed an issue where Junkrat's Bango Power would override the burn from Lithium Alloy.\nFixed an issue where Junkrat's Refreshing Radiation item removed the cooldown reduction from Successful Heist.\nFixed an issue where Skyline Nanite wasn't working properly with DOTs.\nTop of post"
+      }
+    ]
+  },
+  {
+    "patchId": "ow-s4-hotfix-2026-08-04",
+    "date": "2026-08-04",
+    "version": "4.0",
+    "title": "🔥 Overwatch Season 4 - Hotfix August 4",
+    "summary": "Обновление, синхронизированное с Blizzard на 2026-08-04.",
+    "changes": [
+      {
+        "type": "system",
+        "ability": "",
+        "description": "Hello, heroes! We're here today to update you all on our efforts to combat the use of unauthorized peripherals within our console communities, often referred to as using XIM or Ximming. While our efforts to combat this form of unfair gameplay advantage are constant and ongoing, today marks the culmination of a months-long effort to identify and ban over 6000 accounts we've identified as using unauthorized peripherals.\nPart of what makes identifying the unauthorized peripherals used by these accounts tricky is that these cheating devices often intentionally abuse allowances we make for accessibility-focused devices used by legitimate players with disabilities. This issue meant that we wanted to take our time and ensure that we accurately identified unauthorized devices. We're now confident that we've done so, and we've put the hammer down on players utilizing these devices.\nThanks for taking the time today to listen to our update on unauthorized peripherals. Until next time, play nice, play fair, and see you in-game!"
+      }
+    ]
+  },
+  {
     "patchId": "ow-s3-hotfix-2026-07-28",
     "date": "2026-07-28",
     "version": "3.0",

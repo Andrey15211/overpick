@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     default: "Overpick - Контрпики Overwatch",
     template: "%s | Overpick"
   },
-  description: `Контрпики, тир-листы и патч-ноты Overwatch 2 для Season 3. Обновлено по состоянию на ${lastUpdatedRu}, включая свежие Blizzard Hero Statistics и patch notes.`,
-  keywords: ["overwatch", "контрпики", "мета", "герои", "патчи", "тир-лист", "sierra", "season 3", "overwatch 2", "counters", "tier list"],
+  description: `Контрпики, тир-листы и патч-ноты Overwatch для Season 4: Heroes of Busan. Обновлено по состоянию на ${lastUpdatedRu}, включая свежие Blizzard Hero Statistics и patch notes.`,
+  keywords: ["overwatch", "контрпики", "мета", "герои", "патчи", "тир-лист", "d.mon", "season 4", "heroes of busan", "counters", "tier list"],
   authors: [{ name: "Overpick Team" }],
   creator: "Overpick",
   publisher: "Overpick",
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     url: "https://overpick-phi.vercel.app",
     siteName: "Overpick",
     title: "Overpick - Контрпики Overwatch",
-    description: `Найди лучший контрпик для любого героя Overwatch 2. Актуальная мета Season 3 по состоянию на ${lastUpdatedRu}.`,
+    description: `Найди лучший контрпик для любого героя Overwatch. Актуальная мета Season 4: Heroes of Busan по состоянию на ${lastUpdatedRu}.`,
   },
   twitter: {
     card: "summary_large_image",
     title: "Overpick - Контрпики Overwatch",
-    description: "Найди лучший контрпик для любого героя Overwatch 2 на патче Season 3 с учетом текущего среза статистики Blizzard.",
+    description: "Найди лучший контрпик для любого героя Overwatch Season 4 с учетом win rate, pick rate и ban rate Blizzard.",
   },
 };
 

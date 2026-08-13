@@ -4871,5 +4871,80 @@
         "reason": "Swift Step уводит цель из Execution, а Protection Suzu сбивает окно добивания."
       }
     ]
+  },
+  {
+    "heroId": "dmon",
+    "counters": [
+      {
+        "heroId": "ana",
+        "effectiveness": 5,
+        "tier": "S",
+        "counterRole": "Support",
+        "reason": "Sleep Dart останавливает вход и Limit Break, а Biotic Grenade не даёт D.Mon пережить затяжной размен."
+      },
+      {
+        "heroId": "zarya",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Tank",
+        "reason": "Барьеры переживают Plasma Saber и позволяют Заре накапливать энергию, пока D.Mon вынуждена драться вблизи."
+      },
+      {
+        "heroId": "sigma",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Tank",
+        "reason": "Кинетический захват съедает Fusion Repeater, а барьер ломает прямую линию для её фронтлайна."
+      },
+      {
+        "heroId": "orisa",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Tank",
+        "reason": "Javelin Spin и Fortify переживают рывок, разрывают темп и держат D.Mon на неудобной дистанции."
+      },
+      {
+        "heroId": "reaper",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Hellfire Shotguns быстро разбирают крупную цель, а Wraith Form переживает ответный вход."
+      },
+      {
+        "heroId": "bastion",
+        "effectiveness": 4,
+        "tier": "A",
+        "counterRole": "Damage",
+        "reason": "Концентрированный урон Configuration: Assault заставляет D.Mon рано тратить Power Barrier."
+      },
+      {
+        "heroId": "ashe",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Damage",
+        "reason": "Дальний hitscan-урон наказывает D.Mon до входа в Plasma Saber, а Coach Gun сбивает её позицию."
+      },
+      {
+        "heroId": "pharah",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Damage",
+        "reason": "Вертикальная дистанция усложняет удары мечом и заставляет D.Mon полагаться на ограниченные Propulsors."
+      },
+      {
+        "heroId": "zenyatta",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Support",
+        "reason": "Discord Orb ускоряет фокус по D.Mon, а Transcendence переживает её массовый Limit Break."
+      },
+      {
+        "heroId": "lucio",
+        "effectiveness": 3,
+        "tier": "B",
+        "counterRole": "Support",
+        "reason": "Soundwave и Speed Boost срывают направление входа и помогают команде выйти из зоны ультимейта."
+      }
+    ]
   }
 ]

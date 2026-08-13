@@ -26,7 +26,7 @@ const meta = metaData as {
   heroes: HeroMeta[];
 };
 
-const NEW_HEROES = ['shion', 'sierra'];
+const NEW_HEROES = ['dmon'];
 const heroById = buildHeroById(heroes);
 const countersByHeroId = new Map(counters.map((counter) => [counter.heroId, counter]));
 const metaByHeroId = new Map(meta.heroes.map((heroMeta) => [heroMeta.heroId, heroMeta]));
@@ -37,6 +37,20 @@ const ROLE_ICONS: Record<HeroRole, string> = {
   Tank: '🛡️',
   Damage: '⚔️',
   Support: '💚',
+};
+
+const HERO_GUIDES: Record<string, { intro: string; abilities: { name: string; description: string }[] }> = {
+  dmon: {
+    intro: 'D.Mon — лидер MEKA Squad и танк Season 4. Она удерживает фронт Power Barrier, чередует меч и Fusion Repeater, а Limit Break открывает команде окно для фокуса.',
+    abilities: [
+      { name: 'Plasma Saber', description: 'Быстрое энергетическое оружие ближнего боя.' },
+      { name: 'Portable Fusion Repeater', description: 'Тяжёлый пулемёт для давления до входа в мили-дистанцию.' },
+      { name: 'Power Barrier', description: 'Барьер, который прикрывает D.Mon и союзников в направлении фронта.' },
+      { name: 'Surging Strike', description: 'Рывок с ударом, сбивающий позицию противника и создающий окно для продолжения атаки.' },
+      { name: 'Propulsors', description: 'Мобильность с ограниченным топливом для входа, выхода и смены угла.' },
+      { name: 'Limit Break', description: 'Широкий удар мечом: накладывает уязвимость на врагов и даёт D.Mon дополнительное здоровье.' },
+    ],
+  },
 };
 
 // Генерация метаданных
@@ -54,7 +68,7 @@ export async function generateMetadata({
   
   return {
     title: `${hero.nameRu} - Контрпики`,
-    description: `Узнай, кто контрит ${hero.nameRu} в Overwatch 2. Лучшие контрпики и мета-заметки для Season 3, актуально на ${lastUpdatedRu}.`,
+    description: `Узнай, кто контрит ${hero.nameRu} в Overwatch. Лучшие контрпики и мета-заметки для Season 4, актуально на ${lastUpdatedRu}.`,
   };
 }
 
@@ -87,6 +101,7 @@ export default async function HeroDetailPage({
   
   // Найти синергии
   const heroSynergies = synergies[id] || [];
+  const heroGuide = HERO_GUIDES[id];
   
   const isNew = NEW_HEROES.includes(hero.id);
   
@@ -149,6 +164,10 @@ export default async function HeroDetailPage({
                   <div className={styles.heroDetailStatValue}>{heroMeta.winRate}%</div>
                   <div className={styles.heroDetailStatLabel}>Винрейт</div>
                 </div>
+                <div className={styles.heroDetailStat}>
+                  <div className={styles.heroDetailStatValue}>{heroMeta.banRate}%</div>
+                  <div className={styles.heroDetailStatLabel}>Бан-рейт</div>
+                </div>
               </div>
             )}
             {/* Имба-связки */}
@@ -157,6 +176,24 @@ export default async function HeroDetailPage({
             )}
           </div>
         </header>
+
+        {heroGuide && (
+          <section className={styles.heroGuide} aria-labelledby="guide-heading">
+            <div>
+              <p className={styles.heroGuideKicker}>Season 4 / Heroes of Busan</p>
+              <h2 id="guide-heading" className={styles.heroDetailSectionTitle}>Как работает {hero.nameRu}</h2>
+              <p className={styles.heroGuideIntro}>{heroGuide.intro}</p>
+            </div>
+            <div className={styles.heroGuideGrid}>
+              {heroGuide.abilities.map((ability) => (
+                <article key={ability.name} className={styles.heroGuideCard}>
+                  <h3>{ability.name}</h3>
+                  <p>{ability.description}</p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
         
         {/* Контрпики */}
         <section className={styles.heroDetailSection} aria-labelledby="counters-heading">

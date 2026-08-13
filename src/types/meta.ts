@@ -57,6 +57,7 @@ export interface HeroMeta {
   tier: Tier;
   pickRate: number;
   winRate: number;
+  banRate: number;
   whyMeta: string;
 }
 

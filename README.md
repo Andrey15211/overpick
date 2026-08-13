@@ -1,6 +1,6 @@
 # Overpick
 
-Overpick is a Russian-language Overwatch 2 counter-pick and meta dashboard. It shows hero counters, tier lists, patch history, role filters, and hero detail pages from local JSON data that is refreshed from Blizzard public sources.
+Overpick is a Russian-language Overwatch counter-pick and meta dashboard. It shows hero counters, tier lists, patch history, role filters, and hero detail pages from local JSON data that is refreshed from Blizzard public sources.
 
 ## Current Scope
 
@@ -8,8 +8,8 @@ Overpick is a Russian-language Overwatch 2 counter-pick and meta dashboard. It s
 - Meta and tier list views driven by `src/data/meta.json` and `src/data/metaFilters.ts`.
 - Patch history from `src/data/patches.json`.
 - Hero detail pages at `/hero/[id]`.
-- Production smoke checks for `/`, `/heroes`, `/meta`, `/patches`, and `/hero/junkerqueen`.
-- Local weekly sync from Blizzard Hero Statistics and live patch notes.
+- Production smoke checks for `/`, `/heroes`, `/meta`, `/patches`, `/hero/junkerqueen`, and the Season 4 D.Mon page.
+- Local sync from Blizzard Hero Statistics (win rate, pick rate, and competitive ban rate) and live patch notes.
 
 ## Commands
 
@@ -50,7 +50,8 @@ The command does not commit, push, or deploy. To refresh a connected deployment 
 
 The sync script uses:
 
-- Blizzard Hero Statistics for current win rate and pick rate.
+- Blizzard Hero Statistics for current win rate, pick rate, and competitive ban rate.
+- Blizzard's official D.Mon hero page and Season 4: Heroes of Busan launch notes.
 - Blizzard live patch notes for recent hotfix and patch entries.
 - Local expert-signal weights in `src/data/metaFilters.ts`.
 

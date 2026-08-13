@@ -64,6 +64,7 @@ test('meta snapshot has current source and numeric rates', () => {
   for (const entry of meta.heroes) {
     assertFiniteRate(entry.pickRate, `${entry.heroId}.pickRate`);
     assertFiniteRate(entry.winRate, `${entry.heroId}.winRate`);
+    assertFiniteRate(entry.banRate, `${entry.heroId}.banRate`);
     assert.equal(typeof entry.whyMeta, 'string', `${entry.heroId}.whyMeta must be a string`);
     assert.ok(entry.whyMeta.includes(`${entry.tier}-тир`), `${entry.heroId}.whyMeta must mention its tier`);
   }
@@ -99,7 +100,23 @@ test('hero portraits use image hosts configured for next/image', () => {
   }
 });
 
-test('Season 3 new hero Shion is present with current live meta data', () => {
+test('Season 4 new hero D.Mon is present with current live meta data', () => {
+  const dmon = heroes.find((hero) => hero.id === 'dmon');
+  const dmonMeta = meta.heroes.find((entry) => entry.heroId === 'dmon');
+
+  assert.ok(dmon, 'Expected D.Mon in heroes.json');
+  assert.equal(dmon.name, 'D.Mon');
+  assert.equal(dmon.role, 'Tank');
+  assert.equal(dmon.subrole, 'Stalwart');
+  assert.ok(dmon.portrait.includes('/overwatch/'), 'D.Mon portrait should use a Blizzard hero portrait asset');
+
+  assert.ok(dmonMeta, 'Expected D.Mon in meta.json');
+  assert.ok(VALID_TIERS.has(dmonMeta.tier), 'D.Mon should have a valid current tier');
+  assert.ok(dmonMeta.pickRate > 0, 'D.Mon pick rate should come from Blizzard Hero Statistics');
+  assert.ok(dmonMeta.whyMeta.includes('D.Mon'), 'D.Mon meta explanation should use the official name');
+});
+
+test('historical Season 3 hero Shion remains covered by current live meta data', () => {
   const shion = heroes.find((hero) => hero.id === 'shion');
   const shionMeta = meta.heroes.find((entry) => entry.heroId === 'shion');
 

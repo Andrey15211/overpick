@@ -110,3 +110,12 @@ test('Season 3 Shion keeps her expert signal in computed meta', () => {
   assert.ok(['S', 'A', 'B', 'C', 'D'].includes(shion.tier));
   assert.equal(shion.sourceTier, shion.tier);
 });
+
+test('Season 4 D.Mon keeps her official tank signal in computed meta', () => {
+  const dmon = byHeroId(compute(), 'dmon');
+
+  assert.equal(heroRoleById.get(dmon.heroId), 'Tank');
+  assert.equal(dmon.signals.expertTier, 'A');
+  assert.ok(['S', 'A', 'B', 'C', 'D'].includes(dmon.tier));
+  assert.equal(dmon.sourceTier, dmon.tier);
+});

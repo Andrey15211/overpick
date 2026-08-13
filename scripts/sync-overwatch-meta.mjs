@@ -20,6 +20,7 @@ const ROLE_LABELS_RU = {
 
 const HERO_NAME_RU_OVERRIDES = {
   Shion: 'Сион',
+  'D.Mon': 'D.Mon',
 };
 
 const BLIZZARD_HERO_ID_ALIASES = {
@@ -151,7 +152,7 @@ function parseIsoDate(dateText) {
 function formatHotfixTitle(dateIso) {
   const [, month, day] = dateIso.split('-');
   const monthLabel = MONTH_NAMES_EN[Number(month) - 1] || 'July';
-  return `🔥 Overwatch Season 3 - Hotfix ${monthLabel} ${Number(day)}`;
+  return `🔥 Overwatch Season 4 - Hotfix ${monthLabel} ${Number(day)}`;
 }
 
 function translateHeroName(name) {
@@ -382,9 +383,9 @@ function parseLivePatches(html, heroNameById) {
     }
 
     patches.push({
-      patchId: `ow-s3-hotfix-${dateIso}`,
+      patchId: `ow-s4-hotfix-${dateIso}`,
       date: dateIso,
-      version: '3.0',
+      version: '4.0',
       title: formatHotfixTitle(dateIso),
       summary: summary || `Обновление, синхронизированное с Blizzard на ${dateIso}.`,
       changes,
@@ -511,9 +512,14 @@ async function main() {
   const livePatchIds = new Set(livePatches.map((patch) => patch.patchId));
   const existingPatches = patches.filter((patch) => !livePatchIds.has(patch.patchId));
 
+  meta.season = 4;
+  meta.seasonName = 'Сезон 4: Герои Пусана';
+  meta.patch = '4.0';
   meta.lastUpdated = today;
   meta.sources = [
     `Blizzard Hero Statistics: PC, Europe, live Hero Stats page crawled on ${formatDateRu(new Date())}`,
+    'Blizzard D.Mon hero page: official abilities, role and lore',
+    'Blizzard Season 4: Heroes of Busan launch notes',
     ...livePatches.map((patch) => patch.title),
     ...meta.sources.filter(
       (source) =>
@@ -524,13 +530,14 @@ async function main() {
   ].filter((source, index, all) => all.indexOf(source) === index);
   meta.metaDescription =
     `Тир-лист обновлён под актуальный публичный срез Blizzard Hero Statistics для PC (Europe) на ${formatDateRu(new Date())} года. ` +
-    'В основе лежат свежие win rate и pick rate по всем героям с учётом текущего патча Season 3.';
+    'В основе лежат свежие win rate, pick rate и competitive ban rate по всем героям с учётом текущего патча Season 4.';
 
   meta.heroes = meta.heroes.map((hero) => {
     const row = heroById.get(hero.heroId);
     if (!row) return hero;
     const winRate = round1(Number(row.cells.winrate));
     const pickRate = round1(Number(row.cells.pickrate));
+    const banRate = round1(Number(row.cells.banrate));
     const nameRu = heroNameById.get(hero.heroId) || hero.heroId;
     const role = heroRoleById.get(hero.heroId) || 'Damage';
     const tier = deriveTier({
@@ -545,9 +552,37 @@ async function main() {
       tier,
       winRate,
       pickRate,
-      whyMeta: `${nameRu} по текущему срезу Blizzard выглядит как ${tier}-тир ${ROLE_LABELS_RU[role] || role}: ${winRate}% win rate и ${pickRate}% pick rate.`,
+      banRate,
+      whyMeta: `${nameRu} по текущему срезу Blizzard выглядит как ${tier}-тир ${ROLE_LABELS_RU[role] || role}: ${winRate}% win rate, ${pickRate}% pick rate и ${banRate}% ban rate.`,
     };
   });
+
+  // Новые герои могут появиться в Blizzard Hero Statistics раньше, чем в
+  // сохранённом meta.json. Добавляем их автоматически, чтобы сезонный sync
+  // не терял D.Mon и следующие релизы.
+  const mappedHeroIds = new Set(meta.heroes.map((hero) => hero.heroId));
+  for (const [heroId, row] of heroById) {
+    if (mappedHeroIds.has(heroId)) continue;
+    const winRate = round1(Number(row.cells.winrate));
+    const pickRate = round1(Number(row.cells.pickrate));
+    const banRate = round1(Number(row.cells.banrate));
+    const nameRu = heroNameById.get(heroId) || heroId;
+    const role = heroRoleById.get(heroId) || 'Damage';
+    const tier = deriveTier({
+      winRate,
+      pickRate,
+      currentTier: 'B',
+      signal: metaSignals.get(heroId),
+    });
+    meta.heroes.push({
+      heroId,
+      tier,
+      pickRate,
+      winRate,
+      banRate,
+      whyMeta: `${nameRu} по текущему срезу Blizzard выглядит как ${tier}-тир ${ROLE_LABELS_RU[role] || role}: ${winRate}% win rate, ${pickRate}% pick rate и ${banRate}% ban rate.`,
+    });
+  }
 
   await fs.writeFile(PATCHES_PATH, `${JSON.stringify([...livePatches, ...existingPatches], null, 2)}\n`);
   await fs.writeFile(META_PATH, `${JSON.stringify(meta, null, 2)}\n`);

@@ -26,7 +26,7 @@ export default function Header() {
           <span className="header__logo-icon">◆</span>
           <span>Over</span>
           <span className="header__logo-accent">pick</span>
-          <span className="header__logo-season">S3</span>
+          <span className="header__logo-season">S4</span>
         </Link>
 
         <button

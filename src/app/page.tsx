@@ -19,9 +19,9 @@ const meta = metaData as {
   tiers: Record<Tier, TierInfo>;
   heroes: HeroMeta[];
 };
-const NEW_HEROES = ['shion', 'sierra'];
-const SEASON_HERO_ID = 'shion';
-const SEASON_HERO_ART = '/shion-cutout.png';
+const NEW_HEROES = ['dmon'];
+const SEASON_HERO_ID = 'dmon';
+const SEASON_HERO_ART = 'https://d15f34w2p8l1cc.cloudfront.net/overwatch/a46c60b8562fdbd0b8308396d0808f7606fba208bc67cccf3f82fe56d2c73b9d.png';
 
 const DEFAULT_META_FILTERS: MetaFilters = {
   input: 'pc',
@@ -72,13 +72,13 @@ export default function Home() {
         <div className={styles.heroShell}>
           <div className={styles.heroCopy}>
             <p className={styles.heroSystemLine}>
-              {meta.seasonName} / Into the Tiger&apos;s Den / {heroes.length} героя
+              {meta.seasonName} / Heroes of Busan / {heroes.length} героев
             </p>
             <h1 className={styles.heroTitle}>
-              Сион открывает мету Season 3
+              D.Mon открывает мету Season 4
             </h1>
             <p className={styles.heroSubtitle}>
-              Новый герой 3-го сезона Сион, подкласс фланкер.
+              Новый танк Season 4 из MEKA Squad: Plasma Saber, Power Barrier и Limit Break.
             </p>
             <div className={styles.heroCta} aria-label="Основные действия">
               <Link href="/heroes" className={styles.heroCtaPrimary}>
@@ -110,9 +110,9 @@ export default function Home() {
           <div className={styles.seasonPoster} aria-label="Новый герой сезона">
             <Image
               src={SEASON_HERO_ART}
-              alt="Сион, новый герой Season 3"
-              width={1750}
-              height={1520}
+              alt="D.Mon, новый герой Season 4"
+              width={256}
+              height={256}
               className={styles.seasonPosterImg}
               priority
             />
@@ -150,7 +150,7 @@ export default function Home() {
                       />
                       <span className={styles.roleHeroText}>
                         <strong>{hero.nameRu}</strong>
-                        <small>{row.tier} тир / {row.winRate}% WR / {row.pickRate}% PR</small>
+                        <small>{row.tier} тир / {row.winRate}% WR / {row.pickRate}% PR / {row.banRate}% BR</small>
                       </span>
                     </Link>
                   );
@@ -208,7 +208,7 @@ export default function Home() {
                           {isNew && <span className="new-badge">НОВОЕ</span>}
                         </span>
                         <span className={styles.topMetaStats}>
-                          {heroMeta.winRate}% WR / {heroMeta.pickRate}% PR
+                          {heroMeta.winRate}% WR / {heroMeta.pickRate}% PR / {heroMeta.banRate}% BR
                         </span>
                         {hero.subrole && (
                           <span className={styles.topMetaSubrole}>
@@ -234,7 +234,7 @@ export default function Home() {
             </p>
           </div>
           <p className={styles.sectionSubtitle}>
-            Blizzard Hero Statistics / PC Europe / {lastUpdatedRu}
+              Blizzard Hero Statistics / PC Europe / Season 4 / {lastUpdatedRu}
           </p>
         </div>
         <HeroGrid

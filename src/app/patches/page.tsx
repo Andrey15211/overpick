@@ -215,7 +215,7 @@ export default function PatchesPage() {
             История <span>Патчей</span>
           </h1>
           <p className={styles.patchesSubtitle}>
-            Баффы, нерфы, реворки и системные hotfix-обновления Overwatch 2. Страница синхронизирована с Season 3 и актуальным состоянием на {lastUpdatedRu}.
+            Баффы, нерфы, реворки и системные hotfix-обновления Overwatch. Страница синхронизирована с Season 4: Heroes of Busan и актуальным состоянием на {lastUpdatedRu}.
           </p>
         </header>
 

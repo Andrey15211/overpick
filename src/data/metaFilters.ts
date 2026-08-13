@@ -14,22 +14,34 @@ import {
 
 export const META_SOURCE_NOTES = [
   {
+    id: 'blizzard-dmon-hero',
+    label: 'Blizzard D.Mon hero page',
+    url: 'https://overwatch.blizzard.com/heroes/dmon',
+    weight: 'Официальная роль Tank, подкласс Stalwart и набор способностей D.Mon в Season 4.',
+  },
+  {
+    id: 'blizzard-season-4',
+    label: 'Blizzard Season 4: Heroes of Busan',
+    url: 'https://overwatch.blizzard.com/en-us/news/24295381/reign-of-talon-season-4-heroes-of-busan-brings-out-the-best/',
+    weight: 'Официальный анонс Season 4, MEKA Squad и D.Mon.',
+  },
+  {
     id: 'blizzard-shion-hero',
     label: 'Blizzard Shion hero page',
     url: 'https://overwatch.blizzard.com/ru-ru/heroes/shion/',
-    weight: 'Официальная роль, подкласс и набор способностей Сион в Season 3.',
+    weight: 'Официальная роль, подкласс и набор способностей Сион в предыдущем сезоне; используется как исторический сигнал.',
   },
   {
     id: 'pcgamer-2026-06-23',
-    label: 'PC Gamer Season 3 tier list',
+    label: 'PC Gamer Season 4 tier list',
     url: 'https://www.pcgamer.com/games/fps/overwatch-tier-list/',
-    weight: 'Свежий Season 3 tier list: Сион дебютирует как A-tier DPS, Sierra падает ниже после правок.',
+    weight: 'Внешний expert/high-rank сигнал; основная числовая база теперь берётся из live Blizzard Hero Statistics Season 4.',
   },
   {
     id: 'mobalytics-2026-season-3',
-    label: 'Mobalytics Season 3 tier list',
+    label: 'Mobalytics tier list archive',
     url: 'https://mobalytics.gg/overwatch/tier-lists/standard',
-    weight: 'Дополнительный expert/high-rank сигнал по текущим пикам Season 3.',
+    weight: 'Исторический expert/high-rank сигнал для проверки расхождений с текущей статистикой.',
   },
   {
     id: 'blizzard-rates',
@@ -41,7 +53,7 @@ export const META_SOURCE_NOTES = [
     id: 'blizzard-2026-04-23',
     label: 'Blizzard April 23 Balance Hotfix',
     url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/live/2026/04/',
-    weight: 'Предыдущий balance hotfix с правками Roadhog, Sombra и Vendetta после старта Season 3.',
+    weight: 'Исторический balance hotfix; актуальные изменения Season 4 подтягиваются из live patch notes.',
   },
   {
     id: 'blizzard-2026-04-28',
@@ -53,19 +65,19 @@ export const META_SOURCE_NOTES = [
     id: 'blizzard-2026-04-17',
     label: 'Blizzard April 17 Sierra Hotfix',
     url: 'https://overwatch.blizzard.com/en-us/news/patch-notes/live/2026/04/',
-    weight: 'Launch hotfix для Sierra: урон, Anchor Drone и Medi-Drone.',
+    weight: 'Исторический launch hotfix для Sierra; оставлен для контекста её текущего matchup.',
   },
   {
     id: 'pcgamer-2026-04-23',
-    label: 'PC Gamer Season 3 tier list',
+    label: 'PC Gamer tier list archive',
     url: 'https://www.pcgamer.com/games/fps/overwatch-tier-list/',
     weight: 'Свежий общий tier list с упоминаниями pro/high-rank меты.',
   },
   {
     id: 'playerauctions-2026-04-16',
-    label: 'PlayerAuctions Season 3 tier list',
+    label: 'PlayerAuctions tier list archive',
     url: 'https://www.playerauctions.com/overwatch-guide/tips-tricks/season-2-summit-tier-list-is-sierra-broken/',
-    weight: 'Ролевая оценка героев после запуска Season 3.',
+    weight: 'Архивный экспертный сигнал для сравнения с текущей метой.',
   },
   {
     id: 'dexerto-2026-04-15',
@@ -77,7 +89,7 @@ export const META_SOURCE_NOTES = [
     id: 'pockettactics-2026-04-01',
     label: 'Pocket Tactics April 2026 tier list',
     url: 'https://www.pockettactics.com/overwatch-2/tier-list',
-    weight: 'Более ранний baseline для проверки расхождений после старта Season 3.',
+    weight: 'Более ранний baseline для проверки расхождений с текущей Season 4 метой.',
   },
 ] as const;
 
@@ -185,6 +197,7 @@ const DEFAULT_SIGNAL: HeroMetaSignal = {
 };
 
 export const HERO_META_SIGNALS: Record<string, HeroMetaSignal> = {
+  dmon: { expertTier: 'A', proSignal: 2, notes: 'Новый танк Season 4 с сильным фронтлайном, барьером, мобильным входом и дебаффом Limit Break. Ранний pick rate завышен ажиотажем запуска, поэтому тир ограничен A до накопления стабильной выборки.', sourceIds: ['blizzard-rates', 'blizzard-dmon-hero', 'blizzard-season-4'], mapTags: ['brawl', 'dive'], highRankBias: 0.03 },
   dva: { expertTier: 'S', proSignal: 2, notes: 'Высокий expert consensus: универсальный танк для темпа и peel.', sourceIds: ['pcgamer-2026-04-23', 'dexerto-2026-04-15'], mapTags: ['dive', 'vertical'], highRankBias: 0.05 },
   domina: { expertTier: 'A', proSignal: 2, notes: 'Сильный poke/frontline pick, но dive и brawl снижают стабильность.', sourceIds: ['pcgamer-2026-04-23', 'playerauctions-2026-04-16'], mapTags: ['poke'] },
   doomfist: { expertTier: 'C', proSignal: 1, notes: 'Требует высокого исполнения; в экспертных списках нестабилен.', sourceIds: ['pcgamer-2026-04-23'], mapTags: ['dive'], highRankBias: 0.04 },
@@ -192,7 +205,7 @@ export const HERO_META_SIGNALS: Record<string, HeroMetaSignal> = {
   junkerqueen: { expertTier: 'B', proSignal: 1, notes: 'Работает в агрессивном brawl, но карта и состав сильно решают.', sourceIds: ['pcgamer-2026-04-23', 'playerauctions-2026-04-16'], mapTags: ['brawl'] },
   mauga: { expertTier: 'B', proSignal: 0, notes: 'Рабочий ranked pick, но expert consensus не держит его вверху.', sourceIds: ['pcgamer-2026-04-23'] },
   orisa: { expertTier: 'A', proSignal: 0, notes: 'Источники расходятся: статистика слабее, но часть tier-листов ценит стабильность.', sourceIds: ['pcgamer-2026-04-23'] },
-  ramattra: { expertTier: 'S', proSignal: 2, notes: 'Сильный tank consensus в Season 3, особенно в организованной игре.', sourceIds: ['pcgamer-2026-04-23'], mapTags: ['brawl', 'poke'], highRankBias: 0.04 },
+  ramattra: { expertTier: 'S', proSignal: 2, notes: 'Сильный tank consensus в текущей организованной игре.', sourceIds: ['pcgamer-2026-04-23'], mapTags: ['brawl', 'poke'], highRankBias: 0.04 },
   reinhardt: { expertTier: 'B', proSignal: 1, notes: 'Силен в ranked brawl и на close-range картах, но менее универсален.', sourceIds: ['pcgamer-2026-04-23'], mapTags: ['brawl'] },
   roadhog: { expertTier: 'C', proSignal: 0, notes: 'Нестабилен после быстрых правок Chain Hook; hotfix 23 апреля помогает, но статистика всё ещё низкая.', sourceIds: ['blizzard-2026-04-23', 'pcgamer-2026-04-23'] },
   sigma: { expertTier: 'S', proSignal: 3, notes: 'Один из самых надёжных pro/high-rank танков для poke и контроля углов.', sourceIds: ['pcgamer-2026-04-23'], mapTags: ['poke'], highRankBias: 0.06 },
@@ -215,8 +228,8 @@ export const HERO_META_SIGNALS: Record<string, HeroMetaSignal> = {
   reaper: { expertTier: 'A', proSignal: 1, notes: 'Хороший close-range punish в текущем открытом ranked meta.', sourceIds: ['pcgamer-2026-04-23', 'playerauctions-2026-04-16'], mapTags: ['brawl'] },
   sojourn: { expertTier: 'S', proSignal: 2, notes: 'Источники спорят со статистикой: pro/high-skill потенциал всё ещё очень высокий.', sourceIds: ['pcgamer-2026-04-23', 'dexerto-2026-04-15'], mapTags: ['poke'], highRankBias: 0.06 },
   soldier76: { expertTier: 'A', proSignal: 1, notes: 'Надёжный ranked DPS, но ceiling ниже топовых carry-пиков.', sourceIds: ['pcgamer-2026-04-23', 'dexerto-2026-04-15'] },
-  sierra: { expertTier: 'C', proSignal: 1, notes: 'После повторных правок Season 3 она больше не выглядит как автоматический top DPS, но остаётся рабочей на вертикальных и poke-картах.', sourceIds: ['blizzard-rates', 'pcgamer-2026-06-23', 'mobalytics-2026-season-3'], mapTags: ['poke', 'vertical'], highRankBias: 0.01 },
-  shion: { expertTier: 'A', proSignal: 2, notes: 'Новый Season 3 фланкер: Blizzard показывает высокий pick rate, а экспертные списки держат её в A-tier из-за мобильности, Execution и Joyride pressure.', sourceIds: ['blizzard-rates', 'blizzard-shion-hero', 'pcgamer-2026-06-23'], mapTags: ['dive', 'brawl', 'vertical'], highRankBias: 0.05 },
+  sierra: { expertTier: 'C', proSignal: 1, notes: 'После повторных правок она остаётся рабочей на вертикальных и poke-картах, но не является автоматическим top DPS.', sourceIds: ['blizzard-rates', 'pcgamer-2026-06-23', 'mobalytics-2026-season-3'], mapTags: ['poke', 'vertical'], highRankBias: 0.01 },
+  shion: { expertTier: 'A', proSignal: 2, notes: 'Фланкер с высоким потолком исполнения и давлением на бэклайн.', sourceIds: ['blizzard-rates', 'blizzard-shion-hero', 'pcgamer-2026-06-23'], mapTags: ['dive', 'brawl', 'vertical'], highRankBias: 0.05 },
   sombra: { expertTier: 'C', proSignal: 0, notes: 'Ниша counter-pick; hotfix 23 апреля смягчил Stealth, но пока не вернул её в верх меты.', sourceIds: ['blizzard-2026-04-23', 'playerauctions-2026-04-16'] },
   symmetra: { expertTier: 'B', proSignal: 1, notes: 'Может быть сильной в coordinated play и на close-range картах.', sourceIds: ['pcgamer-2026-04-23', 'playerauctions-2026-04-16'], mapTags: ['brawl'] },
   torbjorn: { expertTier: 'A', proSignal: 1, notes: 'Turret value хорошо наказывает мобильных героев в ranked.', sourceIds: ['playerauctions-2026-04-16', 'dexerto-2026-04-15'] },
