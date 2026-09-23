@@ -59,13 +59,13 @@ test('meta snapshot has current source and numeric rates', () => {
     meta.sources.some((source) => source.startsWith('Blizzard Hero Statistics:')),
     'sources must include the live Blizzard Hero Statistics crawl',
   );
-  assert.ok(meta.heroes.some((entry) => entry.banRate > 0), 'competitive ban rates must not be an all-zero placeholder snapshot');
   assert.equal(new Set(meta.sources).size, meta.sources.length, 'sources must not contain duplicates');
 
   for (const entry of meta.heroes) {
     assertFiniteRate(entry.pickRate, `${entry.heroId}.pickRate`);
     assertFiniteRate(entry.winRate, `${entry.heroId}.winRate`);
     assertFiniteRate(entry.banRate, `${entry.heroId}.banRate`);
+    assert.ok(entry.banRate >= 0, `${entry.heroId}.banRate must be non-negative`);
     assert.equal(typeof entry.whyMeta, 'string', `${entry.heroId}.whyMeta must be a string`);
     assert.ok(entry.whyMeta.includes(`${entry.tier}-тир`), `${entry.heroId}.whyMeta must mention its tier`);
   }

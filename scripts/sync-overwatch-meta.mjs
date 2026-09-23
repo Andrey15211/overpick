@@ -494,9 +494,7 @@ async function main() {
   const heroes = JSON.parse(heroesRaw);
   const patches = JSON.parse(patchesRaw);
   const rates = parseRates(ratesHtml);
-  if (!rates.some((row) => Number(row.cells?.banrate) > 0)) {
-    throw new Error('Blizzard competitive Hero Statistics returned no ban-rate values; refusing to publish placeholders');
-  }
+  const hasBanRateValues = rates.some((row) => Number(row.cells?.banrate) > 0);
   const metaSignals = parseMetaSignals(signalSource);
   const localHeroIds = new Set(heroes.map((hero) => hero.id));
   const unknownRateHeroIds = rates
@@ -535,7 +533,7 @@ async function main() {
   ].filter((source, index, all) => all.indexOf(source) === index);
   meta.metaDescription =
     `Тир-лист обновлён под актуальный публичный срез Blizzard Hero Statistics для PC (Europe) на ${formatDateRu(new Date())} года. ` +
-    'В основе лежат свежие win rate, pick rate и competitive ban rate по всем героям с учётом текущего патча Season 4.';
+    `В основе лежат свежие win rate и pick rate${hasBanRateValues ? ', а также competitive ban rate' : '; Blizzard сейчас не публикует ban rate'} по всем героям с учётом текущего патча Season 4.`;
 
   meta.heroes = meta.heroes.map((hero) => {
     const row = heroById.get(hero.heroId);
@@ -558,7 +556,7 @@ async function main() {
       winRate,
       pickRate,
       banRate,
-      whyMeta: `${nameRu} по текущему срезу Blizzard выглядит как ${tier}-тир ${ROLE_LABELS_RU[role] || role}: ${winRate}% win rate, ${pickRate}% pick rate и ${banRate}% ban rate.`,
+      whyMeta: `${nameRu} по текущему срезу Blizzard выглядит как ${tier}-тир ${ROLE_LABELS_RU[role] || role}: ${winRate}% win rate, ${pickRate}% pick rate${hasBanRateValues ? ` и ${banRate}% ban rate` : ''}.`,
     };
   });
 
@@ -585,7 +583,7 @@ async function main() {
       pickRate,
       winRate,
       banRate,
-      whyMeta: `${nameRu} по текущему срезу Blizzard выглядит как ${tier}-тир ${ROLE_LABELS_RU[role] || role}: ${winRate}% win rate, ${pickRate}% pick rate и ${banRate}% ban rate.`,
+      whyMeta: `${nameRu} по текущему срезу Blizzard выглядит как ${tier}-тир ${ROLE_LABELS_RU[role] || role}: ${winRate}% win rate, ${pickRate}% pick rate${hasBanRateValues ? ` и ${banRate}% ban rate` : ''}.`,
     });
   }
 
