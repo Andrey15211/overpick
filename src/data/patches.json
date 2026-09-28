@@ -4,7 +4,7 @@
     "date": "2026-09-22",
     "version": "4.0",
     "title": "🔥 Overwatch Season 4 - Hotfix September 22",
-    "summary": "Обновление, синхронизированное с Blizzard на 2026-09-22.",
+    "summary": "Патч без балансных правок героев: исправления и системные изменения. Реплей-коды сброшены.",
     "changes": [
       {
         "type": "system",
@@ -14,7 +14,7 @@
       {
         "type": "system",
         "ability": "Исправления",
-        "description": "General\nFixed a bug where Team Drives titles showed placeholder text.\nFixed a bug where Drive Signature prestige levels may have changed after Team Drives.\nFixed a bug with the scope on Ashe's Metalcore skin.\nTop of post"
+        "description": "General\nFixed a bug where Team Drives titles showed placeholder text.\nFixed a bug where Drive Signature prestige levels may have changed after Team Drives.\nFixed a bug with the scope on Ashe's Metalcore skin."
       }
     ]
   },
@@ -23,11 +23,29 @@
     "date": "2026-09-17",
     "version": "4.0",
     "title": "🔥 Overwatch Season 4 - Hotfix September 17",
-    "summary": "Горячий фикс без изменений баланса. Реплей-коды от патча 30 июня по-прежнему доступны.",
+    "summary": "Балансный хотфикс затронул 1 герой (D.Mon): 6 нерфов. Все правки разложены ниже по способностям.",
     "changes": [
       {
         "heroId": "dmon",
-        "type": "buff",
+        "type": "nerf",
+        "ability": "Общие изменения",
+        "description": "Armor reduced from 325 to 275 (5v5)."
+      },
+      {
+        "heroId": "dmon",
+        "type": "nerf",
+        "ability": "Общие изменения",
+        "description": "Armor reduced from 300 to 250 (6v6)."
+      },
+      {
+        "heroId": "dmon",
+        "type": "nerf",
+        "ability": "Focused Fusion - Major Perk",
+        "description": "Damage per bullet reduced from 45 to 36."
+      },
+      {
+        "heroId": "dmon",
+        "type": "nerf",
         "ability": "Propulsors",
         "description": "Fuel drain rate increased from 25 to 30."
       },
@@ -39,14 +57,14 @@
       },
       {
         "heroId": "dmon",
-        "type": "buff",
+        "type": "nerf",
         "ability": "Fusion Repeater",
         "description": "Cooldown increased from 4 to 5 seconds."
       },
       {
         "type": "system",
         "ability": "Исправления",
-        "description": "Stadium\nFixed a gameplay issue with Mercy in Stadium. She has been re-enabled in all Stadium queues.\nTop of post"
+        "description": "Stadium\nFixed a gameplay issue with Mercy in Stadium. She has been re-enabled in all Stadium queues."
       }
     ]
   },
@@ -55,7 +73,7 @@
     "date": "2026-09-10",
     "version": "4.0",
     "title": "🔥 Overwatch Season 4 - Hotfix September 10",
-    "summary": "Обновление, синхронизированное с Blizzard на 2026-09-10.",
+    "summary": "Патч без балансных правок героев: исправления и системные изменения. Реплей-коды предыдущего патча по-прежнему доступны.",
     "changes": [
       {
         "type": "system",
@@ -65,7 +83,7 @@
       {
         "type": "system",
         "ability": "Исправления",
-        "description": "Resolved an issue with Ramattra's Ravenous Vortex that caused additional unintended delay before it could be detonated.\nFixed a bug with Jetpack Cat that allowed Purr to go through enemy barriers.\nFixed an issue that affected the range of Vendetta's Palatine Fang in some instances.\nTop of post"
+        "description": "Resolved an issue with Ramattra's Ravenous Vortex that caused additional unintended delay before it could be detonated.\nFixed a bug with Jetpack Cat that allowed Purr to go through enemy barriers.\nFixed an issue that affected the range of Vendetta's Palatine Fang in some instances."
       }
     ]
   },
@@ -74,12 +92,19 @@
     "date": "2026-09-08",
     "version": "4.0",
     "title": "🔥 Overwatch Season 4 - Hotfix September 8",
-    "summary": "Обновление, синхронизированное с Blizzard на 2026-09-08.",
+    "summary": "Балансный хотфикс затронул 24 героя (D.Mon, Дива, Домина, Мауга, Уинстон и ещё 19): 24 баффа, 37 нерфов. Все правки разложены ниже по способностям.",
     "changes": [
       {
         "type": "system",
         "ability": "Junkrat's Loot Hunt",
         "description": "Junkrat's Loot Hunt goes Legendary, with a specially themed twist! Join Junkrat for a unique yet familiar mixup for three weeks starting September 12 and running until September 29."
+      },
+      {
+        "heroId": "dmon",
+        "type": "nerf",
+        "ability": "Общие изменения",
+        "description": "Armor reduced from 325 to 300. (6v6)",
+        "devComment": "Developer Comments: D.Mon has settled into a strong position since launch. We're reducing Call Mech's transformation time to match D.Va's while adjusting Portable Fusion Repeater to improve accuracy and reduce effectiveness at longer distances. We're also reducing Plasma Saber's damage to help offset these improvements."
       },
       {
         "heroId": "dmon",
@@ -90,7 +115,7 @@
       },
       {
         "heroId": "dmon",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Power Barrier",
         "description": "Cast time decreased from 0.065s to 0.016s.",
         "devComment": "Developer Comments: D.Mon has settled into a strong position since launch. We're reducing Call Mech's transformation time to match D.Va's while adjusting Portable Fusion Repeater to improve accuracy and reduce effectiveness at longer distances. We're also reducing Plasma Saber's damage to help offset these improvements."
@@ -118,7 +143,7 @@
       },
       {
         "heroId": "dmon",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Portable Fusion Repeater",
         "description": "Spread reduced from 2 to 1.75 degrees.",
         "devComment": "Developer Comments: D.Mon has settled into a strong position since launch. We're reducing Call Mech's transformation time to match D.Va's while adjusting Portable Fusion Repeater to improve accuracy and reduce effectiveness at longer distances. We're also reducing Plasma Saber's damage to help offset these improvements."
@@ -131,15 +156,36 @@
         "devComment": "Developer Comments: D.Mon has settled into a strong position since launch. We're reducing Call Mech's transformation time to match D.Va's while adjusting Portable Fusion Repeater to improve accuracy and reduce effectiveness at longer distances. We're also reducing Plasma Saber's damage to help offset these improvements."
       },
       {
+        "heroId": "dva",
+        "type": "buff",
+        "ability": "Общие изменения",
+        "description": "Mech base health increased from 175 to 200. (5v5)",
+        "devComment": "Developer Comments: We're increasing D.Va's base health to improve her durability without making adjustments to her Defense Matrix."
+      },
+      {
+        "heroId": "domina",
+        "type": "buff",
+        "ability": "Общие изменения",
+        "description": "Ultimate Cost reduced by 6%.",
+        "devComment": "Developer Comments: Domina's ultimate is disruptive but not always consequential relative to the time required to earn it. We're reducing its cost to make it available more frequently."
+      },
+      {
         "heroId": "mauga",
-        "type": "system",
+        "type": "nerf",
+        "ability": "Общие изменения",
+        "description": "Base armor reduced from 150 to 125.",
+        "devComment": "Developer Comments: Mauga continues to have high durability and damage output. We're reverting the spread adjustment made to single-fire Chainguns while reducing the effectiveness of firing both weapons at longer ranges. Alongside his armor reduction, these changes will lower both survivability and lethality."
+      },
+      {
+        "heroId": "mauga",
+        "type": "buff",
         "ability": "Chainguns",
         "description": "Maximum spread when firing a single gun reverted from 1.5 to 1 degree.",
         "devComment": "Developer Comments: Mauga continues to have high durability and damage output. We're reverting the spread adjustment made to single-fire Chainguns while reducing the effectiveness of firing both weapons at longer ranges. Alongside his armor reduction, these changes will lower both survivability and lethality."
       },
       {
         "heroId": "mauga",
-        "type": "buff",
+        "type": "nerf",
         "ability": "Chainguns",
         "description": "Maximum spread when firing both guns increased from 4 to 5 degrees.",
         "devComment": "Developer Comments: Mauga continues to have high durability and damage output. We're reverting the spread adjustment made to single-fire Chainguns while reducing the effectiveness of firing both weapons at longer ranges. Alongside his armor reduction, these changes will lower both survivability and lethality."
@@ -153,7 +199,7 @@
       },
       {
         "heroId": "winston",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Barrier Projector",
         "description": "Cooldown reduced from 12 to 10 seconds. (5v5)",
         "devComment": "Developer Comments: Winston's Barrier Projector cooldown is being reduced to shorten the downtime between engagements. To offset the increased availability, its duration is also being reduced."
@@ -166,8 +212,15 @@
         "devComment": "Developer Comments: Winston's Barrier Projector cooldown is being reduced to shorten the downtime between engagements. To offset the increased availability, its duration is also being reduced."
       },
       {
+        "heroId": "wreckingball",
+        "type": "nerf",
+        "ability": "Adaptive Barrier – Major Perk",
+        "description": "Duration reduced from 1.5 to 1 second.",
+        "devComment": "Developer Comments: Adaptive Barrier has provided Wrecking Ball with too long a protection window. We're reducing its duration to place greater emphasis on timing its use."
+      },
+      {
         "heroId": "zarya",
-        "type": "buff",
+        "type": "nerf",
         "ability": "Particle Barrier",
         "description": "Cooldown increased from 11 to 12 seconds. (5v5)",
         "devComment": "Developer Comments: The cooldown of Particle Barrier is being increased to reduce Zarya's personal barrier uptime and energy generation. Projected Barrier remains unchanged, encouraging more proactive use on allies."
@@ -181,10 +234,17 @@
       },
       {
         "heroId": "anran",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Vermillion Revival",
         "description": "Cast time reduced from 3 to 2.5 seconds.",
         "devComment": "Developer Comments: Dancing Blaze can generate significant visual clutter, making Anran difficult to track during combat. We're removing the visual clones visible to opponents to improve clarity. Vermillion Revival's cast time is also being reduced to shorten the window opponents have to react."
+      },
+      {
+        "heroId": "freja",
+        "type": "nerf",
+        "ability": "Relentless Barrage – Minor Perk",
+        "description": "Refunded automatic bolts reduced from 8 to 5.",
+        "devComment": "Developer Comments: Recent changes have significantly increased Freja's damage output. We're reducing the damage of both Revdraw Crossbow and Take Aim, while also lowering the effectiveness of Relentless Barrage. Explosive Bolt's impact sound effects have also been reduced to lessen audio clutter when repeatedly hit."
       },
       {
         "heroId": "freja",
@@ -210,6 +270,13 @@
       {
         "heroId": "junkrat",
         "type": "nerf",
+        "ability": "Nitro Boost – Minor Perk",
+        "description": "Bonus speed reduced from 125% to 100%.",
+        "devComment": "Developer Comments: Junkrat has struggled to remain effective since the weakening of his Concussion Mine combo. We're reducing Concussion Mine's cooldown to increase both damage output and mobility. Nitro Boost's movement speed bonus is also being reduced to limit the high speeds of the ultimate with the perk equipped."
+      },
+      {
+        "heroId": "junkrat",
+        "type": "buff",
         "ability": "Concussion Mine",
         "description": "Cooldown reduced from 8 to 7 seconds.",
         "devComment": "Developer Comments: Junkrat has struggled to remain effective since the weakening of his Concussion Mine combo. We're reducing Concussion Mine's cooldown to increase both damage output and mobility. Nitro Boost's movement speed bonus is also being reduced to limit the high speeds of the ultimate with the perk equipped."
@@ -237,7 +304,7 @@
       },
       {
         "heroId": "sierra",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Tremor Charge",
         "description": "Cooldown reduced from 8.5 to 7 seconds.",
         "devComment": "Developer Comments: Sierra's damage output has remained high since release, but her weapon reliability has been limited by projectile travel time at longer ranges. We're reducing the damage of both Helix Rifle and Tracking Shot while increasing projectile speed to improve weapon responsiveness and consistency. Tremor Charge's cooldown is also being reduced to make it available more frequently."
@@ -251,7 +318,7 @@
       },
       {
         "heroId": "symmetra",
-        "type": "buff",
+        "type": "nerf",
         "ability": "Teleporter",
         "description": "Teleport reuse cooldown increased from 1 to 1.25 seconds.",
         "devComment": "Developer Comments: Symmetra's Teleporter can be extremely effective in coordinated teams, enabling long-distance repositioning with limited opportunities for opponents to respond. We're reducing its placement range to limit how far teams can travel with it, while increasing the reuse cooldown to make Teleporter use a greater commitment."
@@ -259,13 +326,20 @@
       {
         "heroId": "torbjorn",
         "type": "nerf",
+        "ability": "Anchor Bolts – Major Perk",
+        "description": "Deploy turrets increased throw range reduced from 50% to 25%.",
+        "devComment": "Developer Comments: Torbjörn's secondary fire is being improved to increase its consistency at closer ranges. We're also reducing Anchor Bolts' turret throw range to preserve the perk's flexibility while limiting extremely distant turret placements."
+      },
+      {
+        "heroId": "torbjorn",
+        "type": "buff",
         "ability": "Rivet Gun",
         "description": "Secondary fire spread reduced from 4.5 to 4 degrees.",
         "devComment": "Developer Comments: Torbjörn's secondary fire is being improved to increase its consistency at closer ranges. We're also reducing Anchor Bolts' turret throw range to preserve the perk's flexibility while limiting extremely distant turret placements."
       },
       {
         "heroId": "vendetta",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Palatine Fang",
         "description": "Initial Swing delay reduced from 0.3 to 0.15 seconds.",
         "devComment": "Developer Comments: These changes are intended to improve the responsiveness of Vendetta's primary fire without significantly increasing the speed of her overall combo. We've reduced delays within Palatine Fang while increasing the recovery times of Whirlwind Dash and Sundering Blade to preserve overall pacing."
@@ -286,14 +360,14 @@
       },
       {
         "heroId": "vendetta",
-        "type": "buff",
+        "type": "nerf",
         "ability": "Whirlwind Dash",
         "description": "Recovery increased from 0.5 to 0.75 seconds.",
         "devComment": "Developer Comments: These changes are intended to improve the responsiveness of Vendetta's primary fire without significantly increasing the speed of her overall combo. We've reduced delays within Palatine Fang while increasing the recovery times of Whirlwind Dash and Sundering Blade to preserve overall pacing."
       },
       {
         "heroId": "vendetta",
-        "type": "buff",
+        "type": "nerf",
         "ability": "Sundering Blade",
         "description": "Recovery increased from 0.2 to 0.5 seconds.",
         "devComment": "Developer Comments: These changes are intended to improve the responsiveness of Vendetta's primary fire without significantly increasing the speed of her overall combo. We've reduced delays within Palatine Fang while increasing the recovery times of Whirlwind Dash and Sundering Blade to preserve overall pacing."
@@ -307,7 +381,7 @@
       },
       {
         "heroId": "widowmaker",
-        "type": "system",
+        "type": "buff",
         "ability": "Take Aim",
         "description": "Updated Widowmaker's Take Aim charge sound effects for the default, Mythic, and Hello Kitty weapons. These sound effects now increase in intensity when the charge level is above 50%."
       },
@@ -320,7 +394,7 @@
       },
       {
         "heroId": "baptiste",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Immortality Field",
         "description": "Cooldown reduced from 22 to 20 seconds.",
         "devComment": "Developer Comments: Immortality Field's long cooldown and vulnerability to being destroyed can limit its effectiveness. We're increasing its health, lowering its cooldown, and raising its minimum health threshold to improve its overall reliability."
@@ -331,6 +405,27 @@
         "ability": "Immortality Field",
         "description": "Health increased from 125 to 150.",
         "devComment": "Developer Comments: Immortality Field's long cooldown and vulnerability to being destroyed can limit its effectiveness. We're increasing its health, lowering its cooldown, and raising its minimum health threshold to improve its overall reliability."
+      },
+      {
+        "heroId": "brigitte",
+        "type": "nerf",
+        "ability": "Общие изменения",
+        "description": "Health reduced from 200 to 175.",
+        "devComment": "Developer Comments: Brigitte's durability can be limited due to operating at close range. We're shifting a portion of her health into armor to improve survivability."
+      },
+      {
+        "heroId": "brigitte",
+        "type": "buff",
+        "ability": "Общие изменения",
+        "description": "Armor increased from 50 to 75.",
+        "devComment": "Developer Comments: Brigitte's durability can be limited due to operating at close range. We're shifting a portion of her health into armor to improve survivability."
+      },
+      {
+        "heroId": "jetpackcat",
+        "type": "buff",
+        "ability": "Общие изменения",
+        "description": "Increased sound priority and volume of base movement and Frenetic Flight.",
+        "devComment": "Developer Comments: Recent movement changes have significantly improved Jetpack Cat's mobility and overall effectiveness. We're reducing the damage and healing of Biotic Pawjectiles to lower overall output. Lifeline is also being adjusted to provide additional counterplay against carried targets while improving its reliability when rescuing allies from environmental deaths."
       },
       {
         "heroId": "jetpackcat",
@@ -403,9 +498,51 @@
         "devComment": "Developer Comments: Harmony Orb can remain active on targets for extended periods with minimal upkeep. We're reducing its line-of-sight grace period to place greater emphasis on maintaining awareness of orb targets and repositioning it when needed."
       },
       {
+        "heroId": "dva",
+        "type": "buff",
+        "ability": "MEKA Ejector - Power",
+        "description": "Ultimate Charge cost reduction increased to 60% (Up from 50%)."
+      },
+      {
+        "heroId": "junkerqueen",
+        "type": "nerf",
+        "ability": "Cut 'Em Gracie - Power",
+        "description": "Return damage reduced to 30 (Down from 40)."
+      },
+      {
+        "heroId": "genji",
+        "type": "buff",
+        "ability": "Laceration - Power",
+        "description": "Cooldown reduction per target increased to 2.5s (Up from 2s)."
+      },
+      {
+        "heroId": "vendetta",
+        "type": "nerf",
+        "ability": "Apex Bloodlust - Power",
+        "description": "Lifesteal per stack reduced to 4% (Down from 5%)."
+      },
+      {
+        "heroId": "ana",
+        "type": "buff",
+        "ability": "Falconer - Power",
+        "description": "Attack speed bonus increased to 50% (Up from 30%)."
+      },
+      {
+        "heroId": "ana",
+        "type": "nerf",
+        "ability": "Falconer - Power",
+        "description": "Ultimate Charge gain reduced to 10% (Down from 25%)."
+      },
+      {
+        "heroId": "jetpackcat",
+        "type": "nerf",
+        "ability": "Territorial - Power",
+        "description": "Damage reduced to 20% of healing (Down from 30%)."
+      },
+      {
         "type": "system",
         "ability": "Исправления",
-        "description": "General\nFixed a bug where Battlepass XP was not granted for Stadium Quick Play Matches.\nFixed a bug with the \"Solus Victorem 2026 Finals\" Spray.\nFixed a bug where the kill feed would sometimes be out of order.\nFixed several issues with the After Match Rewards summary.\nFixed several issues with the ping system.\nRemoved the High Precision Mouse Input setting, as the problem it was built to solve has now been addressed through other means. The setting's removal does not change how mouse input functions in-game.\nHeroesMercy\nFixed an issue causing Mercy's Flash Heal ability to not be counted for the \"Support Ability Mastery\" or \"Master of Life and Death\" daily challenges.\nD.Mon\nFixed an issue with the \"Toggle Boosters\" setting.\nMaps\nFixed a bug with the Black Forest map. It is now re-enabled.\nStadium\nFixed an issue where Mercy's Sympathetic Recovery passive wasn't properly working in Stadium.\nFixed an issue where Cut 'Em Gracie would sometimes pull targets not stuck by the blade."
+        "description": "General\nFixed a bug where Battlepass XP was not granted for Stadium Quick Play Matches.\nFixed a bug with the \"Solus Victorem 2026 Finals\" Spray.\nFixed a bug where the kill feed would sometimes be out of order.\nFixed several issues with the After Match Rewards summary.\nFixed several issues with the ping system.\nRemoved the High Precision Mouse Input setting, as the problem it was built to solve has now been addressed through other means. The setting's removal does not change how mouse input functions in-game.\nHeroes\nMercy\nFixed an issue causing Mercy's Flash Heal ability to not be counted for the \"Support Ability Mastery\" or \"Master of Life and Death\" daily challenges.\nD.Mon\nFixed an issue with the \"Toggle Boosters\" setting.\nMaps\nFixed a bug with the Black Forest map. It is now re-enabled.\nStadium\nFixed an issue where Mercy's Sympathetic Recovery passive wasn't properly working in Stadium.\nFixed an issue where Cut 'Em Gracie would sometimes pull targets not stuck by the blade."
       }
     ]
   },
@@ -414,7 +551,7 @@
     "date": "2026-08-12",
     "version": "4.0",
     "title": "🔥 Overwatch Season 4 - Hotfix August 12",
-    "summary": "Горячий фикс без изменений баланса. Реплей-коды от патча 30 июня по-прежнему доступны.",
+    "summary": "Балансный хотфикс затронул одного героя (D.Mon): правки Plasma Saber, Propulsors и Fusion Repeater — 3 баффа и 2 нерфа.",
     "changes": [
       {
         "heroId": "dmon",
@@ -424,7 +561,7 @@
       },
       {
         "heroId": "dmon",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Propulsors",
         "description": "Fuel drain rate reduced from 40 to 25."
       },
@@ -442,14 +579,14 @@
       },
       {
         "heroId": "dmon",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Fusion Repeater",
         "description": "Cooldown reduced from 6 to 4 seconds."
       },
       {
         "type": "system",
         "ability": "Исправления",
-        "description": "Fixed a bug where Nano Boost was removed from Moira when she used Fade.\nFixed an issue preventing D.Mon's Power Barrier from fully protecting D.Mon if deployed while Fusion Repeater was active.\nFixed a bug where the second attacker spawn extended into playable areas on Paraíso.\nFixed a bug where D.Mon could become invulnerable temporarily.\nTop of post"
+        "description": "Fixed a bug where Nano Boost was removed from Moira when she used Fade.\nFixed an issue preventing D.Mon's Power Barrier from fully protecting D.Mon if deployed while Fusion Repeater was active.\nFixed a bug where the second attacker spawn extended into playable areas on Paraíso.\nFixed a bug where D.Mon could become invulnerable temporarily."
       }
     ]
   },
@@ -458,7 +595,7 @@
     "date": "2026-08-11",
     "version": "4.0",
     "title": "🔥 Overwatch Season 4 - Hotfix August 11",
-    "summary": "Обновление, синхронизированное с Blizzard на 2026-08-11.",
+    "summary": "Крупное обновление Season 4: Heroes of Busan — новый танк D.Mon, балансные правки 12 героев (7 баффов и 7 нерфов), переработка Battle Pass и Competitive (новый ранг Emerald), обновление карт Busan, Paraíso и Eichenwalde.",
     "changes": [
       {
         "type": "system",
@@ -496,14 +633,14 @@
       },
       {
         "heroId": "mauga",
-        "type": "buff",
+        "type": "nerf",
         "ability": "Overrun",
         "description": "Cooldown increased from 5 to 6 seconds. (5v5)",
         "devComment": "Increasing Overrun's cooldown lengthens the window where Mauga must commit to a fight before he can disengage, reducing his mobility without directly impacting his ability to engage."
       },
       {
         "heroId": "pharah",
-        "type": "buff",
+        "type": "nerf",
         "ability": "Concussive Blast",
         "description": "Cooldown increased from 7 to 8 seconds.",
         "devComment": "Concussive Blast provides Pharah with both mobility and displacement. Increasing its cooldown reduces how often she can reposition herself and disrupt enemy movement."
@@ -517,14 +654,14 @@
       },
       {
         "heroId": "tracer",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Recall",
         "description": "Cooldown reduced from 13 to 12 seconds.",
         "devComment": "While Tracer's damage has landed in an effective spot following recent adjustments, reducing Recall's cooldown allows her to disengage more frequently."
       },
       {
         "heroId": "vendetta",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Soaring Slice",
         "description": "Cooldown on spawn reduced from 7 to 3 seconds.",
         "devComment": "Reducing Soaring Slice's cooldown on respawn reduces downtime after respawning while maintaining the reduced ability to quickly return to the fight."
@@ -538,7 +675,7 @@
       },
       {
         "heroId": "juno",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Pulsar Torpedoes",
         "description": "Target lock on minimum time reduced from 0.5 to 0.35 seconds.",
         "devComment": "This change reduces the minimum lock-on time for nearby targets, allowing Pulsar Torpedoes to be used more reactively while creating a clearer distinction in lock-on times across different ranges."
@@ -580,7 +717,7 @@
       },
       {
         "heroId": "mizuki",
-        "type": "buff",
+        "type": "nerf",
         "ability": "Katashiro Return",
         "description": "Cooldown increased from 11 to 12 seconds.",
         "devComment": "Mizuki's mobility uptime has increased significantly following recent changes to Katashiro Return's duration and cooldown. While the increased duration has improved its usability, the cooldown is being partially reverted to reduce overall uptime. Binding Chain's projectile size is also being reduced to make its powerful hinder effect require more precise aim."
@@ -600,22 +737,22 @@
       {
         "type": "system",
         "ability": "Busan - Control",
-        "description": "DowntownBefore and AfterBefore and AfterMEKA BaseBefore and AfterBefore and AfterSanctuaryBefore and AfterBefore and After"
+        "description": "Обновлена визуальная подача карты: переработаны точки Downtown, MEKA Base и Sanctuary."
       },
       {
         "type": "system",
         "ability": "Eichenwalde - Hybrid",
-        "description": "Point ABefore and AfterBefore and AfterBefore and AfterPoint BBefore and AfterBefore and AfterPoint CBefore and After"
+        "description": "Обновлена визуальная подача карты: переработаны точки A, B и C."
       },
       {
         "type": "system",
         "ability": "Paraíso - Hybrid",
-        "description": "Point ABefore and AfterBefore and AfterPoint BBefore and AfterBefore and AfterPoint CBefore and AfterBefore and After"
+        "description": "Обновлена визуальная подача карты: переработаны точки A, B и C."
       },
       {
         "type": "system",
         "ability": "Исправления",
-        "description": "General\nFixed an issue where Brigitte’s Inspiring Strike perk failed to provide its intended instant healing effect.\nFixed an issue that caused Mizuki’s Katashiro’s Return to not trigger when the return point was positioned too close to the payload.\nFixed an issue preventing Execution from appearing as a toggleable option in Custom Game settings.\nFixed an issue where the challenge “A Wee Minidin” had become unintentionally difficult to complete.\nFixed an issue that prevented Reaper from queueing a reload while actively firing Dire Triggers.\nFixed an issue where the Survivor sub‑role incorrectly triggered its passive healing effect without a corresponding movement ability.\nFixed an issue where Doomfist’s Survival of the Fittest perk was not granting the correct amount of Max Overhealth.\nFixed an issue with Hanzo's Frost Arrow Perk that would occur when activated on a controller.\nStadium\nIn a previous update, fixed an issue where Vortex Vial didn't grant the proper amount of Health.\nIn a previous update, fixed an issue where Three Tap Tommygun didn't work properly on D.Va.\nIn a previous update, fixed an issue where Friendly Fissure with Asteroid Smash wouldn't have any falloff damage.\nIn a previous update, fixed an issue where Lucio's Nano Boop item combined with Reverb was dealing more damage than intended.\nFixed an issue where D.Va could reset her boosters cooldown by destroying barriers and deployable when using MEKA Punch.\nFixed an issue where Junkrat's Bango Power would override the burn from Lithium Alloy.\nFixed an issue where Junkrat's Refreshing Radiation item removed the cooldown reduction from Successful Heist.\nFixed an issue where Skyline Nanite wasn't working properly with DOTs.\nTop of post"
+        "description": "General\nFixed an issue where Brigitte’s Inspiring Strike perk failed to provide its intended instant healing effect.\nFixed an issue that caused Mizuki’s Katashiro’s Return to not trigger when the return point was positioned too close to the payload.\nFixed an issue preventing Execution from appearing as a toggleable option in Custom Game settings.\nFixed an issue where the challenge “A Wee Minidin” had become unintentionally difficult to complete.\nFixed an issue that prevented Reaper from queueing a reload while actively firing Dire Triggers.\nFixed an issue where the Survivor sub‑role incorrectly triggered its passive healing effect without a corresponding movement ability.\nFixed an issue where Doomfist’s Survival of the Fittest perk was not granting the correct amount of Max Overhealth.\nFixed an issue with Hanzo's Frost Arrow Perk that would occur when activated on a controller.\nStadium\nIn a previous update, fixed an issue where Vortex Vial didn't grant the proper amount of Health.\nIn a previous update, fixed an issue where Three Tap Tommygun didn't work properly on D.Va.\nIn a previous update, fixed an issue where Friendly Fissure with Asteroid Smash wouldn't have any falloff damage.\nIn a previous update, fixed an issue where Lucio's Nano Boop item combined with Reverb was dealing more damage than intended.\nFixed an issue where D.Va could reset her boosters cooldown by destroying barriers and deployable when using MEKA Punch.\nFixed an issue where Junkrat's Bango Power would override the burn from Lithium Alloy.\nFixed an issue where Junkrat's Refreshing Radiation item removed the cooldown reduction from Successful Heist.\nFixed an issue where Skyline Nanite wasn't working properly with DOTs."
       }
     ]
   },
@@ -624,7 +761,7 @@
     "date": "2026-08-04",
     "version": "4.0",
     "title": "🔥 Overwatch Season 4 - Hotfix August 4",
-    "summary": "Обновление, синхронизированное с Blizzard на 2026-08-04.",
+    "summary": "Системное обновление без правок баланса героев: Blizzard отчиталась о борьбе с неавторизованными периферийными устройствами на консолях и бане более 6000 аккаунтов.",
     "changes": [
       {
         "type": "system",
@@ -638,7 +775,7 @@
     "date": "2026-07-28",
     "version": "3.0",
     "title": "🔥 Overwatch Season 3 - Hotfix July 28",
-    "summary": "Обновление, синхронизированное с Blizzard на 2026-07-28.",
+    "summary": "Небольшой bug fix-патч без правок баланса героев: исправления, обновление раздела Hero Bans и заметки Stadium; реплей-коды сброшены.",
     "changes": [
       {
         "type": "system",
@@ -664,7 +801,7 @@
       {
         "type": "system",
         "ability": "Stadium",
-        "description": "Fixed a bug with Three Tap Tommy Gun on D.Va.\nTop of post"
+        "description": "Fixed a bug with Three Tap Tommy Gun on D.Va."
       }
     ]
   },
@@ -673,7 +810,7 @@
     "date": "2026-07-14",
     "version": "3.0",
     "title": "🔥 Overwatch Season 3 - Hotfix July 14",
-    "summary": "Обновление, синхронизированное с Blizzard на 2026-07-14.",
+    "summary": "Межсезонный балансный хотфикс и старт Summer Games 2026: правки 14 героев (9 баффов и 14 нерфов), включая Freja, Ramattra, Shion, Sierra и поддержку; плюс события Loot Hunt и Excavation Initiative.",
     "changes": [
       {
         "type": "system",
@@ -706,21 +843,21 @@
       },
       {
         "heroId": "junkerqueen",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Commanding Shout",
         "description": "Cooldown reduced from 12 to 10 seconds. (5v5)",
         "devComment": "Commanding Shout is Junker Queen's primary source of survivability and team protection. Its cooldown begins after the effect expires, resulting in a longer time between uses. We're reducing the cooldown to increase its availability during engagements."
       },
       {
         "heroId": "junkerqueen",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Commanding Shout",
         "description": "Cooldown reduced from 15 to 13 seconds. (6v6)",
         "devComment": "Commanding Shout is Junker Queen's primary source of survivability and team protection. Its cooldown begins after the effect expires, resulting in a longer time between uses. We're reducing the cooldown to increase its availability during engagements."
       },
       {
         "heroId": "mauga",
-        "type": "buff",
+        "type": "nerf",
         "ability": "Chainguns",
         "description": "Maximum spread while firing individual Chainguns increased from 1 to 1.5.",
         "devComment": "Mauga could maintain high accuracy when firing a single Chaingun for extended periods. Adding dynamic spread to individual Chainguns encourages switching between weapons to manage spread. This change does not affect accuracy while firing both weapons simultaneously."
@@ -741,7 +878,7 @@
       },
       {
         "heroId": "ramattra",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Block (Nemesis Form)",
         "description": "Cooldown reduced from 1 to 0.5 seconds.",
         "devComment": "Increasing Ravenous Vortex's explosion damage rewards more precise detonations. We're also reducing Block's cooldown to allow Ramattra to block immediately after a single punch instead of two, improving the flow of Nemesis Form."
@@ -755,14 +892,14 @@
       },
       {
         "heroId": "freja",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Take Aim",
         "description": "Recovery reduced from 0.5 to 0.4.",
         "devComment": "Reducing Take Aim's explosion delay lowers the time between impact and damage, creating more consistent follow-up opportunities while reducing the bolt's disruptive potential when hit by it. The other changes are aimed at improving the flow between Take Aim and Revdraw Crossbow’s primary fire."
       },
       {
         "heroId": "freja",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Take Aim",
         "description": "Explosion delay reduced from 1 to 0.8 seconds.",
         "devComment": "Reducing Take Aim's explosion delay lowers the time between impact and damage, creating more consistent follow-up opportunities while reducing the bolt's disruptive potential when hit by it. The other changes are aimed at improving the flow between Take Aim and Revdraw Crossbow’s primary fire."
@@ -776,7 +913,7 @@
       },
       {
         "heroId": "shion",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Execution",
         "description": "Recovery time reduced from 0.4 to 0.3 seconds.",
         "devComment": "Reducing Execution's recovery time better aligns the downtime after using the ability with when Shion can fire again. Joyride's impact damage is also being reduced to lower the effectiveness of continuously ramming targets and the combo potential of immediately detonating the bike after impact."
@@ -790,7 +927,7 @@
       },
       {
         "heroId": "sierra",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Anchor Drone",
         "description": "Cooldown reduced from 12 to 11 seconds.",
         "devComment": "Anchor Drone is being adjusted to support more frequent deployment and repositioning opportunities. Its cooldown and duration are being reduced, while its health is being increased to improve its survivability in combat."
@@ -818,7 +955,7 @@
       },
       {
         "heroId": "venture",
-        "type": "nerf",
+        "type": "buff",
         "ability": "Clobber (Quick Melee)",
         "description": "Cooldown/Recovery reduced from 1.6 to 1.2 seconds.",
         "devComment": "Clobber's cooldown is being reduced to shorten the delay before Venture can use the ability again and better align it with its recovery time. This increases the frequency with which Clobber can be used within engagements and improves its synergy with the Covered in Dirt Major Perk."
@@ -876,7 +1013,7 @@
       {
         "type": "system",
         "ability": "Исправления",
-        "description": "General\nFixed an issue causing Shion's Hero Challenges to not be sorted alphabetically.\nFixed an issue with Mauga where his reticle spread could become inaccurate when swapping between his guns.\nFixed an issue where Sierra’s Trailblazer drone could be interrupted by stun abilities.\nFixed several text bugs in the Advanced Info Panel.\nStadium\nFixed an issue where Junker Queen's Bloodhound Mask wasn't properly granting bonus Weapon Power from Wounds.\nFixed an issue where Doomfist's Friendly Fissure caused Meteor Strike to deal full damage regardless of distance.\nFixed an issue where Cassidy's Gunslinger Grit was triggering before the reload had completed.\nFixed an issue where critically healing an ally after dealing Ability Damage with Cybervenom would apply Healing Reduction to allies.\nFixed an issue where Lucio's Hip Hop wasn't properly working with Wall Jump on Release option toggled off.\nFixed an issue where Mei's Frosting wasn't properly granting Ultimate Charge.\nFixed an issue where Ramattra's Barrier wasn't scaling with Ability Power.\nFixed an issue where Mei's Slowball would visually appear as though it was always the empowered projectile if the Power was sold while buff was active.\nFixed an issue where Kiriko's Leaf on the Wind would target sometimes target enemies.\nIn a previous update, fixed an issue where Moira's Spectral Beam had an incorrect effectiveness value.\nTop of post"
+        "description": "General\nFixed an issue causing Shion's Hero Challenges to not be sorted alphabetically.\nFixed an issue with Mauga where his reticle spread could become inaccurate when swapping between his guns.\nFixed an issue where Sierra’s Trailblazer drone could be interrupted by stun abilities.\nFixed several text bugs in the Advanced Info Panel.\nStadium\nFixed an issue where Junker Queen's Bloodhound Mask wasn't properly granting bonus Weapon Power from Wounds.\nFixed an issue where Doomfist's Friendly Fissure caused Meteor Strike to deal full damage regardless of distance.\nFixed an issue where Cassidy's Gunslinger Grit was triggering before the reload had completed.\nFixed an issue where critically healing an ally after dealing Ability Damage with Cybervenom would apply Healing Reduction to allies.\nFixed an issue where Lucio's Hip Hop wasn't properly working with Wall Jump on Release option toggled off.\nFixed an issue where Mei's Frosting wasn't properly granting Ultimate Charge.\nFixed an issue where Ramattra's Barrier wasn't scaling with Ability Power.\nFixed an issue where Mei's Slowball would visually appear as though it was always the empowered projectile if the Power was sold while buff was active.\nFixed an issue where Kiriko's Leaf on the Wind would target sometimes target enemies.\nIn a previous update, fixed an issue where Moira's Spectral Beam had an incorrect effectiveness value."
       }
     ]
   },
@@ -1650,16 +1787,15 @@
     "title": "🧰 Season 2: Summit — Bug Fix Update",
     "changes": [
       {
-        "heroId": "ramattra",
-        "type": "rework",
+        "type": "system",
         "description": "Replay codes были сброшены вместе с обновлением, но баланс-правок героев в этом патче нет."
       },
       {
-        "heroId": "sierra",
-        "type": "buff",
+        "type": "system",
         "description": "4v4 Evolved и общие bug fixes подтверждают актуальность текущего среза, но числовых правок Sierra в этом патче нет."
       }
-    ]
+    ],
+    "summary": "Bug fix-патч Season 2 без числовых правок баланса героев: сброс replay codes, режим 4v4 Evolved и общие исправления."
   },
   {
     "patchId": "ow-s2-hotfix-2026-04-23",
@@ -1682,7 +1818,8 @@
         "type": "buff",
         "description": "Базовое здоровье увеличено с 175 до 200, суммарный запас здоровья вырос с 250 до 275."
       }
-    ]
+    ],
+    "summary": "Балансный хотфикс Season 2: Roadhog, Sombra и Vendetta получили баффы — сокращение кулдауна Chain Hook, смягчение штрафа скорости Stealth и рост запаса здоровья Vendetta."
   },
   {
     "patchId": "ow-s2-sierra-hotfix-2026-04-17",
@@ -1705,7 +1842,8 @@
         "type": "buff",
         "description": "Medi-Drone — major perk: лечение повышено с 75 до 100."
       }
-    ]
+    ],
+    "summary": "Launch hotfix Sierra: 2 баффа и 1 нерф — рост урона Helix Rifle и Tracking Shot, усиление Anchor Drone и Medi-Drone на фоне повышения стоимости ультимейта Trailblazer."
   },
   {
     "patchId": "ow-s1.5-mid",
@@ -1778,7 +1916,8 @@
         "type": "buff",
         "description": "Радиус ауры 10→12м, дегенерация 2→1.75с"
       }
-    ]
+    ],
+    "summary": "Середина Season 1: правки подклассов (Медик, Бруйзер, Инициатор) и 7 героев — 7 баффов, 3 нерфа и 3 реворка талантов."
   },
   {
     "patchId": "ow-s1-launch",
@@ -1886,7 +2025,8 @@
         "type": "rework",
         "description": "Пассивный хил -5, луч хила +5. Переработан баланс"
       }
-    ]
+    ],
+    "summary": "Старт Overwatch Season 1: добавлены Domina, Anran, Emre, Jetpack Cat и Mizuki, плюс балансные правки около 15 героев — 6 баффов, 6 нерфов и 8 реворков."
   },
   {
     "patchId": "s20-mid",
@@ -1919,7 +2059,8 @@
         "type": "buff",
         "description": "Увеличен радиус ближней атаки"
       }
-    ]
+    ],
+    "summary": "Середина сезона 20: 3 баффа и 2 нерфа — усилены D.Va, Ana и Vendetta, ослаблены Sigma и Tracer."
   },
   {
     "patchId": "s20-launch",
@@ -1947,7 +2088,8 @@
         "type": "nerf",
         "description": "Время восстановления Судзу увеличено с 14 до 15с"
       }
-    ]
+    ],
+    "summary": "Запуск сезона 20: новый герой Vendetta, баффы Sigma и Reinhardt, нерф Kiriko."
   },
   {
     "patchId": "s19-mid",
@@ -1975,7 +2117,8 @@
         "type": "nerf",
         "description": "Скорость исцеления снижена с 55 до 50 в секунду"
       }
-    ]
+    ],
+    "summary": "Середина сезона 19: баффы Wuyang и Genji, нерфы Sojourn и Mercy."
   },
   {
     "patchId": "s19-launch",
@@ -2003,7 +2146,8 @@
         "type": "buff",
         "description": "Радиус ауры увеличен с 12 до 14 метров"
       }
-    ]
+    ],
+    "summary": "Запуск сезона 19: новый саппорт Wuyang, переработка Roadhog, баффы Pharah и Lúcio."
   },
   {
     "patchId": "s18-mid",
@@ -2031,7 +2175,8 @@
         "type": "nerf",
         "description": "HP пилона снижено с 150 до 100"
       }
-    ]
+    ],
+    "summary": "Середина сезона 18: бафф Juno, реворк Sombra и нерфы Mauga и Illari."
   },
   {
     "patchId": "s18-launch",
@@ -2059,7 +2204,8 @@
         "type": "nerf",
         "description": "Снижена максимальная энергия с 100 до 90"
       }
-    ]
+    ],
+    "summary": "Запуск сезона 18: новый DPS-герой Freja, баффы Bastion и Torbjörn, нерф Zarya."
   },
   {
     "patchId": "s14-launch",
@@ -2087,6 +2233,7 @@
         "type": "buff",
         "description": "Разлад теперь увеличивает получаемый урон на 30%"
       }
-    ]
+    ],
+    "summary": "Запуск сезона 14: новый танк Hazard и баффы Orisa, Winston и Zenyatta."
   }
 ]

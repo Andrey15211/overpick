@@ -13,7 +13,11 @@
   padding: var(--spacing-lg);
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(135deg, color-mix(in oklch, var(--color-accent-cyan) 9%, transparent), transparent 56%),
+    linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--color-accent-cyan) 9%, transparent),
+      transparent 56%
+    ),
     var(--color-bg-card);
   box-shadow:
     inset 0 0 0 1px var(--color-border),
@@ -64,7 +68,8 @@
   border-color: var(--color-accent-cyan);
   outline: 2px solid var(--color-accent-cyan);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px color-mix(in oklch, var(--color-accent-cyan) 16%, transparent);
+  box-shadow: 0 0 0 4px
+    color-mix(in oklch, var(--color-accent-cyan) 16%, transparent);
 }
 
 .tierSelect option,
@@ -88,7 +93,8 @@
   border-radius: var(--radius-full);
   color: var(--color-accent-cyan);
   background: color-mix(in oklch, var(--color-accent-cyan) 10%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-accent-cyan) 24%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-accent-cyan) 24%, transparent);
   font-size: var(--font-size-xs);
   font-weight: 900;
 }
@@ -162,7 +168,11 @@
 
 .tierRow:hover {
   transform: translateY(-2px);
-  background: color-mix(in oklch, var(--color-bg-card) 92%, var(--color-accent));
+  background: color-mix(
+    in oklch,
+    var(--color-bg-card) 92%,
+    var(--color-accent)
+  );
   box-shadow:
     inset 0 0 0 1px var(--color-border-hover),
     var(--shadow-md);
@@ -177,15 +187,28 @@
   font-weight: 950;
 }
 
-.tierLabel--S { background: var(--color-tier-s); }
-.tierLabel--A { background: var(--color-tier-a); }
-.tierLabel--B { background: var(--color-tier-b); color: var(--color-bg); }
-.tierLabel--C { background: var(--color-tier-c); color: var(--color-bg); }
-.tierLabel--D { background: var(--color-tier-d); color: var(--color-bg); }
+.tierLabel--S {
+  background: var(--color-tier-s);
+}
+.tierLabel--A {
+  background: var(--color-tier-a);
+}
+.tierLabel--B {
+  background: var(--color-tier-b);
+  color: var(--color-bg);
+}
+.tierLabel--C {
+  background: var(--color-tier-c);
+  color: var(--color-bg);
+}
+.tierLabel--D {
+  background: var(--color-tier-d);
+  color: var(--color-bg);
+}
 
 .tierHeroes {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(124px, 1fr));
   gap: var(--spacing-sm);
   min-width: 0;
   padding: var(--spacing-md);
@@ -202,7 +225,8 @@
   border-radius: var(--radius-lg);
   color: inherit;
   background: color-mix(in oklch, var(--color-bg) 62%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-border) 72%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-border) 72%, transparent);
   transition-property: transform, background-color, box-shadow;
   transition-duration: var(--dur-med);
   transition-timing-function: var(--ease-out);
@@ -229,7 +253,9 @@
   overflow: hidden;
   border-radius: 50%;
   background: var(--color-bg);
-  box-shadow: 0 0 0 2px var(--color-border), 0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
+  box-shadow:
+    0 0 0 2px var(--color-border),
+    0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
   transition-property: transform;
   transition-duration: var(--dur-med);
   transition-timing-function: var(--ease-out);
@@ -246,15 +272,21 @@
 }
 
 .tierHeroAvatar--Tank {
-  box-shadow: 0 0 0 2px var(--color-role-tank), 0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
+  box-shadow:
+    0 0 0 2px var(--color-role-tank),
+    0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .tierHeroAvatar--Damage {
-  box-shadow: 0 0 0 2px var(--color-role-damage), 0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
+  box-shadow:
+    0 0 0 2px var(--color-role-damage),
+    0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .tierHeroAvatar--Support {
-  box-shadow: 0 0 0 2px var(--color-role-support), 0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
+  box-shadow:
+    0 0 0 2px var(--color-role-support),
+    0 0 0 3px color-mix(in oklch, var(--color-ink-glint) 8%, transparent);
 }
 
 .tierHeroName {
@@ -270,22 +302,60 @@
 }
 
 .tierHeroStats {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  min-width: 0;
   gap: var(--space-2xs);
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-xs);
-  font-weight: 900;
 }
 
 .tierHeroStat {
-  padding: 2px 6px;
-  border-radius: var(--radius-full);
-  background: var(--color-bg);
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  gap: 1px;
+  padding: var(--space-2xs) 2px;
+  border-radius: var(--radius-md);
+  background: color-mix(in oklch, var(--color-bg) 82%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-border) 60%, transparent);
+  line-height: 1;
+  text-align: center;
 }
 
-.tierHeroStat--pick { color: var(--color-accent-cyan); }
-.tierHeroStat--win { color: var(--color-accent); }
-.tierHeroStat--ban { color: var(--color-accent-lantern); }
+.tierHeroStatLabel {
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: 0.625rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tierHeroStatValue {
+  max-width: 100%;
+  overflow: hidden;
+  color: var(--color-text-secondary);
+  font-size: 0.6875rem;
+  font-weight: 950;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tierHeroStat--pick .tierHeroStatValue {
+  color: var(--color-accent-cyan);
+}
+.tierHeroStat--win .tierHeroStatValue {
+  color: var(--color-accent);
+}
+.tierHeroStat--ban .tierHeroStatValue {
+  color: var(--color-accent-lantern);
+}
 
 @keyframes tierReveal {
   from {
@@ -319,7 +389,7 @@
   }
 
   .tierHeroes {
-    grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
     padding: var(--spacing-sm);
   }
 
@@ -331,5 +401,4 @@
     width: 44px;
     height: 44px;
   }
-
 }

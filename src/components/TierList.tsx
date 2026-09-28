@@ -1,10 +1,16 @@
-'use client';
+"use client";
 
-import { useMemo, useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { ComputedHeroMeta, HeroMeta, MetaFilters, Tier, TIER_ORDER } from '@/types/meta';
-import { Hero, HeroRole, ROLE_LABELS } from '@/types/heroes';
+import { useMemo, useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import {
+  ComputedHeroMeta,
+  HeroMeta,
+  MetaFilters,
+  Tier,
+  TIER_ORDER,
+} from "@/types/meta";
+import { Hero, HeroRole, ROLE_LABELS } from "@/types/heroes";
 import {
   GAME_MODE_OPTIONS,
   INPUT_OPTIONS,
@@ -13,25 +19,25 @@ import {
   REGION_OPTIONS,
   RANK_TIER_OPTIONS,
   computeFilteredMeta,
-} from '@/data/metaFilters';
-import { buildHeroById } from '@/lib/display';
-import '../styles/TierList.css';
+} from "@/data/metaFilters";
+import { buildHeroById } from "@/lib/display";
+import "../styles/TierList.css";
 
 interface TierListProps {
   metaHeroes: HeroMeta[];
   heroes: Hero[];
 }
 
-type RoleFilter = 'all' | HeroRole;
+type RoleFilter = "all" | HeroRole;
 
 export default function TierList({ metaHeroes, heroes }: TierListProps) {
-  const [roleFilter, setRoleFilter] = useState<RoleFilter>('all');
+  const [roleFilter, setRoleFilter] = useState<RoleFilter>("all");
   const [filters, setFilters] = useState<MetaFilters>({
-    input: 'pc',
-    gameMode: 'competitive',
-    rankTier: 'all',
-    map: 'all-maps',
-    region: 'europe',
+    input: "pc",
+    gameMode: "competitive",
+    rankTier: "all",
+    map: "all-maps",
+    region: "europe",
   });
 
   const heroRoleById = useMemo(() => {
@@ -51,13 +57,19 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
 
   // Фильтрация по роли и группировка по тирам за один проход.
   const heroesByTier = useMemo(() => {
-    const grouped = TIER_ORDER.reduce((acc, tier) => {
-      acc[tier] = [];
-      return acc;
-    }, {} as Record<Tier, ComputedHeroMeta[]>);
+    const grouped = TIER_ORDER.reduce(
+      (acc, tier) => {
+        acc[tier] = [];
+        return acc;
+      },
+      {} as Record<Tier, ComputedHeroMeta[]>,
+    );
 
     for (const metaHero of computedHeroes) {
-      if (roleFilter !== 'all' && heroById.get(metaHero.heroId)?.role !== roleFilter) {
+      if (
+        roleFilter !== "all" &&
+        heroById.get(metaHero.heroId)?.role !== roleFilter
+      ) {
         continue;
       }
       grouped[metaHero.tier].push(metaHero);
@@ -66,19 +78,30 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
     return grouped;
   }, [computedHeroes, heroById, roleFilter]);
 
-  const activeMode = GAME_MODE_OPTIONS.find((option) => option.value === filters.gameMode)?.label;
-  const activeRank = RANK_TIER_OPTIONS.find((option) => option.value === filters.rankTier)?.label;
-  const activeInput = INPUT_OPTIONS.find((option) => option.value === filters.input)?.label;
-  const activeRegion = REGION_OPTIONS.find((option) => option.value === filters.region)?.label;
-  const activeMap = MAP_GROUPS
-    .flatMap((group) => group.options)
-    .find((option) => option.value === filters.map)?.label;
+  const activeMode = GAME_MODE_OPTIONS.find(
+    (option) => option.value === filters.gameMode,
+  )?.label;
+  const activeRank = RANK_TIER_OPTIONS.find(
+    (option) => option.value === filters.rankTier,
+  )?.label;
+  const activeInput = INPUT_OPTIONS.find(
+    (option) => option.value === filters.input,
+  )?.label;
+  const activeRegion = REGION_OPTIONS.find(
+    (option) => option.value === filters.region,
+  )?.label;
+  const activeMap = MAP_GROUPS.flatMap((group) => group.options).find(
+    (option) => option.value === filters.map,
+  )?.label;
 
-  const setFilter = <K extends keyof MetaFilters>(key: K, value: MetaFilters[K]) => {
+  const setFilter = <K extends keyof MetaFilters>(
+    key: K,
+    value: MetaFilters[K],
+  ) => {
     setFilters((current) => {
       const next = { ...current, [key]: value };
-      if (key === 'gameMode' && value === 'quick-play') {
-        next.rankTier = 'all';
+      if (key === "gameMode" && value === "quick-play") {
+        next.rankTier = "all";
       }
       return next;
     });
@@ -87,9 +110,12 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
   // Иконка роли
   const getRoleIcon = (role: HeroRole): string => {
     switch (role) {
-      case 'Tank': return '🛡️';
-      case 'Damage': return '⚔️';
-      case 'Support': return '💚';
+      case "Tank":
+        return "🛡️";
+      case "Damage":
+        return "⚔️";
+      case "Support":
+        return "💚";
     }
   };
 
@@ -101,11 +127,13 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
             <span className="tierSelectLabel">Роль</span>
             <select
               value={roleFilter}
-              onChange={(event) => setRoleFilter(event.target.value as RoleFilter)}
+              onChange={(event) =>
+                setRoleFilter(event.target.value as RoleFilter)
+              }
               className="tierSelect"
             >
               <option value="all">Все роли</option>
-              {(['Tank', 'Damage', 'Support'] as HeroRole[]).map(role => (
+              {(["Tank", "Damage", "Support"] as HeroRole[]).map((role) => (
                 <option key={role} value={role}>
                   {getRoleIcon(role)} {ROLE_LABELS[role]}
                 </option>
@@ -117,11 +145,15 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
             <span className="tierSelectLabel">Устройство</span>
             <select
               value={filters.input}
-              onChange={(event) => setFilter('input', event.target.value as MetaFilters['input'])}
+              onChange={(event) =>
+                setFilter("input", event.target.value as MetaFilters["input"])
+              }
               className="tierSelect"
             >
               {INPUT_OPTIONS.map((option) => (
-                <option key={option.value} value={option.value}>{option.label}</option>
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
               ))}
             </select>
           </label>
@@ -130,25 +162,39 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
             <span className="tierSelectLabel">Режим</span>
             <select
               value={filters.gameMode}
-              onChange={(event) => setFilter('gameMode', event.target.value as MetaFilters['gameMode'])}
+              onChange={(event) =>
+                setFilter(
+                  "gameMode",
+                  event.target.value as MetaFilters["gameMode"],
+                )
+              }
               className="tierSelect"
             >
               {GAME_MODE_OPTIONS.map((option) => (
-                <option key={option.value} value={option.value}>{option.label}</option>
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
               ))}
             </select>
           </label>
 
-          {filters.gameMode === 'competitive' && (
+          {filters.gameMode === "competitive" && (
             <label className="tierSelectField">
               <span className="tierSelectLabel">Ранг</span>
               <select
                 value={filters.rankTier}
-                onChange={(event) => setFilter('rankTier', event.target.value as MetaFilters['rankTier'])}
+                onChange={(event) =>
+                  setFilter(
+                    "rankTier",
+                    event.target.value as MetaFilters["rankTier"],
+                  )
+                }
                 className="tierSelect"
               >
                 {RANK_TIER_OPTIONS.map((option) => (
-                  <option key={option.value} value={option.value}>{option.label}</option>
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
                 ))}
               </select>
             </label>
@@ -158,13 +204,17 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
             <span className="tierSelectLabel">Карта</span>
             <select
               value={filters.map}
-              onChange={(event) => setFilter('map', event.target.value as MetaFilters['map'])}
+              onChange={(event) =>
+                setFilter("map", event.target.value as MetaFilters["map"])
+              }
               className="tierSelect"
             >
               {MAP_GROUPS.map((group) => (
                 <optgroup key={group.label} label={group.label}>
                   {group.options.map((option) => (
-                    <option key={option.value} value={option.value}>{option.label}</option>
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
                   ))}
                 </optgroup>
               ))}
@@ -175,11 +225,15 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
             <span className="tierSelectLabel">Регион</span>
             <select
               value={filters.region}
-              onChange={(event) => setFilter('region', event.target.value as MetaFilters['region'])}
+              onChange={(event) =>
+                setFilter("region", event.target.value as MetaFilters["region"])
+              }
               className="tierSelect"
             >
               {REGION_OPTIONS.map((option) => (
-                <option key={option.value} value={option.value}>{option.label}</option>
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
               ))}
             </select>
           </label>
@@ -188,7 +242,7 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
         <div className="tierActiveSlice">
           <span>Срез: {activeInput}</span>
           <span>{activeMode}</span>
-          {filters.gameMode === 'competitive' && <span>{activeRank}</span>}
+          {filters.gameMode === "competitive" && <span>{activeRank}</span>}
           <span>{activeMap}</span>
           <span>{activeRegion}</span>
         </div>
@@ -197,7 +251,12 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
           <summary>Статистика + экспертная мета + pro-сигналы</summary>
           <div className="tierMethodologyBody">
             {META_SOURCE_NOTES.map((source) => (
-              <a key={source.id} href={source.url} target="_blank" rel="noreferrer">
+              <a
+                key={source.id}
+                href={source.url}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <strong>{source.label}</strong>
                 <span>{source.weight}</span>
               </a>
@@ -207,28 +266,28 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
       </div>
 
       {/* Тир-ряды */}
-      {TIER_ORDER.map(tier => {
+      {TIER_ORDER.map((tier) => {
         const heroesInTier = heroesByTier[tier];
         if (heroesInTier.length === 0) return null;
-        
+
         return (
           <div key={tier} className="tierRow">
-            <div className={`tierLabel tierLabel--${tier}`}>
-              {tier}
-            </div>
+            <div className={`tierLabel tierLabel--${tier}`}>{tier}</div>
             <div className="tierHeroes">
-              {heroesInTier.map(metaHero => {
+              {heroesInTier.map((metaHero) => {
                 const hero = getHeroInfo(metaHero.heroId);
                 if (!hero) return null;
-                
+
                 return (
-                  <Link 
-                    key={metaHero.heroId} 
+                  <Link
+                    key={metaHero.heroId}
                     href={`/hero/${hero.id}`}
                     className="tierHeroCard"
                     aria-label={`${hero.nameRu} — ${metaHero.tier} тир`}
                   >
-                    <div className={`tierHeroAvatar tierHeroAvatar--${hero.role}`}>
+                    <div
+                      className={`tierHeroAvatar tierHeroAvatar--${hero.role}`}
+                    >
                       <Image
                         src={hero.portrait}
                         alt={hero.nameRu}
@@ -241,13 +300,22 @@ export default function TierList({ metaHeroes, heroes }: TierListProps) {
                     <span className="tierHeroName">{hero.nameRu}</span>
                     <div className="tierHeroStats">
                       <span className="tierHeroStat tierHeroStat--pick">
-                        PR {metaHero.pickRate}%
+                        <span className="tierHeroStatLabel">PR</span>
+                        <span className="tierHeroStatValue">
+                          {metaHero.pickRate}%
+                        </span>
                       </span>
                       <span className="tierHeroStat tierHeroStat--win">
-                        WR {metaHero.winRate}%
+                        <span className="tierHeroStatLabel">WR</span>
+                        <span className="tierHeroStatValue">
+                          {metaHero.winRate}%
+                        </span>
                       </span>
                       <span className="tierHeroStat tierHeroStat--ban">
-                        BR {metaHero.banRate}%
+                        <span className="tierHeroStatLabel">BR</span>
+                        <span className="tierHeroStatValue">
+                          {metaHero.banRate}%
+                        </span>
                       </span>
                     </div>
                   </Link>

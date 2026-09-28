@@ -3,9 +3,25 @@
   min-height: 100vh;
   padding: clamp(2rem, 5vw, 4rem) var(--spacing-lg) var(--spacing-3xl);
   background:
-    radial-gradient(ellipse at 18% 0%, color-mix(in oklch, var(--color-accent-lantern) 14%, transparent), transparent 30rem),
-    radial-gradient(ellipse at 82% 28%, color-mix(in oklch, var(--color-accent-sakura) 10%, transparent), transparent 32rem),
-    linear-gradient(180deg, color-mix(in oklch, var(--color-night-indigo) 84%, var(--color-accent-lantern)), transparent 36rem);
+    radial-gradient(
+      ellipse at 18% 0%,
+      color-mix(in oklch, var(--color-accent-lantern) 14%, transparent),
+      transparent 30rem
+    ),
+    radial-gradient(
+      ellipse at 82% 28%,
+      color-mix(in oklch, var(--color-accent-sakura) 10%, transparent),
+      transparent 32rem
+    ),
+    linear-gradient(
+      180deg,
+      color-mix(
+        in oklch,
+        var(--color-night-indigo) 84%,
+        var(--color-accent-lantern)
+      ),
+      transparent 36rem
+    );
 }
 
 .patchesContainer {
@@ -46,15 +62,24 @@
 
 .patchesFilters {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(200px, 0.8fr) minmax(280px, 1.2fr);
+  grid-template-columns: minmax(220px, 1fr) minmax(200px, 0.8fr) minmax(
+      280px,
+      1.2fr
+    );
   gap: var(--spacing-md);
   align-items: end;
   padding: var(--spacing-lg);
   border-radius: var(--radius-xl);
   background:
-    linear-gradient(135deg, color-mix(in oklch, var(--color-accent-cyan) 8%, transparent), transparent 52%),
+    linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--color-accent-cyan) 8%, transparent),
+      transparent 52%
+    ),
     var(--color-bg-card);
-  box-shadow: inset 0 0 0 1px var(--color-border), var(--shadow-sm);
+  box-shadow:
+    inset 0 0 0 1px var(--color-border),
+    var(--shadow-sm);
 }
 
 .patchesFilterGroup {
@@ -93,7 +118,8 @@
   border-color: var(--color-accent-cyan);
   outline: 2px solid var(--color-accent-cyan);
   outline-offset: 2px;
-  box-shadow: 0 0 0 4px color-mix(in oklch, var(--color-accent-cyan) 16%, transparent);
+  box-shadow: 0 0 0 4px
+    color-mix(in oklch, var(--color-accent-cyan) 16%, transparent);
 }
 
 .patchesFilterBtns {
@@ -136,11 +162,21 @@
   box-shadow: inset 0 0 0 1px var(--color-accent);
 }
 
-.patchesFilterBtn--buff { color: var(--color-change-buff); }
-.patchesFilterBtn--nerf { color: var(--color-change-nerf); }
-.patchesFilterBtn--rework { color: var(--color-change-rework); }
-.patchesFilterBtn--map { color: var(--color-change-map); }
-.patchesFilterBtn--system { color: var(--color-change-system); }
+.patchesFilterBtn--buff {
+  color: var(--color-change-buff);
+}
+.patchesFilterBtn--nerf {
+  color: var(--color-change-nerf);
+}
+.patchesFilterBtn--rework {
+  color: var(--color-change-rework);
+}
+.patchesFilterBtn--map {
+  color: var(--color-change-map);
+}
+.patchesFilterBtn--system {
+  color: var(--color-change-system);
+}
 .patchesFilterBtn--buff.patchesFilterBtn--active,
 .patchesFilterBtn--nerf.patchesFilterBtn--active,
 .patchesFilterBtn--rework.patchesFilterBtn--active,
@@ -174,7 +210,7 @@
 }
 
 .patchTimelineItem::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 32px;
   bottom: calc(var(--spacing-lg) * -1);
@@ -213,7 +249,11 @@
 
 .patchCard:hover {
   transform: translateY(-2px);
-  background: color-mix(in oklch, var(--color-bg-card) 92%, var(--color-accent));
+  background: color-mix(
+    in oklch,
+    var(--color-bg-card) 92%,
+    var(--color-accent)
+  );
   box-shadow:
     inset 0 0 0 1px color-mix(in oklch, var(--color-accent) 34%, transparent),
     var(--shadow-md);
@@ -291,6 +331,7 @@
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
   font-weight: 950;
+  letter-spacing: 0.02em;
   line-height: 1;
   text-transform: uppercase;
   white-space: nowrap;
@@ -299,31 +340,41 @@
 .patchStatBadge--buff,
 .changeType--buff {
   color: var(--color-change-buff);
-  background: color-mix(in oklch, var(--color-change-buff) 14%, transparent);
+  background: color-mix(in oklch, var(--color-change-buff) 16%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-change-buff) 34%, transparent);
 }
 
 .patchStatBadge--nerf,
 .changeType--nerf {
   color: var(--color-change-nerf);
-  background: color-mix(in oklch, var(--color-change-nerf) 14%, transparent);
+  background: color-mix(in oklch, var(--color-change-nerf) 16%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-change-nerf) 34%, transparent);
 }
 
 .patchStatBadge--rework,
 .changeType--rework {
   color: var(--color-change-rework);
-  background: color-mix(in oklch, var(--color-change-rework) 14%, transparent);
+  background: color-mix(in oklch, var(--color-change-rework) 16%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-change-rework) 36%, transparent);
 }
 
 .patchStatBadge--map,
 .changeType--map {
   color: var(--color-change-map);
-  background: color-mix(in oklch, var(--color-change-map) 14%, transparent);
+  background: color-mix(in oklch, var(--color-change-map) 16%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-change-map) 34%, transparent);
 }
 
 .patchStatBadge--system,
 .changeType--system {
   color: var(--color-change-system);
-  background: color-mix(in oklch, var(--color-change-system) 14%, transparent);
+  background: color-mix(in oklch, var(--color-change-system) 20%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-change-system) 40%, transparent);
 }
 
 .patchCardChanges {
@@ -338,9 +389,14 @@
   padding: var(--spacing-lg);
   border-radius: var(--radius-lg);
   background:
-    linear-gradient(135deg, color-mix(in oklch, var(--color-accent-cyan) 6%, transparent), transparent 48%),
+    linear-gradient(
+      135deg,
+      color-mix(in oklch, var(--color-accent-cyan) 6%, transparent),
+      transparent 48%
+    ),
     color-mix(in oklch, var(--color-bg) 72%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-border) 88%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-border) 88%, transparent);
 }
 
 .patchSubjectHeader {
@@ -404,7 +460,8 @@
   padding: var(--spacing-md);
   border-radius: var(--radius-md);
   background: color-mix(in oklch, var(--color-bg-card) 72%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-border) 72%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-border) 72%, transparent);
 }
 
 .patchAbilityHeader {
@@ -419,6 +476,13 @@
   color: var(--color-text);
   font-size: var(--font-size-sm);
   font-weight: 950;
+  letter-spacing: 0.01em;
+}
+
+.patchAbilityHeader {
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 1px solid
+    color-mix(in oklch, var(--color-border) 72%, transparent);
 }
 
 .patchAbilityCount {
@@ -438,9 +502,10 @@
 
 .patchChangeItem {
   display: grid;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-sm);
   padding: var(--spacing-sm) var(--spacing-md);
-  border-left: 2px solid color-mix(in oklch, var(--color-accent) 46%, transparent);
+  border-left: 2px solid
+    color-mix(in oklch, var(--color-accent) 46%, transparent);
   background: color-mix(in oklch, var(--color-bg) 58%, transparent);
 }
 
@@ -463,7 +528,8 @@
   padding: var(--spacing-md);
   border-radius: var(--radius-lg);
   background: color-mix(in oklch, var(--color-bg) 62%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--color-border) 72%, transparent);
+  box-shadow: inset 0 0 0 1px
+    color-mix(in oklch, var(--color-border) 72%, transparent);
 }
 
 .changeItemMain {
@@ -486,7 +552,8 @@
   height: 28px;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 0 0 0 1px color-mix(in oklch, var(--color-ink-glint) 12%, transparent);
+  box-shadow: 0 0 0 1px
+    color-mix(in oklch, var(--color-ink-glint) 12%, transparent);
 }
 
 .changeHero {
@@ -512,7 +579,7 @@
   margin: 0;
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .changeAbility,
