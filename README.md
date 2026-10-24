@@ -1,17 +1,30 @@
 # Overpick
 
-Overpick is a Russian-language Overwatch counter-pick and meta dashboard. It shows hero counters, tier lists, patch history, role filters, and hero detail pages from local JSON data that is refreshed from Blizzard public sources.
+Russian-language Overwatch counter-pick and meta dashboard. Live hero counters, tier lists, and patch history driven by Blizzard public data sources.
 
-## Current Scope
+## 🚀 Live Demo
 
-- Counter-pick browser for all heroes in `src/data/heroes.json`.
-- Meta and tier list views driven by `src/data/meta.json` and `src/data/metaFilters.ts`.
-- Patch history from `src/data/patches.json`.
-- Hero detail pages at `/hero/[id]`.
-- Production smoke checks for `/`, `/heroes`, `/meta`, `/patches`, `/hero/junkerqueen`, and the Season 4 D.Mon page.
-- Local sync from Blizzard Hero Statistics (win rate, pick rate, and competitive ban rate) and live patch notes.
+**[https://overpick-mocha.vercel.app](https://overpick-mocha.vercel.app)**
 
-## Commands
+## ✨ Features
+
+- Counter-pick browser for all Overwatch heroes
+- Meta and tier list views with role filters
+- Patch history tracking
+- Hero detail pages with stats and counters
+- Auto-sync from Blizzard Hero Statistics (win rate, pick rate, ban rate)
+- Live patch notes integration
+
+## 🛠 Tech Stack
+
+- **Framework:** Next.js (App Router, SSG)
+- **Language:** TypeScript
+- **Styling:** CSS Modules with design tokens
+- **Data:** Local JSON, synced from Blizzard sources
+- **Testing:** Node test runner
+- **Deployment:** Vercel
+
+## ⚡ Quick Start
 
 ```bash
 npm run dev
