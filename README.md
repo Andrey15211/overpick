@@ -81,3 +81,11 @@ The sync script uses:
 ## Deployment
 
 The app is a standard Next.js static/SSG project and can be deployed on Vercel or any host that supports `next build` and `next start`. There is no deployment command or deployment configuration in this repository; deployment remains the responsibility of the existing host integration after a reviewed push.
+
+---
+
+## Contact
+
+**Telegram:** [@andrey15211](https://t.me/andrey15211)  
+**Email:** andrejbadalin8@gmail.com  
+**GitHub:** [Andrey15211](https://github.com/Andrey15211)
